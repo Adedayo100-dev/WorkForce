@@ -1,0 +1,181 @@
+/* @font-face {
+    font-family: Helvetica;
+    src: url("");
+} */
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Open sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    
+}
+.layout-chasis{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+  }
+main{
+    width: 100%;
+    padding: 10px 38.67px 60px;
+    margin-left: 198.42px;
+    min-height: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+.d-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Tabs */
+
+#tabs .tab-nav .active a { 
+    color: slateblue; 
+    border-bottom: 1px solid slateblue;
+}
+#tabs .tab-nav .active a:hover {
+    border-color: transparent;
+    background: slateblue;
+    color: white;
+}
+#tabs ul.tab-nav{
+    list-style-type: none;
+    padding: 0;
+}
+#tabs ul.tab-nav li{
+    display: inline-flex;
+
+}
+#tabs ul.tab-nav li a {
+    text-decoration: none;
+    color: darkgray;
+    padding: 10px;
+    transition: all .3s ease-in-out;
+    font-size: 14px;
+    position: relative;
+}
+#tabs ul.tab-nav li a.router-link-active::after{
+    content: "";
+    background-color: #018786;
+    position: absolute;
+    bottom: -5px;
+    height: 2px;
+    left: 0px;
+    right: 0px;
+}
+#tabs ul.tab-nav li a:hover {
+    color: gray;
+}
+.tab-active{
+    color: gray !important;
+    border-bottom: 2px solid gray;
+}
+.tab-pane.active { 
+    display: block; 
+}
+
+table{
+    border: 1px solid rgb(238, 238, 238);
+    border-collapse: collapse;
+    width: 100%;
+}
+tbody tr{
+    /* height: 44px; */
+    border: none;
+    border-bottom: 1px solid rgb(238, 238, 238)
+}
+td{
+    /* border: 1px solid rgb(238, 238, 238); */
+    padding: 12px 10px;
+}
+.work-time{
+    color: rgba(128, 128, 128, 0.5);
+}
+.greyed{
+    background-color: rgb(221 221 221);
+}
+.cancelled{
+    background-color: rgba(255, 0, 0, 0.25);
+}
+.success{
+    background-color: rgba(0, 128, 0, 0.251);
+}
+.premium{
+    background-color: goldenrod;
+}
+.underlined{
+    text-decoration: underline dashed;
+}
+.reminder{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 20px;
+}
+caption{
+    text-align: left;
+}
+.today{
+    background-color: grey;
+    padding: 7px 4px;
+}
+.recurring{
+    color: red;
+}
+.paid{
+    color: #390;
+}
+.unpaid{
+    color: rgb(238, 238, 238);
+}
+.work-log{
+    /* padding-top:38.67px; */
+}
+.work-log thead tr{
+    background-color: rgba(32,33,36,0.049);
+}
+.work-log tr:not(thead tr):hover{
+    /* background-color: #dedede; */
+}
+.work-log th, .work-log td{
+    border: none;
+}
+.work-log tr:nth-of-type(even){
+    /* background-color: #efefef; */
+ 
+}
+.work-logo{
+    height: 22px;
+}
+.work-logo_image-container{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.work-places-list{
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+}
+.work-places-list li{
+    background-color: #eee;
+    padding: 10px 12px;
+}
+
+/* Responsiveness */
+@media only screen and (max-width: 467.98px){
+    nav{
+        display: none;
+    }
+    main{
+        padding: 16px;
+    }
+}
