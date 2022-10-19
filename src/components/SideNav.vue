@@ -61,7 +61,7 @@ export default {
         left: 0;
         height: 100%;
         padding: 32px 0 0 0;
-        border-right:  1px solid rgb(238, 238, 238);
+        border-right:  1px solid var(--border-color-primary);
     }
     .side-nav ul{
         list-style-type: none;
@@ -80,13 +80,16 @@ export default {
         display: block;
     }
     .side-nav ul li a:hover {
-        background-color: rgba(32,33,36,0.099);
+        background-color: rgba(244, 244, 246, 0.5);
+    }
+    .side-nav ul li a.router-link-active{
+        background-color: rgb(244, 244, 246);
     }
     .side-nav-links-icons{
         height: 20px;
     }
     .side-nav ul li a div{
         display: inline-flex;
-        gap: 16px;
+        gap: 12px;
     }
 </style>

@@ -4,6 +4,9 @@
         <ul>
             <li>Call Mommy</li>
             <li>Do assignments</li>
+            <li>Payments from Gig Hound & ADP app</li>
+            <li>Pop Culture Test</li>
+            <li>Update WorkLog</li>
             <li>
                 <input v-model="newPlanItem" placeholder="New Item" class="plan-list_input"/>
             </li>

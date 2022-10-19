@@ -12,7 +12,11 @@ export default {
             {id: '7', shopItem: 'Office chair/table(kijiji)', where: '', price: '4'},
             {id: '8', shopItem: 'Chinchin', where: 'Rama', price: ''},
             {id: '9', shopItem: 'Fish', where: 'Rama', price: ''},
-            {id: '', shopItem: 'Raw Rice', where: 'Walmart', price: ''}
+            {id: '10', shopItem: 'Raw Rice', where: 'Walmart', price: ''},
+            {id: '11', shopItem: 'Vitamins', where: '', price: ''},
+            {id: '12', shopItem: 'Safety Boots', where: 'walmart', price: ''},
+            {id: '13', shopItem: 'Milo', where: 'walmart', price: ''},
+            {id: '14', shopItem: 'Knife', where: 'walmart', price: ''}
             // {id: '', shopItem: '', where: '', price: ''}
         ],
         newShopItem: ''

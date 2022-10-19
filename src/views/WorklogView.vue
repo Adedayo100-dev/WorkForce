@@ -44,11 +44,11 @@ export default {
                 {id: '33', loc: 'Amazon', dates: ['Fri September 9, 2022', 'Sat September 10, 2022'], pay: 305.46, payStatus: true},
                 {id: '34', loc: 'Amazon', dates: ['Fri September 16, 2022', 'Sat September 17, 2022'], pay: 266.05, payStatus: true},
                 {id: '35', loc: 'Amazon', dates: ['Fri September 23, 2022', 'Sat September 24, 2022'], pay: 266.05, payStatus: true},
-                {id: '36', loc: 'Amazon', dates: ['Sat 01 September, 2022'], pay: 130.6, payStatus: true},
-                {id: '37', loc: 'Amazon', dates: ['Sat 07 September, 2022'], pay: 131.1, payStatus: false},
-                {id: '38', loc: 'Aspire', dates: ['Wed 12 September, 2022', 'Thur 13 September, 2022'], pay: 340, payStatus: false},
-                {id: '39', loc: 'Amazon', dates: ['Fri 14 September, 2022', 'Sat 15 September, 2022'], pay: 265, payStatus: false}
-                // {id: '37', loc: 'Amazon', dates: ['Sat 01 September, 2022'], pay: , payStatus: true},
+                {id: '36', loc: 'Amazon', dates: ['Sat 01 September, 2022'], pay: 130.06, payStatus: true},
+                {id: '37', loc: 'Amazon', dates: ['Sat 07 September, 2022'], pay: 137.10, payStatus: true},
+                {id: '38', loc: 'Purolator', dates: ['Wed 12 September, 2022', 'Thur 13 September, 2022'], pay: 174.14, payStatus: true},
+                {id: '39', loc: 'Amazon', dates: ['Fri 14 September, 2022', 'Sat 15 September, 2022'], pay: 308, payStatus: false}
+                // {id: '', loc: 'Amazon', dates: ['Sat 01 September, 2022'], pay: , payStatus: true},
             ],
             inputLocation: '',
             inputDate: '',

@@ -1,7 +1,6 @@
-/* @font-face {
-    font-family: Helvetica;
-    src: url("");
-} */
+:root{
+    --border-color-primary:  rgba(0, 0, 0, .1);
+}
 html{
     scroll-behavior: smooth;
 }
