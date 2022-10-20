@@ -24,17 +24,17 @@
             </ul>
         </nav>
         <div class="customize-container">
-            <div class="i8n-lang-container">
+            <div class="i8n-lang-container" :class="{show : openLang}">
                 <div class="i8n-lang-picker" @click="pickLang">
                     <div class="globe-container">
                         <GlobeIcon />
                     </div>
                     <span>English</span>
-                    <div class="caret-d-container">
+                    <div class="caret-container">
                         <CaretUpIcon />
                     </div>
                 </div>
-                <div class="i8n-lang-drop-down" :class="{show : openLang}">
+                <div class="i8n-lang-drop-down">
                     <ul>
                         <li>
                             <a href="">English</a>
@@ -173,6 +173,9 @@ export default {
     align-items: center;
     cursor: pointer;
 }
+.i8n-lang-container.show .i8n-lang-picker svg{
+    transform: rotate(0deg);
+}
 .i8n-lang- span{
     /* font-size: 14px; */
 }
@@ -181,7 +184,7 @@ export default {
     align-items: center;
     height: 100%;
 }
-.caret-d-container{
+.caret-container{
     display: flex;
     align-items: center;
     height: 100%;
@@ -193,17 +196,21 @@ export default {
     cursor: pointer;
 }
 .auth-drop-down, .i8n-lang-drop-down{
-    display: none;
+    display: block;
     position: absolute;
     background-color: white;
     border: 1px solid rgb(235, 235, 235);
     border-radius: 3px;
-    top: calc(100% + 5px + 8px);
+    top: auto;
+    bottom: calc(100% + 5px);
     right: 0;
     z-index: 10;
+    transition: bottom .15s ease-in-out;
+    /* transform: translateY(calc(-100% - 5px - 8px)); */
 }
-.auth-drop-down.show, .i8n-lang-drop-down.show{
-    display: block;
+.auth-drop-down.show, .i8n-lang-container.show .i8n-lang-drop-down{
+    bottom: auto;
+    top: calc(100% + 5px + 8px);
 }
 .auth-drop-down ul, .i8n-lang-drop-down ul{
     list-style: none;

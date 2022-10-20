@@ -41,7 +41,7 @@
                 <div>
                     <span>Linxus Group</span> <br>
                     <span>Amazon</span> <br>
-                    <span>16.5 @ 8 hrs x 2days(3.5% taxes)</span> <br>
+                    <span>16.14 @ 8 hrs x 2days(3.5% taxes)</span> <br>
                     <span>~8.5hrs / shift</span> <br>
                     <b>132</b> <br>
                     <i>Weekends</i>
@@ -63,7 +63,7 @@
                 <div>
                     <span>Linxus Group</span> <br>
                     <span>Amazon</span> <br>
-                    <span>16.5625 @ 8 hrs x 2days(3.5% taxes)</span> <br>
+                    <span>16.14 @ 8 hrs x 2days(3.5% taxes)</span> <br>
                     <span>~8.5hrs / shift</span> <br>
                     <b>132.5</b> <br>
                     <i>Weekends</i>

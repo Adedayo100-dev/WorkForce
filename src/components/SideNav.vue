@@ -10,24 +10,54 @@
                 </RouterLink>
             </li>
             <li>
-                <RouterLink to="/jobs/alljobs">
+                <RouterLink to="/jobs">
                     <div>
                         <JobVacancyIcon />
                         <span> Jobs</span>
                     </div>
+                    <div class="caret-d-container">
+                        <CaretUpIcon />
+                    </div>
                 </RouterLink>
+                <ul id="" class="sidenav-dropdown show">
+                    <li>
+                        <router-link to="/jobs/worklog">WorkLog</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/jobs/alljobs">All</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/jobs/sinjobs">SIN</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/jobs/cashjobs">Cash</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/jobs/breakjobs">Breaks</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/jobs/favjobs">Fav</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/jobs/availability">Availability</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/jobs/co-op">Co-op</router-link>
+                    </li>
+                    
+                </ul>
             </li>
             <li>
                 <RouterLink to="/assignments">Assignments</RouterLink>
             </li>
-            <li>
+            <!-- <li>
                 <RouterLink to="/worklog">
                     <div>
                         <JobVacancyIcon />
                         <span>Work Log</span>
                     </div>
                 </RouterLink>
-            </li>
+            </li> -->
             <li>
                 <RouterLink to="/notifications">
                     <div>
@@ -45,10 +75,12 @@
 import PlanningIcon from '../components/icons/IconPlanning.vue'
 import JobVacancyIcon from '../components/icons/IconJobVacancy.vue'
 import BellIcon from '../components/icons/IconBell.vue'
+import CaretUpIcon from '../components/icons/IconCaretUp.vue'
+import CaretDownIcon from '../components/icons/IconCaretDown.vue'
 
 export default {
     components: {
-        PlanningIcon, JobVacancyIcon, BellIcon
+        PlanningIcon, JobVacancyIcon, BellIcon, CaretUpIcon, CaretDownIcon
     }
 }
 </script>
@@ -69,15 +101,17 @@ export default {
         padding: 0;
     }
     .side-nav ul li{
-        padding: 0px 16px 0px 16px;
+        padding: 0px 0px 0px 0px;
         margin-bottom: 8px;
     }
     .side-nav ul li a{
         font-size: 14px;
         color: #262626;
-        padding: 12px 36px 12px 12px;
-        border-radius: 4px;
-        display: block;
+        padding: 12px 53px 12px 28px;
+        /* border-radius: 4px; */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
     .side-nav ul li a:hover {
         background-color: rgba(244, 244, 246, 0.5);
@@ -91,5 +125,14 @@ export default {
     .side-nav ul li a div{
         display: inline-flex;
         gap: 12px;
+    }
+    .sidenav-dropdown{
+        display: none;
+    }
+    .sidenav-dropdown.show{
+        display: block;
+    }
+    .sidenav-dropdown li a{
+        padding: 12px 53px 12px 56px !important;
     }
 </style>

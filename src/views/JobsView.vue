@@ -5,7 +5,7 @@
 <template>
 
     <div class="jobs">
-        <h3>Job Search Table</h3>
+      <h3>{{$route.meta.title}}</h3>
         <div id="tabs">
             <ul id="nav-tab" class="tab-nav">
               <li>

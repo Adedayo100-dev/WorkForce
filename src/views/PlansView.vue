@@ -1,7 +1,7 @@
 <template>
 
   <div class="plans">
-    <h3>Plans</h3>
+    <h3>{{$route.meta.title}}</h3>
     <div id="tabs">
       <ul id="nav-tab" class="tab-nav">
         <li>

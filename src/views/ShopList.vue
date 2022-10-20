@@ -5,18 +5,20 @@ export default {
         shopItemList: [
             {id: '1', shopItem: 'Milk', where: '', price: '4'},
             {id: '2', shopItem: 'Comb', where: '', price: '4'},
-            {id: '3', shopItem: 'Chicken & Turkey', where: 'Rama', price: '4'},
+            {id: '3', shopItem: 'Chicken & Turkey', where: 'African Store', price: '4'},
             {id: '4', shopItem: 'Beans', where: '', price: '4'},
             {id: '5', shopItem: 'Rice', where: '', price: '4'},
             {id: '6', shopItem: 'Clothes', where: '', price: '4'},
             {id: '7', shopItem: 'Office chair/table(kijiji)', where: '', price: '4'},
-            {id: '8', shopItem: 'Chinchin', where: 'Rama', price: ''},
-            {id: '9', shopItem: 'Fish', where: 'Rama', price: ''},
+            {id: '8', shopItem: 'Chinchin', where: 'African Store', price: ''},
+            {id: '9', shopItem: 'Fish', where: 'African Store', price: ''},
             {id: '10', shopItem: 'Raw Rice', where: 'Walmart', price: ''},
             {id: '11', shopItem: 'Vitamins', where: '', price: ''},
             {id: '12', shopItem: 'Safety Boots', where: 'walmart', price: ''},
             {id: '13', shopItem: 'Milo', where: 'walmart', price: ''},
-            {id: '14', shopItem: 'Knife', where: 'walmart', price: ''}
+            {id: '14', shopItem: 'Knife', where: 'walmart', price: ''},
+            {id: '15', shopItem: 'Noodles', where: 'walmart', price: ''},
+            {id: '16', shopItem: 'Sponge', where: 'African Store', price: ''},
             // {id: '', shopItem: '', where: '', price: ''}
         ],
         newShopItem: ''

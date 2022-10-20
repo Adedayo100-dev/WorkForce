@@ -8,6 +8,7 @@ export default {
     components: {
         WorkLogItem, FilterIcon, UnseeIcon
     },
+    props: ['title'],
     data() {
         return {
             worksList: [
@@ -44,10 +45,11 @@ export default {
                 {id: '33', loc: 'Amazon', dates: ['Fri September 9, 2022', 'Sat September 10, 2022'], pay: 305.46, payStatus: true},
                 {id: '34', loc: 'Amazon', dates: ['Fri September 16, 2022', 'Sat September 17, 2022'], pay: 266.05, payStatus: true},
                 {id: '35', loc: 'Amazon', dates: ['Fri September 23, 2022', 'Sat September 24, 2022'], pay: 266.05, payStatus: true},
-                {id: '36', loc: 'Amazon', dates: ['Sat 01 September, 2022'], pay: 130.06, payStatus: true},
-                {id: '37', loc: 'Amazon', dates: ['Sat 07 September, 2022'], pay: 137.10, payStatus: true},
-                {id: '38', loc: 'Purolator', dates: ['Wed 12 September, 2022', 'Thur 13 September, 2022'], pay: 174.14, payStatus: true},
-                {id: '39', loc: 'Amazon', dates: ['Fri 14 September, 2022', 'Sat 15 September, 2022'], pay: 308, payStatus: false}
+                {id: '36', loc: 'Amazon', dates: ['Sat 01 October, 2022'], pay: 130.06, payStatus: true},
+                {id: '37', loc: 'Amazon', dates: ['Fri 07 October, 2022'], pay: 137.10, payStatus: true},
+                {id: '38', loc: 'Purolator', dates: ['Wed 12 October, 2022', 'Thur 13 October, 2022'], pay: 174.14, payStatus: true},
+                {id: '39', loc: 'Amazon', dates: ['Fri 14 October, 2022', 'Sat 15 October, 2022'], pay: 300.25, payStatus: false},
+                {id: '40', loc: 'Amazon', dates: ['Fri 21 October, 2022', 'Sat 22 October, 2022'], pay: 0.00, payStatus: false},
                 // {id: '', loc: 'Amazon', dates: ['Sat 01 September, 2022'], pay: , payStatus: true},
             ],
             inputLocation: '',
@@ -75,7 +77,6 @@ export default {
 <template>
     <div class="work-log-box">
         <div class="title-top">
-            <h3>Working Log book</h3>
             <div class="add-shift_button-box justify-end">
                 <button class="filter_button">
                     Filter <FilterIcon />
@@ -188,11 +189,11 @@ export default {
         justify-content: end;
     }
     .add-shift_button{
-        background-color: #018786;
+        background-color: #0a793b;
         color: white;
     }
     .add-shift_button:hover{
-        background-color: #016362;
+        background-color: rgb(0, 109, 53);
         color: white;
     }
     .filter_button, .add-shift_button{

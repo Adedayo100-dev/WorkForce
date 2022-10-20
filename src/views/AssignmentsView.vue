@@ -1,5 +1,5 @@
 <template>
-    <h3>Assignments</h3>
+    <h3>{{$route.meta.title}}</h3>
 </template>
 
 <script>

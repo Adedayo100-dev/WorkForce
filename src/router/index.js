@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import PlansIndx from '../views/PlansIndx.vue'
 import JobsIndx from '../views/JobsIndx.vue'
 import AllJobs from '../views/AllJobs.vue'
+// import WorkLog from '../views/WorklogView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -10,12 +11,14 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: HomeView,
+      meta: {title: 'Home'}
     },
     {
       path: '/plans',
       name: 'plans',
       component: () => import('../views/PlansView.vue'),
+      meta: {title: 'Plans'},
       children: [
         {
           // UserProfile will be rendered inside User's <router-view>
@@ -45,6 +48,7 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/JobsView.vue'),
+      meta: {title: 'Jobs Search Table'},
       children: [
         {
           // UserProfile will be rendered inside User's <router-view>
@@ -52,6 +56,12 @@ const router = createRouter({
           path: '',
           name: 'JobsIndx',
           component: JobsIndx,
+        },
+        {
+          path: 'worklog',
+          name: 'worklog',
+          component: () => import('../views/WorklogView.vue'),
+          meta: {title: 'Worklog'}
         },
         {
           // UserProfile will be rendered inside User's <router-view>
@@ -93,21 +103,23 @@ const router = createRouter({
       ],
     },
     {
-      path: '/worklog',
-      name: 'worklog',
-      component: () => import('../views/WorklogView.vue')
-    },
-    {
       path: '/assignments',
       name: 'assignments',
-      component: () => import('../views/AssignmentsView.vue')
+      component: () => import('../views/AssignmentsView.vue'),
+      meta: {title: 'Assignments'}
     },
     {
       path: '/notifications',
       name: 'notifications',
-      component: () => import('../views/NotificationsView.vue')
+      component: () => import('../views/NotificationsView.vue'),
+      meta: {title: 'Notifications'}
     }
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  document.title = `WorkForce - ${to.meta.title}`;
+  next();
+});
 
 export default router

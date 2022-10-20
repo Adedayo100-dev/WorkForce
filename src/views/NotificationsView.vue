@@ -1,6 +1,6 @@
 <template>
   <div class="notifications-box">
-    <h3>Notifications</h3>
+    <h3>{{$route.meta.title}}</h3>
     <!-- <div v-for="notes in notifications" :key="notes.id">
 
     </div> -->
