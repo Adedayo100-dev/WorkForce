@@ -82,7 +82,7 @@ export default {
                     Filter <FilterIcon />
                 </button>
                 <button class="add-shift_button">
-                    <router-link to="/jobs/addwork">+  Add Work Shift</router-link>
+                    <router-link to="/jobs/newshift">+  Add Work Shift</router-link>
                 </button>
             </div>
             <div class="work-log-filter-box">

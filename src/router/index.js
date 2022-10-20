@@ -64,10 +64,10 @@ const router = createRouter({
           meta: {title: 'Work Log'}
         },
         {
-          path: 'addwork',
-          name: 'addwork',
-          component: () => import('../views/AddworkView.vue'),
-          meta: {title: 'Add Work'}
+          path: 'newshift',
+          name: 'newshift',
+          component: () => import('../views/NewShiftView.vue'),
+          meta: {title: 'New Shift'}
         },
         {
           // UserProfile will be rendered inside User's <router-view>

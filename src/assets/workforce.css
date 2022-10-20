@@ -36,54 +36,6 @@ a{
 h3{
     margin-top: calc(1em - 12px);
 }
-
-/* Tabs */
-
-#tabs .tab-nav .active a { 
-    color: slateblue; 
-    border-bottom: 1px solid slateblue;
-}
-#tabs .tab-nav .active a:hover {
-    border-color: transparent;
-    background: slateblue;
-    color: white;
-}
-#tabs ul.tab-nav{
-    list-style-type: none;
-    padding: 0;
-}
-#tabs ul.tab-nav li{
-    display: inline-flex;
-
-}
-#tabs ul.tab-nav li a {
-    text-decoration: none;
-    color: darkgray;
-    padding: 10px;
-    transition: all .3s ease-in-out;
-    font-size: 14px;
-    position: relative;
-}
-#tabs ul.tab-nav li a.router-link-active::after{
-    content: "";
-    background-color: #018786;
-    position: absolute;
-    bottom: -5px;
-    height: 2px;
-    left: 0px;
-    right: 0px;
-}
-#tabs ul.tab-nav li a:hover {
-    color: gray;
-}
-.tab-active{
-    color: gray !important;
-    border-bottom: 2px solid gray;
-}
-.tab-pane.active { 
-    display: block; 
-}
-
 table{
     border: 1px solid rgb(238, 238, 238);
     border-collapse: collapse;

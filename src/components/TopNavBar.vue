@@ -2,15 +2,8 @@
     <div class="top-nav">
         <span class="title">WorkForce</span>
         <div class="logo">
-            <img src="../assets/workForce.svg" alt="">
+            <WorkForceIcon />
         </div>
-        <nav>
-            <ul>
-                <li>
-                    <RouterLink to="/">More</RouterLink>
-                </li>
-            </ul>
-        </nav>
         <div class="customize-container">
             <div class="i8n-lang-container" :class="{show : openLang}">
                 <div class="i8n-lang-picker" @click="pickLang">
@@ -72,13 +65,14 @@
 </template>
 
 <script>
+import WorkForceIcon from '../components/icons/IconWorkForce.vue'
 import GlobeIcon from '../components/icons/IconGlobe.vue'
 import CaretUpIcon from '../components/icons/IconCaretUp.vue'
 import CaretDownIcon from '../components/icons/IconCaretDown.vue'
 
 export default {
     components: {
-        GlobeIcon, CaretUpIcon, CaretDownIcon
+        WorkForceIcon, GlobeIcon, CaretUpIcon, CaretDownIcon
     },
     data() {
         return {
@@ -170,9 +164,9 @@ export default {
 .i8n-lang-container.show .i8n-lang-picker svg{
     transform: rotate(0deg);
 }
-.i8n-lang- span{
-    /* font-size: 14px; */
-}
+/* .i8n-lang- span{
+    font-size: 14px;
+} */
 .globe-container{
     display: flex;
     align-items: center;

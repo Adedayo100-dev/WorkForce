@@ -1,6 +1,6 @@
 <template>
     <div class="settings-view">
-        <!-- <h3>{{$route.meta.title}}</h3> -->
+        <h3>{{$route.meta.title}}</h3>
     </div>
 </template>
 

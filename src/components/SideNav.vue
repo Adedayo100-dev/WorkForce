@@ -9,7 +9,7 @@
                     </div>
                 </RouterLink>
             </li>
-            <li>
+            <li class="show">
                 <RouterLink to="/jobs">
                     <div>
                         <JobVacancyIcon />
@@ -19,7 +19,7 @@
                         <CaretUpIcon />
                     </div>
                 </RouterLink>
-                <ul id="" class="sidenav-dropdown show">
+                <ul id="" class="sidenav-dropdown">
                     <li>
                         <router-link to="/jobs/worklog">WorkLog</router-link>
                     </li>
@@ -128,7 +128,7 @@ export default {
     .sidenav-dropdown{
         display: none;
     }
-    .sidenav-dropdown.show{
+    li.show .sidenav-dropdown{
         display: block;
     }
     .sidenav-dropdown li a{
