@@ -92,7 +92,7 @@ export default {
         /* top: 0; */
         left: 0;
         height: 100%;
-        padding: 32px 0 0 0;
+        padding: 0;
         border-right:  1px solid var(--border-color-primary);
     }
     .side-nav ul{
@@ -102,7 +102,6 @@ export default {
     }
     .side-nav ul li{
         padding: 0px 0px 0px 0px;
-        margin-bottom: 8px;
     }
     .side-nav ul li a{
         font-size: 14px;

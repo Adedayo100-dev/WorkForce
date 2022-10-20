@@ -5,12 +5,12 @@
         <table>
             <thead>
                 <tr>
-                    <th>Employer Agency</th>
-                    <th>Contacted</th>
-                    <th>Registered</th>
-                    <th>Employed</th>
-                    <th>Pay($)</th>
-                    <th>Time</th>
+                    <td>Employer Agency</td>
+                    <td>Contacted</td>
+                    <td>Registered</td>
+                    <td>Employed</td>
+                    <td>Pay($)</td>
+                    <td>Time</td>
                 </tr>
             </thead>
             <tbody>                           

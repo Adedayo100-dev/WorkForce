@@ -46,7 +46,7 @@ export default {
     .shop-list-box{
         list-style: none;
         padding: 0;
-        font-size: 14px;
+        font-size: 12px;
     }
     .shop-item{
         padding: 4px 0;
@@ -56,6 +56,7 @@ export default {
         padding: 8px 12px;
         border-radius: 6px;
         margin: 4px 0;
+        font-size: 12px;
     }
     .shopping-list_input:focus{
         outline: 2px solid #006aff;

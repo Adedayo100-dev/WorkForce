@@ -1,23 +1,11 @@
 <template>
     <div class="top-nav">
         <span class="title">WorkForce</span>
+        <div class="logo">
+            <img src="../assets/workForce.svg" alt="">
+        </div>
         <nav>
             <ul>
-                <li>
-                    <RouterLink to="/plans">Plans</RouterLink>
-                </li>
-                <li>
-                    <RouterLink to="/jobs">Jobs</RouterLink>
-                </li>
-                <li>
-                    <RouterLink to="/assignments">Assignments</RouterLink>
-                </li>
-                <li>
-                    <RouterLink to="/worklog">Work Log</RouterLink>
-                </li>
-                <li>
-                    <RouterLink to="/notifications">Notifications</RouterLink>
-                </li>
                 <li>
                     <RouterLink to="/">More</RouterLink>
                 </li>
@@ -63,16 +51,16 @@
                 <div class="auth-drop-down"  :class="{show : openAuth}">
                     <ul>
                         <li>
-                            <a href="">Profile</a>
+                            <router-link to="/profile">Profile</router-link>
                         </li>
                         <li>
-                            <a href="">Settings</a>
+                        <router-link to="/settings">Settings</router-link>
                         </li>
                         <li>
-                            <a href="">Help & Feedback</a>
+                            <router-link to="/help">Help & Feedback</router-link>
                         </li>
                         <li>
-                            <a href="" class="danger-link">Sign out</a>
+                            <router-link to="/signedout" class="danger-link">Sign out</router-link>
                         </li>
                     </ul>
                 </div>
@@ -120,7 +108,7 @@ export default {
     top: 0;
     background-color: #f4f4f6;
     border-bottom: 1px solid  rgb(235, 235, 235);
-    padding: 5px 38.67px 5px 28px;
+    padding: 5px 30px 5px 28px;
     color: grey;
     font-size: 14px;
     z-index: 10;
@@ -128,6 +116,12 @@ export default {
 .top-nav span.title{
     color:  #5F6368;
     margin-right: 10px;
+}
+.top-nav .logo{
+    display: flex;
+}
+.top-nav .logo img{
+    height: 19px;
 }
 .top-nav nav{
     position: sticky;

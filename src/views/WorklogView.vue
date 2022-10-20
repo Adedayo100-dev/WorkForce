@@ -81,7 +81,9 @@ export default {
                 <button class="filter_button">
                     Filter <FilterIcon />
                 </button>
-                <button class="add-shift_button">+  Add Work Shift</button>
+                <button class="add-shift_button">
+                    <router-link to="/jobs/addwork">+  Add Work Shift</router-link>
+                </button>
             </div>
             <div class="work-log-filter-box">
                 <form action="">
@@ -151,97 +153,5 @@ export default {
 </template>
 
 <style>
-    .title-top{
-        /* padding: 10px 0 0px; */
-        background-color: white;
-        position: sticky;
-        top: 0;
-    }
-    thead td{
-        font-size: 14px;
-    }
-    .pay-header{
-        text-align: end;
-    }
-    .pay-header>div{
-        display: flex;
-        justify-content: end;
-        column-gap: 8px;
-    }
-    tbody{
-        font-size: 14px;
-        overflow-y: scroll;
-        height: 500px;
-    }
-    .add-shift_button-box{
-        display: flex;
-    }
-    .mt-40{
-        margin-top: 40px;
-    }
-    .mb-40{
-        margin-bottom: 40px;
-    }
-    .justify-center{
-        justify-content: center;
-    }
-    .justify-end{
-        justify-content: end;
-    }
-    .add-shift_button{
-        background-color: #0a793b;
-        color: white;
-    }
-    .add-shift_button:hover{
-        background-color: rgb(0, 109, 53);
-        color: white;
-    }
-    .filter_button, .add-shift_button{
-        border: none;
-        border-radius: 4px;
-        padding: 10px 30px;
-        margin-left: 10px;
-    }
-    .filter_button{
-        border: 1px solid rgb(235, 235, 235);
-        color: #262626;
-        background-color: rgb(250,250,250);
-        display: inline-flex;
-        gap: 5px;
-    }
-    .filter_button:hover{
-
-    }
-    .work-log-filter-box{
-        display: flex;
-        padding: 12px 0px;
-    }
-    .total-pay-output{
-        font-weight: bold;
-    }
-    .work-log-filter-box input{
-        padding: 8px 10px;
-        border: 1px solid rgb(235, 235, 235);
-        outline: none;
-    }
-    .work-shifts-total-box{
-        padding-top: 12px;
-    }
-    #addShift{
-        display: flex;
-        justify-content: space-between;
-    }
-    .work-log_form-control_input{
-        padding: 0 12px;
-        border: 1px solid rgb(238, 238, 238);
-    }
-    .date_form-control{
-        display: flex;
-        gap: 10px;
-    }
-    .add-new-date{
-        border: 1px solid rgb(235, 235, 235);
-        border-radius: 4px;
-        padding: 10px 12px;
-    }
+   
 </style>

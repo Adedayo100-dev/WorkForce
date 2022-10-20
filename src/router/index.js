@@ -61,7 +61,13 @@ const router = createRouter({
           path: 'worklog',
           name: 'worklog',
           component: () => import('../views/WorklogView.vue'),
-          meta: {title: 'Worklog'}
+          meta: {title: 'Work Log'}
+        },
+        {
+          path: 'addwork',
+          name: 'addwork',
+          component: () => import('../views/AddworkView.vue'),
+          meta: {title: 'Add Work'}
         },
         {
           // UserProfile will be rendered inside User's <router-view>
@@ -113,6 +119,12 @@ const router = createRouter({
       name: 'notifications',
       component: () => import('../views/NotificationsView.vue'),
       meta: {title: 'Notifications'}
+    },
+    {
+      path: '/settings',
+      name: 'settings',
+      component: () => import('../views/SettingsView.vue'),
+      meta: {title: 'Settings'}
     }
   ]
 })

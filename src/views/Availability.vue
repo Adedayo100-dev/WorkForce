@@ -9,15 +9,15 @@
                 </tr>
                 <tr>
                     <td><b>Tuesday</b></td>
-                    <td>from 2 pm and <b>night</b></td>
+                    <td>night</td>
                 </tr>
                 <tr>
                     <td>Wednesday</td>
                     <td>from 3 pm for 8hrs</td>
                 </tr>
                 <tr>
-                    <td>Thursday</td>
-                    <td>from 3 pm for 8 hrs</td>
+                    <td><b>Thursday</b></td>
+                    <td>All day</td>
                 </tr>
                 <tr>
                     <td><b>Friday</b></td>

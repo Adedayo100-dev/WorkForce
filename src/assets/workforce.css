@@ -1,5 +1,7 @@
+@import "worklogview.css";
 :root{
     --border-color-primary:  rgba(0, 0, 0, .1);
+    --table-font-size: 12px;
 }
 html{
     scroll-behavior: smooth;
@@ -17,8 +19,8 @@ body{
   }
 main{
     width: 100%;
-    padding: 10px 38.67px 60px;
-    margin-left: 198.42px;
+    padding: 12px 30px 60px;
+    margin-left: 195.42px;
     min-height: 100%;
 }
 
@@ -30,6 +32,9 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+h3{
+    margin-top: calc(1em - 12px);
 }
 
 /* Tabs */
@@ -91,7 +96,7 @@ tbody tr{
 }
 td{
     /* border: 1px solid rgb(238, 238, 238); */
-    padding: 12px 10px;
+    padding: 8px 10px;
 }
 .work-time{
     color: rgba(128, 128, 128, 0.5);

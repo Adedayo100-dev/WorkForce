@@ -23,7 +23,7 @@
                     <td><span class="underlined">11pm-7:30am</span> <br> 7am - 3:30pm</td>
                 </tr>
                 <tr class="success">
-                    <td>24hr Employment</td>
+                    <td>(N.A.S) 24hr Employment</td>
                     <td><input type="checkbox" name="" id="" checked> Appointment</td>
                     <td><input type="checkbox" name="" id="" checked></td>
                     <td><input type="checkbox" name="" id="" checked></td>
@@ -31,10 +31,10 @@
                     <td>7pm -7am</td>
                 </tr>
                 <tr>
-                    <td>Vertical sr</td>
+                    <td>Vertical SR</td>
                     <td><input type="checkbox" name="" id="" checked> Mail</td>
                     <td><input type="checkbox" name="" id="" checked></td>
-                    <td><input type="checkbox" name="" id="" ></td>
+                    <td><input type="checkbox" name="" id="" checked></td>
                     <td>15 | 18</td>
                     <td></td>
                 </tr>
@@ -42,7 +42,7 @@
                     <td>GigHound</td>
                     <td><input type="checkbox" name="" id="" checked>App</td>
                     <td><input type="checkbox" name="" id="" checked></td>
-                    <td><input type="checkbox" name="" id="" ></td>
+                    <td><input type="checkbox" name="" id="" checked></td>
                     <td>17</td>
                     <td>varies</td>
                 </tr>
@@ -63,7 +63,7 @@
                     <td></td>
                 </tr>
                 <tr class="greyed">
-                    <td>the blitz team</td>
+                    <td>The Blitz Team</td>
                     <td><input type="checkbox" name="" id="" checked> Whatsapp</td>
                     <td><input type="checkbox" name="" id="" checked></td>
                     <td><input type="checkbox" name="" id="" checked></td>
@@ -80,7 +80,7 @@
                 </tr>
                 
                 <tr>
-                    <td>ABL employment</td>
+                    <td>ABL Employment</td>
                     <td><input type="checkbox" name="" id="" checked></td>
                     <td><input type="checkbox" name="" id="" checked></td>
                     <td><input type="checkbox" name="" id="" ></td>
@@ -104,7 +104,7 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td>NAS</td>
+                    <td>N.A.S</td>
                     <td><input type="checkbox" name="" id="" ></td>
                     <td><input type="checkbox" name="" id="" ></td>
                     <td><input type="checkbox" name="" id="" ></td>
@@ -128,7 +128,7 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td>Express employment/....</td>
+                    <td>Express Employment/....</td>
                     <td><input type="checkbox" name="" id=""></td>
                     <td><input type="checkbox" name="" id=""></td>
                     <td><input type="checkbox" name="" id=""></td>

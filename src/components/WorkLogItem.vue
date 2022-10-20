@@ -40,7 +40,8 @@
             <div>
                 <div class="work-logo_image-container">
                     <div v-if="loc ==='Amazon'">
-                        <AmazonIcon />
+                        <!-- <AmazonIcon /> -->
+                        <p>{{loc}}</p>
                     </div>
                     <div v-else-if="loc ==='Olivieri Foods'">
                         <p>{{loc}}</p>
@@ -98,7 +99,7 @@
         transform: translate(-50%, -50%);
     } */
     .works-dates-list{
-        font-size: 14px;
+        font-size: var(--table-font-size);
         display: block;
     }
     .vdots-icon-container{
