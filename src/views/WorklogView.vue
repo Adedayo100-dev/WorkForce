@@ -48,7 +48,7 @@ export default {
                 {id: '36', loc: 'Amazon', dates: ['Sat 01 October, 2022'], pay: 130.06, payStatus: true},
                 {id: '37', loc: 'Amazon', dates: ['Fri 07 October, 2022'], pay: 137.10, payStatus: true},
                 {id: '38', loc: 'Purolator', dates: ['Wed 12 October, 2022', 'Thur 13 October, 2022'], pay: 174.14, payStatus: true},
-                {id: '39', loc: 'Amazon', dates: ['Fri 14 October, 2022', 'Sat 15 October, 2022'], pay: 300.25, payStatus: false},
+                {id: '39', loc: 'Amazon', dates: ['Fri 14 October, 2022', 'Sat 15 October, 2022'], pay: 301.05, payStatus: false},
                 {id: '40', loc: 'Amazon', dates: ['Fri 21 October, 2022', 'Sat 22 October, 2022'], pay: 0.00, payStatus: false},
                 // {id: '', loc: 'Amazon', dates: ['Sat 01 September, 2022'], pay: , payStatus: true},
             ],
