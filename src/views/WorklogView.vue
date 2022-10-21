@@ -89,8 +89,8 @@ export default {
                 <form action="">
                     <input type="text" placeholder="Search">
                 </form>
-                <div>
-                    
+                <div class="work-log-flank-right">
+                    <router-link to="#totalShifts">&#8645;</router-link>
                 </div>
             </div>
         </div>
@@ -113,10 +113,12 @@ export default {
                         </thead>
                         <tbody>
                             <WorkLogItem v-for="(work, index) in worksList" :key="work.id" :loc="work.loc" :dates="work.dates" :pay="work.pay" :payStatus="work.payStatus" :idx="index"/>
-                            <tr>
-                                <td>Total</td>
+                            <tr id="totalShifts">
+                                <td>
+                                    <p>Total</p>
+                                </td>
                                 <td class="dates-output">{{totalShifts}} shifts</td>
-                                <td class="total-pay-output pay-output">
+                                <td class="text-bold pay-output">
                                     <span>{{totalPay}}</span>
                                 </td>
                                 <!-- <td colspan="3" style="color: #757575;">This is the total sum of all work done from May, 2022 to present......</td> -->
@@ -127,7 +129,7 @@ export default {
                 <!-- <div class="add-shift_button-box justify-center mt-40 mb-40">
                     <button class="add-shift_button">+ Add Work Shift</button>
                 </div> -->
-                <div class="work-shifts-total-box">
+                <!-- <div class="work-shifts-total-box">
                     <form action="" id="addShift">
                         <select v-model="inputLocation" name="" id="" class="work-log_form-control_input">
                             <option disabled value="">Location</option>
@@ -146,7 +148,7 @@ export default {
                         <input v-model="inputPay" type="number" inputmode="decimal" name="" id="" style="width: 90px" placeholder="pay($)"  class="work-log_form-control_input">
                         <input type="submit" value="Add" class="add-shift_button">
                     </form>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
