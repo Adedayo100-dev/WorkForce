@@ -21,7 +21,7 @@
                 </RouterLink>
                 <ul id="" class="sidenav-dropdown">
                     <li>
-                        <router-link to="/jobs/worklog">WorkLog</router-link>
+                        <router-link to="/jobs/worklog">Work Log</router-link>
                     </li>
                     <li>
                         <router-link to="/jobs/alljobs">All</router-link>

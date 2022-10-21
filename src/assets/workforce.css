@@ -19,15 +19,13 @@ body{
   }
 main{
     width: 100%;
-    padding: 12px 30px 60px;
+    padding: 12px 30px 30px;
     margin-left: 195.42px;
     min-height: 100%;
 }
-
 a{
     text-decoration: none;
 }
-
 .d-center{
     display: flex;
     justify-content: center;
@@ -35,9 +33,14 @@ a{
 }
 h3{
     margin-top: calc(1em - 12px);
+    color: grey;
+}
+h4{
+    color: grey;
 }
 table{
     border: 1px solid rgb(238, 238, 238);
+    border-bottom: none;
     border-collapse: collapse;
     width: 100%;
 }
@@ -54,13 +57,13 @@ td{
     color: rgba(128, 128, 128, 0.5);
 }
 .greyed{
-    background-color: rgb(221 221 221);
+    background-color: #f4f4f6;
 }
 .cancelled{
     background-color: rgba(255, 0, 0, 0.25);
 }
 .success{
-    background-color: rgba(0, 128, 0, 0.251);
+    background-color: rgba(0, 128, 0, 0.25);
 }
 .premium{
     background-color: goldenrod;
@@ -128,10 +131,14 @@ caption{
 
 /* Responsiveness */
 @media only screen and (max-width: 467.98px){
+    .top-nav{
+        padding: 5px 16px;
+    }
     nav{
         display: none;
     }
     main{
-        padding: 16px;
+        padding: 12px 16px 16px 16px;
+        margin-left: 0;
     }
 }

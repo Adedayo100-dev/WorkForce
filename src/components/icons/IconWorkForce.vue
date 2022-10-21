@@ -3,7 +3,7 @@
     <metadata>
     Created by potrace 1.15, written by Peter Selinger 2001-2017
     </metadata>
-    <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)" fill="#c0c0c0" stroke="none">
+    <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)" fill="grey" stroke="none">
         <path d="M5855 12733 c-9 -32 -21 -75 -27 -95 l-11 -38 -99 0 -100 0 80 -59
         80 -59 -28 -89 c-15 -48 -26 -89 -25 -91 2 -2 25 12 52 31 106 75 90 73 173
         17 40 -28 74 -49 75 -48 1 2 -10 43 -25 91 l-28 88 79 57 80 57 -98 5 -97 5

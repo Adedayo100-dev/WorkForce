@@ -58,15 +58,18 @@ export default {
     font-size: 14px;
     position: relative;
 }
-#tabs ul.tab-nav li a.router-link-active::after{
+#tabs ul.tab-nav li a:first-of-type{
+  padding-left: 0;
+}
+/* #tabs ul.tab-nav li a.router-link-active::after{
     content: "";
-    background-color: #018786;
+    background-color: #0a793b;
     position: absolute;
     bottom: -5px;
     height: 2px;
     left: 0px;
     right: 0px;
-}
+} */
 #tabs ul.tab-nav li a:hover {
     color: gray;
 }

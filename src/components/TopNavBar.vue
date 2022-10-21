@@ -47,13 +47,13 @@
                             <router-link to="/profile">Profile</router-link>
                         </li>
                         <li>
-                        <router-link to="/settings">Settings</router-link>
+                            <router-link to="/settings">Settings</router-link>
                         </li>
                         <li>
                             <router-link to="/help">Help & Feedback</router-link>
                         </li>
                         <li>
-                            <router-link to="/signedout" class="danger-link">Sign out</router-link>
+                            <span class="danger-link" @click="openModal">Sign out</span>
                         </li>
                     </ul>
                 </div>
@@ -95,16 +95,17 @@ export default {
 
 <style>
 .top-nav{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* flex-direction: row;
+    justify-content: space-between; */
     position: sticky;
     top: 0;
     background-color: #f4f4f6;
     border-bottom: 1px solid  rgb(235, 235, 235);
     padding: 5px 30px 5px 28px;
     color: grey;
-    font-size: 14px;
+    font-size: 12px;
     z-index: 10;
 }
 .top-nav span.title{
@@ -113,6 +114,7 @@ export default {
 }
 .top-nav .logo{
     display: flex;
+    justify-content: center;
 }
 .top-nav .logo img{
     height: 19px;
@@ -149,6 +151,7 @@ export default {
 .customize-container{
     display: flex;
     column-gap: 20px;
+    justify-content: end;
     /* color: grey; */
 }
 .i8n-lang-container{
@@ -179,6 +182,7 @@ export default {
 }
 .auth-container{
     position: relative;
+    display: flex;
 }
 .auth-picker{
     cursor: pointer;
@@ -204,16 +208,17 @@ export default {
     list-style: none;
     padding: 0;
     margin: 0;
-    font-size: 13px;
+    font-size: 12px;
 }
-.auth-drop-down a, .i8n-lang-drop-down a{
+.auth-drop-down a, .i8n-lang-drop-down a, .auth-drop-down span{
     display: flex;
     white-space: nowrap;
     padding: 8.5px 17px;
     color: grey;
 }
-.auth-drop-down a:hover, .i8n-lang-drop-downa:hover{
-    background-color: rgb(235, 235, 235);
+.auth-drop-down a:hover, .i8n-lang-drop-downa:hover, .auth-drop-down span:hover{
+    background-color: #f4f4f6;
+    color: black;
 }
 .danger-link{
     color: red !important;

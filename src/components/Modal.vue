@@ -1,8 +1,17 @@
 <template>
-    <div class="modal-overlay">
+    <div class="modal-overlay" :class="{show: toggleModal}">
         <div class="modal-static-container">
             <div class="modal-dynamic-content">
-                <h3>Add Shift</h3>
+                <div class="confirm-dialog-box">
+                    <h3>Confirm</h3>
+                    <p>Are you sure you wanna proceed?</p>
+                    <div class="confirm-button-container">
+                        <button @click="closeModal">No</button>
+                        <button>
+                            <router-link to="/signedout">Yes</router-link>
+                        </button>
+                    </div>
+                </div>
                 <!-- Content goes in here -->
             </div>
         </div>
@@ -11,7 +20,20 @@
 
 <script>
 export default {
-    name: 'modal'
+    name: 'modal',
+    data() {
+        return {
+            toggleModal: false,
+        }
+    },
+    methods: {
+        closeModal: function() {
+            this.toggleModal = false;
+        },
+        openModal: function() {
+            this.toggleModal = true;
+        }
+    }
 }
 </script>
 
@@ -23,7 +45,8 @@ export default {
         position: fixed;
         top: 0;
         left: 0;
-        background-color: rgba(0, 0, 0, 0.452);
+        /* background-color: rgba(0, 0, 0, 0.452); */
+        background-color: rgba(32, 33, 36, 0.6);
         width: 100%;
         z-index: 100;
         height: 100vh;
@@ -37,49 +60,24 @@ export default {
     }
     .modal-static-container{
         background: white;
-        padding: 60px 180px;
+        padding: 18px 24px;
         border-radius: 6px;
+        box-shadow: 0 12px 15px 0 rgb(0 0 0 / 24%);
+        font-size: 14px;
     }
     .modal_add-shift{
         display: flex;
         flex-direction: column;
         gap: 12px;
     }
-    .form-group{
+    .confirm-button-container{
         display: flex;
-        flex-direction: column;
-        gap: 6px;
+        justify-content: end;
+        column-gap: 8px;
     }
-    .modal-overlay label{
-        font-size: 14px;
-    }
-    .modal_form-control_input{
-        padding: 10px 12px;
-        border: 1px solid rgb(238, 238, 238);
-        resize: none;
-    }
-    .modal_date_form-control{
-        width:100%;
-        display: flex;
-        gap: 10px;
-        justify-content: space-between;
-    }
-    .modal_add-shift_button{
-        width: 100%;
+    .confirm-button-container button{
+        padding: 8px 20px;
         border: none;
         border-radius: 4px;
-        padding: 10px 40px;
-        background-color: #018786;
-        color: white;
-    }
-    .buttons-split{
-        display: flex;
-        gap: 12px;
-    }
-    input[type=reset]{
-        padding: 10px 40px;
-        border: 1px solid rgb(238, 238, 238);
-        border-radius: 4px;
-        background: transparent;
     }
 </style>

@@ -3,10 +3,10 @@ export default {
   data() {
     return {
         shopItemList: [
-            {id: '1', shopItem: 'Milk', where: '', price: '4'},
+            {id: '1', shopItem: 'Milk', where: 'Walmart', price: '4'},
             {id: '2', shopItem: 'Comb', where: '', price: '4'},
             {id: '3', shopItem: 'Chicken & Turkey', where: 'African Store', price: '4'},
-            {id: '4', shopItem: 'Beans', where: '', price: '4'},
+            {id: '4', shopItem: 'Beans', where: 'African Store', price: '4'},
             {id: '5', shopItem: 'Rice', where: '', price: '4'},
             {id: '6', shopItem: 'Clothes', where: '', price: '4'},
             {id: '7', shopItem: 'Office chair/table(kijiji)', where: '', price: '4'},

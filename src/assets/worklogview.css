@@ -64,21 +64,29 @@ tbody{
 .work-log-filter-box{
     display: flex;
     padding: 12px 0px;
+    justify-content: space-between;
 }
-.total-pay-output{
+.text-bold{
     font-weight: bold;
 }
 .work-log-filter-box input{
     padding: 8px 10px;
     border: 1px solid rgb(235, 235, 235);
     outline: none;
+    font-size: 12px;
+}
+.work-log-flank-right{
+    display: flex;
+    align-items: center;
+    padding: 0px 10px;
+    cursor: pointer;
+    /* border: 1px solid rgb(235, 235, 235); */
+}
+.work-log-flank-right a{
+    color: darkgrey;
 }
 .work-shifts-total-box{
     padding-top: 12px;
-}
-#addShift{
-    display: flex;
-    justify-content: space-between;
 }
 .work-log_form-control_input{
     padding: 0 12px;

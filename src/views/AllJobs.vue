@@ -82,7 +82,7 @@
                 <tr>
                     <td>ABL Employment</td>
                     <td><input type="checkbox" name="" id="" checked></td>
-                    <td><input type="checkbox" name="" id="" checked></td>
+                    <td class="cancelled"><input type="checkbox" name="" id="" checked></td>
                     <td><input type="checkbox" name="" id="" ></td>
                     <td></td>
                     <td></td>
