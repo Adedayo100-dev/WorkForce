@@ -15,7 +15,7 @@ export default {
                 {id: '1', loc: 'LCBO & PRO-BELL', dates: ['Feb 17, 2022 - Apr, 2022'], pay: 2027.63, payStatus: true},
                 {id: '3', loc: 'Olivieri', dates: ['Thur May 5, 2022'], pay: 112.32, payStatus: true},
                 {id: '4', loc: 'Amazon', dates: ['Fri May 6, 2022', 'Sat May 7, 2022'], pay: 231.68, payStatus: true},
-                {id: '5', loc: 'Original Foods', dates: ['Wed May 11 2022'], pay: 231.68, payStatus: true},
+                {id: '5', loc: 'Original Foods', dates: ['Wed May 11 2022'], pay: 98, payStatus: true},
                 {id: '7', loc: 'Amazon', dates: ['Fri May 13, 2022', 'Sat May 14, 2022'], pay: 267.16, payStatus: true},
                 {id: '8', loc: 'Original Foods', dates: ['Mon May 16, 2022', 'Wed 18, 2022'], pay: 204, payStatus: true},
                 {id: '9', loc: 'Amazon', dates: ['Fri May 20, 2022', 'Sat May 21, 2022'], pay: 259.74, payStatus: true},

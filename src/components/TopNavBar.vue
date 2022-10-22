@@ -213,7 +213,8 @@ export default {
 .auth-drop-down a, .i8n-lang-drop-down a, .auth-drop-down span{
     display: flex;
     white-space: nowrap;
-    padding: 8.5px 17px;
+    /* padding: 8.5px 17px; */
+    padding: 7px 26px 7px 16px;
     color: grey;
 }
 .auth-drop-down a:hover, .i8n-lang-drop-downa:hover, .auth-drop-down span:hover{
