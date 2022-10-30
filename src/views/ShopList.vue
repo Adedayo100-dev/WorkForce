@@ -19,6 +19,11 @@ export default {
             {id: '14', shopItem: 'Knife', where: 'walmart', price: ''},
             {id: '15', shopItem: 'Noodles', where: 'walmart', price: ''},
             {id: '16', shopItem: 'Sponge', where: 'African Store', price: ''},
+            {id: '17', shopItem: 'Relaxer', where: 'Walmart', price: ''},
+            {id: '18', shopItem: 'Laundry basket', where: 'Walmart', price: ''},
+            {id: '19', shopItem: 'Shoe rack', where: 'Walmart', price: ''},
+            {id: '20', shopItem: 'Singlet', where: 'Walmart', price: ''},
+
             // {id: '', shopItem: '', where: '', price: ''}
         ],
         newShopItem: ''

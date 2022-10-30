@@ -2,11 +2,14 @@
     <div class="allplans-box">
         <h3>All Plans</h3>
         <ul>
-            <li>Call Mommy</li>
+            <li>Tuesday - Call Mommy</li>
+            <li>Tuesday - Call Bro Dimeji</li>
+            <li>Tuesday - References</li>
+            <li>Wednesday - Coop Interview</li>
+            <li>Thursday - Nuvate Upseat</li>
             <li>Do assignments</li>
-            <li>Payments from Gig Hound & ADP app</li>
-            <li>Pop Culture Test</li>
-            <li>Update WorkLog</li>
+            <li>Carry Table</li>
+            <li></li>
             <li>
                 <input v-model="newPlanItem" placeholder="New Item" class="plan-list_input"/>
             </li>

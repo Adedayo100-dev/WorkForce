@@ -46,7 +46,13 @@
 
 <script>
 export default {
-
+    data() {
+        return{
+            inputLocation: '',
+            inputDate: '',
+            inputPay: ''
+        }
+    }
 }
 </script>
 
