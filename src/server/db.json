@@ -38,6 +38,11 @@
         {"id": 36, "loc": "Purolator", "dates": ["Wed 12 October, 2022", "Thur 13 October, 2022"], "pay": 174.14, "payStatus": true},
         {"id": 37, "loc": "Amazon", "dates": ["Fri 14 October, 2022", "Sat 15 October, 2022"], "pay": 301.05, "payStatus": true},
         {"id": 38, "loc": "Amazon", "dates": ["Fri 21 October, 2022", "Sat 22 October, 2022"], "pay": 258.73, "payStatus": true},
-        {"id": 39, "loc": "Upseat", "dates": ["Thur 27 September, 2022"], "pay": 141.3, "payStatus": false}
+        {"id": 39, "loc": "Upseat", "dates": ["Thur 27 October, 2022"], "pay": 129.01, "payStatus": false},
+        {"id": 40, "loc": "Amazon", "dates": ["Fri 28 October, 2022", "Sat 29 October, 2022"], "pay": 266.85, "payStatus": true},
+        {"id": 41, "loc": "Amazon", "dates": ["Fri 4 November, 2022"], "pay": 137.81, "payStatus": true},
+        {"id": 42, "loc": "Upseat", "dates": ["Fri 10 November, 2022"], "pay": 0, "payStatus": true},
+        {"id": 43, "loc": "Amazon", "dates": ["Fri 11 November, 2022", "Sat 12 November, 2022"], "pay": 0, "payStatus": false}
+
     ]
 }

@@ -2,21 +2,27 @@ const express = require('express');
 const app = express();
 const fs = require('fs');
 
+var worksList;
 // REad db.json
-fs.readFile("db.json", (err, data) => {
+fs.readFile("./db.json", "utf8", (err, data) => {
     if (err) throw err;
-    let dbObj = JSON.parse(data);
-    // console.log("File data:", dbObj);
-    console.log(dbObj.worksList);
+    try {
+        let dbObj = JSON.parse(data);
+        console.log(dbObj.worksList);
+        worksList = dbObj.worksList;
+    } catch (error) {
+        console.lor('Error parsing JSON', err);
+    }
 });
+
 
 app.use(express.json());
 
-const worksList = [
-    {"id": 1, "loc": "LCBO & PRO-BELL", "dates": ["Feb 17, 2022 - Apr, 2022"], "pay": 2027.63, "payStatus": true},
-    {"id": 2, "loc": "Olivieri", "dates": ["Thur May 5, 2022"], "pay": 112.32, "payStatus": true},
-    {"id": 3, "loc": "Amazon", "dates": ["Fri May 6, 2022", "Sat May 7, 2022"], "pay": 231.68, "payStatus": true},
-];
+// const worksList = [
+//     {"id": 1, "loc": "LCBO & PRO-BELL", "dates": ["Feb 17, 2022 - Apr, 2022"], "pay": 2027.63, "payStatus": true},
+//     {"id": 2, "loc": "Olivieri", "dates": ["Thur May 5, 2022"], "pay": 112.32, "payStatus": true},
+//     {"id": 3, "loc": "Amazon", "dates": ["Fri May 6, 2022", "Sat May 7, 2022"], "pay": 231.68, "payStatus": true},
+// ];
 
 // Handle CORS
 app.use((req, res, next) => {
@@ -41,7 +47,7 @@ app.post('/api/worksList', (req, res) => {
     res.send(course);
 })
 
-app.get('api/courses/:id', (req, res) => {
+app.get('api/worksList/:id', (req, res) => {
     res.send(req.params.query);
 });
 
