@@ -3,6 +3,8 @@ const app = express();
 const fs = require('fs');
 
 var worksList;
+var shopItemList;
+
 // REad db.json
 fs.readFile("./db.json", "utf8", (err, data) => {
     if (err) throw err;
@@ -18,6 +20,8 @@ fs.readFile("./db.json", "utf8", (err, data) => {
 
 app.use(express.json());
 
+
+// PLACEHOLDER
 // const worksList = [
 //     {"id": 1, "loc": "LCBO & PRO-BELL", "dates": ["Feb 17, 2022 - Apr, 2022"], "pay": 2027.63, "payStatus": true},
 //     {"id": 2, "loc": "Olivieri", "dates": ["Thur May 5, 2022"], "pay": 112.32, "payStatus": true},
@@ -31,20 +35,21 @@ app.use((req, res, next) => {
 });
 
 app.get('/', (req, res) => {
-    res.send('Hello World of Dayo!');
+    res.send('Hello World of Dayo! This is all API');
 });
 
+// WorksList API
 app.get('/api/worksList', (req, res) => {
     res.send(worksList);
 });
 
 app.post('/api/worksList', (req, res) => {
-    const course = {
+    const worksList = {
         id: worksList.length + 1,
         name: req.body.name
     };
-    worksList.push(course);
-    res.send(course);
+    worksList.push(worksList);
+    res.send(worksList);
 })
 
 app.get('api/worksList/:id', (req, res) => {

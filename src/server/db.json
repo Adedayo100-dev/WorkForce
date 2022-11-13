@@ -43,6 +43,26 @@
         {"id": 41, "loc": "Amazon", "dates": ["Fri 4 November, 2022"], "pay": 137.81, "payStatus": true},
         {"id": 42, "loc": "Upseat", "dates": ["Fri 10 November, 2022"], "pay": 0, "payStatus": true},
         {"id": 43, "loc": "Amazon", "dates": ["Fri 11 November, 2022", "Sat 12 November, 2022"], "pay": 0, "payStatus": false}
-
+    ],
+    "shopping": [
+        {"id": 1, "shopItem": "Milk", "where": "Walmart", "price": 4},
+        {"id": 2, "shopItem": "Comb", "where": "", "price": 4},
+        {"id": 3, "shopItem": "Chicken & Turkey", "where": "African Store", "price": 4},
+        {"id": 4, "shopItem": "Beans", "where": "African Store", "price": 4},
+        {"id": 5, "shopItem": "Rice", "where": "", "price": 4},
+        {"id": 6, "shopItem": "Clothes", "where": "", "price": 4},
+        {"id": 7, "shopItem": "Office chair/table(kijiji)", "where": "", "price": 4},
+        {"id": 8, "shopItem": "Chinchin", "where": "African Store", "price": ""},
+        {"id": 9, "shopItem": "Keyboard", "where": "Walmart", "price": ""},
+        {"id": 10, "shopItem": "Delmonte", "where": "Walmart", "price": ""},
+        {"id": 11, "shopItem": "Vitamins", "where": "", "price": ""},
+        {"id": 12, "shopItem": "Safety Boots", "where": "walmart", "price": ""},
+        {"id": 16, "shopItem": "Sponge", "where": "African Store", "price": ""},
+        {"id": 17, "shopItem": "Relaxer", "where": "Walmart", "price": ""},
+        {"id": 18, "shopItem": "Laundry basket", "where": "Walmart", "price": ""},
+        {"id": 19, "shopItem": "Shoe rack", "where": "Walmart", "price": ""},
+        {"id": 20, "shopItem": "Singlet", "where": "Walmart", "price": ""},
+        {"id": 21, "shopItem": "extension", "where": "Walmart", "price": ""},
+        {"id": 22, "shopItem": "thermal wear", "where": "Walmart", "price": ""}
     ]
 }

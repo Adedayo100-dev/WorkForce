@@ -1,6 +1,8 @@
 <template>
     <div class="top-nav">
-        <span class="title">WorkForce</span>
+        <div class="title-box">
+            <span class="title">WorkForce</span>
+        </div>
         <div class="logo">
             <WorkForceIcon />
         </div>
@@ -108,9 +110,14 @@ export default {
     font-size: 12px;
     z-index: 10;
 }
+.top-nav div.title-box{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
 .top-nav span.title{
     color:  #5F6368;
-    margin-right: 10px;
+    /* margin-right: 10px; */
 }
 .top-nav .logo{
     display: flex;

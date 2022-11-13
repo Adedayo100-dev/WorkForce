@@ -45,12 +45,12 @@ export default {
                     Filter <FilterIcon />
                 </button>
                 <button class="add-shift_button">
-                    <router-link to="/jobs/newshift">+  Add Work Shift</router-link>
+                    <router-link to="/jobs/newshift">+  Add <span class="responsive-toggle">Work</span> Shift</router-link>
                 </button>
             </div>
             <div class="work-log-filter-box">
-                <form action="">
-                    <input type="text" placeholder="Search">
+                <form action="worklog/search">
+                    <input type="search" placeholder="Search">
                 </form>
                 <div class="work-log-flank-right">
                     <router-link to="#totalShifts">&#8645;</router-link>
