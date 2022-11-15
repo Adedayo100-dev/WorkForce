@@ -16,12 +16,7 @@ export default {
         totalPay: {
             type: Number
         }
-    },
-    data() {
-        return {
-            
-        }
-    },
+    }
 }
 </script>
 

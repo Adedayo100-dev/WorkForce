@@ -4,7 +4,14 @@
 
 <script>
 export default {
-
+    props: {
+        worksList: {
+            type: Array
+        }, 
+        totalShifts: {
+            type: Number
+        }
+    }
 }
 </script>
 
