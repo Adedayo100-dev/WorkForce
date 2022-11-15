@@ -1,8 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import PlansIndx from '../views/PlansIndx.vue'
-import JobsIndx from '../views/JobsIndx.vue'
-import AllJobs from '../views/AllJobs.vue'
+import JobsIndx from '../views/jobs/JobsIndx.vue'
+import AllJobs from '../views/jobs/AllJobs.vue'
+import Tabular from '../views/jobs/worklog/TabularView.vue'
+import Graphical from '../views/jobs/worklog/GraphicalView.vue'
 // import WorkLog from '../views/WorklogView.vue'
 
 const router = createRouter({
@@ -21,7 +23,7 @@ const router = createRouter({
       meta: {title: 'Plans'},
       children: [
         {
-          // UserProfile will be rendered inside User's <router-view>
+          // Userhelp will be rendered inside User's <router-view>
           // when /user/:id/profile is matched
           path: '',
           name: 'plansindx',
@@ -47,7 +49,7 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/JobsView.vue'),
+      component: () => import('../views/jobs/JobsView.vue'),
       meta: {title: 'Jobs Search Table'},
       children: [
         {
@@ -55,18 +57,30 @@ const router = createRouter({
           // when /user/:id/profile is matched
           path: '',
           name: 'JobsIndx',
-          component: JobsIndx,
+          component: JobsIndx
         },
         {
           path: 'worklog',
           name: 'worklog',
-          component: () => import('../views/WorklogView.vue'),
-          meta: {title: 'Work Log'}
+          component: () => import('../views/jobs/worklog/WorklogView.vue'),
+          meta: {title: 'Work Log'},
+          children: [
+            {
+              path: 'tabular',
+              name: Tabular,
+              component:  Tabular,
+            },
+            {
+              path: 'graphical',
+              name: Graphical,
+              component: () => import('../views/jobs/worklog/GraphicalView.vue')
+            }
+          ]
         },
         {
           path: 'newshift',
           name: 'newshift',
-          component: () => import('../views/NewShiftView.vue'),
+          component: () => import('../views/jobs/NewShiftView.vue'),
           meta: {title: 'New Shift'}
         },
         {
@@ -79,32 +93,32 @@ const router = createRouter({
         {
           path: 'sinjobs',
           name: 'sinjobs',
-          component: () => import('../views/SINJobs.vue'),
+          component: () => import('../views/jobs/SINJobs.vue'),
         },
         {
           path: 'cashjobs',
           name: 'cashjobs',
-          component: () => import('../views/CashJobs.vue'),
+          component: () => import('../views/jobs/CashJobs.vue'),
         },
         {
           path: 'breakjobs',
           name: 'breakjobs',
-          component: () => import('../views/BreakJobs.vue'),
+          component: () => import('../views/jobs/BreakJobs.vue'),
         },
         {
           path: 'favjobs',
           name: 'favjobs',
-          component: () => import('../views/FavJobs.vue'),
+          component: () => import('../views/jobs/FavJobs.vue'),
         },
         {
           path: 'availability',
           name: 'availability',
-          component: () => import('../views/Availability.vue'),
+          component: () => import('../views/jobs/Availability.vue'),
         },
         {
           path: 'co-op',
           name: 'co-op',
-          component: () => import('../views/Co-op.vue'),
+          component: () => import('../views/jobs/Co-op.vue'),
         }
       ],
     },
@@ -125,6 +139,24 @@ const router = createRouter({
       name: 'settings',
       component: () => import('../views/SettingsView.vue'),
       meta: {title: 'Settings'}
+    },
+    {
+      path: '/profile',
+      name: 'profile',
+      component: () => import('../views/ProfileView.vue'),
+      meta: {title: 'Dashboard'}
+    },
+    {
+      path: '/help',
+      name: 'help',
+      component: () => import('../views/helpView.vue'),
+      meta: {title: 'Help'}
+    },
+    {
+      path: '/signedout',
+      name: 'signedout',
+      component: () => import('../views/signedOutView.vue'),
+      meta: {title: 'Signed-out'}
     }
   ]
 })

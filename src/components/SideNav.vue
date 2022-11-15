@@ -93,7 +93,7 @@ export default {
         left: 0;
         height: 100%;
         padding: 0;
-        border-right:  1px solid var(--border-color-primary);
+        border-right:  1px solid #e0e1e1;
     }
     .side-nav ul{
         list-style-type: none;
@@ -133,5 +133,6 @@ export default {
     }
     .sidenav-dropdown li a{
         padding: 12px 53px 12px 56px !important;
+        color: grey !important;
     }
 </style>

@@ -10,20 +10,7 @@
         props: ['key', 'loc', 'dates', 'pay', 'payStatus', 'idx'],
         data() {
             return {
-                // months: [
-                //     {id: '1', monthName:'Jan'},
-                //     {id: '2', monthName:'Feb'},
-                //     {id: '3', monthName:'Mar'},
-                //     {id: '4', monthName:'Apr'},
-                //     {id: '5', monthName:'May'},
-                //     {id: '6', monthName:'Jun'},
-                //     {id: '7', monthName:'Jul'},
-                //     {id: '8', monthName:'Aug'},
-                //     {id: '9', monthName:'Sep'},
-                //     {id: '10', monthName:'Oct'},
-                //     {id: '11', monthName:'Nov'},
-                //     {id: '12', monthName:'Dec'},
-                // ]
+                
             }
         },
         methods: {

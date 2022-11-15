@@ -1,6 +1,6 @@
 <template>
     <div class="tab-pane" id="tab-breaks">
-        <h4>Breaks</h4>
+        <h4>Breaks Work</h4>
 
         <table>
             <thead>

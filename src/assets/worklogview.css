@@ -21,6 +21,7 @@ tbody{
 }
 .add-shift_button-box{
     display: flex;
+    column-gap: 12px;
 }
 .mt-40{
     margin-top: 40px;
@@ -49,7 +50,7 @@ tbody{
     border: none;
     border-radius: 4px;
     padding: 10px 30px;
-    margin-left: 10px;
+    /* margin-left: 10px; */
 }
 .filter_button{
     border: 1px solid rgb(235, 235, 235);
@@ -80,7 +81,7 @@ tbody{
     align-items: center;
     padding: 0px 10px;
     cursor: pointer;
-    /* border: 1px solid rgb(235, 235, 235); */
+    border: 1px dashed rgb(235, 235, 235);
 }
 .work-log-flank-right a{
     color: darkgrey;

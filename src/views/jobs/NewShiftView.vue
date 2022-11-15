@@ -101,6 +101,7 @@ label{
     gap: 12px;
 }
 input[type=reset]{
+    width: 100%;
     padding: 10px 40px;
     border: 1px solid rgb(238, 238, 238);
     border-radius: 4px;

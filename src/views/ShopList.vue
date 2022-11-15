@@ -1,11 +1,17 @@
 <script>
 export default {
-  data() {
-    return {
-        shopItemList: [],
-        newShopItem: ''
-    }
-  }
+    data() {
+        return {
+            shoppingList: [],
+            newShopItem: ''
+        }
+    },
+    mounted() {
+        fetch('http://localhost:3000/api/shoppingList')
+            .then(res => res.json())
+            .then(data => this.shoppingList = data)
+            .catch(err => console.log(err.message));
+    },
 }
 </script>
 
@@ -13,7 +19,7 @@ export default {
     <div class="shopping-list-box">
         <h3>Shopping List</h3>
         <ul class="shop-list-box">
-            <li v-for="item in shopItemList" :key="item.id" class="shop-item">
+            <li v-for="item in shoppingList" :key="item.id" class="shop-item">
                 {{item.shopItem}}
             </li>
             <!-- Check Youtube for how to handle Vue forms -->

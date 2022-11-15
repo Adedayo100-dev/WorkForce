@@ -104,7 +104,7 @@ export default {
     position: sticky;
     top: 0;
     background-color: #f4f4f6;
-    border-bottom: 1px solid  rgb(235, 235, 235);
+    border-bottom: 1px solid  #e0e1e1; /*rgb(235, 235, 235)*/
     padding: 5px 30px 5px 28px;
     color: grey;
     font-size: 12px;

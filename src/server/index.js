@@ -1,32 +1,27 @@
 const express = require('express');
 const app = express();
 const fs = require('fs');
+const path = require('path');
+const mongoose = require('mongoose');
+
+app.use(express.json());
 
 var worksList;
-var shopItemList;
+var shoppingList;
 
 // REad db.json
 fs.readFile("./db.json", "utf8", (err, data) => {
     if (err) throw err;
     try {
         let dbObj = JSON.parse(data);
-        console.log(dbObj.worksList);
-        worksList = dbObj.worksList;
+        console.log(dbObj.jobs.worksList);
+        worksList = dbObj.jobs.worksList;
+        shoppingList = dbObj.shopping;
     } catch (error) {
-        console.lor('Error parsing JSON', err);
+        console.log('Error parsing JSON', err);
     }
 });
 
-
-app.use(express.json());
-
-
-// PLACEHOLDER
-// const worksList = [
-//     {"id": 1, "loc": "LCBO & PRO-BELL", "dates": ["Feb 17, 2022 - Apr, 2022"], "pay": 2027.63, "payStatus": true},
-//     {"id": 2, "loc": "Olivieri", "dates": ["Thur May 5, 2022"], "pay": 112.32, "payStatus": true},
-//     {"id": 3, "loc": "Amazon", "dates": ["Fri May 6, 2022", "Sat May 7, 2022"], "pay": 231.68, "payStatus": true},
-// ];
 
 // Handle CORS
 app.use((req, res, next) => {
@@ -38,7 +33,19 @@ app.get('/', (req, res) => {
     res.send('Hello World of Dayo! This is all API');
 });
 
-// WorksList API
+// Handler for 404 - Resource Not Found
+// app.use((req, res, next) => {
+//     res.status(404).send("We think you are lost!");
+// })
+
+// Handler for Error 500
+// app.use((err, re, res, next) => {
+//     console.error(err.stack)
+//     res.sendFile(path.join(_dirname, '../public/500.html'))
+// })
+
+// WorksList API Section
+
 app.get('/api/worksList', (req, res) => {
     res.send(worksList);
 });
@@ -54,6 +61,14 @@ app.post('/api/worksList', (req, res) => {
 
 app.get('api/worksList/:id', (req, res) => {
     res.send(req.params.query);
+});
+
+
+
+// Shopping List API section
+
+app.get('/api/shoppingList', (req, res) => {
+    res.send(shoppingList);
 });
 
 const port = process.env.PORT || 3000;

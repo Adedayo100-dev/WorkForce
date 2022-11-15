@@ -1,6 +1,8 @@
 <template>
     <div class="plans-indx">
-        <p>when plans is empty, show this</p>
+        <div class="d-center">
+            <p>When plans is empty, show this</p>
+        </div>
     </div>
 </template>
 

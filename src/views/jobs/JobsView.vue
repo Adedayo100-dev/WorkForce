@@ -1,5 +1,5 @@
 <script>
-  import SubNavTab from '../components/SubNavTab.vue'
+  import SubNavTab from '../../components/SubNavTab.vue'
   export default {
     components: {
       SubNavTab
@@ -9,7 +9,7 @@
 
 <template>
     <div class="jobs">
-      <h3>{{$route.meta.title}}</h3>
+      <h3><span>{{$route.meta.title}}</span> <span class="title_total-pay">CAD 11129.39</span></h3>
         <div id="tabs">
             <SubNavTab />
             <div id="tab-contents">
@@ -22,6 +22,8 @@
 </template>
 
 <style scoped>
-
-
+.title_total-pay{
+  float: right;
+  color:black;
+}
 </style>
