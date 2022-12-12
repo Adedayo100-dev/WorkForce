@@ -132,6 +132,9 @@ caption{
     background-color: #eee;
     padding: 10px 12px;
 }
+.tithe span{
+    font-size: var(--table-font-size);
+}
 
 /* Responsiveness */
 

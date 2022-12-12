@@ -37,8 +37,14 @@ export default {
 <template>
     <div class="work-log-box">
         <div class="title-top">
-            <router-link to="/jobs/worklog/tabular">Tabular</router-link>
-            <router-link to="/jobs/worklog/graphical">Graphical</router-link>
+            <ul class="link-tab-group">
+                <li>
+                    <router-link to="/jobs/worklog/tabular" class="tab-link">Tabular</router-link>
+                </li>
+                <li>
+                    <router-link to="/jobs/worklog/graphical" class="tab-link">Graphical</router-link>
+                </li>
+            </ul>
             <div class="add-shift_button-box justify-end">
                 <button class="filter_button">
                     Filter <FilterIcon />
@@ -64,6 +70,7 @@ export default {
                 </router-view>
 
                 <div class="tithe">
+                    <span>Tithe: </span>
                     <span>{{totalPay * 0.1}}</span>
                 </div>
             </div>

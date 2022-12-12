@@ -50,9 +50,9 @@
                 <div>
                     <span>Vertical sr</span> <br>
                     <span>Nuvate Upseat</span> <br>
-                    <span>16.74756 @ 7.5 hrs daily / oncall(7% taxes)</span> <br>
+                    <span>17.2 @ 7.5 hrs daily / oncall(4.4444% taxes)</span> <br>
                     <span>8hrs / shift</span> <br>
-                    <b>125.6</b> <br>
+                    <b>129</b> <br>
                     <i>No weekends</i> <br>
                     <i>will hire after 3 months(increased pay) </i>
                 </div>
@@ -73,9 +73,9 @@
                 <div>
                     <span>Vertical sr</span> <br>
                     <span>Nuvate Upseat</span> <br>
-                    <span>16.74756 @ 7.5 hrs daily / oncall(7% taxes)</span> <br>
+                    <span>17.2 @ 7.5 hrs daily / oncall(4.4444% taxes)</span> <br>
                     <span>8hrs / shift</span> <br>
-                    <b>125.6</b> <br>
+                    <b>129</b> <br>
                     <i>No weekends</i> <br>
                     <i>will hire after 3 months(increased pay) </i>
                 </div>

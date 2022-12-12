@@ -3,13 +3,14 @@
   export default {
     components: {
       SubNavTab
-    }
+    },
+    props: ['totalPay'],
   }
 </script>
 
 <template>
     <div class="jobs">
-      <h3><span>{{$route.meta.title}}</span> <span class="title_total-pay">CAD 11129.39</span></h3>
+      <h3><span>{{$route.meta.title}}</span> <span class="title_total-pay">CAD {{totalPay}}</span></h3>
         <div id="tabs">
             <SubNavTab />
             <div id="tab-contents">

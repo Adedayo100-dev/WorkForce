@@ -19,6 +19,19 @@ tbody{
     font-size: var(--table-font-size);
     overflow-y: scroll;
 }
+.link-tab-group{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 6px;
+}
+.tab-link{
+    font-size: 14px;
+    padding: 6px 10px;
+    border: 1px dashed grey;
+    display: block;
+}
 .add-shift_button-box{
     display: flex;
     column-gap: 12px;

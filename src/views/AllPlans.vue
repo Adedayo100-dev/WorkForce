@@ -2,9 +2,20 @@
     <div class="allplans-box">
         <h3>All Plans</h3>
         <ul>
-            <li>Tuesday - Call Mommy</li>
-            <li>Tuesday - Call Bro Dimeji</li>
-            <li>Tuesday - References</li>
+            <li>Activate KOHO card</li>
+            <li>Do assignments</li>
+            <li>
+                <ul>
+                    <li>Buy Winter jacket</li>
+                </ul>
+            </li>
+            <li>Wednesday, 23 - Go to work Interview 1 PM -3 PM</li>
+            <li>Friday, 25 - Interview
+                <ul>
+                    <li>Black Friday Sales</li>
+                    <li>Reach out to CBC Radio</li>
+                </ul>
+            </li>
             <li>Wednesday - Coop Interview</li>
             <li>Thursday - Nuvate Upseat</li>
             <li>Do assignments</li>
