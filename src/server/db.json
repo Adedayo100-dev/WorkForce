@@ -47,7 +47,7 @@
             {"id": 44, "loc": "Upseat", "dates": ["Thur 17 November, 2022"], "pay": 129.01, "payStatus": true},
             {"id": 45, "loc": "Amazon", "dates": ["Fri 18 November, 2022", "Sat 19 November, 2022"], "pay": 256.26, "payStatus": true},
             {"id": 46, "loc": "Upseat", "dates": ["Thurs 24 November, 2022"], "pay": 129.01, "payStatus": true},
-            {"id": 47, "loc": "Upseat", "dates": ["Thurs 01 November, 2022"], "pay": 129.01, "payStatus": true},
+            {"id": 47, "loc": "Upseat", "dates": ["Thurs 01 December, 2022"], "pay": 129.01, "payStatus": true},
             {"id": 48, "loc": "Amazon", "dates": ["Fri 02 December, 2022", "Sat 03 December, 2022"], "pay": 270.81, "payStatus": true},
             {"id": 49, "loc": "Amazon", "dates": [ "Sat 10 December, 2022"], "pay": 145.26, "payStatus": false}
         ]
@@ -71,10 +71,19 @@
         {"id": 19, "shopItem": "", "where": "Walmart"},
         {"id": 20, "shopItem": "Singlet", "where": "Walmart"},
         {"id": 21, "shopItem": "extension", "where": "Walmart"},
-        {"id": 22, "shopItem": "", "where": "Walmart"},
+        {"id": 22, "shopItem": "toothpaste", "where": "Walmart"},
         {"id": 23, "shopItem": "Camphor", "where": "Walmart"},
         {"id": 24, "shopItem": "Beanie", "where": "Walmart"},
-        {"id": 25, "shopItem": "Wall Hangar", "where": "Walmart"}
+        {"id": 25, "shopItem": "Wall Hangar", "where": "Walmart"},
+        {"id": 26, "shopItem": "butter", "where": "Walmart"},
+        {"id": 27, "shopItem": "sardine", "where": "Walmart"},
+        {"id": 28, "shopItem": "bread", "where": "Walmart"},
+        {"id": 29, "shopItem": "pepper", "where": "Walmart"},
+        {"id": 29, "shopItem": "tissue paper & savette", "where": "Walmart"},
+        {"id": 29, "shopItem": "yam", "where": "Walmart"},
+        {"id": 29, "shopItem": "bread ", "where": "Walmart"},
+        {"id": 29, "shopItem": "yam", "where": "Walmart"},
+        {"id": 29, "shopItem": "yam", "where": "Walmart"}
     ],
     "prices": [
         {"id": 1, "item":"Orange juice", "price": "2.47"},

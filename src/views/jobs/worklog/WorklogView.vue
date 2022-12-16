@@ -70,8 +70,56 @@ export default {
                 </router-view>
 
                 <div class="tithe">
-                    <span>Tithe: </span>
-                    <span>{{totalPay * 0.1}}</span>
+                    <form oninput="x.value=parseInt(a.value)*parseInt(b.value)">
+                        <div class="func-container">
+                            <span>Tithe: </span>
+                            <div class="calc-container">
+                                <input type="number" name="" id="a" :value="totalPay * 0.1">
+                                <pre> * </pre>
+                                <input type="number" name="" id="b" value="645" placeholder="Currency Rate">
+                                <pre> = ₦</pre>
+                                <output name="x" for="a  b"></output>
+                            </div>
+                        </div>
+                    </form>
+                    <span>₦8,777</span>
+                    <form oninput="y.value=parseInt(c.value)/parseInt(d.value)">
+                        <div class="func-container">
+                            <span>Send Home: </span>
+                            <div class="calc-container">
+                                <input type="number" name="" id="c">
+                                <pre> * </pre>
+                                <input type="number" name="" id="d" value="645" placeholder="Currency Rate">
+                                <pre> = ₦</pre>
+                                <output name="y" for="c d"></output>
+                            </div>
+                        </div>
+                    </form>
+                    <br>
+                    <div>
+                        <div>
+                            <div class="transaction-list">
+                                <p>
+                                    200 * 540 = 108000
+                                </p>
+                                <p>
+                                    1000 * 490 = 490000 <br>
+                                    -----------------------
+                                </p>
+                            </div>
+                            <div class="transaction-sum">
+                                <p>
+                                    1200 * 515 = 598000
+                                </p>
+                            </div>
+                        </div>
+                        <div>
+                            <span>Remaining: </span>
+                            <p>₦2000000 - ₦598000 = ₦1402000</p>
+                            <p>₦1402000 / 545 = $2572.48</p>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>
