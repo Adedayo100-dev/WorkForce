@@ -155,7 +155,7 @@ tbody{
     display: inline-flex;
     align-items: center;
     font-size: var(--table-font-size);
-    min-width: 75px;
+    min-width: 82.5px;
 }
 .transaction-list p{
     margin: 0.5em 0;

@@ -1,6 +1,8 @@
 <script>
 import WorkLogItem from '../../../components/WorkLogItem.vue'
 import UnseeIcon from '../../../components/icons/IconUnview.vue'
+import FormatNumMixin from '../../../mixins/toLocaleString.js'
+
 
 export default {
     components: {
@@ -16,7 +18,8 @@ export default {
         totalPay: {
             type: Number
         }
-    }
+    },
+    mixins: [FormatNumMixin],
 }
 </script>
 

@@ -82,11 +82,11 @@ export default {
 
                 <div class="tithe">
                     <div class="first-tithe-box">
-                        <form oninput="x.value='₦'+parseInt(a.value)*parseInt(b.value)">
+                        <form oninput="x.value='₦'+(parseInt(a.value)*parseInt(b.value)).toLocaleString('en-US')">
                             <div class="func-container">
                                 <span>Tithe: </span>
                                 <div class="calc-container">
-                                    <input type="number" name="" id="a" :value="totalPay / 10">
+                                    <input type="number" name="" id="a" :value="totalPay / 10" placeholder="$">
                                     <pre> * </pre>
                                     <input type="number" name="" id="b" :value="exchangeRate" placeholder="Currency Rate">
                                     <pre> = </pre>
@@ -95,11 +95,11 @@ export default {
                             </div>
                         </form>
                         <br>
-                        <form oninput="y.value='₦'+parseInt(c.value)*parseInt(d.value)">
+                        <form oninput="y.value='₦'+(parseInt(c.value)*parseInt(d.value)).toLocaleString('en-US')">
                             <div class="func-container">
                                 <span>Send Home: </span>
                                 <div class="calc-container">
-                                    <input type="number" name="" id="c">
+                                    <input type="number" name="" id="c" placeholder="$">
                                     <pre> * </pre>
                                     <input type="number" name="" id="d" :value="exchangeRate" placeholder="Currency Rate">
                                     <pre> = </pre>
@@ -112,16 +112,16 @@ export default {
                             <div>
                                 <div class="transaction-list">
                                     <p>
-                                        200 * 540 = 108000
+                                        200 * 540 = {{formatNum(108000)}}
                                     </p>
                                     <p>
-                                        1000 * 490 = 490000 <br>
+                                        1000 * 490 = {{formatNum(490000)}} <br>
                                         -----------------------
                                     </p>
                                 </div>
                                 <div class="transaction-sum">
                                     <p>
-                                        1200 * --- = 598000
+                                        1200 * --- = {{formatNum(598000)}}
                                     </p>
                                 </div>
                             </div>
@@ -139,6 +139,9 @@ export default {
                             <h3>{{paidPercentage}}%</h3>
                             <span>paid</span>
                         </div>
+                        <p>
+                            {{formatNum(75459384)}}
+                        </p>
                     </div>
                 </div>
             </div>
