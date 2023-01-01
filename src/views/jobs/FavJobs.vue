@@ -61,13 +61,12 @@
                 <h3>SIN</h3>
 
                 <div>
-                    <span>Linxus Group</span> <br>
+                    <span>Service MasterClean</span> <br>
                     <span>Amazon</span> <br>
-                    <span>16.14 @ 8 hrs x 2days(3.5% taxes)</span> <br>
+                    <span>16.22 @ 8 hrs x 2days(4.57% taxes)</span> <br>
                     <span>~8.5hrs / shift</span> <br>
-                    <b>132.5</b> <br>
-                    <i>Weekends</i> <br>
-                    <i>will hire after 3 months(increased pay) </i>
+                    <b>135.295</b> <br>
+                    <i>Weekends</i>
                 </div>
                 <br>
                 <div>

@@ -5,7 +5,7 @@
 
     </div> -->
     <div class="notification-item">
-      <h4>Check Messages</h4>
+      <h4>T4 on Feb 1st</h4>
       <p>This is a notification</p>
     </div>
     <div class="notification-item">

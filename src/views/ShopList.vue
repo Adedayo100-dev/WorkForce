@@ -20,7 +20,7 @@ export default {
         <h3>Shopping List</h3>
         <ul class="shop-list-box">
             <li v-for="item in shoppingList" :key="item.id" class="shop-item">
-                {{item.shopItem}}
+                <input type="checkbox" name="" id="">{{item.shopItem}}
             </li>
             <!-- Check Youtube for how to handle Vue forms -->
             <li>

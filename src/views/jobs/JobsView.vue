@@ -5,6 +5,11 @@
       SubNavTab
     },
     props: ['totalPay'],
+    data() {
+      return {
+        totalPay: 13000,
+      }
+    },
   }
 </script>
 
