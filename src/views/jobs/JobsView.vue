@@ -4,7 +4,7 @@
     components: {
       SubNavTab
     },
-    props: ['totalPay'],
+    // props: ['totalPay'],
     data() {
       return {
         totalPay: 13000,

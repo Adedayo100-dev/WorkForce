@@ -43,7 +43,7 @@ export default {
                     </td>
                     <td class="dates-output">{{totalShifts}} entries</td>
                     <td class="text-bold pay-output">
-                        <span>{{totalPay}}</span>
+                        <span>{{formatNum(totalPay)}}</span>
                     </td>
                     <!-- <td colspan="3" style="color: #757575;">This is the total sum of all work done from May, 2022 to present......</td> -->
                 </tr>

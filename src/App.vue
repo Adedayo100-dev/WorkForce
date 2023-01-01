@@ -5,6 +5,7 @@ import SideNav from './components/SideNav.vue';
 import TopNavBar from './components/TopNavBar.vue'
 import * as d3 from "d3";
 
+
 // import HelloWorld from './components/HelloWorld.vue'
 
 </script>

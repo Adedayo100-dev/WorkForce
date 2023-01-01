@@ -1,5 +1,6 @@
 <script>
 import FilterIcon from '../../../components/icons/IconFilter.vue'
+import FormatNumMixin from '../../../mixins/toLocaleString.js'
 
 export default {
     components: {
@@ -36,7 +37,11 @@ export default {
         paidPercentage(){
             return this.nairaPaid / this.nairaTotal*100;
         }
-    }
+    },
+    methods: {
+        
+    },
+    mixins: [FormatNumMixin],
 }
 </script>
 
@@ -76,7 +81,7 @@ export default {
                 </router-view>
 
                 <div class="tithe">
-                    <div>
+                    <div class="first-tithe-box">
                         <form oninput="x.value='₦'+parseInt(a.value)*parseInt(b.value)">
                             <div class="func-container">
                                 <span>Tithe: </span>
@@ -89,14 +94,15 @@ export default {
                                 </div>
                             </div>
                         </form>
-                        <form oninput="y.value=parseInt(c.value)*parseInt(d.value)">
+                        <br>
+                        <form oninput="y.value='₦'+parseInt(c.value)*parseInt(d.value)">
                             <div class="func-container">
                                 <span>Send Home: </span>
                                 <div class="calc-container">
                                     <input type="number" name="" id="c">
                                     <pre> * </pre>
                                     <input type="number" name="" id="d" :value="exchangeRate" placeholder="Currency Rate">
-                                    <pre> = ₦</pre>
+                                    <pre> = </pre>
                                     <output name="y" for="c d"></output>
                                 </div>
                             </div>
@@ -119,6 +125,7 @@ export default {
                                     </p>
                                 </div>
                             </div>
+                            <br>
                             <div>
                                 <span>Remaining: </span>
                                 <p>₦2000000 - ₦598000 = ₦1402000</p>
@@ -127,7 +134,7 @@ export default {
                         </div>
                     </div>
                     <hr class="">
-                    <div class="second-">
+                    <div class="second-tithe-box">
                         <div class="paid-percentage-box">
                             <h3>{{paidPercentage}}%</h3>
                             <span>paid</span>
