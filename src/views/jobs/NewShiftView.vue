@@ -65,7 +65,7 @@ export default {
 }
 .form-group{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 10fr;
     /* gap: 6px; */
     margin-bottom: 10px;
 }

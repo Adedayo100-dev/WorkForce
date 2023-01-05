@@ -32,6 +32,51 @@
                     <td>day and <b>night</b></td>
                 </tr>
             </table>
+
+            <br>
+            <div class="weekly-availability">
+                <table >
+                    <thead>
+                        <tr>
+                            <td class="company-name">Day/Company</td>
+                            <td>Sun</td>
+                            <td>Mon</td>
+                            <td>Tue</td>
+                            <td>Wed</td>
+                            <td>Thu</td>
+                            <td>Fri</td>
+                            <td>Sat</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="company-name">Kelly</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="company-name">is2</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="company-name">Service Master</td>
+                            <td colspan="5">invalid</td>
+                            <td class="work-active" colspan="2">active</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </template>
@@ -43,5 +88,14 @@ export default {
 </script>
 
 <style>
-
+.weekly-availability td{
+    text-align: center;
+    border-left: 1px solid rgb(238, 238, 238);
+}
+.company-name{
+    background-color: #f4f4f6;
+}
+.work-active{
+    background-color: rgba(0, 128, 0, 0.25);
+}
 </style>

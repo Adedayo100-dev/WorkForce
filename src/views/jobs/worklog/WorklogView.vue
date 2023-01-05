@@ -1,18 +1,23 @@
 <script>
 import FilterIcon from '../../../components/icons/IconFilter.vue'
 import FormatNumMixin from '../../../mixins/toLocaleString.js'
+import TransactionsList from '../../../components/TransactionsList.vue'
 
 export default {
     components: {
-        FilterIcon
+        FilterIcon, TransactionsList
     },
     props: ['title'],
     data() {
         return {
             worksList: [],
+            transactions: [
+                {"id": 1, "amount": 1000, "rate": 490},
+                {"id": 2, "amount": 200, "rate": 540}
+            ],
             nairaPaid: 598000,
             nairaTotal: 2000000,
-            exchangeRate: 645, 
+            exchangeRate: 540, 
         }
     },
     mounted() {
@@ -20,6 +25,10 @@ export default {
             .then(res => res.json())
             .then(data => this.worksList = data)
             .catch(err => console.log(err.message));
+        // fetch('http://localhost:3000/api/transactions')
+        //     .then(res => res.json())
+        //     .then(data => this.transactions = data)
+        //     .catch(err => console.log(err.message));
     },
     computed: {
         totalPay() {
@@ -110,26 +119,14 @@ export default {
                         <br>
                         <div>
                             <div>
-                                <div class="transaction-list">
-                                    <p>
-                                        200 * 540 = {{formatNum(108000)}}
-                                    </p>
-                                    <p>
-                                        1000 * 490 = {{formatNum(490000)}} <br>
-                                        -----------------------
-                                    </p>
-                                </div>
-                                <div class="transaction-sum">
-                                    <p>
-                                        1200 * --- = {{formatNum(598000)}}
-                                    </p>
-                                </div>
+                                <TransactionsList :transactions="transactions"/>
                             </div>
+                            
                             <br>
                             <div>
                                 <span>Remaining: </span>
-                                <p>₦2000000 - ₦598000 = ₦1402000</p>
-                                <p>₦1402000 / 545 = $2572.48</p>
+                                <p>₦2000000 - ₦598000 = ₦{{formatNum(1402000)}}</p>
+                                <p>₦1402000 / 545 = ${{formatNum(2572.48)}}</p>
                             </div>
                         </div>
                     </div>

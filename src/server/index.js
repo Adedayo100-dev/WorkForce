@@ -8,6 +8,7 @@ app.use(express.json());
 
 var worksList;
 var shoppingList;
+var transactions;
 
 // REad db.json
 fs.readFile("./db.json", "utf8", (err, data) => {
@@ -17,6 +18,7 @@ fs.readFile("./db.json", "utf8", (err, data) => {
         console.log(dbObj.jobs.worksList);
         worksList = dbObj.jobs.worksList;
         shoppingList = dbObj.shopping;
+        transactions = dbObj.transactions;
     } catch (error) {
         console.log('Error parsing JSON', err);
     }
@@ -69,6 +71,12 @@ app.get('api/worksList/:id', (req, res) => {
 
 app.get('/api/shoppingList', (req, res) => {
     res.send(shoppingList);
+});
+
+// Transactions API section
+
+app.get('/api/transactions', (req, res) => {
+    res.send(transactions);
 });
 
 const port = process.env.PORT || 3000;

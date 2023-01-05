@@ -7,7 +7,7 @@
     // props: ['totalPay'],
     data() {
       return {
-        totalPay: 13000,
+        totalPay: 13241.37,
       }
     },
   }

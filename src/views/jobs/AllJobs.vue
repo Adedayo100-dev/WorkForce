@@ -14,12 +14,28 @@
             </thead>
             <tbody>
                 <!-- Each Courses Data -->
+                <tr class="">
+                    <td>is2</td>
+                    <td><input type="checkbox" name="" id="" checked> Email</td>
+                    <td><input type="checkbox" name="" id=""></td>
+                    <td><input type="checkbox" name="" id=""></td>
+                    <td>19</td>
+                    <td>7am - 3pm unlimited</td>
+                </tr>
+                <tr>
+                    <td>Kelly</td>
+                    <td><input type="checkbox" name="" id="" checked> Email & Phone</td>
+                    <td><input type="checkbox" name="" id="" checked></td>
+                    <td><input type="checkbox" name="" id="" ></td>
+                    <td>17.68</td>
+                    <td><span class="underlined">7:00pm - 7:00am</span> <br> 7:00am - 7:00pm</td>
+                </tr>
                 <tr class="premium">
                     <td>Service MasterClean</td>
                     <td><input type="checkbox" name="" id="" checked> Transfered</td>
                     <td><input type="checkbox" name="" id="" checked></td>
                     <td><input type="checkbox" name="" id="" checked></td>
-                    <td><span class="underlined">17</span></td>
+                    <td><span>17.5</span></td>
                     <td><span class="underlined">11:00pm-7:30am</span> <br> 7:00am - 3:30pm</td>
                 </tr>
                 <tr class="success">
@@ -36,11 +52,11 @@
                     <td><input type="checkbox" name="" id="" checked></td>
                     <td><input type="checkbox" name="" id="" checked></td>
                     <td>15 | 18</td>
-                    <td></td>
+                    <td>8:00am - 5:00pm</td>
                 </tr>
                 <tr class="greyed">
                     <td>GigHound</td>
-                    <td><input type="checkbox" name="" id="" checked>App</td>
+                    <td><input type="checkbox" name="" id="" checked> App</td>
                     <td><input type="checkbox" name="" id="" checked></td>
                     <td><input type="checkbox" name="" id="" checked></td>
                     <td>17</td>
@@ -76,14 +92,6 @@
                     <td><input type="checkbox" name="" id="" ></td>
                     <td><input type="checkbox" name="" id="" ></td>
                     <td>18.02</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Kelly</td>
-                    <td><input type="checkbox" name="" id="" ></td>
-                    <td><input type="checkbox" name="" id="" ></td>
-                    <td><input type="checkbox" name="" id="" ></td>
-                    <td>17</td>
                     <td></td>
                 </tr>
                 <tr>
@@ -133,6 +141,14 @@
                     <td><input type="checkbox" name="" id="" checked></td>
                     <td>15</td>
                     <td>3pm - 11pm</td>
+                </tr>
+                <tr class="greyed">
+                    <td>StaffPlus</td>
+                    <td><input type="checkbox" name="" id="" checked></td>
+                    <td><input type="checkbox" name="" id="" checked></td>
+                    <td><input type="checkbox" name="" id="" checked></td>
+                    <td>16.95</td>
+                    <td>4pm - 12pm</td>
                 </tr>
                 <tr class="">
                     <td>School Jobs</td>
