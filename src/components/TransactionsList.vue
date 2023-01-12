@@ -2,6 +2,11 @@
 import FormatNumMixin from '../mixins/toLocaleString.js'
 
 export default {
+    data() {
+        return {
+            
+        }
+    },
     props: {
         transactions: {
             type: Array
@@ -13,26 +18,41 @@ export default {
 
 <template>
     <div class="transaction-list">
-        <div  v-for="(transact, index) in transactions" :key="transact.id" :amount="transact.amount" :rate="transact.rate" :idx="index">
-            <p>
-                {{amount}} * {{rate}} = ok
-            </p>
+        <div>
+            <table>
+                <tr v-for="item in transactions" :key="item.id">
+                    <td class="num-output">{{formatNum(item.amount)}}</td>
+                    <td><pre> * </pre></td>
+                    <td class="num-output">{{item.rate}}</td>
+                    <td><pre> = </pre></td>
+                    <td class="num-output">{{formatNum(item.amount * item.rate)}}</td>
+                </tr>
+                <tr>
+                    <td colspan="5">------------------------</td>
+                </tr>
+                <tr class="transaction-sum">
+                    <td class="num-output">1200</td>
+                    <td><pre> * </pre></td>
+                    <td>---</td>
+                    <td><pre> = </pre></td>
+                    <td class="num-output">{{formatNum(598000)}}</td>
+                </tr>
+            </table>
         </div>
-        <p>
-            200 * 540 = {{formatNum(108000)}}
-        </p>
-        <p>
-            1000 * 490 = {{formatNum(490000)}} <br>
-            -----------------------
-        </p>
-    </div>
-    <div class="transaction-sum">
-        <p>
-            1200 * --- = {{formatNum(598000)}}
-        </p>
     </div>
 </template>
 
 <style>
-
+.transaction-list table{
+    border: none;
+    width: auto;
+    
+}
+.transaction-list td, .transaction-sum td{
+    padding: 0;
+    font-size: 14px;
+}
+.num-output{
+    text-align: end;
+}
 </style>

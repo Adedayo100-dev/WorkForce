@@ -11,10 +11,7 @@ export default {
     data() {
         return {
             worksList: [],
-            transactions: [
-                {"id": 1, "amount": 1000, "rate": 490},
-                {"id": 2, "amount": 200, "rate": 540}
-            ],
+            transactions: [],
             nairaPaid: 598000,
             nairaTotal: 2000000,
             exchangeRate: 540, 
@@ -25,10 +22,10 @@ export default {
             .then(res => res.json())
             .then(data => this.worksList = data)
             .catch(err => console.log(err.message));
-        // fetch('http://localhost:3000/api/transactions')
-        //     .then(res => res.json())
-        //     .then(data => this.transactions = data)
-        //     .catch(err => console.log(err.message));
+        fetch('http://localhost:3000/api/transactions')
+            .then(res => res.json())
+            .then(data => this.transactions = data)
+            .catch(err => console.log(err.message));
     },
     computed: {
         totalPay() {
@@ -48,7 +45,7 @@ export default {
         }
     },
     methods: {
-        
+
     },
     mixins: [FormatNumMixin],
 }

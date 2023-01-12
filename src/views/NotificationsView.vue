@@ -34,7 +34,7 @@ export default {
 .notification-item{
   padding: 1.33em;
   padding-right: 0;
-  border: 1px solid #8C8F1C;
+  border: 1px solid #ffc517;
   border-left-width: 12px;
   /* border-radius: 8px; */
   font-size: 14px;
