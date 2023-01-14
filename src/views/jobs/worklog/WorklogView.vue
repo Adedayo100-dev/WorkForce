@@ -2,10 +2,11 @@
 import FilterIcon from '../../../components/icons/IconFilter.vue'
 import FormatNumMixin from '../../../mixins/toLocaleString.js'
 import TransactionsList from '../../../components/TransactionsList.vue'
+import IncomeCalculator from '../../../components/IncomeCalculator.vue'
 
 export default {
     components: {
-        FilterIcon, TransactionsList
+        FilterIcon, TransactionsList, IncomeCalculator
     },
     props: ['title'],
     data() {
@@ -14,7 +15,8 @@ export default {
             transactions: [],
             nairaPaid: 598000,
             nairaTotal: 2000000,
-            exchangeRate: 540, 
+            exchangeRate: 540,
+
         }
     },
     mounted() {
@@ -44,9 +46,6 @@ export default {
             return this.nairaPaid / this.nairaTotal*100;
         }
     },
-    methods: {
-
-    },
     mixins: [FormatNumMixin],
 }
 </script>
@@ -71,7 +70,7 @@ export default {
                 </button>
             </div>
             <div class="work-log-filter-box">
-                <form action="worklog/search">
+                <form action="/search">
                     <input type="search" placeholder="Search">
                 </form>
                 <div class="work-log-flank-right">
@@ -87,56 +86,59 @@ export default {
                 </router-view>
 
                 <div class="tithe">
-                    <div class="first-tithe-box">
-                        <form oninput="x.value='₦'+(parseInt(a.value)*parseInt(b.value)).toLocaleString('en-US')">
-                            <div class="func-container">
-                                <span>Tithe: </span>
-                                <div class="calc-container">
-                                    <input type="number" name="" id="a" :value="totalPay / 10" placeholder="$">
-                                    <pre> * </pre>
-                                    <input type="number" name="" id="b" :value="exchangeRate" placeholder="Currency Rate">
-                                    <pre> = </pre>
-                                    <output name="x" for="a  b"></output>
+                    <div class="contribution">
+                        <div class="first-tithe-box">
+                            <form oninput="x.value='₦'+(parseInt(a.value)*parseInt(b.value)).toLocaleString('en-US')">
+                                <div class="func-container">
+                                    <span>Tithe: </span>
+                                    <div class="calc-container">
+                                        <input type="number" name="" id="a" :value="totalPay / 10" placeholder="$">
+                                        <pre> * </pre>
+                                        <input type="number" name="" id="b" :value="exchangeRate" placeholder="Currency Rate">
+                                        <pre> = </pre>
+                                        <output name="x" for="a  b"></output>
+                                    </div>
                                 </div>
-                            </div>
-                        </form>
-                        <br>
-                        <form oninput="y.value='₦'+(parseInt(c.value)*parseInt(d.value)).toLocaleString('en-US')">
-                            <div class="func-container">
-                                <span>Send Home: </span>
-                                <div class="calc-container">
-                                    <input type="number" name="" id="c" placeholder="$">
-                                    <pre> * </pre>
-                                    <input type="number" name="" id="d" :value="exchangeRate" placeholder="Currency Rate">
-                                    <pre> = </pre>
-                                    <output name="y" for="c d"></output>
+                            </form>
+                            <br>
+                            <form oninput="y.value='₦'+(parseInt(c.value)*parseInt(d.value)).toLocaleString('en-US')">
+                                <div class="func-container">
+                                    <span>Send Home: </span>
+                                    <div class="calc-container">
+                                        <input type="number" name="" id="c" placeholder="$">
+                                        <pre> * </pre>
+                                        <input type="number" name="" id="d" :value="exchangeRate" placeholder="Currency Rate">
+                                        <pre> = </pre>
+                                        <output name="y" for="c d"></output>
+                                    </div>
                                 </div>
-                            </div>
-                        </form>
-                        <br>
-                        <div>
-                            <div>
-                                <TransactionsList :transactions="transactions"/>
-                            </div>
-                            
+                            </form>
                             <br>
                             <div>
-                                <span>Remaining: </span>
-                                <p>₦2000000 - ₦598000 = ₦{{formatNum(1402000)}}</p>
-                                <p>₦1402000 / 545 = ${{formatNum(2572.48)}}</p>
+                                <div>
+                                    <TransactionsList :transactions="transactions"/>
+                                </div>
+                                
+                                <br>
+                                <div>
+                                    <span>Remaining: </span>
+                                    <p>₦2000000 - ₦598000 = ₦{{formatNum(1402000)}}</p>
+                                    <p>₦1402000 / 545 = ${{formatNum(2572.48)}}</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <hr class="">
-                    <div class="second-tithe-box">
-                        <div class="paid-percentage-box">
-                            <h3>{{paidPercentage}}%</h3>
-                            <span>paid</span>
+                        <hr class="">
+                        <div class="second-tithe-box">
+                            <div class="paid-percentage-box">
+                                <h3>{{paidPercentage}}%</h3>
+                                <span>paid</span>
+                            </div>
+                            <p>
+                                {{formatNum(75459384)}}
+                            </p>
                         </div>
-                        <p>
-                            {{formatNum(75459384)}}
-                        </p>
                     </div>
+                    <!-- <IncomeCalculator/> -->
                 </div>
             </div>
         </div>

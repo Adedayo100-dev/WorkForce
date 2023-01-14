@@ -20,7 +20,7 @@
                     <td><input type="checkbox" name="" id=""></td>
                     <td><input type="checkbox" name="" id=""></td>
                     <td>19</td>
-                    <td>7am - 3pm unlimited</td>
+                    <td>3:30pm - 12:30am</td>
                 </tr>
                 <tr>
                     <td>Kelly</td>
@@ -72,14 +72,6 @@
                 </tr>
                 <tr class="">
                     <td>PSW</td>
-                    <td><input type="checkbox" name="" id=""></td>
-                    <td><input type="checkbox" name="" id=""></td>
-                    <td><input type="checkbox" name="" id=""></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr class="">
-                    <td>Snow Removal</td>
                     <td><input type="checkbox" name="" id=""></td>
                     <td><input type="checkbox" name="" id=""></td>
                     <td><input type="checkbox" name="" id=""></td>
@@ -153,14 +145,6 @@
                 <tr class="">
                     <td>School Jobs</td>
                     <td><input type="checkbox" name="" id="" checked>Website</td>
-                    <td><input type="checkbox" name="" id="" ></td>
-                    <td><input type="checkbox" name="" id="" ></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>N.A.S</td>
-                    <td><input type="checkbox" name="" id="" ></td>
                     <td><input type="checkbox" name="" id="" ></td>
                     <td><input type="checkbox" name="" id="" ></td>
                     <td></td>
