@@ -90,6 +90,12 @@ tbody{
 .text-end{
     text-align: end;
 }
+.border-none{
+    border: none;
+}
+.border-width-3{
+    border-width: 3px;
+}
 .work-log-filter-box input{
     padding: 8px 10px;
     border: 1px solid rgb(235, 235, 235);

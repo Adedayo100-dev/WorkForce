@@ -54,7 +54,7 @@
             {"id": 51, "loc": "Aspire", "dates": ["Mon 19 Dec, 2022"], "pay": 170, "payStatus": false},
             {"id": 52, "loc": "Amazon", "dates": ["Fri 23 Dec, 2022"], "pay": 212.03, "payStatus": true},
             {"id": 53, "loc": "Minova", "dates": ["Fri 06 Jan, 2023"], "pay": 0, "payStatus": false},
-            {"id": 53, "loc": "Minova", "dates": ["Sun 08 Jan, 2023","Mon 09 Jan, 2023","Tue 10 Jan, 2023", "Wed 11 Jan, 2023", "Thur 12 Jan, 2023", "Fri 13 Jan, 2023"], "pay": 837, "payStatus": false}
+            {"id": 53, "loc": "Minova", "dates": ["Sun 08 Jan, 2023","Mon 09 Jan, 2023","Tue 10 Jan, 2023", "Wed 11 Jan, 2023", "Thur 12 Jan, 2023", "Fri 13 Jan, 2023"], "pay": 838, "payStatus": false}
 
         ]
     },

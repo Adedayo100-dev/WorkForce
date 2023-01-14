@@ -129,6 +129,7 @@ export default {
                         </div>
                         <hr class="">
                         <div class="second-tithe-box">
+                            
                             <div class="paid-percentage-box">
                                 <h3>{{paidPercentage}}%</h3>
                                 <span>paid</span>
@@ -138,7 +139,7 @@ export default {
                             </p>
                         </div>
                     </div>
-                    <!-- <IncomeCalculator/> -->
+                    <IncomeCalculator/>
                 </div>
             </div>
         </div>

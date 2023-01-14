@@ -42,6 +42,9 @@ export default {
         grossIncome(){
             return this.regIncome + this.overTimeIncome + this.vacationPay;
         },
+        netIncome(){
+            return 0;
+        }
     },
     mixins: [FormatNumMixin],
 }
@@ -51,7 +54,7 @@ export default {
     <div class="income-calc">
         <span>Income:</span>
         <br><br>
-        <table>
+        <table style="border:none; width: 50%;">
             <thead></thead>
             <tbody>
                 <tr>
@@ -66,15 +69,15 @@ export default {
                     <td>${{ overTimePay }}</td>
                     <td>${{ overTimeIncome }}</td>
                 </tr>
-                <tr>
+                <tr class="border-width-3">
                     <td>Vacation Pay</td>
                     <td>-</td>
                     <td>${{ vacationPay }}</td>
                     <td>${{ vacationPay }}</td>
                 </tr>
-                <tr>
-                    <td class="text-bold">Gross Income</td>
-                    <td colspan="3" class="text-bold text-end">${{ formatNum(grossIncome) }}</td>
+                <tr class="text-bold">
+                    <td>Gross Income</td>
+                    <td colspan="3" class="text-end">${{ formatNum(grossIncome) }}</td>
                     
                 </tr>
                 <tr>
@@ -88,18 +91,18 @@ export default {
                     <td class="">-${{ cpp }}</td>
                 </tr>
                 <tr>
-                    <td>EI deductions</td>
+                    <td>EI Deductions</td>
                     <td colspan="2"></td>
                     <td class="">-${{ eI }}</td>
                 </tr>
-                <tr>
-                    <td>Total deductions</td>
+                <tr class="border-width-3">
+                    <td>Total Deductions</td>
                     <td colspan="2"></td>
                     <td class="">-${{ eI }}</td>
                 </tr>
-                <tr>
-                    <td class="text-bold">Net Income</td>
-                    <td colspan="3" class="text-bold text-end">${{ formatNum(netIncome) }}</td>
+                <tr class="text-bold border-none">
+                    <td>Net Income</td>
+                    <td colspan="3" class="text-end">${{ formatNum(netIncome) }}</td>
                 </tr>
             </tbody>
         </table>       
