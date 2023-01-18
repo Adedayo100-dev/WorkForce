@@ -6,7 +6,7 @@ export default {
     data() {
         return {
             regPay: 19,
-            hoursWorked: 49,
+            hoursWorked: '',
         }
     },
     computed: {
@@ -43,7 +43,7 @@ export default {
             return this.regIncome + this.overTimeIncome + this.vacationPay;
         },
         netIncome(){
-            return 0;
+            return parseFloat((this.grossIncome * 0.78254).toFixed(2));
         }
     },
     mixins: [FormatNumMixin],
@@ -52,9 +52,14 @@ export default {
 
 <template>
     <div class="income-calc">
-        <span>Income:</span>
-        <br><br>
-        <table style="border:none; width: 50%;">
+        <div class="func-container">
+            <span>Income: </span>
+            <div class="calc-container">
+                <input type="number" v-model="hoursWorked" placeholder="hrs">
+            </div>
+        </div>
+        <br>
+        <table style="border:none; max-width: 524px;">
             <thead></thead>
             <tbody>
                 <tr>
@@ -98,14 +103,16 @@ export default {
                 <tr class="border-width-3">
                     <td>Total Deductions</td>
                     <td colspan="2"></td>
-                    <td class="">-${{ eI }}</td>
+                    <td class="">-${{ totalDeductions }}</td>
                 </tr>
                 <tr class="text-bold border-none">
                     <td>Net Income</td>
                     <td colspan="3" class="text-end">${{ formatNum(netIncome) }}</td>
                 </tr>
             </tbody>
-        </table>       
+        </table> 
+
+        <span>Probable Income: {{ netIncome }}</span>      
     </div>
 </template>
 
