@@ -45,7 +45,7 @@
             {"id": 42, "loc": "Upseat", "dates": ["Thur 10 Nov, 2022"], "pay": 129.00, "payStatus": true},
             {"id": 43, "loc": "Amazon", "dates": ["Fri 11 Nov, 2022", "Sat 12 Nov, 2022"], "pay": 269.23, "payStatus": true},
             {"id": 44, "loc": "Upseat", "dates": ["Thur 17 Nov, 2022"], "pay": 129.01, "payStatus": true},
-            {"id": 45, "loc": "Amazon", "dates": ["Fri 18 JesusisLordNov, 2022", "Sat 19 Nov, 2022"], "pay": 256.26, "payStatus": true},
+            {"id": 45, "loc": "Amazon", "dates": ["Fri 18 Nov, 2022", "Sat 19 Nov, 2022"], "pay": 256.26, "payStatus": true},
             {"id": 46, "loc": "Upseat", "dates": ["Thur 24 Nov, 2022"], "pay": 129.01, "payStatus": true},
             {"id": 47, "loc": "Upseat", "dates": ["Thur 01 Dec, 2022"], "pay": 129.01, "payStatus": true},
             {"id": 48, "loc": "Amazon", "dates": ["Fri 02 Dec, 2022", "Sat 03 Dec, 2022"], "pay": 270.81, "payStatus": true},
