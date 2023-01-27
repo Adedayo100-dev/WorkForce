@@ -7,7 +7,7 @@
         components: {
             AmazonIcon, VDotsIcon, EditIcon
         },
-        props: ['key', 'loc', 'dates', 'pay', 'payStatus', 'idx'],
+        props: ['key', 'loc', 'dates', 'hours', 'pay', 'payStatus', 'idx'],
         data() {
             return {
                 
@@ -48,6 +48,15 @@
                 class="works-dates-list">{{date}}</span>
             </div>
         </td>
+        <td>
+            <div class="hours-output">
+                <span 
+                v-for="hour in hours" 
+                :key="hour" 
+                :hour="hour" 
+                class="works-hours-list">{{hour}} hrs</span>
+            </div>
+        </td>
         <td class="pay-output" :class="[payStatus? 'paid' : 'unpaid']"> 
             <span>{{pay}}</span> 
         </td>
@@ -85,7 +94,7 @@
         left: 50%;
         transform: translate(-50%, -50%);
     } */
-    .works-dates-list{
+    .works-dates-list, .works-hours-list{
         font-size: var(--table-font-size);
         display: block;
     }

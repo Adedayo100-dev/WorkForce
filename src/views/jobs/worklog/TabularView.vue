@@ -30,6 +30,7 @@ export default {
                 <tr>
                     <td>Location</td>
                     <td>Date</td>
+                    <td></td>
                     <td class="pay-header">
                         <div class="">
                             <span>(CAD) Pay</span>
@@ -39,12 +40,13 @@ export default {
                 </tr>
             </thead>
             <tbody>
-                <WorkLogItem v-for="(work, index) in worksList" :key="work.id" :loc="work.loc" :dates="work.dates" :pay="work.pay" :payStatus="work.payStatus" :idx="index"/>
+                <WorkLogItem v-for="(work, index) in worksList" :key="work.id" :loc="work.loc" :dates="work.dates" :hours="work.hours" :pay="work.pay" :payStatus="work.payStatus" :idx="index"/>
                 <tr id="totalShifts">
                     <td>
                         <p>Total</p>
                     </td>
                     <td class="dates-output">{{totalShifts}} entries</td>
+                    <td></td>
                     <td class="text-bold pay-output">
                         <span>{{formatNum(totalPay)}}</span>
                     </td>

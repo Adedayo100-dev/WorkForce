@@ -11,7 +11,7 @@
           <router-link to="/plans/shopping-list">Shopping List</router-link>
         </li>
         <li>
-          <!-- <router-link to="/plans/cashplans">Cash</router-link> -->
+          <router-link to="/plans/taxfiling">T4</router-link>
         </li>
       </ul>
       <div id="tab-contents">

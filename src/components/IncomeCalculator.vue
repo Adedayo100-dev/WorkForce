@@ -22,7 +22,7 @@ export default {
         },
         overTimeHours(){
             if (this.hoursWorked > 40) {
-                return this.hoursWorked - 40;
+                return parseFloat((this.hoursWorked - 40).toFixed(2));
             } else if(this.hoursWorked <= 40) {
                 return 0;
             }
@@ -43,7 +43,7 @@ export default {
             return this.regIncome + this.overTimeIncome + this.vacationPay;
         },
         netIncome(){
-            return parseFloat((this.grossIncome * 0.78254).toFixed(2));
+            return parseFloat(((this.grossIncome * 0.643576) + 145.881).toFixed(2));
         }
     },
     mixins: [FormatNumMixin],

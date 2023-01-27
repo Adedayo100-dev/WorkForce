@@ -40,6 +40,11 @@ const router = createRouter({
           path: 'shopping-list',
           name: 'shoppling-list',
           component: () => import('../views/ShopList.vue'),
+        },
+        {
+          path: 'taxfiling',
+          name: 'taxfiling',
+          component: () => import('../views/TaxFiling.vue'),
         }
       ],
     },

@@ -53,10 +53,11 @@
             {"id": 50, "loc": "Amazon", "dates": ["Sat 16 Dec, 2022","Sat 17 Dec, 2022"], "pay": 270.59, "payStatus": true},
             {"id": 51, "loc": "Aspire", "dates": ["Mon 19 Dec, 2022"], "pay": 170, "payStatus": false},
             {"id": 52, "loc": "Amazon", "dates": ["Fri 23 Dec, 2022"], "pay": 212.03, "payStatus": true},
-            {"id": 53, "loc": "Minova", "dates": ["Fri 06 Jan, 2023"], "pay": 120.60, "payStatus": false},
-            {"id": 54, "loc": "Minova", "dates": ["Sun 08 Jan, 2023","Mon 09 Jan, 2023","Tue 10 Jan, 2023", "Wed 11 Jan, 2023", "Thur 12 Jan, 2023", "Fri 13 Jan, 2023"], "pay": 821.48, "payStatus": false},
-            {"id": 55, "loc": "Amazon", "dates": ["Vac Accrual"], "pay": 231.87, "payStatus": false},
-            {"id": 56, "loc": "Minova", "dates": ["Sun 15 Jan, 2023","Mon 16 Jan, 2023","Tue 17 Jan, 2023", "Wed 18 Jan, 2023", "Thur 19 Jan, 2023", "Fri 20 Jan, 2023"], "pay": 0, "payStatus": false}
+            {"id": 53, "loc": "Minova", "dates": ["Fri 06 Jan, 2023"], "pay": 816.71, "payStatus": true},
+            {"id": 54, "loc": "Minova", "dates": ["Sun 08 Jan, 2023","Mon 09 Jan, 2023","Tue 10 Jan, 2023", "Wed 11 Jan, 2023", "Thur 12 Jan, 2023", "Fri 13 Jan, 2023"], "hours": [8.5,8.5,8.5,9.0,8.5,8.5], "pay": 821.48, "payStatus": true},
+            {"id": 55, "loc": "Amazon", "dates": ["Vac Accrual"], "pay": 19.84, "payStatus": true},
+            {"id": 56, "loc": "Minova", "dates": ["Sun 15 Jan, 2023","Mon 16 Jan, 2023","Tue 17 Jan, 2023", "Thur 19 Jan, 2023", "Fri 20 Jan, 2023", "Sat 21 Jan, 2023"], "hours": [8,8.5,8.5,8.5,8.5,8.5],  "pay": 815.37, "payStatus": false},
+            {"id": 57, "loc": "Minova", "dates": ["Sun 22 Jan, 2023", "Mon 23 Jan, 2023", "Tue 24 Jan,2023"], "hours": [8,8.5,8.5],  "pay": 0, "payStatus": false}
 
         ]
     },
