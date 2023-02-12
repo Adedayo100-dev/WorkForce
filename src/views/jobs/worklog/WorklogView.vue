@@ -22,10 +22,9 @@ export default {
             nairaPaid: 598000,
             nairaTotal: 2000000,
             exchangeRate: 540,
-
         }
     },
-    mounted() {
+    created() {
         fetch('http://localhost:3000/api/worksList')
             .then(res => res.json())
             .then(data => this.worksList = data)

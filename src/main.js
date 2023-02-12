@@ -1,4 +1,5 @@
 import { createApp } from 'vue'
+import { createStore } from 'vue'
 import App from './App.vue'
 import router from './router'
 
@@ -10,14 +11,21 @@ app.use(router)
 
 app.mount('#app')
 
-// EventBus
-// import mitt from 'mitt'
+// Store 
+const store = createStore({
+    state(){
+        return {
+            count: 0
+        }
+    },
+    mutations: {
+        increment (state) {
+            state.count++
+        }
+    }
+})
 
-// const emitter = mitt()
-
-// app.config.globalProperties.emitter = emitter
-
-
+app.use(store)
 
 
 

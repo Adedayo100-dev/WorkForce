@@ -17,7 +17,7 @@
             }
         },
         created() {
-            EventBus.on('openModal', openModal());
+            // EventBus.on('openModal', openModal());
         },
         methods: {
             closeModal: function(event) {

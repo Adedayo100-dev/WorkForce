@@ -1,7 +1,8 @@
 // Event Bus
+import mitt from 'mitt'
 import emitter from 'tiny-emitter';
 import Emitter from 'tiny-emitter';
-export const EventBus = new Emitter();
+export const EventBus = new mitt();
 // export default {
 //     $on: (...args) => emitter.on(...args),
 //     $once: (...args) => emitter.once(...args),
