@@ -5,7 +5,7 @@
                 <RouterLink to="/plans">
                     <div>
                         <PlanningIcon />
-                        <span> Plans</span>
+                        <span v-show="navTogVal"> Plans</span>
                     </div>
                 </RouterLink>
             </li>
@@ -13,13 +13,13 @@
                 <RouterLink to="/jobs">
                     <div>
                         <JobVacancyIcon />
-                        <span> Jobs</span>
+                        <span v-show="navTogVal"> Jobs</span>
                     </div>
-                    <div class="caret-d-container">
+                    <div class="caret-d-container" v-show="navTogVal">
                         <CaretUpIcon />
                     </div>
                 </RouterLink>
-                <ul id="" class="sidenav-dropdown">
+                <ul id="" class="sidenav-dropdown"  v-show="navTogVal">
                     <li>
                         <router-link to="/jobs/worklog">Work Log</router-link>
                     </li>
@@ -47,27 +47,29 @@
                     
                 </ul>
             </li>
-            <li>
-                <RouterLink to="/assignments">Assignments</RouterLink>
-            </li>
             <!-- <li>
-                <RouterLink to="/worklog">
-                    <div>
-                        <JobVacancyIcon />
-                        <span>Work Log</span>
-                    </div>
-                </RouterLink>
+                <RouterLink to="/assignments">Assignments</RouterLink>
             </li> -->
             <li>
                 <RouterLink to="/notifications">
                     <div>
                         <BellIcon />
-                        <span> Notifications</span>
+                        <span v-show="navTogVal"> Notifications</span>
                     </div>
                 </RouterLink>
             </li>
+            
         </ul>
-
+        <div>
+            <div class="float-bottom">
+                <RouterLink to="/settings">
+                    <div>
+                        <SettingsIcon />
+                        <span v-show="navTogVal"> Settings</span>
+                    </div>
+                </RouterLink>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -77,10 +79,16 @@ import JobVacancyIcon from '../components/icons/IconJobVacancy.vue'
 import BellIcon from '../components/icons/IconBell.vue'
 import CaretUpIcon from '../components/icons/IconCaretUp.vue'
 import CaretDownIcon from '../components/icons/IconCaretDown.vue'
+import SettingsIcon from '../components/icons/IconSettings.vue'
 
 export default {
     components: {
-        PlanningIcon, JobVacancyIcon, BellIcon, CaretUpIcon, CaretDownIcon
+        PlanningIcon, JobVacancyIcon, BellIcon, CaretUpIcon, CaretDownIcon, SettingsIcon
+    },
+    data() {
+        return {
+            navTogVal: false,
+        }
     }
 }
 </script>
@@ -91,9 +99,12 @@ export default {
         position: fixed;
         /* top: 0; */
         left: 0;
-        height: 100%;
+        height: -webkit-fill-available;
         padding: 0;
         border-right:  1px solid #e0e1e1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
     .side-nav ul{
         list-style-type: none;
@@ -106,7 +117,7 @@ export default {
     .side-nav ul li a{
         font-size: 14px;
         color: #262626;
-        padding: 12px 53px 12px 28px;
+        padding: 12px 20px;
         /* border-radius: 4px; */
         display: flex;
         justify-content: space-between;
@@ -134,5 +145,8 @@ export default {
     .sidenav-dropdown li a{
         padding: 12px 53px 12px 56px !important;
         color: grey !important;
+    }
+    .float-bottom{
+        padding: 12px 20px;
     }
 </style>

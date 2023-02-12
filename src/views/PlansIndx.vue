@@ -1,7 +1,7 @@
 <template>
     <div class="plans-indx">
         <div class="d-center">
-            <p>When plans is empty, show this</p>
+            <p>This shows in plans by default</p>
         </div>
     </div>
 </template>

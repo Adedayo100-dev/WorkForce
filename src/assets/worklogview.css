@@ -1,3 +1,4 @@
+@import "tables.css";
 .title-top{
     /* padding: 10px 0 0px; */
     background-color: white;
@@ -8,6 +9,7 @@ thead{
     border-bottom: 1px solid rgb(238, 238, 238);
 }
 thead td{
+    color: var(--primary-black);
     font-size: var(--table-font-size);
 }
 .pay-header{
@@ -31,10 +33,10 @@ tbody{
 }
 .tab-link{
     font-size: 14px;
-    padding: 6px 10px;
-    border: 1px dashed rgba(33,33,33,.9);
-    color: rgba(33,33,33,.9);
-    display: block;
+    padding: 2px 5px;/*6 10px*/
+    /* border: 1px dashed rgba(33,33,33,.9); */
+    color: darkgray;
+    display: flex;
 }
 .add-shift_button-box{
     display: flex;
@@ -90,27 +92,40 @@ tbody{
 .text-end{
     text-align: end;
 }
+.text-black{
+    color: var(--primary-black);
+}
 .border-none{
     border: none;
 }
 .border-width-3{
     border-width: 3px;
 }
-.work-log-filter-box input{
-    padding: 8px 10px;
+.work-log-filter-box input, .work-log-filter-box select{
     border: 1px solid rgb(235, 235, 235);
     outline: none;
     font-size: 12px;
+}
+.work-log-filter-box input{
+    padding: 8px 10px;
+    border-right: none;
+}
+.work-log-filter-box select{
+    padding: 7px 10px;
 }
 .work-log-flank-right{
     display: flex;
     align-items: center;
     padding: 0px 10px;
     cursor: pointer;
-    border: 1px dashed rgb(235, 235, 235);
+    /* border: 1px dashed rgb(235, 235, 235); */
+}
+.work-log-flank-right:hover{
+    background-color: rgba(32,33,36,0.049);
+    border-radius: 4px;
 }
 .work-log-flank-right a{
-    color: darkgrey;
+    /* color: darkgrey; */
 }
 .work-shifts-total-box{
     padding-top: 12px;

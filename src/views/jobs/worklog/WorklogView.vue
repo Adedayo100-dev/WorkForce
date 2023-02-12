@@ -3,10 +3,12 @@ import FilterIcon from '../../../components/icons/IconFilter.vue'
 import FormatNumMixin from '../../../mixins/toLocaleString.js'
 import TransactionsList from '../../../components/TransactionsList.vue'
 import IncomeCalculator from '../../../components/IncomeCalculator.vue'
+import TableIcon from '../../../components/icons/IconTable.vue'
+import GraphIcon from '../../../components/icons/IconGraph.vue'
 
 export default {
     components: {
-        FilterIcon, TransactionsList, IncomeCalculator
+        FilterIcon, TransactionsList, IncomeCalculator, TableIcon, GraphIcon
     },
     props: ['title'],
     data() {
@@ -53,15 +55,20 @@ export default {
 <template>
     <div class="work-log-box">
         <div class="title-top">
-            <ul class="link-tab-group">
+            <!-- ul used to be here -->
+            <div class="add-shift_button-box justify-end">
+                <ul class="link-tab-group">
                 <li>
-                    <router-link to="/jobs/worklog/tabular" class="tab-link">Tabular</router-link>
+                    <router-link to="/jobs/worklog/tabular" class="tab-link" title="Tabular">
+                        <TableIcon/>
+                    </router-link>
                 </li>
                 <li>
-                    <router-link to="/jobs/worklog/graphical" class="tab-link">Graphical</router-link>
+                    <router-link to="/jobs/worklog/graphical" class="tab-link" title="Graphical">
+                        <GraphIcon/>
+                    </router-link>
                 </li>
             </ul>
-            <div class="add-shift_button-box justify-end">
                 <button class="filter_button">
                     Filter <FilterIcon />
                 </button>
@@ -72,6 +79,17 @@ export default {
             <div class="work-log-filter-box">
                 <form action="/search">
                     <input type="search" placeholder="Search">
+                    <select name="browser">
+                        <option value="all">All</option>
+                        <option value="minova">Minova</option>
+                        <option value="amazon">Amazon</option>
+                        <option value="lcbo">LCBO</option>
+                        <option value="pro-bell">PRO-BELL</option>
+                        <option value="mondelez">Mondelez</option>
+                        <option value="ferrero">Ferrero</option>
+                        <option value="aspire">Aspire</option>
+                        <option value="upseat">Upseat</option>
+                    </select>
                 </form>
                 <div class="work-log-flank-right">
                     <router-link to="#totalShifts">&#8645;</router-link>

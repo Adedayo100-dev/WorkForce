@@ -10,13 +10,16 @@ export default {
     },
     props: {
         worksList: {
-            type: Array
+            type: Array,
+            required: true,
         }, 
         totalShifts: {
-            type: Number
+            type: Number,
+            required: true,
         }, 
         totalPay: {
-            type: Number
+            type: Number,
+            required: true,
         }
     },
     mixins: [FormatNumMixin],
@@ -30,7 +33,7 @@ export default {
                 <tr>
                     <td>Location</td>
                     <td>Date</td>
-                    <td></td>
+                    <td>Hours</td>
                     <td class="pay-header">
                         <div class="">
                             <span>(CAD) Pay</span>
@@ -47,7 +50,7 @@ export default {
                     </td>
                     <td class="dates-output">{{totalShifts}} entries</td>
                     <td></td>
-                    <td class="text-bold pay-output">
+                    <td class="text-bold pay-output text-black">
                         <span>{{formatNum(totalPay)}}</span>
                     </td>
                     <!-- <td colspan="3" style="color: #757575;">This is the total sum of all work done from May, 2022 to present......</td> -->

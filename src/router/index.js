@@ -146,7 +146,7 @@ const router = createRouter({
       meta: {title: 'Settings'}
     },
     {
-      path: '/profile',
+      path: '/user-profile',
       name: 'profile',
       component: () => import('../views/ProfileView.vue'),
       meta: {title: 'Dashboard'}

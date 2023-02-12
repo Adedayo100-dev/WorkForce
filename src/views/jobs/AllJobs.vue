@@ -14,30 +14,23 @@
             </thead>
             <tbody>
                 <!-- Each Courses Data -->
-                <tr class="">
+                <tr class="premium">
                     <td>is2</td>
                     <td><input type="checkbox" name="" id="" checked> Email</td>
-                    <td><input type="checkbox" name="" id=""></td>
-                    <td><input type="checkbox" name="" id=""></td>
+                    <td><input type="checkbox" name="" id="" checked></td>
+                    <td><input type="checkbox" name="" id="" checked></td>
                     <td>19</td>
                     <td>3:30pm - 12:30am</td>
                 </tr>
                 <tr>
                     <td>Kelly</td>
                     <td><input type="checkbox" name="" id="" checked> Email & Phone</td>
-                    <td><input type="checkbox" name="" id="" checked></td>
+                    <td><input type="checkbox" name="" id="" ></td>
                     <td><input type="checkbox" name="" id="" ></td>
                     <td>17.68</td>
                     <td><span class="underlined">7:00pm - 7:00am</span> <br> 7:00am - 7:00pm</td>
                 </tr>
-                <tr class="premium">
-                    <td>Service MasterClean</td>
-                    <td><input type="checkbox" name="" id="" checked> Transfered</td>
-                    <td><input type="checkbox" name="" id="" checked></td>
-                    <td><input type="checkbox" name="" id="" checked></td>
-                    <td><span>17.5</span></td>
-                    <td><span class="underlined">11:00pm-7:30am</span> <br> 7:00am - 3:30pm</td>
-                </tr>
+                
                 <tr class="success">
                     <td>24hr Employment</td>
                     <td><input type="checkbox" name="" id="" checked> Appointment</td>
@@ -109,6 +102,14 @@
                     <td><input type="checkbox" name="" id="" ></td>
                     <td></td>
                     <td></td>
+                </tr>
+                <tr class="greyed">
+                    <td>Service MasterClean</td>
+                    <td><input type="checkbox" name="" id="" checked> Transfered</td>
+                    <td><input type="checkbox" name="" id="" checked></td>
+                    <td><input type="checkbox" name="" id="" checked></td>
+                    <td><span>17.5</span></td>
+                    <td><span class="underlined">11:00pm-7:30am</span> <br> 7:00am - 3:30pm</td>
                 </tr>
                 <tr class="greyed">
                     <td>Linxus Group</td>
