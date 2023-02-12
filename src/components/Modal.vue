@@ -1,45 +1,36 @@
 <template>
-    <div class="modal-overlay" :class="{show: toggleModal}">
-        <div class="modal-static-container">
-            <div class="modal-dynamic-content">
-                <div class="confirm-dialog-box">
-                    <h3>Confirm</h3>
-                    <p>Are you sure you wanna proceed?</p>
-                    <div class="confirm-button-container">
-                        <button @click="closeModal">No</button>
-                        <button>
-                            <router-link to="/signedout">Yes</router-link>
-                        </button>
+    <transition  name="modal">
+        <div class="modal-overlay" :class="{show: toggleModal}">
+            <div class="modal-static-container">
+                <div class="modal-dynamic-content">
+                    <div class="confirm-dialog-box">
+                        <h3>Confirm</h3>
+                        <p>Are you sure you wanna proceed?</p>
+                        <div class="confirm-button-container">
+                            <button @click="$emit('close', 'modal closed')">No</button>
+                            <button>
+                                <router-link to="/signedout">Yes</router-link>
+                            </button>
+                        </div>
                     </div>
+                    <!-- Content goes in here -->
                 </div>
-                <!-- Content goes in here -->
             </div>
         </div>
-    </div>
+    </transition>
+    
 </template>
 
 <script>
 export default {
     name: 'modal',
-    data() {
-        return {
-            toggleModal: false,
-        }
-    },
-    methods: {
-        closeModal: function() {
-            this.toggleModal = false;
-        },
-        openModal: function() {
-            this.toggleModal = true;
-        }
-    }
+    emits: ['close']
 }
 </script>
 
 <style scoped>
     .modal-overlay.show{
-        display: flex;
+        /* display: flex; */
     }
     .modal-overlay{
         position: fixed;
@@ -50,7 +41,7 @@ export default {
         width: 100%;
         z-index: 100;
         height: 100vh;
-        display: none;
+        display: flex;
         justify-content: center;
         align-items: center;
         min-height: 500px;
@@ -79,5 +70,20 @@ export default {
         padding: 8px 20px;
         border: none;
         border-radius: 4px;
+    }
+
+    /* Modal Transition */
+    .modal-enter-from {
+        opacity: 0;
+    }
+
+    .modal-leave-to {
+        opacity: 0;
+    }
+
+    .modal-enter-from .modal-container,
+    .modal-leave-to .modal-container {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
     }
 </style>

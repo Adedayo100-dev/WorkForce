@@ -45,6 +45,7 @@ export default {
 #tabs ul.tab-nav{
     list-style-type: none;
     padding: 0;
+    margin: 0.125em 0;
 }
 #tabs ul.tab-nav li{
     display: inline-flex;

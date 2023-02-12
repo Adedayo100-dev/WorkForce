@@ -34,7 +34,8 @@ a{
     align-items: center;
 }
 h3{
-    margin-top: calc(1em - 12px);
+    margin: calc(1em - 12px) 0;
+    /* margin-bottom: 6.72px; */
     /* color: grey; */
 }
 /* h4{
