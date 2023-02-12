@@ -5,8 +5,6 @@ import TransactionsList from '../../../components/TransactionsList.vue'
 import IncomeCalculator from '../../../components/IncomeCalculator.vue'
 import TableIcon from '../../../components/icons/IconTable.vue'
 import GraphIcon from '../../../components/icons/IconGraph.vue'
-// Import EventBus
-import { EventBus } from '../../../EventBus.js'
 
 
 export default {
@@ -14,7 +12,6 @@ export default {
         FilterIcon, TransactionsList, IncomeCalculator, TableIcon, GraphIcon
     },
     props: ['title'],
-    emits: ['open'],
     data() {
         return {
             worksList: [],
@@ -53,9 +50,9 @@ export default {
     },
     mixins: [FormatNumMixin],
     methods: {
-        openModal() {
-            console.log("NewshiftModalClicked");
-            EventBus.emit('openModal', 'New Shift')
+        openModal(modalType) {
+            this.$store.commit('openModal', modalType);
+            console.log(modalType, 'Modal-Opened');
         }
     },
 }
@@ -81,7 +78,7 @@ export default {
                 <button class="filter_button">
                     Filter <FilterIcon />
                 </button>
-                <button class="add-shift_button" @click="openModal()">
+                <button class="add-shift_button" @click="openModal('newShift')">
                     <span>+  Add <span class="responsive-toggle">Work</span> Shift</span>
                 </button>
             </div>

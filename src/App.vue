@@ -1,11 +1,10 @@
 <script>
     import { RouterLink, RouterView } from 'vue-router';
+    import { mapState } from 'vuex'
     import Modal from './components/Modal.vue';
     import SideNav from './components/SideNav.vue';
     import TopNavBar from './components/TopNavBar.vue';
-    // import EventBus
-    import {EventBus} from './EventBus.js'
-
+    
     export default {
         name: 'App',
         components: {
@@ -13,21 +12,23 @@
         },
         data() {
             return {
-                toggleModal: true,
+                
             }
         },
-        created() {
-            // EventBus.on('openModal', openModal());
-        },
+        computed: mapState({
+            modalState: 'toggleModal',
+            // modalType: 
+        }),
         methods: {
             closeModal: function(event) {
-                this.toggleModal = false;
+                this.$store.commit('closeModal')
                 console.log(event);
             },
-            openModal: function(modalType) {
-                this.toggleModal = true;
-                console.log(modalType," opened");
-            }
+            // openModal: function(modalType) {
+            //     this.$store.commit('openModal', modalType)
+            //     console.log(modalType," opened");
+            //     console.log("this works!")
+            // }
         }
     }
 </script>
@@ -42,5 +43,5 @@
             </main>
         </div>
     </div>
-    <Modal v-show="toggleModal" @close="closeModal"/>
+    <Modal v-show="modalState" @close="closeModal"/>
 </template>

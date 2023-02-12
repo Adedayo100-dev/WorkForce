@@ -3,11 +3,12 @@
         <div class="modal-overlay" :class="{show: toggleModal}">
             <div class="modal-static-container">
                 <div class="modal-dynamic-content">
+                    <!-- <component :is=''></component> -->
                     <div class="confirm-dialog-box">
                         <h3>Confirm</h3>
                         <p>Are you sure you wanna proceed?</p>
                         <div class="confirm-button-container">
-                            <button @click="$emit('close', 'modal closed')">No</button>
+                            <button @click="$emit('close', 'Modal cancelled')">No</button>
                             <button>
                                 <router-link to="/signedout">Yes</router-link>
                             </button>
