@@ -48,7 +48,7 @@
                 </div>            
             </div>
             <div  class="one-liner">
-                <button class=" log-out_button danger-link" @click="openModal">Log out</button>
+                <button class=" log-out_button danger-link" @click="openModal('DialogBox')">Log out</button>
             </div>
         </div>
     </div>
@@ -70,8 +70,12 @@ export default {
     methods: {
         pickLang: function() {
             this.openLang = !this.openLang;
+        },
+        openModal(modalType) {
+            this.$store.commit('openModal', modalType);
+            console.log(modalType, 'Modal-Opened');
         }
-    }
+    },
 }
 </script>
 

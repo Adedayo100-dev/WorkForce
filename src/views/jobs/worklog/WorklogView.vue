@@ -33,7 +33,7 @@ export default {
     },
     computed: {
         totalPay() {
-            return this.worksList.reduce((acc, item) => acc + item.pay, 0).toFixed(2);
+            return parseFloat(this.worksList.reduce((acc, item) => acc + item.pay, 0).toFixed(2));
         },
         totalShifts() {
             var numDates = 0;
@@ -52,7 +52,7 @@ export default {
     methods: {
         openModal(modalType) {
             this.$store.commit('openModal', modalType);
-            console.log(modalType, 'Modal-Opened');
+            // console.log(modalType, 'Modal-Opened');
         }
     },
 }
@@ -78,7 +78,7 @@ export default {
                 <button class="filter_button">
                     Filter <FilterIcon />
                 </button>
-                <button class="add-shift_button" @click="openModal('newShift')">
+                <button class="add-shift_button green-confirm-button" @click="openModal('NewShift')">
                     <span>+  Add <span class="responsive-toggle">Work</span> Shift</span>
                 </button>
             </div>

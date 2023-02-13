@@ -42,8 +42,23 @@ export default {
         grossIncome(){
             return this.regIncome + this.overTimeIncome + this.vacationPay;
         },
+        cppCalc(){
+            if (this.hoursWorked > 42) {
+                return parseFloat((this.grossIncome * 0.055695).toFixed(2));
+            } else if(this.hoursWorked <= 42) {
+                return parseFloat((this.grossIncome * 0.055695).toFixed(2));
+            }
+        },
+        totalDeductions(){
+            return parseFloat((this.grossIncome - this.netIncome).toFixed(2));
+        },
         netIncome(){
-            return parseFloat(((this.grossIncome * 0.643576) + 145.881).toFixed(2));
+            if (this.hoursWorked > 42) {
+                return parseFloat(((this.grossIncome * 0.643576) + 145.881).toFixed(2));
+            } else if(this.hoursWorked <= 42) {
+                return parseFloat(((this.grossIncome * 0.738687) + 53.4623).toFixed(2));
+            }
+            
         }
     },
     mixins: [FormatNumMixin],
@@ -93,7 +108,7 @@ export default {
                 <tr>
                     <td>CPP</td>
                     <td colspan="2"></td>
-                    <td class="">-${{ cpp }}</td>
+                    <td class="">-${{ cppCalc }}</td>
                 </tr>
                 <tr>
                     <td>EI Deductions</td>

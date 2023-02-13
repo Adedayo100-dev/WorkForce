@@ -54,15 +54,15 @@ tbody{
 .justify-end{
     justify-content: end;
 }
-.add-shift_button{
+.green-confirm-button{
     background-color: #0a793b;
     color: white;
 }
-.add-shift_button:hover{
+.green-confirm-button:hover{
     background-color: rgb(0, 109, 53);
     color: white;
 }
-.add-shift_button span{
+.green-confirm-button span{
     color: white;
 }
 .filter_button, .add-shift_button{

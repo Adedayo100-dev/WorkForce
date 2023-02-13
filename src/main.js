@@ -12,11 +12,14 @@ const store = createStore({
     state(){
         return {
             toggleModal: false,
+            whichModal: 'null', //Change to null
         }
     },
     mutations: {
         openModal (state, modalType){
             state.toggleModal = true;
+            state.whichModal = modalType;
+            // console.log(state.whichModal, "mutated");
         },
         closeModal (state){
             state.toggleModal = false;
@@ -25,7 +28,7 @@ const store = createStore({
 })
 
 
-console.log(store.state.toggleModal)
+// console.log(store.state.toggleModal, store.state.whichModal);
 
 const app = createApp(App)
 

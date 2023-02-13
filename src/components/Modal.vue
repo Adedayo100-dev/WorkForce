@@ -3,33 +3,49 @@
         <div class="modal-overlay" :class="{show: toggleModal}">
             <div class="modal-static-container">
                 <div class="modal-dynamic-content">
-                    <!-- <component :is=''></component> -->
-                    <div class="confirm-dialog-box">
-                        <h3>Confirm</h3>
-                        <p>Are you sure you wanna proceed?</p>
-                        <div class="confirm-button-container">
-                            <button @click="$emit('close', 'Modal cancelled')">No</button>
-                            <button>
-                                <router-link to="/signedout">Yes</router-link>
-                            </button>
-                        </div>
+                    <component :is='currentModal'></component>
+                    <div class="confirm-button-container">
+                        <component :is='modalSubmitType'></component> 
                     </div>
                     <!-- Content goes in here -->
                 </div>
             </div>
         </div>
     </transition>
-    
 </template>
 
 <script>
+import NewShift from '../components/NewShift.vue'
+import DialogBox from '../components/DialogBox.vue'
+import FormSubmit from '../components/FormSubmit.vue'
+import DialogSubmit from '../components/DialogSubmit.vue'
+import { mapState } from 'vuex'
+
 export default {
     name: 'modal',
-    emits: ['close']
+    components: {
+        NewShift, DialogBox, FormSubmit, DialogSubmit
+    },
+    props: ['modalOptions'],
+    data() {
+        return {
+            modalSubmitType: FormSubmit,
+        }
+    },
+    computed: mapState({
+            currentModal: state => state.whichModal,
+    }),
+    emits: ['close'],
+    // created(){
+    //     console.log(this.$store.state.whichModal, "created");
+    // },
+    // updated() {
+    //     console.log("updated modal to", this.currentModal);
+    // },
 }
 </script>
 
-<style scoped>
+<style>
     .modal-overlay.show{
         /* display: flex; */
     }
@@ -49,10 +65,11 @@ export default {
     }
     .modal-overlay h3{
         margin-top: 0;
+        margin-bottom: 14px;
     }
     .modal-static-container{
         background: white;
-        padding: 18px 24px;
+        padding: 24px 24px;
         border-radius: 6px;
         box-shadow: 0 12px 15px 0 rgb(0 0 0 / 24%);
         font-size: 14px;
@@ -65,12 +82,20 @@ export default {
     .confirm-button-container{
         display: flex;
         justify-content: end;
-        column-gap: 8px;
+        column-gap: 12px;
+        margin-top: 24px;
     }
     .confirm-button-container button{
-        padding: 8px 20px;
         border: none;
-        border-radius: 4px;
+        /* border-radius: 4px; */
+        padding: 10px 40px;
+    }
+    .green-confirm-button{
+        background-color: #0a793b;
+        color: white;
+    }
+    .green-confirm-button a{
+        color: white;
     }
 
     /* Modal Transition */
