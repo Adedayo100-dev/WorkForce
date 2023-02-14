@@ -1,23 +1,12 @@
 <script>
-// mychart.js
-// import { Highcharts } from 'highcharts/modules/exporting';
-// Load module after Highcharts is loaded
-// require('highcharts/modules/exporting')(Highcharts);
-// import 'https://code.highcharts.com/highcharts.js'
-// import 'https://code.highcharts.com/modules/exporting.js'
-// import 'https://code.highcharts.com/modules/export-data.js'
-// import 'https://code.highcharts.com/modules/accessibility.js'
-// import 'https://code.highcharts.com/es-modules/Series/Line/LineSeries.js';
-// import 'https://code.highcharts.com/es-modules/Series/Column/ColumnSeries.js';
-// var Highcharts = require('highcharts');  
+import HighchartsVue from 'highcharts-vue'
+import Highcharts from 'highcharts'
+
 
 // Example to create a simple column chart in a div#container:
 // const myChart = new Chart('container');
 // const mySeries = new PieSeries();
 // mySeries.init(myChart, { data: [1, 2, 3] });
-// import Highcharts from 'highcharts'
-// import Chart from 'highcharts/es-modules/Core/Chart/Chart.js';
-// import PieSeries from 'highcharts/es-modules/Series/Pie/PieSeries.js';
 
 // Chart(Highcharts);
 // PieSeries(Highcharts);
@@ -88,6 +77,10 @@
 // });
 
 export default {
+    name: 'GraphicalView',
+    components: {
+        HighchartsVue
+    },
     props: {
         worksList: {
             type: Array
@@ -95,14 +88,40 @@ export default {
         totalShifts: {
             type: Number
         }
+    },
+    data() {
+        return {
+            chartOptions: {
+                chart: {
+                    type: 'line'
+                },
+                title: {
+                    text: 'My Chart'
+                },
+                series: [
+                    {
+                        name: 'My Series',
+                        data: [1, 2, 3, 4, 5]
+                    }
+                ]
+            }
+        }
+    },
+    mounted() {
+        Highcharts.setOptions({
+        lang: {
+            thousandsSep: ','
+        }
+        })
     }
 }
 </script>
 
 <template>
-    <div>
+    <highcharts :options="chartOptions" />
+    <!-- <div>
         <div class="render-canvas" id='container'></div>
-    </div>
+    </div> -->
 </template>
 
 
