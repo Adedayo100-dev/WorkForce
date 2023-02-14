@@ -7,7 +7,7 @@
     // props: ['totalPay'],
     data() {
       return {
-        totalPay: 13241.37,
+        totalPay: 17832.71,
       }
     },
   }
@@ -15,7 +15,7 @@
 
 <template>
     <div class="jobs">
-      <h3><span>{{$route.meta.title}}</span> <span class="title_total-pay">CAD {{totalPay}}</span></h3>
+      <h3><span>{{$route.meta.title}}</span> <span class="title_total-pay">CAD {{$formatNum(totalPay)}}</span></h3>
         <div id="tabs">
             <SubNavTab />
             <div id="tab-contents">

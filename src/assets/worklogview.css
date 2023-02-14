@@ -55,7 +55,7 @@ tbody{
     justify-content: end;
 }
 .green-confirm-button{
-    background-color: #0a793b;
+    background-color: #1B5E20;
     color: white;
 }
 .green-confirm-button:hover{
@@ -124,9 +124,9 @@ tbody{
     background-color: rgba(32,33,36,0.049);
     border-radius: 4px;
 }
-.work-log-flank-right a{
-    /* color: darkgrey; */
-}
+/* .work-log-flank-right a{
+    color: darkgrey;
+} */
 .work-shifts-total-box{
     padding-top: 12px;
 }

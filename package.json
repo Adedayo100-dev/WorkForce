@@ -9,10 +9,9 @@
   "dependencies": {
     "audit": "^0.0.6",
     "express": "^4.18.2",
-    "highcharts": "^10.3.2",
-    "mitt": "^3.0.0",
+    "highcharts": "^10.3.3",
+    "highcharts-vue": "^1.4.0",
     "mongoose": "^6.7.2",
-    "tiny-emitter": "^2.1.0",
     "vue": "^3.2.38",
     "vue-router": "^4.1.5",
     "vuex": "^4.0.2"

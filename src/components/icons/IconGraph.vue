@@ -4,7 +4,6 @@
 <style scoped>
     svg{
         height: 24px;
-        
     }
     svg path{
         stroke: darkgray;

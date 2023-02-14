@@ -1,7 +1,6 @@
 <script>
 import WorkLogItem from '../../../components/WorkLogItem.vue'
 import UnseeIcon from '../../../components/icons/IconUnview.vue'
-import FormatNumMixin from '../../../mixins/toLocaleString.js'
 
 
 export default {
@@ -22,7 +21,6 @@ export default {
             required: true,
         }
     },
-    mixins: [FormatNumMixin],
 }
 </script>
 

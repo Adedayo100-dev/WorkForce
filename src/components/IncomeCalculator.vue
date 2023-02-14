@@ -1,5 +1,5 @@
 <script>
-import FormatNumMixin from '../mixins/toLocaleString.js'
+// import FormatNumMixin from '../mixins/toLocaleString.js'
 
 export default {
     name: 'IncomeCalculator',
@@ -61,7 +61,7 @@ export default {
             
         }
     },
-    mixins: [FormatNumMixin],
+    // mixins: [FormatNumMixin],
 }
 </script>
 
@@ -97,7 +97,7 @@ export default {
                 </tr>
                 <tr class="text-bold">
                     <td>Gross Income</td>
-                    <td colspan="3" class="text-end">${{ formatNum(grossIncome) }}</td>
+                    <td colspan="3" class="text-end">${{ $formatNum(grossIncome) }}</td>
                     
                 </tr>
                 <tr>
@@ -122,7 +122,7 @@ export default {
                 </tr>
                 <tr class="text-bold border-none">
                     <td>Net Income</td>
-                    <td colspan="3" class="text-end">${{ formatNum(netIncome) }}</td>
+                    <td colspan="3" class="text-end">${{ $formatNum(netIncome) }}</td>
                 </tr>
             </tbody>
         </table> 

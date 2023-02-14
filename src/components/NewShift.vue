@@ -7,6 +7,7 @@
                 <label for="">Location:</label>
                 <select v-model="formValues.inputLocation" name="shiftlocation" id="" class="form-control_input">
                     <option disabled value="">Location</option>
+                    <option value="Minova">Minova</option>
                     <option value="Amazon">Amazon</option>
                     <option value="Ferrero">Ferrero</option>
                     <option value="Aspire">Aspire</option>
@@ -51,7 +52,7 @@ export default {
             formValues:{
                 inputLocation: '',
                 inputDate: '',
-                inputPay: '',
+                inputPay: 0,
                 inputPayStatus: false,
                 shiftDescription: '',
             }   

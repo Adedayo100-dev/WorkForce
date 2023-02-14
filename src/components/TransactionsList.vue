@@ -1,5 +1,4 @@
 <script>
-import FormatNumMixin from '../mixins/toLocaleString.js'
 
 export default {
     data() {
@@ -10,9 +9,20 @@ export default {
     props: {
         transactions: {
             type: Array
-        }
+        },
+        nairaPaid: {
+            type: Number,
+            required: true,
+        },
     },
-    mixins: [FormatNumMixin],
+    computed: {
+        dollarPaid(){
+            return 1600;
+        },
+    },
+    updated(){
+        console.log(this.nairaPaid);
+    },
 }
 </script>
 
@@ -21,21 +31,22 @@ export default {
         <div>
             <table>
                 <tr v-for="item in transactions" :key="item.id">
-                    <td class="num-output">{{formatNum(item.amount)}}</td>
+                    <td class="num-output">{{$formatNum(item.amount)}}</td>
                     <td><pre> * </pre></td>
                     <td class="num-output">{{item.rate}}</td>
                     <td><pre> = </pre></td>
-                    <td class="num-output">{{formatNum(item.amount * item.rate)}}</td>
+                    <td class="num-output">{{$formatNum(item.amount * item.rate)}}</td>
                 </tr>
                 <tr>
                     <td colspan="5">------------------------</td>
                 </tr>
                 <tr class="transaction-sum">
-                    <td class="num-output">1200</td>
+                    <td class="num-output">{{$formatNum(dollarPaid) }}</td>
                     <td><pre> * </pre></td>
                     <td>---</td>
                     <td><pre> = </pre></td>
-                    <td class="num-output">{{formatNum(598000)}}</td>
+                    <td class="num-output">{{$formatNum(this.nairaPaid)}}</td>
+                    <!-- <td class="num-output"></td> -->
                 </tr>
             </table>
         </div>

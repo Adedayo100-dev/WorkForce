@@ -1,6 +1,5 @@
 <script>
 import FilterIcon from '../../../components/icons/IconFilter.vue'
-import FormatNumMixin from '../../../mixins/toLocaleString.js'
 import TransactionsList from '../../../components/TransactionsList.vue'
 import IncomeCalculator from '../../../components/IncomeCalculator.vue'
 import TableIcon from '../../../components/icons/IconTable.vue'
@@ -16,9 +15,10 @@ export default {
         return {
             worksList: [],
             transactions: [],
-            nairaPaid: 598000,
+            // nairaPaid: 822000,
             nairaTotal: 2000000,
-            exchangeRate: 540,
+            dollarTotal: 2500,
+            exchangeRate: 560,
         }
     },
     created() {
@@ -32,6 +32,15 @@ export default {
             .catch(err => console.log(err.message));
     },
     computed: {
+        nairaPaid(){
+            // return parseFloat(this.transactions.reduce((acc, item) => acc + (item.amount * item.rate), 0).toFixed(2));
+            let sum = 0;
+            for (const entry of Object.values(this.transactions)) {
+                sum += (entry.amount * entry.rate);
+            }
+            return sum;
+            // return 822000;
+        },
         totalPay() {
             return parseFloat(this.worksList.reduce((acc, item) => acc + item.pay, 0).toFixed(2));
         },
@@ -45,10 +54,9 @@ export default {
             return numDates;
         },
         paidPercentage(){
-            return this.nairaPaid / this.nairaTotal*100;
+            return (this.nairaPaid / this.nairaTotal*100).toFixed(2);
         }
     },
-    mixins: [FormatNumMixin],
     methods: {
         openModal(modalType) {
             this.$store.commit('openModal', modalType);
@@ -139,27 +147,28 @@ export default {
                             </form>
                             <br>
                             <div>
-                                <div>
-                                    <TransactionsList :transactions="transactions"/>
+                                <div class="transactions-binder">
+                                    <TransactionsList :transactions="transactions" :nairaPaid="nairaPaid"/>
+                                    <div class="paid-percentage-box">
+                                        <h3>{{paidPercentage}}%</h3>
+                                        <span>paid</span>
+                                    </div>
                                 </div>
                                 
                                 <br>
+
                                 <div>
                                     <span>Remaining: </span>
-                                    <p>₦2000000 - ₦598000 = ₦{{formatNum(1402000)}}</p>
-                                    <p>₦1402000 / 545 = ${{formatNum(2572.48)}}</p>
+                                    <p>₦{{ $formatNum(nairaTotal) }} - ₦{{$formatNum(nairaPaid)}} = ₦{{$formatNum(1402000)}}</p>
+                                    <p>₦1402000 / {{exchangeRate}} = ${{$formatNum(2572.48)}}</p>
                                 </div>
                             </div>
                         </div>
                         <hr class="">
                         <div class="second-tithe-box">
                             
-                            <div class="paid-percentage-box">
-                                <h3>{{paidPercentage}}%</h3>
-                                <span>paid</span>
-                            </div>
                             <p>
-                                {{formatNum(75459384)}}
+                                {{$formatNum(75459384)}}
                             </p>
                         </div>
                     </div>
@@ -171,5 +180,8 @@ export default {
 </template>
 
 <style>
-   
+   .transactions-binder{
+        display: flex;
+        gap: 28px;
+   }
 </style>

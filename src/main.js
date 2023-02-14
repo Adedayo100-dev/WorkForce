@@ -1,5 +1,7 @@
 import { createApp } from 'vue'
 import { createStore } from 'vuex'
+import { formatNum } from './mixins/toLocaleString.js'
+
 
 import App from './App.vue'
 import router from './router'
@@ -30,8 +32,11 @@ const store = createStore({
 
 // console.log(store.state.toggleModal, store.state.whichModal);
 
+
+
 const app = createApp(App)
 
+app.config.globalProperties.$formatNum = formatNum;
 app.use(router)
 app.use(store)
 

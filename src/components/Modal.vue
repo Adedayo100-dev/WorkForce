@@ -90,13 +90,13 @@ export default {
         /* border-radius: 4px; */
         padding: 10px 40px;
     }
-    .green-confirm-button{
+    /* .green-confirm-button{
         background-color: #0a793b;
         color: white;
     }
     .green-confirm-button a{
         color: white;
-    }
+    } */
 
     /* Modal Transition */
     .modal-enter-from {
