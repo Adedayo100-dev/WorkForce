@@ -1,5 +1,6 @@
 <script>
 import FilterIcon from '../../../components/icons/IconFilter.vue'
+import AddIcon from '../../../components/icons/IconAdd.vue'
 import TransactionsList from '../../../components/TransactionsList.vue'
 import IncomeCalculator from '../../../components/IncomeCalculator.vue'
 import TableIcon from '../../../components/icons/IconTable.vue'
@@ -8,7 +9,7 @@ import GraphIcon from '../../../components/icons/IconGraph.vue'
 
 export default {
     components: {
-        FilterIcon, TransactionsList, IncomeCalculator, TableIcon, GraphIcon
+        FilterIcon, TransactionsList, IncomeCalculator, TableIcon, GraphIcon, AddIcon
     },
     props: ['title'],
     data() {
@@ -87,7 +88,8 @@ export default {
                     Filter <FilterIcon />
                 </button>
                 <button class="add-shift_button green-confirm-button" @click="openModal('NewShift')">
-                    <span>+  Add <span class="responsive-toggle">Work</span> Shift</span>
+                    <AddIcon />
+                    <span>  Add <span class="responsive-toggle">Work</span> Shift</span>
                 </button>
             </div>
             <div class="work-log-filter-box">

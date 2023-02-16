@@ -66,6 +66,7 @@ tbody{
     color: white;
 }
 .filter_button, .add-shift_button{
+    display: flex;
     border: none;
     border-radius: 4px;
     padding: 10px 30px;

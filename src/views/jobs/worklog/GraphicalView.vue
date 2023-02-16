@@ -14,12 +14,7 @@ import {Chart} from 'highcharts-vue'
 
 
 // Example to create a simple column chart in a div#container:
-// const myChart = new Chart('container');
-// const mySeries = new PieSeries();
-// mySeries.init(myChart, { data: [1, 2, 3] });
 
-// Chart(Highcharts);
-// PieSeries(Highcharts);
 
 // Highcharts.chart('container', {
 //     chart: {
@@ -89,7 +84,7 @@ import {Chart} from 'highcharts-vue'
 export default {
     name: 'GraphicalView',
     components: {
-        Highcharts, highcharts: Chart
+        highcharts: Chart //HighCharts (component registration) was removed.
     },
     props: {
         worksList: {
@@ -106,14 +101,16 @@ export default {
                     plotBackgroundColor: null,
                     plotBorderWidth: null,
                     plotShadow: false,
-                    type: 'pie'
+                    zoomType: "x",
+                    type: 'line'
                 },
-                // series: [{
-                //     data: [1,2,3] // sample data
-                // }],
+                // xAxis: {
+                //     type: "datetime"
+                // },
                 title: {
                     text: 'Browser market shares in May, 2020',
-                    align: 'left'
+                    align: 'center',
+                    verticalAlign: 'bottom'
                 },
                 tooltip: {
                     pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -124,48 +121,63 @@ export default {
                     }
                 },
                 plotOptions: {
-                    pie: {
-                        allowPointSelect: true,
-                        cursor: 'pointer',
-                        dataLabels: {
-                            enabled: true,
-                            format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                    histogram: {
+                        accessibility: {
+                            point: {
+                                valueDescriptionFormat: '{index}. {point.x:.3f} to {point.x2:.3f}, {point.y}.'
+                            }
                         }
-                    }
+                    },
+                    series: {
+                        label: {
+                            connectorAllowed: false
+                        },
+                        pointStart: 0
+                    },
+                    // pie: {
+                    //     allowPointSelect: true,
+                    //     cursor: 'pointer',
+                    //     dataLabels: {
+                    //         enabled: true,
+                    //         format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                    //     }
+                    // }
                 },
                 series: [{
-                    name: 'Brands',
+                    name: 'Weeks',
                     colorByPoint: true,
                     data: [{
                         name: 'Chrome',
-                        y: 70.67,
-                        sliced: true,
-                        selected: true
+                        y: 816.71,
+                        // sliced: true,
+                        // selected: true
                     }, {
                         name: 'Edge',
-                        y: 14.77
+                        y: 821.48
                     },  {
                         name: 'Firefox',
-                        y: 4.86
+                        y: 815.37
                     }, {
                         name: 'Safari',
-                        y: 2.63
+                        y: 632.94
                     }, {
                         name: 'Internet Explorer',
-                        y: 1.53
+                        y: 677.83
                     },  {
                         name: 'Opera',
-                        y: 1.40
-                    }, {
-                        name: 'Sogou Explorer',
-                        y: 0.84
-                    }, {
-                        name: 'QQ',
-                        y: 0.51
-                    }, {
-                        name: 'Other',
-                        y: 2.6
-                    }]
+                        y: 826.25
+                    }
+                    // ,{
+                    //     name: 'Sogou Explorer',
+                    //     y: 0.84
+                    // }, {
+                    //     name: 'QQ',
+                    //     y: 0.51
+                    // }, {
+                    //     name: 'Other',
+                    //     y: 2.6
+                    // }
+                    ]
                 }]
             }
         }
