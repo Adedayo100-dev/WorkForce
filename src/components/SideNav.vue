@@ -4,7 +4,7 @@
             <li>
                 <RouterLink to="/plans">
                     <div>
-                        <PlanningIcon />
+                        <TaskIcon />
                         <span v-show="navTogVal"> Plans</span>
                     </div>
                 </RouterLink>
@@ -12,7 +12,7 @@
             <li class="show">
                 <RouterLink to="/jobs">
                     <div>
-                        <JobVacancyIcon />
+                        <WorkIcon />
                         <span v-show="navTogVal"> Jobs</span>
                     </div>
                     <div class="caret-d-container" v-show="navTogVal">
@@ -74,8 +74,8 @@
 </template>
 
 <script>
-import PlanningIcon from '../components/icons/IconPlanning.vue'
-import JobVacancyIcon from '../components/icons/IconJobVacancy.vue'
+import TaskIcon from '../components/icons/IconTask.vue'
+import WorkIcon from '../components/icons/IconWork.vue'
 import BellIcon from '../components/icons/IconBell.vue'
 import CaretUpIcon from '../components/icons/IconCaretUp.vue'
 import CaretDownIcon from '../components/icons/IconCaretDown.vue'
@@ -83,7 +83,7 @@ import SettingsIcon from '../components/icons/IconSettings.vue'
 
 export default {
     components: {
-        PlanningIcon, JobVacancyIcon, BellIcon, CaretUpIcon, CaretDownIcon, SettingsIcon
+        TaskIcon, WorkIcon, BellIcon, CaretUpIcon, CaretDownIcon, SettingsIcon
     },
     data() {
         return {

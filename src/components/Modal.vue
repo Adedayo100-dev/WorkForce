@@ -17,6 +17,7 @@
 <script>
 import NewShift from '../components/NewShift.vue'
 import DialogBox from '../components/DialogBox.vue'
+import WorkDetails from '../components/WorkDetails.vue'
 import FormSubmit from '../components/FormSubmit.vue'
 import DialogSubmit from '../components/DialogSubmit.vue'
 import { mapState } from 'vuex'
@@ -24,7 +25,7 @@ import { mapState } from 'vuex'
 export default {
     name: 'modal',
     components: {
-        NewShift, DialogBox, FormSubmit, DialogSubmit
+        NewShift, DialogBox, WorkDetails, FormSubmit, DialogSubmit
     },
     props: ['modalOptions'],
     data() {

@@ -17,12 +17,12 @@ export default {
     },
     computed: {
         dollarPaid(){
-            return 1600;
+            return 2000;
         },
     },
-    updated(){
-        console.log(this.nairaPaid);
-    },
+    // updated(){
+    //     console.log(this.nairaPaid);
+    // },
 }
 </script>
 

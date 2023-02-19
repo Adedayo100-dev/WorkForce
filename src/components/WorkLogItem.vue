@@ -14,6 +14,10 @@
             }
         },
         methods: {
+            openModal(modalType) {
+                this.$store.commit('openModal', modalType);
+                // console.log(modalType, 'Modal-Opened');
+            },
             delWorkItem(id) {
                 console.log(id);
             }
@@ -22,7 +26,7 @@
 </script>
 
 <template>
-    <tr>
+    <tr @click="openModal('WorkDetails')">
         <td>
             <div>
                 <div class="work-logo_image-container">
@@ -58,7 +62,7 @@
             </div>
         </td>
         <td class="pay-output" :class="[payStatus? 'paid' : 'unpaid']"> 
-            <span>{{pay}}</span> 
+            <span>{{$formatNum(pay)}}</span> 
         </td>
         <!-- <td @click="delWorkItem(idx)">DELETE</td>
         <td @click="editWorkItem(idx)">
