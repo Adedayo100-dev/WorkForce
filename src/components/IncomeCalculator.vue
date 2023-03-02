@@ -53,9 +53,9 @@ export default {
             return parseFloat((this.grossIncome - this.netIncome).toFixed(2));
         },
         netIncome(){
-            if (this.hoursWorked > 42) {
+            if (this.hoursWorked > 43) {
                 return parseFloat(((this.grossIncome * 0.643576) + 145.881).toFixed(2));
-            } else if(this.hoursWorked <= 42) {
+            } else if(this.hoursWorked <= 43) {
                 return parseFloat(((this.grossIncome * 0.738687) + 53.4623).toFixed(2));
             }
             

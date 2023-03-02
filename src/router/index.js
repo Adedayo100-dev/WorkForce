@@ -5,7 +5,6 @@ import JobsIndx from '../views/jobs/JobsIndx.vue'
 import AllJobs from '../views/jobs/AllJobs.vue'
 import Tabular from '../views/jobs/worklog/TabularView.vue'
 import Graphical from '../views/jobs/worklog/GraphicalView.vue'
-// import WorkLog from '../views/WorklogView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -45,6 +44,16 @@ const router = createRouter({
           path: 'taxfiling',
           name: 'taxfiling',
           component: () => import('../views/TaxFiling.vue'),
+        },
+        {
+          path: 'wish-list',
+          name: 'wish-list',
+          component: () => import('../views/WishList.vue'),
+        },
+        {
+          path: 'bought-items',
+          name: 'bought-items',
+          component: () => import('../views/BoughtItems.vue'),
         }
       ],
     },

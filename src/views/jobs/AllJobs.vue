@@ -23,6 +23,22 @@
                     <td>3:30pm - 12:30am</td>
                 </tr>
                 <tr>
+                    <td>Bell Network Technician</td>
+                    <td><input type="checkbox" name="" id="" checked> Email & Phone</td>
+                    <td><input type="checkbox" name="" id="" ></td>
+                    <td><input type="checkbox" name="" id="" ></td>
+                    <td>17.68</td>
+                    <td><span class="underlined">7:00pm - 7:00am</span> <br> 7:00am - 7:00pm</td>
+                </tr>
+                <tr>
+                    <td>Remote Tech Jobs</td>
+                    <td><input type="checkbox" name="" id="" checked> Email & Phone</td>
+                    <td><input type="checkbox" name="" id="" ></td>
+                    <td><input type="checkbox" name="" id="" ></td>
+                    <td>17.68</td>
+                    <td><span class="underlined">7:00pm - 7:00am</span> <br> 7:00am - 7:00pm</td>
+                </tr>
+                <tr>
                     <td>Kelly</td>
                     <td><input type="checkbox" name="" id="" checked> Email & Phone</td>
                     <td><input type="checkbox" name="" id="" ></td>

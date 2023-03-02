@@ -13,6 +13,12 @@
         <li>
           <router-link to="/plans/taxfiling">T4</router-link>
         </li>
+        <li>
+          <router-link to="/plans/wish-list">Wish List</router-link>
+        </li>
+        <li>
+          <router-link to="/plans/bought-items">Bought Items</router-link>
+        </li>
       </ul>
       <div id="tab-contents">
         <router-view>

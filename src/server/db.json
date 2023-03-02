@@ -50,7 +50,7 @@
             {"id": 47, "loc": "Upseat", "dates": ["Thur 01 Dec, 2022"], "hours": [8], "pay": 129.01, "payStatus": true},
             {"id": 48, "loc": "Amazon", "dates": ["Fri 02 Dec, 2022", "Sat 03 Dec, 2022"], "hours": [8.5, 8.5], "pay": 270.81, "payStatus": true},
             {"id": 49, "loc": "Amazon", "dates": ["Sat 10 Dec, 2022"], "hours": [8.5], "pay": 147.03, "payStatus": true},
-            {"id": 50, "loc": "Amazon", "dates": ["Sat 16 Dec, 2022","Sat 17 Dec, 2022"], "hours": [8.5, 8.5], "hours": [8.5, 8.5], "pay": 270.59, "payStatus": true},
+            {"id": 50, "loc": "Amazon", "dates": ["Sat 16 Dec, 2022","Sat 17 Dec, 2022"], "hours": [8.5, 8.5], "pay": 270.59, "payStatus": true},
             {"id": 51, "loc": "Aspire", "dates": ["Mon 19 Dec, 2022"], "hours": [12], "pay": 170, "payStatus": false},
             {"id": 52, "loc": "Amazon", "dates": ["Fri 23 Dec, 2022"], "hours": [8.5], "pay": 212.03, "payStatus": true},
             {"id": 53, "loc": "Minova", "dates": ["Fri 06 Jan, 2023"], "hours": [8.5], "pay": 816.71, "payStatus": true},
@@ -60,8 +60,9 @@
             {"id": 57, "loc": "Minova", "dates": ["Sun 22 Jan, 2023", "Mon 23 Jan, 2023", "Tue 24 Jan,2023", "Wed 25 Jan,2023","Thur 26 Jan,2023"], "hours": [8,8.5,8.5,8.5,8.5],  "pay": 632.94, "payStatus": true},
             {"id": 58, "loc": "Minova", "dates": ["Mon 31 Jan, 2023", "Tue 02 Feb, 2023", "Wed 03 Feb, 2023","Thur 04 Feb, 2023","Fri 05 Feb, 2023"], "hours": [9,9,8.5,8.5,8.5],  "pay": 677.83, "payStatus": true},
             {"id": 59, "loc": "Minova", "dates": ["Sun 05 Feb, 2023", "Mon 06 Feb, 2023", "Tue 07 Feb, 2023", "Wed 08 Feb, 2023","Thur 09 Feb, 2023","Fri 10 Feb, 2023"], "hours": [8,8.5,8.5,8.5,9,8.5],  "pay": 826.25, "payStatus": true},
-            {"id": 60, "loc": "Minova", "dates": ["Mon 14 Feb, 2023", "Tue 15 Feb, 2023", "Wed 16 Feb, 2023","Thur 17 Feb, 2023","Fri 18 Feb, 2023"], "hours": [9.5,9.5,9.5,8.5,8.5],  "pay": 0, "payStatus": false}
-
+            {"id": 60, "loc": "Minova", "dates": ["Mon 14 Feb, 2023", "Tue 15 Feb, 2023", "Wed 16 Feb, 2023","Thur 17 Feb, 2023","Fri 18 Feb, 2023"], "hours": [9.5,9.5,9.5,8.5,8.5],  "pay": 699.81, "payStatus": true},
+            {"id": 61, "loc": "Minova", "dates": ["Mon 20 Feb, 2023", "Tue 21 Feb, 2023", "Wed 22 Feb, 2023","Thur 23 Feb, 2023","Fri 24 Feb, 2023"], "hours": [0,8.5,8.5,8.5,8.5],  "pay": 651.56, "payStatus": false},
+            {"id": 62, "loc": "Minova", "dates": ["Tue 28 Feb, 2023", "Wed 01 Feb, 2023","Thur 02 Feb, 2023","Fri 03 Feb, 2023"], "hours": [],  "pay": 0, "payStatus": true}
         ]
     },
     "shopping": [
@@ -108,26 +109,49 @@
         {"id": 41, "shopItem": "Pots", "where": "Walmart"},
         {"id": 42, "shopItem": "Electronics", "where": "Walmart"},
         {"id": 43, "shopItem": "Rod", "where": "Walmart"},
-        {"id": 44, "shopItem": "Heater Aisle 20", "where": "Walmart"},
-        {"id": 45, "shopItem": "Pots", "where": "Walmart"}
+        {"id": 44, "shopItem": "Humidifier Aisle 20", "where": "Canadian Tore"},
+        {"id": 45, "shopItem": "Adjustable Computer Keyboard & Mouse Platform Tray Deluxe Under Table Desk Mount", "where": ""},
+        {"id": 46, "shopItem": "JLab Go Wireless Keyboard", "where": "Canadian Tire"}
     ],
     "transactions": [
         {"id": 1, "amount": 1000, "rate": 490},
         {"id": 2, "amount": 200, "rate": 540},
         {"id": 3, "amount": 400, "rate": 560},
-        {"id": 4, "amount": 400, "rate": 564}
+        {"id": 4, "amount": 400, "rate": 564},
+        {"id": 5, "amount": 280, "rate": 556},
+        {"id": 6, "amount": 220, "rate": 0}
     ],
     "prices": [
         {"id": 1, "item":"Orange juice", "price": "2.47"},
         {"id": 2, "item":"Del Monte", "price": "1.77"},
         {"id": 3, "item":"Guava", "price": "3.88"},
         {"id": 4, "item":"GV ice-cream", "price": "3.97"},
-        {"id": 5, "item":"", "price": ""},
-        {"id": 6, "item":"", "price": ""},
-        {"id": 7, "item":"", "price": ""},
-        {"id": 8, "item":"", "price": ""},
-        {"id": 9, "item":"", "price": ""},
-        {"id": 10, "item":"", "price": ""}
+        {"id": 5, "item":"Bournvita 900g", "price": "20"},
+        {"id": 6, "item":"VITAMALT Classic 6x330ml", "price": "10"},
+        {"id": 7, "item":"Peak Milk Powder", "price": "15"},
+        {"id": 8, "item":"Checkers Vanilla Custard", "price": "9.99"},
+        {"id": 9, "item":"Milo Cube", "price": "8"},
+        {"id": 10, "item":"Burger Peanut", "price": "1.25"},
+        {"id": 11, "item":"Habanero", "price": "11.69"},
+        {"id": 12, "item":"Yam", "price": "12.99"},
+        {"id": 13, "item":"GV CTNDY", "price": "3.97"},
+        {"id": 14, "item":"cookies", "price": "0.65"},
+        {"id": 15, "item":"BBQ Sauce", "price": "3.27"},
+        {"id": 16, "item":"Orange Crush", "price": "6.47"},
+        {"id": 17, "item":"Kiju 4-pk man/org", "price": "1.87"},
+        {"id": 18, "item":"HDZ Bar Cho", "price": "4.97"},
+        {"id": 19, "item":"HST", "price": "0.13"},
+        {"id": 20, "item":"Turkey Drumstick 5kg", "price": "24.99"},
+        {"id": 22, "item":"Curry Powder", "price": "1.99"},
+        {"id": 23, "item":"Thyme", "price": "1.99"},
+        {"id": 24, "item":"Silk Almond Sweet", "price": "2.77"},
+        {"id": 25, "item":"Carnation", "price": "1.47"},
+        {"id": 26, "item":"Pepper Hab", "price": "3.97"},
+        {"id": 27, "item":"Orange Biscuit", "price": "0.65"},
+        {"id": 28, "item":"", "price": ""},
+        {"id": 29, "item":"", "price": ""},
+        {"id": 30, "item":"", "price": ""},
+        {"id": 21, "item":"Ola Ola Poundo Yam 10kg", "price": "42"}
     ],
     "months": [
         {"id": 1, "monthName":"Jan"},
