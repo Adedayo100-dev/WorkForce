@@ -26,10 +26,10 @@ fs.readFile("./db.json", "utf8", (err, data) => {
 
 
 // Handle CORS
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    next();
-});
+// app.use((req, res, next) => {
+//     res.header('Access-Control-Allow-Origin', '*');
+//     next();
+// });
 
 app.get('/', (req, res) => {
     res.send('Hello World of Dayo! This is all API');

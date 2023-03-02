@@ -2,7 +2,7 @@
     <div class="new-shift">
         <h3>Add New Shift</h3>
         
-        <form @submit="submitNewShift" action="" id="addShift" class="">
+        <form @submit.prevent="createShift" action="" id="addShift" class="">
             <div class="form-group">
                 <label for="">Location:</label>
                 <select v-model="formValues.inputLocation" name="shiftlocation" id="" class="form-control_input">
@@ -26,7 +26,7 @@
             </div>
             <div class="form-group">
                 <label for="">Pay:</label>
-                <input v-model="formValues.inputPay" type="number" name="shiftpay" id=""  class="form-control_input" min="0" step=".01">
+                <input v-model.number="formValues.inputPay" type="number" name="shiftpay" id=""  class="form-control_input" min="0" step=".01">
             </div>
             <div class="form-group">
                 <label for="">Pay Status:</label>
@@ -52,15 +52,14 @@ export default {
             formValues:{
                 inputLocation: '',
                 inputDate: '',
-                inputPay: 0,
+                inputPay: null,
                 inputPayStatus: false,
                 shiftDescription: '',
             }   
         }
     },
     methods: {
-        submitNewShift(event){
-            event.preventDefault();
+        createShift(){
             console.log('Form values', this.formValues)
         }
     },

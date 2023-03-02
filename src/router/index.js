@@ -4,7 +4,7 @@ import PlansIndx from '../views/PlansIndx.vue'
 import JobsIndx from '../views/jobs/JobsIndx.vue'
 import AllJobs from '../views/jobs/AllJobs.vue'
 import Tabular from '../views/jobs/worklog/TabularView.vue'
-import Graphical from '../views/jobs/worklog/GraphicalView.vue'
+// import Graphical from '../views/jobs/worklog/GraphicalView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -81,22 +81,17 @@ const router = createRouter({
           children: [
             {
               path: 'tabular',
-              name: Tabular,
+              name: 'Tabular',
               component:  Tabular,
             },
             {
               path: 'graphical',
-              name: Graphical,
+              name: 'Graphical',
               component: () => import('../views/jobs/worklog/GraphicalView.vue')
             }
           ]
         },
-        {
-          path: 'newshift',
-          name: 'newshift',
-          component: () => import('../views/jobs/NewShiftView.vue'),
-          meta: {title: 'New Shift'}
-        },
+
         {
           // UserProfile will be rendered inside User's <router-view>
           // when /user/:id/profile is matched

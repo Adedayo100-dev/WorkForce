@@ -5,6 +5,7 @@ import TransactionsList from '../../../components/TransactionsList.vue'
 import IncomeCalculator from '../../../components/IncomeCalculator.vue'
 import TableIcon from '../../../components/icons/IconTable.vue'
 import GraphIcon from '../../../components/icons/IconGraph.vue'
+import axios from 'axios'
 
 
 export default {
@@ -20,17 +21,28 @@ export default {
             nairaTotal: 2000000,
             dollarTotal: 2500,
             exchangeRate: 560,
+            errorMsg: '',
+            sampleSub: {id: '7', amount: 220, rate: 0}
         }
     },
     created() {
-        fetch('http://localhost:3000/api/worksList')
-            .then(res => res.json())
-            .then(data => this.worksList = data)
-            .catch(err => console.log(err.message));
-        fetch('http://localhost:3000/api/transactions')
-            .then(res => res.json())
-            .then(data => this.transactions = data)
-            .catch(err => console.log(err.message));
+        axios.get('http://localhost:3000/api/worksList')
+            .then((res) => {
+                this.worksList = res.data;
+            })
+            .catch((err) => {
+                console.log(err.message)
+                this.errorMsg = 'error retrieving data';
+            });
+        axios.get('http://localhost:3000/api/transactions')
+            .then((res) => {
+                this.transactions = res.data;
+                console.log(res.data);
+            })
+            .catch((err) => {
+                console.log(err.message)
+            });
+        
     },
     computed: {
         nairaPaid(){
@@ -62,7 +74,12 @@ export default {
         openModal(modalType) {
             this.$store.commit('openModal', modalType);
             // console.log(modalType, 'Modal-Opened');
-        }
+
+            // POSTING
+            axios.post('http://localhost:3000/api/transactions', this.sampleSub)
+                .then(res => console.log(res))
+                .catch(err => console.log(err))
+            }
     },
 }
 </script>
