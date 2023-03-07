@@ -1,31 +1,31 @@
 const express = require('express');
 const dotenv = require('dotenv').config();
 const {errorHandler} = require('./middleware/errorMiddleware');
+const connectDB  = require('./config/db');
+// const path = require('path');
+
+connectDB()
+
 const app = express();
-const fs = require('fs');
-const path = require('path');
-const mongoose = require('mongoose');
 const cors = require('cors');
 
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
-var shoppingList;
-var transactions;
 
 // REad db.json
-fs.readFile("./db.json", "utf8", (err, data) => {
-    if (err) throw err;
-    try {
-        let dbObj = JSON.parse(data);
-        console.log(dbObj.jobs.worksList);
-        worksList = dbObj.jobs.worksList;
-        shoppingList = dbObj.shopping;
-        transactions = dbObj.transactions;
-    } catch (error) {
-        console.log('Error parsing JSON', err);
-    }
-});
+// fs.readFile("./db.json", "utf8", (err, data) => {
+//     if (err) throw err;
+//     try {
+//         let dbObj = JSON.parse(data);
+//         console.log(dbObj.jobs.worksList);
+//         worksList = dbObj.jobs.worksList;
+//         shoppingList = dbObj.shopping;
+//         transactions = dbObj.transactions;
+//     } catch (error) {
+//         console.log('Error parsing JSON', err);
+//     }
+// });
 
 
 // Handle CORS

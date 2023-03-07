@@ -1,15 +1,17 @@
+const asyncHandler = require('express-async-handler');
+
 // @desc    Get WorksList
 // @route   GET /api/workslist
 // @access  Private
-const getWorksList = async (req, res) => {
+const getWorksList = asyncHandler(async (req, res) => {
     res.status(200).json({message: 'Get WorksList'});
     // res.send(worksList);
-}
+})
 
 // @desc    Set WorksList
 // @route   POST /api/workslist
 // @access  Private
-const setWorksList = async (req, res) => {
+const setWorksList = asyncHandler(async (req, res) => {
     if (!req.body.text) {
         res.status(400)
         throw new Error('Pleae add a text field');
@@ -25,15 +27,15 @@ const setWorksList = async (req, res) => {
     // };
     // worksList.push(newWorksList);
     // res.send(worksList);
-}
+})
 
 // @desc    Update WorksList
 // @route   PUT /api/workslist/:id
 // @access  Private
-const updateWorksList = async (req, res) => {
+const updateWorksList = asyncHandler(async (req, res) => {
     res.status(200).json({ message: `Update goal ${req.params.id}`})
     // res.send(worksList);
-}
+})
 
 // @desc    Get WorksList
 // @route   GET /api/workslist
@@ -46,10 +48,10 @@ const updateWorksList = async (req, res) => {
 // @desc    Delete WorksList
 // @route   DELETE /api/workslist
 // @access  Private
-const deleteWorksList = async (req, res) => {
+const deleteWorksList = asyncHandler(async (req, res) => {
     res.status(200).json({ message: `Delete goal ${req.params.id}`})
     // res.send(worksList);
-}
+})
 
 
 

@@ -1,3 +1,5 @@
+const asyncHandler = require('express-async-handler');
+
 // @desc    Get Transactions
 // @route   GET /api/workslist
 // @access  Private
