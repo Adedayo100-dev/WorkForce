@@ -1,5 +1,6 @@
 const express = require('express');
 const dotenv = require('dotenv').config();
+const {errorHandler} = require('./middleware/errorMiddleware')
 const app = express();
 const fs = require('fs');
 const path = require('path');
@@ -7,6 +8,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 app.use(express.json());
+app.use(express.urlencoded({extended: false}));
 
 var shoppingList;
 var transactions;
@@ -44,36 +46,28 @@ app.get('/', (req, res) => {
 // })
 
 // Handler for Error 500
-// app.use((err, re, res, next) => {
+// app.use((err, req, res, next) => {
 //     console.error(err.stack)
 //     res.sendFile(path.join(_dirname, '../public/500.html'))
 // })
 
 
 // WorkShifts API Route Section
-app.use('/api/worksList', require('./routes/worksListRoutes'));
+
+app.use('/api/worksList', require('./routes/worksRoutes'));
+
 
 // Shopping List API section
 
-app.get('/api/shoppingList', (req, res) => {
-    res.send(shoppingList);
-});
+app.use('/api/shopping', require('./routes/shoppingRoutes'));
+
 
 // Transactions API section
 
-app.get('/api/transactions', (req, res) => {
-    res.send(transactions);
-});
+app.use('/api/transactions', require('./routes/transactionsRoutes'));
 
-app.post('/api/transactions', (req, res, next) => {
-    const newTransactions = {
-        id: transactions.length + 1,
-        amount: req.body.amount,
-        rate: req.body.rate
-    };
-    transactions.push(newTransactions);
-    res.send(transactions);
-})
+
+app.use(errorHandler)
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${port}...`));

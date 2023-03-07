@@ -7,7 +7,7 @@ export default {
         }
     },
     mounted() {
-        fetch('http://localhost:3000/api/shoppingList')
+        fetch('http://localhost:3000/api/shopping')
             .then(res => res.json())
             .then(data => this.shoppingList = data)
             .catch(err => console.log(err.message));
