@@ -46,6 +46,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
     data() {
         return{
@@ -60,7 +61,10 @@ export default {
     },
     methods: {
         createShift(){
-            console.log('Form values', this.formValues)
+            console.log('Form values', this.formValues);
+            axios.post('http://localhost:3000/api/workslist', this.formValues, {headers:{"Content-Type" : "application/json"}})
+            .then((res) => console.log(res))
+            .catch((err) => console.log(err))
         }
     },
 }

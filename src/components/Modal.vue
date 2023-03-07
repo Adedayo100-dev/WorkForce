@@ -20,6 +20,7 @@ import DialogBox from '../components/DialogBox.vue'
 import WorkDetails from '../components/WorkDetails.vue'
 import FormSubmit from '../components/FormSubmit.vue'
 import DialogSubmit from '../components/DialogSubmit.vue'
+import axios from 'axios'
 import { mapState } from 'vuex'
 
 export default {

@@ -1,12 +1,13 @@
 const express = require('express');
+const dotenv = require('dotenv').config();
 const app = express();
 const fs = require('fs');
 const path = require('path');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 app.use(express.json());
 
-var worksList;
 var shoppingList;
 var transactions;
 
@@ -26,10 +27,12 @@ fs.readFile("./db.json", "utf8", (err, data) => {
 
 
 // Handle CORS
+app.use(cors());
 // app.use((req, res, next) => {
 //     res.header('Access-Control-Allow-Origin', '*');
 //     next();
 // });
+
 
 app.get('/', (req, res) => {
     res.send('Hello World of Dayo! This is all API');
@@ -46,26 +49,9 @@ app.get('/', (req, res) => {
 //     res.sendFile(path.join(_dirname, '../public/500.html'))
 // })
 
-// WorksList API Section
 
-app.get('/api/worksList', (req, res) => {
-    res.send(worksList);
-});
-
-app.post('/api/worksList', (req, res) => {
-    const worksList = {
-        id: worksList.length + 1,
-        name: req.body.name
-    };
-    worksList.push(worksList);
-    res.send(worksList);
-})
-
-app.get('api/worksList/:id', (req, res) => {
-    res.send(req.params.query);
-});
-
-
+// WorkShifts API Route Section
+app.use('/api/worksList', require('./routes/worksListRoutes'));
 
 // Shopping List API section
 
@@ -78,6 +64,16 @@ app.get('/api/shoppingList', (req, res) => {
 app.get('/api/transactions', (req, res) => {
     res.send(transactions);
 });
+
+app.post('/api/transactions', (req, res, next) => {
+    const newTransactions = {
+        id: transactions.length + 1,
+        amount: req.body.amount,
+        rate: req.body.rate
+    };
+    transactions.push(newTransactions);
+    res.send(transactions);
+})
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${port}...`));

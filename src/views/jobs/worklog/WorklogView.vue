@@ -22,7 +22,7 @@ export default {
             dollarTotal: 2500,
             exchangeRate: 560,
             errorMsg: '',
-            sampleSub: {id: '7', amount: 220, rate: 0}
+            sampleSub: {id: null, amount: 400, rate: 560}
         }
     },
     created() {
@@ -75,11 +75,11 @@ export default {
             this.$store.commit('openModal', modalType);
             // console.log(modalType, 'Modal-Opened');
 
-            // POSTING
-            axios.post('http://localhost:3000/api/transactions', this.sampleSub)
-                .then(res => console.log(res))
-                .catch(err => console.log(err))
-            }
+        // POSTING
+        axios.post('http://localhost:3000/api/transactions', this.sampleSub, {headers:{"Content-Type" : "application/json"}})
+            .then((res) => console.log(res))
+            .catch((err) => console.log(err))
+        }
     },
 }
 </script>

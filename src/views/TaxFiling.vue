@@ -27,8 +27,10 @@ export default {
                 <input v-model="newShopItem" placeholder="New Item" class="shopping-list_input"/>
             </li> -->
             <li>StaffPlus T4</li>
+            <li>School T4</li>
             <li>Blitz Personnel T4</li>
             <li>Service Master T4</li>
+            <li>GigHound T4</li>
         </ul>
     </div>
 </template>

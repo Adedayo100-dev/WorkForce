@@ -3,6 +3,7 @@
         bought items
         <ul>
             <li>Table <span>119.99</span></li>
+            <li>Humidifier <span>49.99</span></li>
         </ul>
     </div>
 </template>
