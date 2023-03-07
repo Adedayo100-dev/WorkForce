@@ -1,11 +1,12 @@
 const asyncHandler = require('express-async-handler');
+const Work = require('../models/workModel');
 
 // @desc    Get WorksList
 // @route   GET /api/workslist
 // @access  Private
 const getWorksList = asyncHandler(async (req, res) => {
-    res.status(200).json({message: 'Get WorksList'});
-    // res.send(worksList);
+    const works = await Work.find()
+    res.status(200).json(works);
 })
 
 // @desc    Set WorksList
@@ -16,7 +17,11 @@ const setWorksList = asyncHandler(async (req, res) => {
         res.status(400)
         throw new Error('Pleae add a text field');
     }
-    // res.status(200).json({message: 'Set WorksList'});
+    const work = await Work.create({
+        text: req.body.text
+    })
+
+    res.status(200).json(work)
     // const newWorksList = {
     //     id: worksList.length + 1,
     //     loc: req.body.inputLocation,
@@ -33,8 +38,18 @@ const setWorksList = asyncHandler(async (req, res) => {
 // @route   PUT /api/workslist/:id
 // @access  Private
 const updateWorksList = asyncHandler(async (req, res) => {
-    res.status(200).json({ message: `Update goal ${req.params.id}`})
-    // res.send(worksList);
+    const work = await Work.findById(req.params.id)
+
+    if(!work){
+        res.status(400)
+        throw new Error('Work not found')
+    }
+
+    const updatedGoal = await Work.findByIdAndUpdate(req.params.id, req.body, {
+        new: true,
+    })
+    
+    res.status(200).json(updatedGoal)
 })
 
 // @desc    Get WorksList
@@ -49,11 +64,16 @@ const updateWorksList = asyncHandler(async (req, res) => {
 // @route   DELETE /api/workslist
 // @access  Private
 const deleteWorksList = asyncHandler(async (req, res) => {
-    res.status(200).json({ message: `Delete goal ${req.params.id}`})
-    // res.send(worksList);
+    const work = await Work.findById(req.params.id)
+
+    if(!work){
+        res.status(400)
+        throw new Error('Work not found')
+    }
+    await work.remove()
+
+    res.status(200).json({id: req.params.id})
 })
-
-
 
 
 module.exports = {
