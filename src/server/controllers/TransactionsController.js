@@ -1,7 +1,7 @@
 // @desc    Get Transactions
 // @route   GET /api/workslist
 // @access  Private
-const getTransactions = (req, res) => {
+const getTransactions = async (req, res) => {
     res.status(200).json({message: 'Get Transactions'});
     // res.send(transactions);
 
@@ -10,7 +10,7 @@ const getTransactions = (req, res) => {
 // @desc    Set Transactions
 // @route   POST /api/workslist
 // @access  Private
-const setTransactions = (req, res) => {
+const setTransactions = async (req, res) => {
     if (!req.body.text) {
         res.status(400)
         throw new Error('Pleae add a text field');
@@ -20,7 +20,7 @@ const setTransactions = (req, res) => {
 // @desc    Update Transactions
 // @route   PUT /api/workslist/:id
 // @access  Private
-const updateTransactions = (req, res, next) => {
+const updateTransactions = async (req, res, next) => {
     res.status(200).json({ message: `Update goal ${req.params.id}`})
     // const newTransactions = {
     //     id: transactions.length + 1,
@@ -34,7 +34,7 @@ const updateTransactions = (req, res, next) => {
 // @desc    Delete Transactions
 // @route   DELETE /api/workslist
 // @access  Private
-const deleteTransactions = (req, res) => {
+const deleteTransactions = async (req, res) => {
     res.status(200).json({ message: `Delete goal ${req.params.id}`})
     // res.send(worksList);
 }

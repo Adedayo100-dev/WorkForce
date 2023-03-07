@@ -9,6 +9,6 @@ const errorHandler = (err, req, res, next) => {
     })
 }
 
-modeule.exports = {
+module.exports = {
     errorHandler
 }
