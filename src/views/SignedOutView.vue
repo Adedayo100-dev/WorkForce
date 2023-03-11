@@ -3,7 +3,7 @@
         <h3>{{$route.meta.title}}</h3>
     </div>
     <div>
-        <router-link to="/log-in">Log in</router-link>
+        <router-link to="/login">Log in</router-link>
     </div>
 </template>
 

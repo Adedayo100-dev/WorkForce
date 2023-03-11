@@ -29,6 +29,7 @@ export default {
         axios.get('http://localhost:3000/api/worksList')
             .then((res) => {
                 this.worksList = res.data;
+                console.log(res.data);
             })
             .catch((err) => {
                 console.log(err.message)

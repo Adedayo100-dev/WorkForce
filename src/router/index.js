@@ -91,7 +91,6 @@ const router = createRouter({
             }
           ]
         },
-
         {
           // UserProfile will be rendered inside User's <router-view>
           // when /user/:id/profile is matched
@@ -165,6 +164,12 @@ const router = createRouter({
       path: '/signedout',
       name: 'signedout',
       component: () => import('../views/signedOutView.vue'),
+      meta: {title: 'Signed-out'}
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: () => import('../views/logInView.vue'),
       meta: {title: 'Signed-out'}
     }
   ]

@@ -39,24 +39,24 @@ export default {
         vacationPay(){
             return parseFloat((this.workIncome * 0.04).toFixed(2));
         },
-        grossIncome(){
+        netIncome(){
             return this.regIncome + this.overTimeIncome + this.vacationPay;
         },
         cppCalc(){
             if (this.hoursWorked > 42) {
-                return parseFloat((this.grossIncome * 0.055695).toFixed(2));
+                return parseFloat((this.netIncome * 0.055695).toFixed(2));
             } else if(this.hoursWorked <= 42) {
-                return parseFloat((this.grossIncome * 0.055695).toFixed(2));
+                return parseFloat((this.netIncome * 0.055695).toFixed(2));
             }
         },
         totalDeductions(){
-            return parseFloat((this.grossIncome - this.netIncome).toFixed(2));
+            return parseFloat((this.netIncome - this.grossIncome).toFixed(2));
         },
-        netIncome(){
+        grossIncome(){
             if (this.hoursWorked > 43) {
-                return parseFloat(((this.grossIncome * 0.643576) + 145.881).toFixed(2));
+                return parseFloat(((this.netIncome * 0.643576) + 145.881).toFixed(2));
             } else if(this.hoursWorked <= 43) {
-                return parseFloat(((this.grossIncome * 0.738687) + 53.4623).toFixed(2));
+                return parseFloat(((this.netIncome * 0.738687) + 53.4623).toFixed(2));
             }
             
         }
@@ -96,8 +96,8 @@ export default {
                     <td>${{ vacationPay }}</td>
                 </tr>
                 <tr class="text-bold">
-                    <td>Gross Income</td>
-                    <td colspan="3" class="text-end">${{ $formatNum(grossIncome) }}</td>
+                    <td>Net Income</td>
+                    <td colspan="3" class="text-end">${{ $formatNum(netIncome) }}</td>
                     
                 </tr>
                 <tr>
@@ -121,13 +121,13 @@ export default {
                     <td class="">-${{ totalDeductions }}</td>
                 </tr>
                 <tr class="text-bold border-none">
-                    <td>Net Income</td>
-                    <td colspan="3" class="text-end">${{ $formatNum(netIncome) }}</td>
+                    <td>Gross Income</td>
+                    <td colspan="3" class="text-end">${{ $formatNum(grossIncome) }}</td>
                 </tr>
             </tbody>
         </table> 
 
-        <span>Probable Income: {{ netIncome }}</span>      
+        <span>Probable Income: {{ grossIncome }}</span>      
     </div>
 </template>
 

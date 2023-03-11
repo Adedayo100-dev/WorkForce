@@ -22,16 +22,7 @@ const setWorksList = asyncHandler(async (req, res) => {
     })
 
     res.status(200).json(work)
-    // const newWorksList = {
-    //     id: worksList.length + 1,
-    //     loc: req.body.inputLocation,
-    //     dates: req.body.inputDate,
-    //     pay: req.body.inputPay,
-    //     payStatus: req.body.inputPayStatus,
-    //     description: req.body.shiftDescription,
-    // };
-    // worksList.push(newWorksList);
-    // res.send(worksList);
+    
 })
 
 // @desc    Update WorksList
