@@ -63,7 +63,8 @@
             {"id": 60, "loc": "Minova", "dates": ["Mon 14 Feb, 2023", "Tue 15 Feb, 2023", "Wed 16 Feb, 2023","Thur 17 Feb, 2023","Fri 18 Feb, 2023"], "hours": [9.5,9.5,9.5,8.5,8.5],  "pay": 699.81, "payStatus": true},
             {"id": 61, "loc": "Minova", "dates": ["Mon 20 Feb, 2023", "Tue 21 Feb, 2023", "Wed 22 Feb, 2023","Thur 23 Feb, 2023","Fri 24 Feb, 2023"], "hours": [0,8.5,8.5,8.5,8.5],  "pay": 651.56, "payStatus": true},
             {"id": 62, "loc": "Minova", "dates": ["Tue 28 Feb, 2023", "Wed 01 Feb, 2023","Thur 02 Feb, 2023","Fri 03 Feb, 2023"], "hours": [9,9,12,8.5],  "pay": 587.35, "payStatus": false},
-            {"id": 62, "loc": "Minova", "dates": ["Sun 05 Feb, 2023", "Tue 07 Feb, 2023","Wed 08 Feb, 2023","Thur 09 Feb, 2023","Fri 10 Feb, 2023"], "hours": [8,9.5,8.5,12,8.5],  "pay": 0, "payStatus": false}
+            {"id": 63, "loc": "Minova", "dates": ["Sun 05 Feb, 2023", "Tue 07 Feb, 2023","Wed 08 Feb, 2023","Thur 09 Feb, 2023"], "hours": [8,9.5,8.5,12],  "pay": 0, "payStatus": false},
+            {"id": 64, "loc": "Minova", "dates": ["Sun 12 Feb, 2023","Mon 13 Feb, 2023", "Tue 14 Feb, 2023","Wed 15 Feb, 2023","Thur 16 Feb, 2023", "Fri 17 Feb, 2023"], "hours": [12,12,12,11,11.5],  "pay": 0, "payStatus": false}
         ]
     },
     "shopping": [
@@ -100,8 +101,8 @@
         {"id": 31, "shopItem": "payback $5", "where": "Walmart"},
         {"id": 32, "shopItem": "hand soap", "where": "Walmart"},
         {"id": 33, "shopItem": "Hand gloves", "where": "Walmart"},
-        {"id": 34, "shopItem": "", "where": "Walmart"},
-        {"id": 35, "shopItem": "", "where": "Walmart"},
+        {"id": 34, "shopItem": "Pop Corn", "where": "Walmart"},
+        {"id": 35, "shopItem": "Body Lotion", "where": "Walmart"},
         {"id": 36, "shopItem": "Salt", "where": "Walmart"},
         {"id": 37, "shopItem": "Indomie", "where": "Walmart"},
         {"id": 38, "shopItem": "Fish", "where": "Nations"},
@@ -109,10 +110,11 @@
         {"id": 40, "shopItem": "Work trousers", "where": "Walmart"},
         {"id": 41, "shopItem": "Pots", "where": "Walmart"},
         {"id": 42, "shopItem": "Electronics", "where": "Walmart"},
+        
         {"id": 43, "shopItem": "Rod", "where": "Walmart"},
-        {"id": 44, "shopItem": "Humidifier Aisle 20", "where": "Canadian Tore"},
+        {"id": 44, "shopItem": "", "where": "Canadian Tore"},
         {"id": 45, "shopItem": "Adjustable Computer Keyboard & Mouse Platform Tray Deluxe Under Table Desk Mount", "where": ""},
-        {"id": 46, "shopItem": "JLab Go Wireless Keyboard", "where": "Canadian Tire"}
+        {"id": 46, "shopItem": "", "where": "Canadian Tire"}
     ],
     "transactions": [
         {"id": 1, "amount": 1000, "rate": 490},

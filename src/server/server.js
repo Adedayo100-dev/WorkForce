@@ -1,9 +1,11 @@
 const express = require('express');
-const dotenv = require('dotenv').config();
+const mongoose = require('mongoose');
+const dotenv = require('dotenv').config({ path: './config/config.env'});
 const {errorHandler} = require('./middleware/errorMiddleware');
 // const exphbs = require('express-handlebars');
 const passport = require('passport');
 const session = require('express-session');
+const MongoStore = require('connect-mongo');
 const cors = require('cors');
 const connectDB  = require('./config/db');
 
@@ -25,34 +27,35 @@ app.use(express.urlencoded({extended: false}));
 app.use(cors());
 
 //Session
-app.use(session({
-    secret: 'keyboard cat',
-    resave: false,
-    saveUninitialized: false
-    // cookie: { secure: true }
-}))
+app.use(
+    session({
+        secret: 'keyboard cat',
+        resave: false,
+        saveUninitialized: false,
+        store: MongoStore.create({mongoUrl: process.env.MONGO_URI,}),
+    })
+)
 
 // Passport Middleware
 app.use(passport.initialize())
 app.use(passport.session())
 
+//Index and Auth Route 
 
-app.get('/', (req, res) => {
-    res.send('Hello World of Dayo! This is all API');
-});
+app.use('/', require('./routes/index'))
+app.use('/auth', require('./routes/auth'))
 
-
-// WorkShifts API Route Section
+// WorkShifts API Route 
 
 app.use('/api/worksList', require('./routes/worksRoutes'));
 
 
-// Shopping List API section
+// Shopping List API Route
 
 app.use('/api/shopping', require('./routes/shoppingRoutes'));
 
 
-// Transactions API section
+// Transactions API Route
 
 app.use('/api/transactions', require('./routes/transactionsRoutes'));
 

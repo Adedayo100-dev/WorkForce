@@ -6,9 +6,21 @@ const router = express.Router();
 
 //@desc    Auth with Google
 //@route   GET /auth/google
-router.get('/', passport.authenticate('google', { scope: ['profile'] }));
+router.get('/google', passport.authenticate('google', { scope: ['profile'] }));
 
+//@desc    Google Auth Callback
+//@route   GET /auth/google/callback
+router.get('/google/callback', passport.authenticate('google', { failureRedirect: '/' }), (req, res) => {
+    res.redirect('http://127.0.0.1:5173/user-profile')
+});
 
-
+// @desc    Logout user
+// @route   /auth/logout
+router.get('/logout', (req, res, next) => {
+    req.logout((error) => {
+        if (error) {return next(error)}
+        res.redirect('/')
+    })
+})
 
 module.exports = router

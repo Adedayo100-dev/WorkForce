@@ -67,7 +67,7 @@ export default {
     }
     .modal-overlay h3{
         margin-top: 0;
-        margin-bottom: 14px;
+        margin-bottom: 28px;
     }
     .modal-static-container{
         background: white;

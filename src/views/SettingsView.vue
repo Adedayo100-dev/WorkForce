@@ -47,6 +47,9 @@
                     </div>
                 </div>            
             </div>
+            <div class="one-liner hard-coded-sumbit">
+                <a href="http://localhost:3000/auth/logout">Log Out</a>
+            </div>
             <div  class="one-liner">
                 <button class=" log-out_button danger-link" @click="openModal('DialogBox')">Log out</button>
             </div>
@@ -55,6 +58,7 @@
 </template>
 
 <script>
+
 import GlobeIcon from '../components/icons/IconGlobe.vue'
 import CaretUpIcon from '../components/icons/IconCaretUp.vue'
 import CaretDownIcon from '../components/icons/IconCaretDown.vue'
