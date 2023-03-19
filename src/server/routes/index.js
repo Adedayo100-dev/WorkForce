@@ -11,10 +11,22 @@ router.get('/', ensureGuest, (req, res) => {
 
 // @desc    Profile
 // @route   GET /profile
-router.get('/profile', ensureAuth, (req, res) => {
-    res.send('Profile', {
-        name: req.user.firstName,
-    })
+router.get('/profile', ensureAuth, async (req, res) => {
+    try {
+        res.status(200).send({
+            displayName: req.user.displayName,
+            firstName: req.user.firstName,
+            lastName: req.user.lastName,
+            image: req.user.image,
+        })
+        //     const getWorksList = asyncHandler(async (req, res) => {
+        //         const works = await Work.find()
+        //         res.status(200).json(works);
+        // })
+    } catch (err) {
+        console.log(err)
+    }
+    console.log("Tried Opening Profile API")
 })
 
 

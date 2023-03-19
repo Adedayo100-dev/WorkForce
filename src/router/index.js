@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import PlansIndx from '../views/PlansIndx.vue'
+import PlansIndx from '../views/plans/PlansIndx.vue'
 import JobsIndx from '../views/jobs/JobsIndx.vue'
 import AllJobs from '../views/jobs/AllJobs.vue'
 import Tabular from '../views/jobs/worklog/TabularView.vue'
@@ -18,7 +18,7 @@ const router = createRouter({
     {
       path: '/plans',
       name: 'plans',
-      component: () => import('../views/PlansView.vue'),
+      component: () => import('../views/plans/PlansView.vue'),
       meta: {title: 'Plans'},
       children: [
         {
@@ -33,27 +33,27 @@ const router = createRouter({
           // when /user/:id/profile is matched
           path: 'allplans',
           name: 'allplans',
-          component: () => import('../views/AllPlans.vue') ,
+          component: () => import('../views/plans/AllPlans.vue') ,
         },
         {
           path: 'shopping-list',
           name: 'shoppling-list',
-          component: () => import('../views/ShopList.vue'),
+          component: () => import('../views/plans/ShopList.vue'),
         },
         {
           path: 'taxfiling',
           name: 'taxfiling',
-          component: () => import('../views/TaxFiling.vue'),
+          component: () => import('../views/plans/TaxFiling.vue'),
         },
         {
           path: 'wish-list',
           name: 'wish-list',
-          component: () => import('../views/WishList.vue'),
+          component: () => import('../views/plans/WishList.vue'),
         },
         {
           path: 'bought-items',
           name: 'bought-items',
-          component: () => import('../views/BoughtItems.vue'),
+          component: () => import('../views/plans/BoughtItems.vue'),
         }
       ],
     },

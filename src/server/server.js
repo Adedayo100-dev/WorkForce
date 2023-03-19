@@ -7,8 +7,13 @@ const passport = require('passport');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const cors = require('cors');
+const app = express();
 const connectDB  = require('./config/db');
 
+
+
+// Handle CORS
+app.use(cors());
 
 // Passport config
 require('./config/passport.js')(passport)
@@ -17,14 +22,10 @@ require('./config/passport.js')(passport)
 // Connect to DataBase(MongoDB)
 connectDB()
 
-const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
-
-// Handle CORS
-app.use(cors());
 
 //Session
 app.use(

@@ -30,11 +30,28 @@
 
 <script>
 import AddPhotoIcon from '../components/icons/IconAddPhoto.vue'
+import axios from 'axios'
+
 
 export default {
     name: 'Profile',
     components: {
         AddPhotoIcon
+    },
+    data() {
+        return {
+            profile: {},
+        }
+    },
+    created() {
+        axios.get('http://localhost:3000/profile')
+            .then((res) => {
+                this.profile = res.data;
+                console.log(res.data);
+            })
+            .catch((err) => {
+                console.log(err)
+            });
     }
 }
 </script>
