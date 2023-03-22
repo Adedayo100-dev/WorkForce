@@ -5,25 +5,38 @@
         <form @submit.prevent="createShift" action="" id="addShift" class="">
             <div class="form-group">
                 <label for="">Location:</label>
-                <select v-model="formValues.inputLocation" name="shiftlocation" id="" class="form-control_input">
-                    <option disabled value="">Location</option>
+                <input type="text" v-model="formValues.inputLocation" name="shiftlocation" id=""  class="form-control_input" list="locName" placeholder="Location">
+                <datalist id="locName">
                     <option value="Minova">Minova</option>
                     <option value="Amazon">Amazon</option>
                     <option value="Ferrero">Ferrero</option>
                     <option value="Aspire">Aspire</option>
                     <option value="Mondelez">Mondelez</option>
                     <option value="Nuvate">Nuvate</option>
-                </select>
+                </datalist>
             </div>
             <div class="form-group">
-                <label for="">Date(s):</label>
+                <label for="">Date(S):</label>
                 <div class="date_form-control">
-                    <input v-model="formValues.inputDate" type="date" name="shiftdate" id=""  class="form-control_input width-full">
+                    <input v-model="formValues.inputTime.startTime" type="datetime-local" name="shiftstart" id=""  class="form-control_input width-full">
                     <button class="add-new-date">
                         +
                     </button>
                 </div>
             </div>
+            <div class="form-group">
+                <label for="">Date(E):</label>
+                <div class="date_form-control">
+                    <input v-model="formValues.inputTime.stopTime" type="datetime-local" name="shiftend" id=""  class="form-control_input width-full">
+                    <button class="add-new-date">
+                        +
+                    </button>
+                </div>
+            </div>
+            <!-- <div class="form-group">
+                <label for="">Hour(s)</label>
+                <input type="datetime-local" name="" id="">
+            </div> -->
             <div class="form-group">
                 <label for="">Pay:</label>
                 <input v-model.number="formValues.inputPay" type="number" name="shiftpay" id=""  class="form-control_input" min="0" step=".01">
@@ -37,7 +50,7 @@
             </div>
             <div class="form-group">
                 <label for="">Description:</label>
-                <textarea v-model="formValues.shiftDescription" name="shiftdescription" id="" class="form-control_input"></textarea>
+                <textarea v-model="formValues.inputDescription" name="shiftdescription" id="" class="form-control_input"></textarea>
             </div>
             <input type="submit" value="submit">
         </form>
@@ -52,10 +65,13 @@ export default {
         return{
             formValues:{
                 inputLocation: '',
-                inputDate: '',
+                inputTime: {
+                    startTime: '',
+                    stopTime: ''
+                },
                 inputPay: null,
                 inputPayStatus: false,
-                shiftDescription: '',
+                inputDescription: '',
             }   
         }
     },

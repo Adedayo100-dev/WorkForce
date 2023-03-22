@@ -21,8 +21,7 @@ export default {
             nairaTotal: 2000000,
             dollarTotal: 2500,
             exchangeRate: 560,
-            errorMsg: '',
-            sampleSub: {id: null, amount: 400, rate: 560}
+            errorMsg: ''
         }
     },
     created() {
@@ -45,6 +44,14 @@ export default {
             });
         
     },
+    // beforeMount() {
+    //     if (this.worksList = {}) {
+    //         console.log("Workslist is active but empty")
+    //     }
+    //     else{
+    //         console.log(typeof this.worksList);
+    //     }
+    // },
     computed: {
         nairaPaid(){
             // return parseFloat(this.transactions.reduce((acc, item) => acc + (item.amount * item.rate), 0).toFixed(2));
@@ -59,13 +66,14 @@ export default {
             return parseFloat(this.worksList.reduce((acc, item) => acc + item.pay, 0).toFixed(2));
         },
         totalShifts() {
-            var numDates = 0;
-            this.worksList.forEach(
-                function(a,b) {
-                    numDates += a.dates.length;
-                }
-            );
-            return numDates;
+            return this.worksList.length;
+            // var numDates = 0;
+            // this.worksList.forEach(
+            //     function(a,b) {
+            //         numDates += a.time.startDate.length;
+            //     }
+            // );
+            // return numDates;
         },
         paidPercentage(){
             return (this.nairaPaid / this.nairaTotal*100).toFixed(2);
@@ -77,9 +85,9 @@ export default {
             // console.log(modalType, 'Modal-Opened');
 
         // POSTING
-        axios.post('http://localhost:3000/api/transactions', this.sampleSub, {headers:{"Content-Type" : "application/json"}})
-            .then((res) => console.log(res))
-            .catch((err) => console.log(err))
+        // axios.post('http://localhost:3000/api/transactions', this.sampleSub, {headers:{"Content-Type" : "application/json"}})
+        //     .then((res) => console.log(res))
+        //     .catch((err) => console.log(err))
         }
     },
 }

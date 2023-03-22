@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import { defineAsyncComponent } from 'vue'
 import NewShift from '../components/NewShift.vue'
 import DialogBox from '../components/DialogBox.vue'
 import WorkDetails from '../components/WorkDetails.vue'
@@ -26,7 +27,12 @@ import { mapState } from 'vuex'
 export default {
     name: 'modal',
     components: {
-        NewShift, DialogBox, WorkDetails, FormSubmit, DialogSubmit
+        NewShift,
+        DialogBox,
+        WorkDetails,
+        FormSubmit, // defineAsyncComponent(() => import('../components/FormSubmit.vue')),
+        DialogSubmit // defineAsyncComponent( () => import('../components/DialogSubmit.vue')),
+        // DialogSubmit
     },
     props: ['modalOptions'],
     data() {

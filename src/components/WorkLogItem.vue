@@ -7,7 +7,33 @@
         components: {
             AmazonIcon, VDotsIcon, EditIcon
         },
-        props: ['key', 'loc', 'dates', 'hours', 'pay', 'payStatus', 'idx'],
+        props: {
+            key: [String, Number],
+            loc: {
+                type: String, 
+                required: true
+            },
+            time: { 
+                type: Object,
+                // required: true
+            },
+            pay: {
+                type: Number,
+                required: true
+            },
+            payStatus: {
+                type: Boolean,
+                required: true
+            },
+            description: {
+                type: String,
+                // required: true
+            }, 
+            idx: {
+                type: Number,
+                // required: true
+            }
+        },
         data() {
             return {
                 
@@ -45,20 +71,12 @@
         </td>
         <td>
             <div class="dates-output">
-                <span 
-                v-for="date in dates" 
-                :key="date" 
-                :date="date" 
-                class="works-dates-list">{{date}}</span>
+                <span class="works-dates-list">{{time}}</span>
             </div>
         </td>
         <td>
             <div class="hours-output">
-                <span 
-                v-for="hour in hours" 
-                :key="hour" 
-                :hour="hour" 
-                class="works-hours-list">{{hour}} hrs</span>
+                <span class="works-hours-list">{{time.duration}} hrs</span>
             </div>
         </td>
         <td class="pay-output" :class="[payStatus? 'paid' : 'unpaid']"> 

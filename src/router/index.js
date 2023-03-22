@@ -1,10 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import PlansIndx from '../views/plans/PlansIndx.vue'
-import JobsIndx from '../views/jobs/JobsIndx.vue'
-import AllJobs from '../views/jobs/AllJobs.vue'
-import Tabular from '../views/jobs/worklog/TabularView.vue'
-// import Graphical from '../views/jobs/worklog/GraphicalView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -12,7 +6,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView,
+      component:  () => import('../views/HomeView.vue'),
       meta: {title: 'Home'}
     },
     {
@@ -26,7 +20,8 @@ const router = createRouter({
           // when /user/:id/profile is matched
           path: '',
           name: 'plansindx',
-          component: PlansIndx,
+          component:  () => import('../views/plans/PlansIndx.vue'),
+          //
         },
         {
           // UserProfile will be rendered inside User's <router-view>
@@ -71,7 +66,7 @@ const router = createRouter({
           // when /user/:id/profile is matched
           path: '',
           name: 'JobsIndx',
-          component: JobsIndx
+          component:  () => import('../views/jobs/JobsIndx.vue')
         },
         {
           path: 'worklog',
@@ -82,7 +77,7 @@ const router = createRouter({
             {
               path: 'tabular',
               name: 'Tabular',
-              component:  Tabular,
+              component: () => import('../views/jobs/worklog/TabularView.vue'),
             },
             {
               path: 'graphical',
@@ -96,7 +91,8 @@ const router = createRouter({
           // when /user/:id/profile is matched
           path: 'alljobs',
           name: 'alljobs',
-          component: AllJobs,
+          component: () => import('../views/jobs/AllJobs.vue'),
+          // http://127.0.0.1:5173/jobs/alljobs
         },
         {
           path: 'sinjobs',

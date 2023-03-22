@@ -1,5 +1,6 @@
 const asyncHandler = require('express-async-handler');
 const Work = require('../models/workModel');
+const { substractTime } = require('../middleware/timeHandling.js');
 
 // @desc    Get WorksList
 // @route   GET /api/workslist
@@ -13,12 +14,22 @@ const getWorksList = asyncHandler(async (req, res) => {
 // @route   POST /api/workslist
 // @access  Private
 const setWorksList = asyncHandler(async (req, res) => {
-    if (!req.body.text) {
+    if (!req.body) {
         res.status(400)
         throw new Error('Pleae add a text field');
     }
     const work = await Work.create({
-        text: req.body.text
+        loc: req.body.inputLocation,
+        time: {
+            startDate: req.body.inputTime.startTime.slice(0, 10),
+            startTime: req.body.inputTime.startTime.slice(11, 16),
+            endDate: req.body.inputTime.stopTime.slice(0, 10),
+            endTime: req.body.inputTime.stopTime.slice(11, 16),
+            duration: substractTime(req.body.inputTime.stopTime, req.body.inputTime.startTime),
+        },
+        pay: req.body.inputPay,
+        payStatus: req.body.inputPayStatus,
+        description: req.body.inputDescription
     })
 
     res.status(200).json(work)

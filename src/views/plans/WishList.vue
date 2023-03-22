@@ -16,8 +16,8 @@
             <li>Black Curtain<span>13-25</span></li>
             <li>Office Papar Mesh bin<span>10</span></li>
             <li>Wardrobe<span></span></li>
-            <li>Colored Movable vent<span></span></li>
-            <li><span></span></li>
+            <li>Black Colored Movable vent<span>8.49</span></li>
+            <li>Dresser<span>159-ikea</span></li>
             <li><span></span></li>
             <li><span></span></li>
             <li><span></span></li>
