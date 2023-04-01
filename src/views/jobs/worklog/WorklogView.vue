@@ -119,19 +119,23 @@ export default {
                 </button>
             </div>
             <div class="work-log-filter-box">
-                <form action="/search">
+                <form action="/search" class="filter-form">
                     <input type="search" placeholder="Search">
-                    <select name="browser">
-                        <option value="all">All</option>
-                        <option value="minova">Minova</option>
-                        <option value="amazon">Amazon</option>
-                        <option value="lcbo">LCBO</option>
-                        <option value="pro-bell">PRO-BELL</option>
-                        <option value="mondelez">Mondelez</option>
-                        <option value="ferrero">Ferrero</option>
-                        <option value="aspire">Aspire</option>
-                        <option value="upseat">Upseat</option>
-                    </select>
+                    <div class="select-box">
+                        <div class="vertical-divider"></div>
+                        <select name="browser">
+                            <option value="all">All</option>
+                            <option value="minova">Minova</option>
+                            <option value="amazon">Amazon</option>
+                            <option value="lcbo">LCBO</option>
+                            <option value="pro-bell">PRO-BELL</option>
+                            <option value="mondelez">Mondelez</option>
+                            <option value="ferrero">Ferrero</option>
+                            <option value="aspire">Aspire</option>
+                            <option value="upseat">Upseat</option>
+                        </select>
+                    </div>
+                    
                 </form>
                 <div class="work-log-flank-right">
                     <router-link to="#totalShifts">&#8645;</router-link>
@@ -208,8 +212,19 @@ export default {
 </template>
 
 <style>
-   .transactions-binder{
+    .transactions-binder{
         display: flex;
         gap: 28px;
-   }
+    }
+    .select-box{
+        position: relative;
+        display: inline-block;
+    }
+    .vertical-divider{
+        border-left: 1px solid #ebebeb;
+        position: absolute;
+        top: 8px;
+        bottom: 8px;
+        z-index: 3;
+    }
 </style>

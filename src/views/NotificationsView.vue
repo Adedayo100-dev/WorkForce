@@ -8,9 +8,9 @@ export default {
     return {
       notifications: [
         {title: "Tax Filing", body: "File for taxes with my T4 from StaffPlus and Linxus Group. Loremipsum dolor sit amet rgr ged. File for taxes with my T4 from StaffPlus and Linxus Group. Loremipsum dolor sit amet rgr ged.File for taxes with my T4 from StaffPlus and Linxus Group. Loremipsum dolor sit amet rgr ged. File for taxes with my T4 from StaffPlus and Linxus Group. Loremipsum dolor sit amet rgr ged.", date: "01 Feb"},
-        {title: "Coop Application", body: "Begin application for Coop", date: "27 Jan"},
         {title: "Cancel Netflix", body: "I need to remove my billing information from there and monitor the bills on my credit card while saving up", date: "undefined"},
-        {title: "Check Message", body: "This is a Notification", date: "undefined"}
+        {title: "Check Message", body: "This is a Notification", date: "undefined"},
+        {title: "Pay Phone bill- $122.67", body: "Pay the phone bill for Fido", date: "Apr 19"}
       ]
     }
   },

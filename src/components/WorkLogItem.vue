@@ -11,7 +11,7 @@
             key: [String, Number],
             loc: {
                 type: String, 
-                required: true
+                // required: true
             },
             time: { 
                 type: Object,
@@ -19,11 +19,11 @@
             },
             pay: {
                 type: Number,
-                required: true
+                // required: true
             },
             payStatus: {
                 type: Boolean,
-                required: true
+                // required: true
             },
             description: {
                 type: String,
@@ -71,12 +71,12 @@
         </td>
         <td>
             <div class="dates-output">
-                <span class="works-dates-list">{{time}}</span>
+                <span class="works-dates-list">{{ time.startDate }}</span>
             </div>
         </td>
         <td>
             <div class="hours-output">
-                <span class="works-hours-list">{{time.duration}} hrs</span>
+                <span class="works-hours-list">{{ time.duration }}</span>
             </div>
         </td>
         <td class="pay-output" :class="[payStatus? 'paid' : 'unpaid']"> 

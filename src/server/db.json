@@ -64,8 +64,9 @@
             {"id": 61, "loc": "Minova", "dates": ["Mon 20 Feb, 2023", "Tue 21 Feb, 2023", "Wed 22 Feb, 2023","Thur 23 Feb, 2023","Fri 24 Feb, 2023"], "hours": [0,8.5,8.5,8.5,8.5],  "pay": 651.56, "payStatus": true},
             {"id": 62, "loc": "Minova", "dates": ["Tue 28 Feb, 2023", "Wed 01 Feb, 2023","Thur 02 Feb, 2023","Fri 03 Feb, 2023"], "hours": [9,9,12,8.5],  "pay": 587.35, "payStatus": false},
             {"id": 63, "loc": "Minova", "dates": ["Sun 05 Feb, 2023", "Tue 07 Feb, 2023","Wed 08 Feb, 2023","Thur 09 Feb, 2023"], "hours": [8,9.5,8.5,12],  "pay": 0, "payStatus": false},
-            {"id": 64, "loc": "Minova", "dates": ["Sun 12 Feb, 2023","Mon 13 Feb, 2023", "Tue 14 Feb, 2023","Wed 15 Feb, 2023","Thur 16 Feb, 2023"], "hours": [12,12,12,11,11.5],  "pay": 0, "payStatus": false},
-            {"id": 65, "loc": "Minova", "dates": ["Mon 13 Feb, 2023", "Tue 14 Feb, 2023","Wed 15 Feb, 2023","Thur 16 Feb, 2023", "Fri 17 Feb, 2023"], "hours": [],  "pay": 0, "payStatus": false}
+            {"id": 64, "loc": "Minova", "dates": ["Sun 12 Feb, 2023","Mon 13 Feb, 2023", "Tue 14 Feb, 2023","Wed 15 Feb, 2023","Thur 16 Feb, 2023"], "hours": [12,12,12,11,11.5],  "pay": 964, "payStatus": true},
+            {"id": 65, "loc": "Minova", "dates": ["Wed 22 Feb, 2023","Thur 23 Feb, 2023", "Fri 24 Feb, 2023"], "hours": [12,12,8.5],  "pay": 508.80, "payStatus": true},
+            {"id": 66, "loc": "Minova", "dates": ["Sun 26 Jan 2023","Mon 27 Feb, 2023","Wed 29 Feb, 2023","Thur 30 Feb, 2023"], "hours": [11.5,11.25,11.5,7.25],  "pay": 0, "payStatus": false}
         ]
     },
     "shopping": [
@@ -123,7 +124,10 @@
         {"id": 3, "amount": 400, "rate": 560},
         {"id": 4, "amount": 400, "rate": 564},
         {"id": 5, "amount": 280, "rate": 556},
-        {"id": 6, "amount": 220, "rate": 550}
+        {"id": 6, "amount": 220, "rate": 550},
+        {"id": 7, "amount": 400, "rate": 550},
+        {"id": 8, "amount": 550, "rate": 550},
+        {"id": 9, "amount": 545.04, "rate": 555}
     ],
     "prices": [
         {"id": 1, "item":"Orange juice", "price": "2.47"},
@@ -169,14 +173,14 @@
         {"id": 41, "item":"Snickers MTP", "price": "4.47"},
         {"id": 42, "item":"Snickers 10", "price": "2.28"},
         {"id": 43, "item":"Sprite", "price": "3.77"},
-        {"id": 43, "item":"Meat", "price": "6.45"},
-        {"id": 43, "item":"Beef Sirloin Tip", "price": "7.88"},
-        {"id": 43, "item":"Onion", "price": "4.00"},
-        {"id": 43, "item":"Chicken Drums", "price": "8.75/kg"},
-        {"id": 43, "item":"", "price": ""},
-        {"id": 43, "item":"", "price": ""},
-        {"id": 43, "item":"", "price": ""},
-        {"id": 43, "item":"", "price": ""}
+        {"id": 44, "item":"Meat", "price": "6.45"},
+        {"id": 45, "item":"Beef Sirloin Tip", "price": "7.88"},
+        {"id": 46, "item":"Onion", "price": "4.00"},
+        {"id": 47, "item":"Chicken Drums", "price": "8.75/kg"},
+        {"id": 48, "item":"", "price": ""},
+        {"id": 49, "item":"", "price": ""},
+        {"id": 50, "item":"", "price": ""},
+        {"id": 51, "item":"", "price": ""}
     ],
     "months": [
         {"id": 1, "monthName":"Jan"},

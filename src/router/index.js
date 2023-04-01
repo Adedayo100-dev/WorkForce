@@ -92,7 +92,6 @@ const router = createRouter({
           path: 'alljobs',
           name: 'alljobs',
           component: () => import('../views/jobs/AllJobs.vue'),
-          // http://127.0.0.1:5173/jobs/alljobs
         },
         {
           path: 'sinjobs',

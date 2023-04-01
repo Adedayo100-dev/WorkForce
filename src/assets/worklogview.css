@@ -102,8 +102,11 @@ tbody{
 .border-width-3{
     border-width: 3px;
 }
-.work-log-filter-box input, .work-log-filter-box select{
+.filter-form{
     border: 1px solid rgb(235, 235, 235);
+}
+.work-log-filter-box input, .work-log-filter-box select{
+    border: none;
     outline: none;
     font-size: 12px;
 }

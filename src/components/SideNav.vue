@@ -101,7 +101,7 @@ export default {
         left: 0;
         height: -webkit-fill-available;
         padding: 0;
-        border-right:  1px solid #e0e1e1;
+        border-right:  1px solid #d1d1d1;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -127,7 +127,7 @@ export default {
         background-color: rgba(244, 244, 246, 0.5);
     }
     .side-nav ul li a.router-link-active{
-        background-color: rgb(244, 244, 246);
+        background-color: #eee;
     }
     .side-nav-links-icons{
         height: 20px;
