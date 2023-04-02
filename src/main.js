@@ -15,13 +15,28 @@ const store = createStore({
         return {
             toggleModal: false,
             whichModal: 'null', //Change to null
+            whichSubmitType: null,
         }
     },
     mutations: {
         openModal (state, modalType){
             state.toggleModal = true;
             state.whichModal = modalType;
-            // console.log(state.whichModal, "mutated");
+            switch (state.whichModal) {
+                case "DialogBox":
+                    state.whichSubmitType = "DialogSubmit";
+                    break;
+                    
+                case "NewShift":
+                    state.whichSubmitType = null;
+                    break;
+
+                default:
+                    state.whichSubmitType = "DialogSubmit";
+                    break;
+            }
+            
+            console.log(state.whichModal, typeof state.whichModal, "mutated");
         },
         closeModal (state){
             state.toggleModal = false;
