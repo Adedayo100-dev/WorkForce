@@ -15,13 +15,10 @@
 </template>
 
 <script>
-import { defineAsyncComponent } from 'vue'
 import NewShift from '../components/NewShift.vue'
 import DialogBox from '../components/DialogBox.vue'
 import WorkDetails from '../components/WorkDetails.vue'
-import FormSubmit from '../components/FormSubmit.vue'
 import DialogSubmit from '../components/DialogSubmit.vue'
-import axios from 'axios'
 import { mapState } from 'vuex'
 
 export default {
@@ -30,18 +27,18 @@ export default {
         NewShift,
         DialogBox,
         WorkDetails,
-        FormSubmit, // defineAsyncComponent(() => import('../components/FormSubmit.vue')),
-        DialogSubmit // defineAsyncComponent( () => import('../components/DialogSubmit.vue')),
-        // DialogSubmit
+        DialogSubmit
     },
     props: ['modalOptions'],
     data() {
         return {
-            modalSubmitType: FormSubmit,
+
         }
     },
     computed: mapState({
-            currentModal: state => state.whichModal,
+        currentModal: state => state.whichModal, // NewShift  or DialogBox
+        modalSubmitType: state => state.whichSubmitType, // FormSubmit or DialogSubmit
+
     }),
     emits: ['close'],
     // created(){

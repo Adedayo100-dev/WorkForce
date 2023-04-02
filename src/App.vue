@@ -1,14 +1,16 @@
 <script>
     import { RouterLink, RouterView } from 'vue-router';
     import { mapState } from 'vuex'
-    import Modal from './components/Modal.vue';
-    import SideNav from './components/SideNav.vue';
-    import TopNavBar from './components/TopNavBar.vue';
+    import { defineAsyncComponent } from 'vue'
+    // import SideNav from './components/SideNav.vue';
+    // import TopNavBar from './components/TopNavBar.vue';
     
     export default {
         name: 'App',
         components: {
-            Modal, SideNav, TopNavBar
+            Modal: defineAsyncComponent(() => import('./components/Modal.vue')),
+            SideNav: defineAsyncComponent(() => import('./components/SideNav.vue')),
+            TopNavBar: defineAsyncComponent(() => import('./components/TopNavBar.vue'))
         },
         data() {
             return {

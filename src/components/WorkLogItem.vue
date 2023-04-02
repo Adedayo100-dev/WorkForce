@@ -106,6 +106,9 @@
     .dates-output{
         color: #757575;
     }
+    .hours-output{
+        color: #202124;
+    }
     .pay-output{
         text-align: end;
     }

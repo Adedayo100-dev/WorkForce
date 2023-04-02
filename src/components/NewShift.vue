@@ -52,7 +52,11 @@
                 <label for="">Description:</label>
                 <textarea v-model="formValues.inputDescription" name="shiftdescription" id="" class="form-control_input"></textarea>
             </div>
-            <input type="submit" value="submit">
+
+            <!-- <input type="submit" value="submit"> -->
+            <div class="confirm-button-container">
+                <FormSubmit></FormSubmit>
+            </div>
         </form>
 
     </div>
@@ -60,7 +64,11 @@
 
 <script>
 import axios from 'axios'
+import FormSubmit from '../components/FormSubmit.vue'
 export default {
+    components: {
+        FormSubmit,
+    },
     data() {
         return{
             formValues:{

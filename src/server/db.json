@@ -63,8 +63,8 @@
             {"id": 60, "loc": "Minova", "dates": ["Mon 14 Feb, 2023", "Tue 15 Feb, 2023", "Wed 16 Feb, 2023","Thur 17 Feb, 2023","Fri 18 Feb, 2023"], "hours": [9.5,9.5,9.5,8.5,8.5],  "pay": 699.81, "payStatus": true},
             {"id": 61, "loc": "Minova", "dates": ["Mon 20 Feb, 2023", "Tue 21 Feb, 2023", "Wed 22 Feb, 2023","Thur 23 Feb, 2023","Fri 24 Feb, 2023"], "hours": [0,8.5,8.5,8.5,8.5],  "pay": 651.56, "payStatus": true},
             {"id": 62, "loc": "Minova", "dates": ["Tue 28 Feb, 2023", "Wed 01 Feb, 2023","Thur 02 Feb, 2023","Fri 03 Feb, 2023"], "hours": [9,9,12,8.5],  "pay": 587.35, "payStatus": false},
-            {"id": 63, "loc": "Minova", "dates": ["Sun 05 Feb, 2023", "Tue 07 Feb, 2023","Wed 08 Feb, 2023","Thur 09 Feb, 2023"], "hours": [8,9.5,8.5,12],  "pay": 0, "payStatus": false},
-            {"id": 64, "loc": "Minova", "dates": ["Sun 12 Feb, 2023","Mon 13 Feb, 2023", "Tue 14 Feb, 2023","Wed 15 Feb, 2023","Thur 16 Feb, 2023"], "hours": [12,12,12,11,11.5],  "pay": 964, "payStatus": true},
+            {"id": 63, "loc": "Minova", "dates": ["Sun 05 Feb, 2023", "Tue 07 Feb, 2023","Wed 08 Feb, 2023","Thur 09 Feb, 2023"], "hours": [8,9.5,8.5,12],  "pay": 571.57, "payStatus": false},
+            {"id": 64, "loc": "Minova", "dates": ["Sun 12 Feb, 2023","Mon 13 Feb, 2023", "Tue 14 Feb, 2023","Wed 15 Feb, 2023","Thur 16 Feb, 2023"], "hours": [12,12,12,11,11.5],  "pay": 964.32, "payStatus": true},
             {"id": 65, "loc": "Minova", "dates": ["Wed 22 Feb, 2023","Thur 23 Feb, 2023", "Fri 24 Feb, 2023"], "hours": [12,12,8.5],  "pay": 508.80, "payStatus": true},
             {"id": 66, "loc": "Minova", "dates": ["Sun 26 Jan 2023","Mon 27 Feb, 2023","Wed 29 Feb, 2023","Thur 30 Feb, 2023"], "hours": [11.5,11.25,11.5,7.25],  "pay": 0, "payStatus": false}
         ]
@@ -118,17 +118,21 @@
         {"id": 45, "shopItem": "Adjustable Computer Keyboard & Mouse Platform Tray Deluxe Under Table Desk Mount", "where": ""},
         {"id": 46, "shopItem": "", "where": "Canadian Tire"}
     ],
-    "transactions": [
-        {"id": 1, "amount": 1000, "rate": 490},
-        {"id": 2, "amount": 200, "rate": 540},
-        {"id": 3, "amount": 400, "rate": 560},
-        {"id": 4, "amount": 400, "rate": 564},
-        {"id": 5, "amount": 280, "rate": 556},
-        {"id": 6, "amount": 220, "rate": 550},
-        {"id": 7, "amount": 400, "rate": 550},
-        {"id": 8, "amount": 550, "rate": 550},
-        {"id": 9, "amount": 545.04, "rate": 555}
-    ],
+    "transactions": {
+        "towardsDebt": [
+            {"id": 1, "amount": 1000, "rate": 490, "date": "YYYY-MM-DD", "medium": "String"},
+            {"id": 2, "amount": 200, "rate": 540, "date": "YYYY-MM-DD", "medium": "String"},
+            {"id": 3, "amount": 400, "rate": 560, "date": "YYYY-MM-DD", "medium": "String"},
+            {"id": 4, "amount": 400, "rate": 564, "date": "YYYY-MM-DD", "medium": "String"},
+            {"id": 5, "amount": 280, "rate": 556, "date": "YYYY-MM-DD", "medium": "String"},
+            {"id": 6, "amount": 220, "rate": 550, "date": "YYYY-MM-DD", "medium": "String"}
+        ],
+        "towardsSchoolFees": [
+            {"id": 1, "amount": 400, "rate": 550, "date": "YYYY-MM-DD", "medium": "String"},
+            {"id": 2, "amount": 550, "rate": 550, "date": "YYYY-MM-DD", "medium": "String"},
+            {"id": 3, "amount": 545.05, "rate": 555, "date": "YYYY-MM-DD", "medium": "String"}
+        ]
+    },
     "prices": [
         {"id": 1, "item":"Orange juice", "price": "2.47"},
         {"id": 2, "item":"Del Monte", "price": "1.77"},
@@ -177,23 +181,9 @@
         {"id": 45, "item":"Beef Sirloin Tip", "price": "7.88"},
         {"id": 46, "item":"Onion", "price": "4.00"},
         {"id": 47, "item":"Chicken Drums", "price": "8.75/kg"},
-        {"id": 48, "item":"", "price": ""},
+        {"id": 48, "item":"Mr Goudas Rice 8kg", "price": "18.99"},
         {"id": 49, "item":"", "price": ""},
         {"id": 50, "item":"", "price": ""},
         {"id": 51, "item":"", "price": ""}
-    ],
-    "months": [
-        {"id": 1, "monthName":"Jan"},
-        {"id": 2, "monthName":"Feb"},
-        {"id": 3, "monthName":"Mar"},
-        {"id": 4, "monthName":"Apr"},
-        {"id": 5, "monthName":"May"},
-        {"id": 6, "monthName":"Jun"},
-        {"id": 7, "monthName":"Jul"},
-        {"id": 8, "monthName":"Aug"},
-        {"id": 9, "monthName":"Sep"},
-        {"id": 10, "monthName":"Oct"},
-        {"id": 11, "monthName":"Nov"},
-        {"id": 12, "monthName":"Dec"}
-    ]
+    ]    
 }

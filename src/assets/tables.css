@@ -4,10 +4,21 @@ table{
     border-collapse: collapse;
     width: 100%;
 }
+thead{
+    border-bottom: 1px solid rgb(238, 238, 238);
+}
+thead td{
+    color: var(--primary-black);
+    font-size: var(--table-font-size);
+}
+tbody{
+    font-size: var(--table-font-size);
+    overflow-y: scroll;
+}
 tbody tr{
     /* height: 44px; */
     border: none;
-    border-bottom: 1px solid ; /*#ecedef*/
+    border-bottom: 1px solid #eee; /*#ecedef*/
 }
 td{
     /* border: 1px solid rgb(238, 238, 238); */
@@ -50,7 +61,10 @@ caption{
     color: #390;
 }
 .unpaid{
-    color: rgb(238, 238, 238);
+    color: #757575;
+}
+.pay-error{
+    color: red;
 }
 .work-log{
     /* padding-top:38.67px; */

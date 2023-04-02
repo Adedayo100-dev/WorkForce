@@ -42,6 +42,9 @@ export default {
         netIncome(){
             return this.regIncome + this.overTimeIncome + this.vacationPay;
         },
+        federalTax() {
+            return 0;
+        },
         cppCalc(){
             if (this.hoursWorked > 42) {
                 return parseFloat((this.netIncome * 0.055695).toFixed(2));
@@ -49,14 +52,19 @@ export default {
                 return parseFloat((this.netIncome * 0.055695).toFixed(2));
             }
         },
+        eI() {
+            return parseFloat((this.netIncome * 0.0163).toFixed(2));
+        },
         totalDeductions(){
             return parseFloat((this.netIncome - this.grossIncome).toFixed(2));
         },
         grossIncome(){
-            if (this.hoursWorked > 43) {
+            if (false) { // this.hoursWorked > 43
                 return parseFloat(((this.netIncome * 0.643576) + 145.881).toFixed(2));
-            } else if(this.hoursWorked <= 43) {
+            } else if(false) { // this.hoursWorked <= 43
                 return parseFloat(((this.netIncome * 0.738687) + 53.4623).toFixed(2));
+            } else {
+                return parseFloat(((this.netIncome * 0.697985) + 85.6702).toFixed(2));
             }
             
         }
