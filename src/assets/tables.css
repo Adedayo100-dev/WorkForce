@@ -73,7 +73,7 @@ caption{
     background-color: rgba(32,33,36,0.049);
 }
 .work-log tr:not(thead tr):hover{
-    /* background-color: #dedede; */
+    background-color: #eaf3ff;
 }
 .work-log th, .work-log td{
     border: none;

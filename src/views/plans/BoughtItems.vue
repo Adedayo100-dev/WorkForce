@@ -3,7 +3,7 @@
         bought items
         <ul>
             <li>Table <span>119.99</span><span>Best Buy</span></li>
-            <li>Humidifier <span>49.99</span><span>Canadian Tire</span></li>
+            <li>Humidifier <span>49.99</span><span>Total - 56.49</span><span>Canadian Tire</span>(04 March 2023)</li>
             <li>
                 Heater 
                 <span>28.99</span>

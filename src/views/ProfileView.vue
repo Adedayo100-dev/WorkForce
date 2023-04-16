@@ -5,7 +5,7 @@
         </div>
         <div class="profile-main">
             <div class="profile-pic_container">
-                <img src="../assets/profile_img.jpg" alt="profile img" class="profile-img"> <!-- Image or logo -->
+                <img src="../assets/profile_img.jpg" alt="profile img" class="profile-image"> <!-- Image or logo -->
                 <AddPhotoIcon />
             </div>
             <div class="one-liner">
@@ -44,14 +44,27 @@ export default {
         }
     },
     created() {
-        axios.get('http://localhost:3000/profile')
-            .then((res) => {
-                this.profile = res.data;
-                console.log(res.data);
-            })
-            .catch((err) => {
-                console.log(err)
-            });
+        // axios.get('http://localhost:3000/profile')
+        //     .then((res) => {
+        //         this.profile = res.data;
+        //         console.log(res.data);
+        //     })
+        //     .catch((err) => {
+        //         console.log(err)
+        //     });
+
+        // Simple GET request using fetch
+        // fetch("http://localhost:3000/profile")
+        // .then(response => {
+        //     console.log(response)
+        //     return response;     
+        // })
+        // .then(data => {
+        //     this.profile = data;
+        // })
+        // .catch(error => {
+        //     console.log(error);
+        // });
     }
 }
 </script>
@@ -63,7 +76,7 @@ export default {
 .profile-pic_container{
     margin-bottom: 14px;
 }
-.profile-img{
+.profile-image{
     width: 100px;
     height: 100px;
     border-radius: 50%;

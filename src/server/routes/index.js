@@ -12,6 +12,7 @@ router.get('/', ensureGuest, (req, res) => {
 // @desc    Profile
 // @route   GET /profile
 router.get('/profile', ensureAuth, async (req, res) => {
+    console.log("2. Well, this got touched");
     try {
         res.status(200).send({
             displayName: req.user.displayName,
@@ -23,10 +24,14 @@ router.get('/profile', ensureAuth, async (req, res) => {
         //         const works = await Work.find()
         //         res.status(200).json(works);
         // })
+        console.log("3. Tried Opening Profile API successful")
+
     } catch (err) {
         console.log(err)
+        console.log("Tried Opening Profile API unsuccessful")
+
     }
-    console.log("Tried Opening Profile API")
+    
 })
 
 

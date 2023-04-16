@@ -34,7 +34,7 @@ export default {
     justify-content: space-between; */
     position: sticky;
     top: 0;
-    background-color: #eee;
+    background-color: white;
     border-bottom: 1px solid  #d1d1d1; /*rgb(235, 235, 235)*/
     padding: 5px 24px 5px 24px;
     color: grey;

@@ -10,7 +10,7 @@
                 </RouterLink>
             </li>
             <li class="show">
-                <RouterLink to="/jobs">
+                <RouterLink to="/finance">
                     <div>
                         <WorkIcon />
                         <span v-show="navTogVal"> Jobs</span>
@@ -21,28 +21,28 @@
                 </RouterLink>
                 <ul id="" class="sidenav-dropdown"  v-show="navTogVal">
                     <li>
-                        <router-link to="/jobs/worklog">Work Log</router-link>
+                        <router-link to="/finance/worklog">Work Log</router-link>
                     </li>
                     <li>
-                        <router-link to="/jobs/alljobs">All</router-link>
+                        <router-link to="/finance/alljobs">All</router-link>
                     </li>
                     <li>
-                        <router-link to="/jobs/sinjobs">SIN</router-link>
+                        <router-link to="/finance/sinjobs">SIN</router-link>
                     </li>
                     <li>
-                        <router-link to="/jobs/cashjobs">Cash</router-link>
+                        <router-link to="/finance/cashjobs">Cash</router-link>
                     </li>
                     <li>
-                        <router-link to="/jobs/breakjobs">Breaks</router-link>
+                        <router-link to="/finance/breakjobs">Breaks</router-link>
                     </li>
                     <li>
-                        <router-link to="/jobs/favjobs">Fav</router-link>
+                        <router-link to="/finance/favjobs">Fav</router-link>
                     </li>
                     <li>
-                        <router-link to="/jobs/availability">Availability</router-link>
+                        <router-link to="/finance/availability">Availability</router-link>
                     </li>
                     <li>
-                        <router-link to="/jobs/co-op">Co-op</router-link>
+                        <router-link to="/finance/co-op">Co-op</router-link>
                     </li>
                     
                 </ul>
@@ -62,10 +62,12 @@
         </ul>
         <div>
             <div class="float-bottom">
-                <RouterLink to="/settings">
+                <RouterLink to="/user-profile">
                     <div>
-                        <SettingsIcon />
-                        <span v-show="navTogVal"> Settings</span>
+                        <!-- <SettingsIcon />
+                        <span v-show="navTogVal"> Settings</span> -->
+                        <img src="../assets/profile_default.png" alt="" class="profile-img">
+                        <div class="on-side"></div>
                     </div>
                 </RouterLink>
             </div>
@@ -117,17 +119,20 @@ export default {
     .side-nav ul li a{
         font-size: 14px;
         color: #262626;
-        padding: 12px 20px;
+        padding: 12px 12px;
         /* border-radius: 4px; */
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
     .side-nav ul li a:hover {
-        background-color: rgba(244, 244, 246, 0.5);
+        background-color: rgba(0, 0, 0, 0.1);
     }
     .side-nav ul li a.router-link-active{
-        background-color: #eee;
+        background-color: rgba(232, 57, 0, 1);
+    }
+    .side-nav ul li a.router-link-active .side-nav-links-icons{
+        fill: white;
     }
     .side-nav-links-icons{
         height: 20px;
@@ -147,6 +152,33 @@ export default {
         color: grey !important;
     }
     .float-bottom{
-        padding: 12px 20px;
+        padding: 12px 10px;
+    }
+    .float-bottom a{
+        display: block;
+    }
+    .float-bottom a:hover>div{
+        background-color: rgba(218,220,224,.5);
+    }
+    .float-bottom>a>div{
+        display: flex;
+        justify-content: center;
+        position: relative;
+        /* padding: 6px 4px; */
+        border-radius: 50%;
+    }
+    .profile-img{
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+    }
+    .on-side{
+        box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+        border-radius: 50%;
+        border: none;
+        width: 28px;
+        height: 28px;
+        position: absolute;
+        top: 0;
     }
 </style>

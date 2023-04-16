@@ -18,8 +18,8 @@
             <li>Wardrobe<span></span></li>
             <li>Black Colored Movable vent<span>8.49</span></li>
             <li>Dresser<span>159-ikea</span></li>
-            <li><span></span></li>
-            <li><span></span></li>
+            <li>Samsung Galaxy A8 32GB<span>169.99</span></li>
+            <li>PlayStation 5<span>480 | 509.99</span></li>
             <li><span></span></li>
         </ul>
     </div>

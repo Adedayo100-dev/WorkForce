@@ -22,7 +22,7 @@ body{
 main{
     width: 100%;
     padding: 24px 24px 30px;
-    margin-left: 64px;
+    margin-left: 49px;
     min-height: 100%;
 }
 a{
@@ -39,7 +39,7 @@ a{
 h3{
     margin: calc(1em - 12px) 0;
     /* margin-bottom: 6.72px; */
-    color: #202124;
+    color: rgba(232, 57, 0, 1); /* #202124 */
 }
 /* h4{
     color: grey;

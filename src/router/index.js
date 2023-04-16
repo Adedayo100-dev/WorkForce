@@ -53,12 +53,12 @@ const router = createRouter({
       ],
     },
     {
-      path: '/jobs',
-      name: 'jobs',
+      path: '/finance',
+      name: 'finance',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/jobs/JobsView.vue'),
+      component: () => import('../views/finance/JobsView.vue'),
       meta: {title: 'Jobs Search Table'},
       children: [
         {
@@ -66,23 +66,23 @@ const router = createRouter({
           // when /user/:id/profile is matched
           path: '',
           name: 'JobsIndx',
-          component:  () => import('../views/jobs/JobsIndx.vue')
+          component:  () => import('../views/finance/JobsIndx.vue')
         },
         {
           path: 'worklog',
           name: 'worklog',
-          component: () => import('../views/jobs/worklog/WorklogView.vue'),
+          component: () => import('../views/finance/worklog/WorklogView.vue'),
           meta: {title: 'Work Log'},
           children: [
             {
               path: 'tabular',
               name: 'Tabular',
-              component: () => import('../views/jobs/worklog/TabularView.vue'),
+              component: () => import('../views/finance/worklog/TabularView.vue'),
             },
             {
               path: 'graphical',
               name: 'Graphical',
-              component: () => import('../views/jobs/worklog/GraphicalView.vue')
+              component: () => import('../views/finance/worklog/GraphicalView.vue')
             }
           ]
         },
@@ -91,37 +91,37 @@ const router = createRouter({
           // when /user/:id/profile is matched
           path: 'alljobs',
           name: 'alljobs',
-          component: () => import('../views/jobs/AllJobs.vue'),
+          component: () => import('../views/finance/AllJobs.vue'),
         },
         {
           path: 'sinjobs',
           name: 'sinjobs',
-          component: () => import('../views/jobs/SINJobs.vue'),
+          component: () => import('../views/finance/SINJobs.vue'),
         },
         {
           path: 'cashjobs',
           name: 'cashjobs',
-          component: () => import('../views/jobs/CashJobs.vue'),
+          component: () => import('../views/finance/CashJobs.vue'),
         },
         {
           path: 'breakjobs',
           name: 'breakjobs',
-          component: () => import('../views/jobs/BreakJobs.vue'),
+          component: () => import('../views/finance/BreakJobs.vue'),
         },
         {
           path: 'favjobs',
           name: 'favjobs',
-          component: () => import('../views/jobs/FavJobs.vue'),
+          component: () => import('../views/finance/FavJobs.vue'),
         },
         {
           path: 'availability',
           name: 'availability',
-          component: () => import('../views/jobs/Availability.vue'),
+          component: () => import('../views/finance/Availability.vue'),
         },
         {
           path: 'co-op',
           name: 'co-op',
-          component: () => import('../views/jobs/Co-op.vue'),
+          component: () => import('../views/finance/Co-op.vue'),
         }
       ],
     },

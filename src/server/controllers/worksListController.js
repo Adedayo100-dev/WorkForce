@@ -16,7 +16,7 @@ const getWorksList = asyncHandler(async (req, res) => {
 const setWorksList = asyncHandler(async (req, res) => {
     if (!req.body) {
         res.status(400)
-        throw new Error('Pleae add a text field');
+        throw new Error('Pleae add a workList field');
     }
     const work = await Work.create({
         loc: req.body.inputLocation,
@@ -47,23 +47,16 @@ const updateWorksList = asyncHandler(async (req, res) => {
         throw new Error('Work not found')
     }
 
-    const updatedGoal = await Work.findByIdAndUpdate(req.params.id, req.body, {
+    const updatedWork = await Work.findByIdAndUpdate(req.params.id, req.body, {
         new: true,
     })
     
-    res.status(200).json(updatedGoal)
+    res.status(200).json(updatedWork)
 })
 
-// @desc    Get WorksList
-// @route   GET /api/workslist
-// @access  Private
-// const getWorksList = (req, res) => {
-//     res.status(200).json({message: 'Get WorksList'});
-//     res.send(worksList);
-// }
 
 // @desc    Delete WorksList
-// @route   DELETE /api/workslist
+// @route   DELETE /api/workslist/:id
 // @access  Private
 const deleteWorksList = asyncHandler(async (req, res) => {
     const work = await Work.findById(req.params.id)

@@ -53,7 +53,7 @@ export default {
 }
 #tabs ul.tab-nav li a {
     text-decoration: none;
-    color: darkgray;
+    color: #5f6368;
     padding: 10px;
     transition: all .3s ease-in-out;
     font-size: 14px;

@@ -42,7 +42,7 @@
                 <input v-model.number="formValues.inputPay" type="number" name="shiftpay" id=""  class="form-control_input" min="0" step=".01">
             </div>
             <div class="form-group">
-                <label for="">Pay Status:</label>
+                <label for="payStatus">Pay Status:</label>
                 <div class="form-wrap">
                     <input v-model="formValues.inputPayStatus" type="checkbox" name="payStatus" id="payStatus">
                     <label for="payStatus">Paid</label>
@@ -113,7 +113,7 @@ label{
 }
 .new-shift .form-control_input{
     padding: 10px 12px;
-    border: 1px solid rgb(238, 238, 238);
+    border: 1px solid rgba(0 0, 0, .1);
     resize: none;
     border-radius: 4px;
 }

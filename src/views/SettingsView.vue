@@ -7,10 +7,13 @@
             </div>
             
             <div class="one-liner">
-                <router-link to="/user-profile">Profile</router-link>
+                <router-link to="/settings">Settings</router-link>
             </div>
             <div  class="one-liner">
                 <router-link to="/help">Help & Feedback</router-link>
+            </div>
+            <div  class="one-liner">
+                <router-link to="/report">Report</router-link>
             </div>
             <div class="one-liner customize-container">
                 <div class="i8n-lang-container" :class="{show : openLang}">

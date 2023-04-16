@@ -60,7 +60,6 @@ export default {
                 sum += (entry.amount * entry.rate);
             }
             return sum;
-            // return 822000;
         },
         totalPay() {
             return parseFloat(this.worksList.reduce((acc, item) => acc + item.pay, 0).toFixed(2));
@@ -179,6 +178,8 @@ export default {
                             </form>
                             <br>
                             <div>
+                                <span>Transactions: </span>
+                                <br> <br>
                                 <div class="transactions-binder">
                                     <TransactionsList :transactions="transactions" :nairaPaid="nairaPaid"/>
                                     <div class="paid-percentage-box">

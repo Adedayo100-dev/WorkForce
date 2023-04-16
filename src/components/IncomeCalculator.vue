@@ -1,5 +1,4 @@
 <script>
-// import FormatNumMixin from '../mixins/toLocaleString.js'
 
 export default {
     name: 'IncomeCalculator',
@@ -68,8 +67,7 @@ export default {
             }
             
         }
-    },
-    // mixins: [FormatNumMixin],
+    }
 }
 </script>
 

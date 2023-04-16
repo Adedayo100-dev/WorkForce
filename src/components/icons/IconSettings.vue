@@ -9,5 +9,5 @@
 </template>
 <style scoped>
 svg{
-    height: 20px;
+    height: 24px;
 }</style>

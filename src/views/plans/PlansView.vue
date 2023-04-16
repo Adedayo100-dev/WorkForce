@@ -19,6 +19,9 @@
         <li>
           <router-link to="/plans/bought-items">Bought Items</router-link>
         </li>
+        <li>
+          <router-link to="/plans/vault">Vault</router-link>
+        </li>
       </ul>
       <div id="tab-contents">
         <router-view>

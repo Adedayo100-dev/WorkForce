@@ -6,6 +6,6 @@
 <style scoped>
     svg{
         height: 15px;
-        fill: #262626;
+        fill: rgba(232, 57, 0, 1);
     }
 </style>
