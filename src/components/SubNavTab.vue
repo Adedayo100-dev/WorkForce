@@ -1,25 +1,25 @@
 <template>
   <ul id="nav-tab" class="tab-nav">
     <li>
-      <router-link to="/jobs/alljobs">All</router-link>
+      <router-link to="/finance/alljobs">All</router-link>
     </li>
     <li>
-      <router-link to="/jobs/sinjobs">SIN</router-link>
+      <router-link to="/finance/sinjobs">SIN</router-link>
     </li>
     <li>
-      <router-link to="/jobs/cashjobs">Cash</router-link>
+      <router-link to="/finance/cashjobs">Cash</router-link>
     </li>
     <li>
-      <router-link to="/jobs/breakjobs">Breaks</router-link>
+      <router-link to="/finance/breakjobs">Breaks</router-link>
     </li>
     <li>
-      <router-link to="/jobs/favjobs">Fav</router-link>
+      <router-link to="/finance/favjobs">Fav</router-link>
     </li>
     <li>
-      <router-link to="/jobs/availability">Availability</router-link>
+      <router-link to="/finance/availability">Availability</router-link>
     </li>
     <li>
-      <router-link to="/jobs/co-op">Co-op</router-link>
+      <router-link to="/finance/co-op">Co-op</router-link>
     </li>
   </ul>
 </template>
