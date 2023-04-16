@@ -24,14 +24,21 @@ router.get('/profile', ensureAuth, async (req, res) => {
         //         const works = await Work.find()
         //         res.status(200).json(works);
         // })
+<<<<<<< HEAD
         console.log("3. Tried Opening Profile API successful")
+=======
+        console.log("Tried Opening Profile API successful")
+>>>>>>> 425148ffed216af13b23f428a7ed2a7b45042c10
 
     } catch (err) {
         console.log(err)
         console.log("Tried Opening Profile API unsuccessful")
 
     }
+<<<<<<< HEAD
     
+=======
+>>>>>>> 425148ffed216af13b23f428a7ed2a7b45042c10
 })
 
 
