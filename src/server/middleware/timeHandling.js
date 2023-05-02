@@ -5,7 +5,11 @@ const substractTime = (a, b) => {
     d = c / 3600000;
     e = Math.trunc(d);
     f = Math.round(( d - e ) * 60);
-    result = `${e} hrs ${f} mins`;
+    if (f == 0) {
+        result = `${e} hrs`;    
+    } else {
+        result = `${e} hrs ${f} mins`;
+    }
     return result;
 }
 module.exports = {

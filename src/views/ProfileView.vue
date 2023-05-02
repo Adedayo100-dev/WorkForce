@@ -24,6 +24,9 @@
                 <span></span>
             </div>
         </div>
+        <div class="donate-view">
+            <span class="donate-title">Donate to the cause:</span>
+        </div>
     </div>
     
 </template>
@@ -43,15 +46,15 @@ export default {
             profile: {},
         }
     },
-    created() {
-        // axios.get('http://localhost:3000/profile')
-        //     .then((res) => {
-        //         this.profile = res.data;
-        //         console.log(res.data);
-        //     })
-        //     .catch((err) => {
-        //         console.log(err)
-        //     });
+    async created() {
+        axios.get('http://localhost:3000/profile')
+            .then((res) => {
+                this.profile = res.data;
+                console.log(res.data);
+            })
+            .catch((err) => {
+                console.log(err)
+            });
 
         // Simple GET request using fetch
         // fetch("http://localhost:3000/profile")
@@ -65,6 +68,14 @@ export default {
         // .catch(error => {
         //     console.log(error);
         // });
+
+        // try {
+        //     const response = await fetch("http://localhost:3000/profile");
+        //     var a = response;
+        //     console.log(a);
+        // } catch (error) {
+        //     throw error;
+        // }
     }
 }
 </script>
@@ -81,5 +92,7 @@ export default {
     height: 100px;
     border-radius: 50%;
 }
-
+.donate-title{
+    font-size: 12px;
+}
 </style>

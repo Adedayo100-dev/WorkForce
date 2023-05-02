@@ -58,12 +58,15 @@ export default {
             return parseFloat((this.netIncome - this.grossIncome).toFixed(2));
         },
         grossIncome(){
-            if (false) { // this.hoursWorked > 43
-                return parseFloat(((this.netIncome * 0.643576) + 145.881).toFixed(2));
-            } else if(false) { // this.hoursWorked <= 43
-                return parseFloat(((this.netIncome * 0.738687) + 53.4623).toFixed(2));
-            } else {
-                return parseFloat(((this.netIncome * 0.697985) + 85.6702).toFixed(2));
+            var g = this.netIncome;
+            if (g < 610) { // this.hoursWorked > 43
+                return parseFloat(((g * 0.643576) + 145.881).toFixed(2));
+            } else if(g >= 610 && g < 1018.6964) { // this.hoursWorked <= 43
+                return parseFloat(((g * 0.713397) + 73.0862).toFixed(2));
+            } else if(g >= 1018.6964 && g < 1060){
+                return parseFloat(((g * 0.643939) + 145.502).toFixed(2)); // (0.697985, 85.6702)
+            } else if(g >= 1060){
+                return parseFloat(((g * 0.642560379) + 146.9457319).toFixed(2)); // (0.697985, 85.6702)
             }
             
         }
@@ -90,7 +93,7 @@ export default {
                     <td>${{ regIncome }}</td>
                 </tr>
                 <tr>
-                    <td>Over Time</td>
+                    <td>Overtime</td>
                     <td>{{overTimeHours}} hrs</td>
                     <td>${{ overTimePay }}</td>
                     <td>${{ overTimeIncome }}</td>
@@ -102,7 +105,7 @@ export default {
                     <td>${{ vacationPay }}</td>
                 </tr>
                 <tr class="text-bold">
-                    <td>Net Income</td>
+                    <td>Gross Income</td>
                     <td colspan="3" class="text-end">${{ $formatNum(netIncome) }}</td>
                     
                 </tr>
@@ -127,7 +130,7 @@ export default {
                     <td class="">-${{ totalDeductions }}</td>
                 </tr>
                 <tr class="text-bold border-none">
-                    <td>Gross Income</td>
+                    <td>Net Income</td>
                     <td colspan="3" class="text-end">${{ $formatNum(grossIncome) }}</td>
                 </tr>
             </tbody>

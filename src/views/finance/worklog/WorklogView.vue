@@ -1,7 +1,6 @@
 <script>
 import FilterIcon from '../../../components/icons/IconFilter.vue'
 import EditSquareIcon from '../../../components/icons/IconEditSquare.vue'
-import TransactionsList from '../../../components/TransactionsList.vue'
 import IncomeCalculator from '../../../components/IncomeCalculator.vue'
 import TableIcon from '../../../components/icons/IconTable.vue'
 import GraphIcon from '../../../components/icons/IconGraph.vue'
@@ -10,7 +9,7 @@ import axios from 'axios'
 
 export default {
     components: {
-        FilterIcon, TransactionsList, IncomeCalculator, TableIcon, GraphIcon, EditSquareIcon
+        FilterIcon, IncomeCalculator, TableIcon, GraphIcon, EditSquareIcon
     },
     props: ['title'],
     data() {
@@ -181,7 +180,6 @@ export default {
                                 <span>Transactions: </span>
                                 <br> <br>
                                 <div class="transactions-binder">
-                                    <TransactionsList :transactions="transactions" :nairaPaid="nairaPaid"/>
                                     <div class="paid-percentage-box">
                                         <h3>{{paidPercentage}}%</h3>
                                         <span>paid</span>
@@ -199,7 +197,6 @@ export default {
                         </div>
                         <hr class="">
                         <div class="second-tithe-box">
-                            
                             <p>
                                 {{$formatNum(75459384)}}
                             </p>

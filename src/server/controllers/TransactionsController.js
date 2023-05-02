@@ -3,20 +3,19 @@ const Transaction = require('../models/transactionModel');
 
 
 // @desc    Get Transactions
-// @route   GET /api/workslist
+// @route   GET /api/transactions
 // @access  Private
 const getTransactions = asyncHandler(async (req, res) => {
     const Transactions = await Transaction.find();
     res.status(200).json(Transactions);
-    // res.send(transactions);
 
 })
 
 
 // @desc    Set Transactions
-// @route   POST /api/workslist
+// @route   POST /api/transactions
 // @access  Private
-const setTransactions = async (req, res) => {
+const setTransactions = asyncHandler(async (req, res) => {
     if (!req.body) {
         res.status(400)
         throw new Error('Pleae add a transaction field');
@@ -30,24 +29,29 @@ const setTransactions = async (req, res) => {
     })
 
     res.status(200).json(transaction);
-}
+})
 
 // @desc    Update Transactions
-// @route   PUT /api/workslist/:id
+// @route   PUT /api/transactions/:id
 // @access  Private
-const updateTransactions = async (req, res, next) => {
-    res.status(200).json({ message: `Update goal ${req.params.id}`})
-    // const newTransactions = {
-    //     id: transactions.length + 1,
-    //     amount: req.body.amount,
-    //     rate: req.body.rate
-    // };
-    // transactions.push(newTransactions);
-    // res.send(transactions);
-}
+const updateTransactions = asyncHandler(async (req, res) => {
+    const transaction = await Transaction.findById(req.params.id)
+
+    if(!transaction){
+        res.status(400)
+        throw new Error(`Transaction ${req.params.id} not found`)
+    }
+
+    const updatedTransaction = await Transaction.findByIdAndUpdate(req.params.id, req.body, {
+        new: true,
+    })
+    
+    res.status(200).json(updatedTransaction)
+    // res.status(200).json({ message: `Update goal ${req.params.id}`})
+})
 
 // @desc    Delete Transactions
-// @route   DELETE /api/workslist/:id
+// @route   DELETE /api/transactions/:id
 // @access  Private
 const deleteTransactions = asyncHandler(async (req, res) => {
     const transaction = await Transaction.findById(req.params.id)

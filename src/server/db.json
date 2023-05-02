@@ -67,8 +67,11 @@
             {"id": 64, "loc": "Minova", "dates": ["Sun 12 Mar, 2023","Mon 13 Mar, 2023", "Tue 14 Mar, 2023","Wed 15 Mar, 2023","Thur 16 Mar, 2023"], "hours": [12,12,12,11,11.5],  "pay": 964.32, "payStatus": true},
             {"id": 65, "loc": "Minova", "dates": ["Wed 22 Mar, 2023","Thur 23 Mar, 2023", "Fri 24 Mar, 2023"], "hours": [12,12,8.5],  "pay": 508.80, "payStatus": true},
             {"id": 66, "loc": "Minova", "dates": ["Sun 26 Mar 2023","Mon 27 Mar, 2023","Wed 29 Mar, 2023","Thur 30 Mar, 2023"], "hours": [11.5,11.25,11.5,7.25],  "pay": 636, "payStatus": true},
-            {"id": 67, "loc": "Minova", "dates": ["Mon 03 Apr, 2023","Tue 04 Apr, 2023","Thur 30 Feb, 2023"], "hours": [7.5, 9.25, 8.58],  "pay": 0, "payStatus": false},
-            {"id": 67, "loc": "Minova", "dates": ["Mon 10 Apr, 2023","Tue 12 Apr, 2023","Wed 13 Apr, 2023","Thur 14 Apr, 2023","Fri 15 Apr, 2023"], "hours": [11],  "pay": 0, "payStatus": false}
+            {"id": 67, "loc": "Minova", "dates": ["Mon 03 Apr, 2023","Tue 04 Apr, 2023","Thur 30 Feb, 2023"], "hours": [7.5, 9.25, 8.58],  "pay": 518.34, "payStatus": true},
+            {"id": 68, "loc": "Minova", "dates": ["Mon 10 Apr, 2023"], "hours": [11],  "pay": 223.15, "payStatus": true},
+            {"id": 69, "loc": "Minova", "dates": ["Mon 17 Apr, 2023","Tue 18 Apr, 2023","Wed 19 Apr, 2023","Thur 20 Apr, 2023","Fri 21 Apr, 2023"], "hours": [12,12,11,11,7.66],  "pay": 816, "payStatus": false},
+            {"id": 70, "loc": "Minova", "dates": ["Mon 24 Apr, 2023","Tue 25 Apr, 2023"], "hours": [11.2,7],  "pay": 0, "payStatus": false},
+            {"id": 71, "loc": "Minova", "dates": ["Sun 30 Apr, 2023"], "hours": [8.5],  "pay": 0, "payStatus": false}
         ]
     },
     "shopping": [
@@ -132,7 +135,9 @@
             {"id": 1, "amount": 400, "rate": 550, "date": "2023-03-17", "medium": "Africhange"},
             {"id": 2, "amount": 550, "rate": 550, "date": "2023-03-25", "medium": "Africhange"},
             {"id": 3, "amount": 545.05, "rate": 555, "date": "2023-03-31", "medium": "Lemonade"},
-            {"id": 4, "amount": 300.37, "rate": 552, "date": "2023-04-15", "medium": "Lemonade"}
+            {"id": 4, "amount": 300.37, "rate": 552, "date": "2023-04-15", "medium": "Lemonade"},
+            {"id": 5, "amount": 100, "rate": 545, "date": "2023-04-24", "medium": "Lemonade"},
+            {"id": 6, "amount": 650, "rate": 546, "date": "2023-04-28", "medium": "Africhange"}
         ]
     },
     "prices": [

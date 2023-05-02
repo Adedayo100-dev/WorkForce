@@ -5,15 +5,6 @@
     position: sticky;
     top: 0;
 }
-.pay-header{
-    text-align: end;
-}
-.pay-header>div{
-    display: flex;
-    justify-content: end;
-    column-gap: 8px;
-}
-
 .link-tab-group{
     list-style-type: none;
     background-color: rgb(235, 235, 235);

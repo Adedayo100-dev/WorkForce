@@ -2,9 +2,7 @@
     <div class="wish-list_view">
         Wish Lists
         <ul>
-            <li>Keyboard <span>45-65</span></li>
             <li>Chair <span>199.99 - 206</span></li>
-            <li>PS5 <span>200-300</span></li>
             <li>Singlet <span>23.97</span></li>
             <li>USB Extension<span>24.99</span></li>
             <li>Lagos Wall Frame<span></span></li>
@@ -19,8 +17,10 @@
             <li>Black Colored Movable vent<span>8.49</span></li>
             <li>Dresser<span>159-ikea</span></li>
             <li>Samsung Galaxy A8 32GB<span>169.99</span></li>
+            <li>PS5 <span>200-300</span></li>
             <li>PlayStation 5<span>480 | 509.99</span></li>
-            <li><span></span></li>
+            <li>Malm Bed Drawers 19cm/7.5" <a href="https://www.ikea.com/ca/en/p/songesand-underbed-storage-box-set-of-2-brown-30372541/">Link</a><span></span></li>
+            <li>Alex Desk Drawer <a href="https://www.ikea.com/ca/en/p/alex-drawer-unit-white-00473546/#content">Link</a><span></span></li>
         </ul>
     </div>
 </template>

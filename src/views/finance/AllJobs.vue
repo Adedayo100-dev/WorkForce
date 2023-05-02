@@ -14,13 +14,29 @@
             </thead>
             <tbody>
                 <!-- Each Courses Data -->
-                <tr class="premium">
+                <tr class="">
+                    <td>AppleOne</td>
+                    <td><input type="checkbox" name="" id="" checked> Email</td>
+                    <td><input type="checkbox" name="" id="" ></td>
+                    <td><input type="checkbox" name="" id="" ></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="">
+                    <td>BrickLayer</td>
+                    <td><input type="checkbox" name="" id="" checked> Email</td>
+                    <td><input type="checkbox" name="" id="" ></td>
+                    <td><input type="checkbox" name="" id="" ></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="success">
                     <td>is2</td>
                     <td><input type="checkbox" name="" id="" checked> Email</td>
                     <td><input type="checkbox" name="" id="" checked></td>
                     <td><input type="checkbox" name="" id="" checked></td>
                     <td>19</td>
-                    <td>3:30pm - 12:30am</td>
+                    <td><span class="underlined">3:30pm - 12:30am</span> <br> 5:00pm - 5:00am</td>
                 </tr>
                 <tr>
                     <td>Bell Network Technician</td>
@@ -127,7 +143,7 @@
                     <td><span>17.5</span></td>
                     <td><span class="underlined">11:00pm-7:30am</span> <br> 7:00am - 3:30pm</td>
                 </tr>
-                <tr class="greyed">
+                <tr class="success">
                     <td>Linxus Group</td>
                     <td><input type="checkbox" name="" id="" checked> Indeed</td>
                     <td><input type="checkbox" name="" id="" checked></td>

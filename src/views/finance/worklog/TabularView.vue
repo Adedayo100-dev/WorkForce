@@ -26,35 +26,22 @@ export default {
 
 <template>
     <div class="work-log-list-container">
-        <table>
-            <thead>
-                <tr>
-                    <td>Location</td>
-                    <td>Date</td>
-                    <td>Hours</td>
-                    <td class="pay-header">
-                        <div class="">
-                            <span>(CAD) Pay</span>
-                            <UnseeIcon />
-                        </div>
-                    </td>
-                </tr>
-            </thead>
-            <tbody>
-                <WorkLogItem v-for="(work, index) in worksList" :key="work._id" :loc="work.loc" :time="work.time" :pay="work.pay" :payStatus="work.payStatus" :idx="index"/>
-                <tr id="totalShifts">
-                    <td>
-                        <p>Total</p>
-                    </td>
-                    <td class="dates-output">{{totalShifts}} entries</td>
-                    <td></td>
-                    <td class="text-bold pay-output text-black">
-                        <span>{{$formatNum(totalPay)}}</span>
-                    </td>
-                    <!-- <td colspan="3" style="color: #757575;">This is the total sum of all work done from May, 2022 to present......</td> -->
-                </tr>
-            </tbody>
-        </table>
+        <UnseeIcon />
+        <WorkLogItem v-for="(work, index) in worksList.slice().reverse()" :key="work._id" :loc="work.loc" :time="work.time" :description="work.description" :pay="work.pay" :payStatus="work.payStatus" :idx="index"/>
+        <div class="shifts-list-item" id="totalShifts">
+            <div class="visible">
+                <div class="work-logo_image-container">
+                    <p>Total</p>
+                </div>
+                <div class="dates-output">{{totalShifts}} entries</div>
+                <div class="hours-output"></div>
+                <div class="text-bold pay-output text-black">
+                    <span>{{$formatNum(totalPay)}}</span>
+                </div>
+                <!-- <td colspan="3" style="color: #757575;">This is the total sum of all work done from May, 2022 to present......</td> -->
+            </div>
+            
+        </div>
     </div>
 </template>
 

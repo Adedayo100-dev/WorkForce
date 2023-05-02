@@ -122,6 +122,11 @@ const router = createRouter({
           path: 'co-op',
           name: 'co-op',
           component: () => import('../views/finance/Co-op.vue'),
+        },
+        {
+          path: 'transactions',
+          name: 'transactions',
+          component: () => import('../views/finance/TransactionsView.vue'),
         }
       ],
     },

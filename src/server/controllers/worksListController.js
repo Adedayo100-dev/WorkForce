@@ -33,7 +33,6 @@ const setWorksList = asyncHandler(async (req, res) => {
     })
 
     res.status(200).json(work)
-    
 })
 
 // @desc    Update WorksList

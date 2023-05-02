@@ -16,6 +16,7 @@
 
 <script>
 import NewShift from '../components/NewShift.vue'
+import NewTransaction from '../components/NewTransaction.vue'
 import DialogBox from '../components/DialogBox.vue'
 import WorkDetails from '../components/WorkDetails.vue'
 import DialogSubmit from '../components/DialogSubmit.vue'
@@ -25,6 +26,7 @@ export default {
     name: 'modal',
     components: {
         NewShift,
+        NewTransaction,
         DialogBox,
         WorkDetails,
         DialogSubmit
@@ -36,7 +38,7 @@ export default {
         }
     },
     computed: mapState({
-        currentModal: state => state.whichModal, // NewShift  or DialogBox
+        currentModal: state => state.whichModal, // NewShift, newTransaction  or DialogBox
         modalSubmitType: state => state.whichSubmitType, // FormSubmit or DialogSubmit
 
     }),
@@ -88,7 +90,6 @@ export default {
         display: flex;
         justify-content: end;
         column-gap: 12px;
-        margin-top: 24px;
     }
     .confirm-button-container button{
         border: none;
@@ -117,4 +118,14 @@ export default {
         -webkit-transform: scale(1.1);
         transform: scale(1.1);
     }
+    .form-group{
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+label{
+    font-size: 13px;
+    color: darkgray;
+}
 </style>

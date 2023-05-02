@@ -63,35 +63,35 @@
 </template>
 
 <script>
-import axios from 'axios'
-import FormSubmit from '../components/FormSubmit.vue'
-export default {
-    components: {
-        FormSubmit,
-    },
-    data() {
-        return{
-            formValues:{
-                inputLocation: '',
-                inputTime: {
-                    startTime: '',
-                    stopTime: ''
+    import axios from 'axios'
+    import FormSubmit from '../components/FormSubmit.vue'
+    export default {
+        components: {
+            FormSubmit,
+        },
+        data() {
+            return{
+                formValues:{
+                    inputLocation: '',
+                    inputTime: {
+                        startTime: '',
+                        stopTime: ''
+                    },
+                    inputPay: null,
+                    inputPayStatus: false,
+                    inputDescription: '',
+                }   
+            }
+        },
+        methods: {
+            createShift(){
+                    console.log('Shift Form values', this.formValues);
+                    axios.post('http://localhost:3000/api/worksList', this.formValues, {headers:{"Content-Type" : "application/json"}})
+                    .then((res) => console.log(res))
+                    .catch((err) => console.log(err))
                 },
-                inputPay: null,
-                inputPayStatus: false,
-                inputDescription: '',
-            }   
-        }
-    },
-    methods: {
-        createShift(){
-            console.log('Form values', this.formValues);
-            axios.post('http://localhost:3000/api/workslist', this.formValues, {headers:{"Content-Type" : "application/json"}})
-            .then((res) => console.log(res))
-            .catch((err) => console.log(err))
-        }
-    },
-}
+        },
+    }
 </script>
 
 <style>
@@ -101,16 +101,7 @@ export default {
 .new-shift{
     /* margin-top: 60px; */
 }
-.form-group{
-    display: grid;
-    grid-template-columns: 2fr 10fr;
-    gap: 12px;
-    margin-bottom: 10px;
-}
-label{
-    font-size: 13px;
-    color: darkgray;
-}
+
 .new-shift .form-control_input{
     padding: 10px 12px;
     border: 1px solid rgba(0 0, 0, .1);

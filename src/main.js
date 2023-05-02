@@ -30,6 +30,10 @@ const store = createStore({
                 case "NewShift":
                     state.whichSubmitType = null;
                     break;
+                    
+                case "NewTransaction":
+                    state.whichSubmitType = null;
+                    break;
 
                 default:
                     state.whichSubmitType = "DialogSubmit";
