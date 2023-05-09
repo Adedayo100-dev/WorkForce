@@ -9,7 +9,8 @@ export default {
       notifications: [
         {title: "Cancel Netflix", body: "I need to remove my billing information from there and monitor the bills on my credit card while saving up", date: "undefined"},
         {title: "Check Message", body: "This is a Notification", date: "undefined"},
-        {title: "Pay Phone bill- $122.67", body: "Pay the phone bill for Fido", date: "Apr 19"}
+        {title: "Pay Phone bill- $122.67", body: "Pay the phone bill for Fido", date: "Apr 19"},
+        {title: "Get TELEX after paying with form-A", body: "Pay the phone bill for Fido", date: "Apr 19"}
       ]
     }
   },

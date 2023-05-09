@@ -137,7 +137,8 @@
             {"id": 3, "amount": 545.05, "rate": 555, "date": "2023-03-31", "medium": "Lemonade"},
             {"id": 4, "amount": 300.37, "rate": 552, "date": "2023-04-15", "medium": "Lemonade"},
             {"id": 5, "amount": 100, "rate": 545, "date": "2023-04-24", "medium": "Lemonade"},
-            {"id": 6, "amount": 650, "rate": 546, "date": "2023-04-28", "medium": "Africhange"}
+            {"id": 6, "amount": 650, "rate": 546, "date": "2023-04-28", "medium": "Africhange"},
+            {"id": 7, "amount": 366.85, "rate": 546, "date": "", "medium": ""}
         ]
     },
     "prices": [

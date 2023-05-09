@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const dotenv = require('dotenv').config({ path: './config/config.env'});
+require('dotenv').config({ path: './config/config.env'});
 const {errorHandler} = require('./middleware/errorMiddleware');
 // const exphbs = require('express-handlebars');
 const passport = require('passport');
@@ -52,7 +52,7 @@ app.use('/auth', require('./routes/auth'))
 app.use('/api', require('./routes/api.js'))
 
 
-app.use(errorHandler)
+// app.use(errorHandler)
 
 // Handler for 404 - Resource Not Found
 app.use((req, res, next) => {

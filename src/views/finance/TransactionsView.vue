@@ -9,7 +9,7 @@
         },
         data() {
             return {
-                transactions: [],
+                transactions:{},
                 nairaTotal: 2000000,
             }
         },
@@ -25,30 +25,39 @@
         
         },
         computed: {
-            nairaPaid(){
-                let sum = 0;
-                for (const entry of Object.values(this.transactions)) {
-                    sum += (entry.amount * entry.rate);
-                }
-                return sum;
-            },
-            dollarPaid(){
-                let sum = 0;
-                for (const entry of Object.values(this.transactions)) {
-                    sum += entry.amount;
-                }
-                return sum;
-            },
-            paidPercentage(){
-                return (this.nairaPaid / this.nairaTotal*100).toFixed(2);
-            }
+            // nairaPaid(){
+            //     const transactionArrays = Object.values(this.transactions)
+            //     const sums = transactionArrays.map(transactions => {
+            //         return transactions.reduce((total, transaction) => {
+            //             return total + (transaction.amount* transaction.rate)
+            //         }, 0)
+            //     })
+
+            //     return sums
+            // },
+            // dollarPaid(){
+            //     const transactionArrays = Object.values(this.transactions)
+            //     const sums = transactionArrays.map(transactions => {
+            //         return transactions.reduce((total, transaction) => {
+            //             return total + transaction.amount
+            //         }, 0)
+            //     })
+
+            //     return sums
+            // },
+            // paidPercentage(){
+            //     return (this.nairaPaid / this.nairaTotal*100).toFixed(2);
+            // }
         },
         methods: {
             openModal(modalType) {
                 this.$store.commit('openModal', modalType);
                 // console.log(modalType, 'Modal-Opened');
             }
-        }
+        },
+        mounted() {
+            console.log(this.transactions);
+        },
     }
 </script>
 
@@ -60,65 +69,37 @@
         </button>
     </div>
     <br>
-    <div class="transaction-list">    
-        <h4>Towards Debt</h4>
-        <div class="transactions-binder">
-            <div>
-                <table>
-                    <tr v-for="item in transactions" :key="item.id">
-                        <td class="num-output">{{$formatNum(item.amount)}}</td>
-                        <td><pre> * </pre></td>
-                        <td class="num-output">{{item.rate}} ₦/CAD</td>
-                        <td><pre> = </pre></td>
-                        <td class="num-output">{{$formatNum(item.amount * item.rate)}}</td>
-                    </tr>
-                    <tr>
-                        <td colspan="5"><div class="hr"></div></td>
-                        
-                    </tr>
-                    <tr class="transaction-sum">
-                        <td class="num-output">{{$formatNum(dollarPaid) }}</td>
-                        <td><pre> * </pre></td>
-                        <td>529.712(mean)</td>
-                        <td><pre> = </pre></td>
-                        <td class="num-output">{{$formatNum(this.nairaPaid)}}</td>
-                    </tr>
-                </table>
-            </div>
-            <div class="paid-percentage-box">
-                <h3>{{paidPercentage}}%</h3>
-                <span>paid</span>
-            </div>
-        </div>
-    </div>
-    <div class="transaction-list">    
-        <h4>Towards School Fees</h4>
-        <div class="transactions-binder">
-            <div>
-                <table>
-                    <tr v-for="item in transactions" :key="item.id">
-                        <td class="num-output">{{$formatNum(item.amount)}}</td>
-                        <td><pre> * </pre></td>
-                        <td class="num-output">{{item.rate}} ₦/CAD</td>
-                        <td><pre> = </pre></td>
-                        <td class="num-output">{{$formatNum(item.amount * item.rate)}}</td>
-                    </tr>
-                    <tr>
-                        <td colspan="5"><div class="hr"></div></td>
-                        
-                    </tr>
-                    <tr class="transaction-sum">
-                        <td class="num-output">{{$formatNum(dollarPaid) }}</td>
-                        <td><pre> * </pre></td>
-                        <td>529.712(mean)</td>
-                        <td><pre> = </pre></td>
-                        <td class="num-output">{{$formatNum(this.nairaPaid)}}</td>
-                    </tr>
-                </table>
-            </div>
-            <div class="paid-percentage-box">
-                <h3>{{paidPercentage}}%</h3>
-                <span>paid</span>
+    <div v-for="(item, index) in transactions" :key="index">
+        <div class="transaction-list">    
+            <h4>Towards {{ index }}</h4>
+            <div class="transactions-binder">
+                <div>
+                    <table>
+                        <tr v-for="content in item.transactionsData" :key="content.id">
+                            <td class="num-output">{{$formatNum(content.amount)}}</td>
+                            <td><pre> * </pre></td>
+                            <td class="num-output">{{content.rate}} ₦/CAD</td>
+                            <td><pre> = </pre></td>
+                            <td class="num-output">{{$formatNum(content.amount * content.rate)}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5"><div class="hr"></div></td>
+        
+                        </tr>
+                        <tr class="transaction-sum">
+                        <td class="num-output">{{$formatNum(100000)}}</td>
+                            <td><pre> * </pre></td>
+                            <td>{{ $formatNum(10000)}} ₦/CAD</td>
+                            <td><pre> = </pre></td>
+                            <td class="num-output">{{$formatNum(1000000)}}</td>
+                        </tr>
+                    </table>
+                    Goal: 
+                </div>
+                <div class="paid-percentage-box">
+                    <h3>{{item.transactionsMeta.paidPercentage}}%</h3>
+                    <span>paid</span>
+                </div>
             </div>
         </div>
     </div>

@@ -21,7 +21,7 @@
                 <span>Birthday:</span> <span>13th Nov, 2002(not show)</span>
             </div>
             <div class="one-liner">
-                <span></span>
+                <span>ok: {{ profile.displayName }}</span>
             </div>
         </div>
         <div class="donate-view">
@@ -47,14 +47,31 @@ export default {
         }
     },
     async created() {
+
+        let axiosConfig = {
+            headers: {
+                'Content-Type': 'application/json;charset=UTF-8',
+                "Access-Control-Allow-Origin": "*",
+            }
+        };
+
         axios.get('http://localhost:3000/profile')
             .then((res) => {
-                this.profile = res.data;
-                console.log(res.data);
-            })
-            .catch((err) => {
-                console.log(err)
-            });
+                    this.profile = res.data;
+                    console.log(res.data);
+                })
+                .catch((err) => {
+                    console.log(err)
+                });
+
+        // axios.get('http://localhost:3000/profile')
+        //     .then((res) => {
+        //         this.profile = res.data;
+        //         console.log(res.data);
+        //     })
+        //     .catch((err) => {
+        //         console.log(err)
+        //     });
 
         // Simple GET request using fetch
         // fetch("http://localhost:3000/profile")

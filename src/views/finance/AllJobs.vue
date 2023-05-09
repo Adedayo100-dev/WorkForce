@@ -17,10 +17,18 @@
                 <tr class="">
                     <td>AppleOne</td>
                     <td><input type="checkbox" name="" id="" checked> Email</td>
+                    <td><input type="checkbox" name="" id="" checked></td>
                     <td><input type="checkbox" name="" id="" ></td>
+                    <td>17.75</td>
+                    <td><span class="underlined">7:15am - 4:15pm</span> <br> 4:15pm - 1:15am</td>
+                </tr>
+                <tr class="">
+                    <td>AnyHere</td>
+                    <td><input type="checkbox" name="" id="" checked> App</td>
+                    <td><input type="checkbox" name="" id="" checked></td>
                     <td><input type="checkbox" name="" id="" ></td>
-                    <td></td>
-                    <td></td>
+                    <td>17.44</td>
+                    <td>3:20pm - 11:50pm</td>
                 </tr>
                 <tr class="">
                     <td>BrickLayer</td>

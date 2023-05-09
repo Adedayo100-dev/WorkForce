@@ -1,9 +1,17 @@
 <script>
+import axios from 'axios'
 export default {
     data() {
         return {
             shoppingList: [],
-            newShopItem: ''
+            newShopItem:{
+                    inputAmount: null,
+                    inputRate: null,
+                    inputTime: {
+                        inputDate: null,
+                        inputTime: null,
+                    },
+                },
         }
     },
     mounted() {
@@ -12,6 +20,14 @@ export default {
             .then(data => this.shoppingList = data)
             .catch(err => console.log(err.message));
     },
+    methods: {
+            createShopItem(){
+                console.log('Shopping Form values', this.newShopItem);
+                axios.post('http://localhost:3000/api/shopping', this.newShopItem, {headers:{"Content-Type" : "application/json"}})
+                .then((res) => console.log(res))
+                .catch((err) => console.log(err))
+            },
+        },
 }
 </script>
 
@@ -24,7 +40,13 @@ export default {
             </li>
             <!-- Check Youtube for how to handle Vue forms -->
             <li>
-                <input v-model="newShopItem" placeholder="New Item" class="shopping-list_input"/>
+                <form @submit.prevent="createShopItem" action="">
+                    <input v-model="newShopItem.inputAmount" placeholder="New Item" class="shopping-list_input"/>
+                    <input v-model="newShopItem.inputRate" placeholder="Amount" class="shopping-list_input"/>
+                    <input v-model="newShopItem.inputTime.inputDate" placeholder="StartDate" class="shopping-list_input"/>
+                    <input v-model="newShopItem.inputTime.inputTime" placeholder="StartTime" class="shopping-list_input"/>
+                    <input type="submit" value="">
+                </form>
             </li>
         </ul>
     </div>

@@ -1,14 +1,31 @@
 const asyncHandler = require('express-async-handler');
-const Transaction = require('../models/transactionModel');
+const {SchoolFee, Debt} = require('../models/transactionModel');
+// const Transaction = require('../models/transactionModel');
 
 
 // @desc    Get Transactions
 // @route   GET /api/transactions
 // @access  Private
 const getTransactions = asyncHandler(async (req, res) => {
-    const Transactions = await Transaction.find();
-    res.status(200).json(Transactions);
+    const debts = {
+        transactionsData : await Debt.find(),
+        transactionsMeta: {
+            nairaPaid: 132480,
+            nairaTarget: 132480,
+            paidPercentage: 100
+        }
+    }
 
+    const schoolFees = {
+        transactionsData : await SchoolFee.find(),
+        transactionsMeta: {
+            nairaPaid: 1600507.09,
+            nairaTarget: 3105000,
+            paidPercentage: 51.55
+        }
+    }
+
+    res.status(200).json({debts, schoolFees});
 })
 
 
@@ -20,7 +37,8 @@ const setTransactions = asyncHandler(async (req, res) => {
         res.status(400)
         throw new Error('Pleae add a transaction field');
     }
-    const transaction = await Transaction.create({
+
+    const debts = await Debt.create({
         amount: req.body.inputAmount,
         rate: req.body.inputRate,
         date: req.body.inputDate,
@@ -28,7 +46,15 @@ const setTransactions = asyncHandler(async (req, res) => {
         description: req.body.inputDescription
     })
 
-    res.status(200).json(transaction);
+    const schoolFees = await SchoolFee.create({
+        amount: req.body.inputAmount,
+        rate: req.body.inputRate,
+        date: req.body.inputDate,
+        medium: req.body.inputMedium,
+        description: req.body.inputDescription
+    })
+
+    res.status(200).json({debts, schoolFees});
 })
 
 // @desc    Update Transactions
