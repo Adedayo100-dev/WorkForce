@@ -1,0 +1,60 @@
+const mongoose = require('mongoose');
+
+const employerSchema = mongoose.Schema(
+    {
+        name: {
+            type: String,
+            required: [true, 'Please add an employer name value']
+        },
+        contacted: {
+            type: Boolean,
+            required: [true, 'Please add a contacted value']
+        },
+        registered: {
+            type: Boolean,
+            required: [true, 'Please add a registered value']
+        },
+        employed: {
+            type: Boolean,
+            required: [true, 'Please add your employment status']
+        },
+        pay: {
+            morning: {
+                type: Number,
+                required: [true, 'Please add a pay value']
+            },
+            afternoon: {
+                type: Number,
+                required: [true, 'Please add a pay value']
+            },
+            night: {
+                type: Number,
+                required: [true, 'Please add a pay value']
+            }
+            
+        },
+        time: {
+            morning: {
+                type: String,
+                required: [true, 'Please add a time value']
+            },
+            afternoon: {
+                type: String,
+                required: [true, 'Please add a time value']
+            },
+            night: {
+                type: String,
+                required: [true, 'Please add a time value']
+            }
+        },
+        description: {
+            type: String,
+            required: [true, 'Please add a description value']
+        }
+    },
+    {
+       timestamps: true, 
+    }
+)
+
+module.exports = mongoose.model('Employer', employerSchema)

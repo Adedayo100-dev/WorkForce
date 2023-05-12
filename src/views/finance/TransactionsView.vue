@@ -71,7 +71,7 @@
     <br>
     <div v-for="(item, index) in transactions" :key="index">
         <div class="transaction-list">    
-            <h4>Towards {{ index }}</h4>
+            <h4>Towards {{ item.transactionsMeta.name }}</h4>
             <div class="transactions-binder">
                 <div>
                     <table>
@@ -87,14 +87,14 @@
         
                         </tr>
                         <tr class="transaction-sum">
-                        <td class="num-output">{{$formatNum(100000)}}</td>
+                        <td class="num-output">{{$formatNum(item.transactionsMeta.totalDollarPaid)}}</td>
                             <td><pre> * </pre></td>
                             <td>{{ $formatNum(10000)}} ₦/CAD</td>
                             <td><pre> = </pre></td>
-                            <td class="num-output">{{$formatNum(1000000)}}</td>
+                            <td class="num-output">{{$formatNum(item.transactionsMeta.totalNairaPaid)}}</td>
                         </tr>
                     </table>
-                    Goal: 
+                   <span> Goal: ₦{{$formatNum(item.transactionsMeta.nairaGoal)}}</span>
                 </div>
                 <div class="paid-percentage-box">
                     <h3>{{item.transactionsMeta.paidPercentage}}%</h3>

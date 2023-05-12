@@ -89,9 +89,9 @@ const router = createRouter({
         {
           // UserProfile will be rendered inside User's <router-view>
           // when /user/:id/profile is matched
-          path: 'alljobs',
-          name: 'alljobs',
-          component: () => import('../views/finance/AllJobs.vue'),
+          path: 'employers',
+          name: 'employers',
+          component: () => import('../views/finance/Employers.vue'),
         },
         {
           path: 'sinjobs',

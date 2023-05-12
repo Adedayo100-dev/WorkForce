@@ -1,6 +1,6 @@
 <template>
     <div class="tab-pane" id="tab-all">
-        <h4>All</h4>
+        <h4>Employers</h4>
         <table>
             <thead>
                 <tr>
@@ -14,6 +14,22 @@
             </thead>
             <tbody>
                 <!-- Each Courses Data -->
+                <tr>
+                    <td>UPS Burlington</td>
+                    <td><input type="checkbox" name="" id="" checked></td>
+                    <td><input type="checkbox" name="" id="" checked></td>
+                    <td><input type="checkbox" name="" id="" ></td>
+                    <td>18.60 | 20.10</td>
+                    <td><span class="underlined">10:00am-6:30pm</span> <br> 2:00pm - 10:30pm</td>
+                </tr>
+                <tr>
+                    <td>ABL Employment</td>
+                    <td><input type="checkbox" name="" id="" checked></td>
+                    <td><input type="checkbox" name="" id="" checked></td>
+                    <td><input type="checkbox" name="" id="" ></td>
+                    <td>17.5</td>
+                    <td></td>
+                </tr>
                 <tr class="">
                     <td>AppleOne</td>
                     <td><input type="checkbox" name="" id="" checked> Email</td>
@@ -22,13 +38,21 @@
                     <td>17.75</td>
                     <td><span class="underlined">7:15am - 4:15pm</span> <br> 4:15pm - 1:15am</td>
                 </tr>
-                <tr class="">
+                <tr class="cancelled">
                     <td>AnyHere</td>
                     <td><input type="checkbox" name="" id="" checked> App</td>
                     <td><input type="checkbox" name="" id="" checked></td>
                     <td><input type="checkbox" name="" id="" ></td>
                     <td>17.44</td>
                     <td>3:20pm - 11:50pm</td>
+                </tr>
+                <tr>
+                    <td>Express Employment</td>
+                    <td><input type="checkbox" name="" id="" checked></td>
+                    <td><input type="checkbox" name="" id="" checked></td>
+                    <td><input type="checkbox" name="" id=""></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr class="">
                     <td>BrickLayer</td>
@@ -72,7 +96,7 @@
                 </tr>
                 
                 <tr class="success">
-                    <td>24hr Employment</td>
+                    <td>24hr Employment <MessageDangerIcon/></td>
                     <td><input type="checkbox" name="" id="" checked> Appointment</td>
                     <td><input type="checkbox" name="" id="" checked></td>
                     <td><input type="checkbox" name="" id="" checked></td>
@@ -135,14 +159,6 @@
                     <td></td>
                     <td></td>
                 </tr>
-                <tr>
-                    <td>ABL Employment</td>
-                    <td><input type="checkbox" name="" id="" checked></td>
-                    <td class="cancelled"><input type="checkbox" name="" id="" checked></td>
-                    <td><input type="checkbox" name="" id="" ></td>
-                    <td></td>
-                    <td></td>
-                </tr>
                 <tr class="greyed">
                     <td>Service MasterClean</td>
                     <td><input type="checkbox" name="" id="" checked> Transfered</td>
@@ -199,14 +215,7 @@
                     <td></td>
                     <td></td>
                 </tr>
-                <tr>
-                    <td>Express Employment</td>
-                    <td><input type="checkbox" name="" id=""></td>
-                    <td><input type="checkbox" name="" id=""></td>
-                    <td><input type="checkbox" name="" id=""></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+                
                 <tr class="">
                     <td></td>
                     <td><input type="checkbox" name="" id=""></td>
@@ -220,11 +229,34 @@
     </div>
 </template>
 
-// <script>
-// export default {
-
-// }
-// </script>
+<script>
+import axios from 'axios'
+import MessageDangerIcon from '../../components/icons/IconMessageDanger.vue'
+export default {
+    name: 'Employers',
+    components: {
+        MessageDangerIcon
+    },
+    data() {
+        return {
+            allJobs: [
+                { Employer: "UPS Burlington", contacted: true, registered: true, employed: true, pay: [18.60, 20.10], time: []}
+            ]
+        }
+    },
+    created() {
+        // axios.get('http://localhost:3000/api/employer')
+        // .then((res) => {
+        //     this.alljobs = res.data;
+        //     console.log(res.data);
+        // })
+        // .catch((err) => {
+        //     console.log(err.message)
+        // });
+    
+    },
+}
+</script>
 
 <style>
 

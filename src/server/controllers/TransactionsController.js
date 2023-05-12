@@ -7,20 +7,96 @@ const {SchoolFee, Debt} = require('../models/transactionModel');
 // @route   GET /api/transactions
 // @access  Private
 const getTransactions = asyncHandler(async (req, res) => {
+
+    ////////////////Query Debt///////////////////////
+    var someDB = await
+    Debt.aggregate([
+        {
+            $project: {
+              _id: 0,
+              totalSum:{
+                $sum: "$amount"
+              },
+              totalMul: {
+                $multiply: ['$amount', '$rate']
+              }
+            }
+        },
+        { 
+            $group: { 
+                _id: null, 
+                totalDollarPaid: { 
+                    $sum: "$totalSum" 
+                },
+                totalNairaPaid: {
+                    $sum: "$totalMul"
+                }
+            } 
+        }
+    ]).then(result => {
+        // console.log(result)
+        return result[0]
+    })
+    .catch(error => {
+        console.error(error);
+    })
+    console.log(someDB);
+
+    //////////////////////////////////////
+
     const debts = {
         transactionsData : await Debt.find(),
         transactionsMeta: {
-            nairaPaid: 132480,
-            nairaTarget: 132480,
+            name: "Debt",
+            totalDollarPaid: someDB.totalDollarPaid, //2500
+            totalNairaPaid: someDB.totalNairaPaid, //1324280
+            nairaGoal: 1324280,
             paidPercentage: 100
         }
     }
 
+    //////////////////Query SchoolFee/////////////////////
+    var someSF = await
+    SchoolFee.aggregate([
+        {
+            $project: {
+              _id: 0,
+              totalSum:{
+                $sum: "$amount"
+              },
+              totalMul: {
+                $multiply: ['$amount', '$rate']
+              }
+            }
+        },
+        { 
+            $group: { 
+                _id: null, 
+                totalDollarPaid: { 
+                    $sum: "$totalSum" 
+                },
+                totalNairaPaid: {
+                    $sum: "$totalMul"
+                }
+            } 
+        }
+    ]).then(result => {
+        return result[0];
+    })
+    .catch(error => {
+        console.error(error);
+    })
+    console.log(someSF);
+
+    //////////////////////////////////////
+    
     const schoolFees = {
         transactionsData : await SchoolFee.find(),
         transactionsMeta: {
-            nairaPaid: 1600507.09,
-            nairaTarget: 3105000,
+            name: "School Fee",
+            totalDollarPaid: someSF.totalDollarPaid,
+            totalNairaPaid: someSF.totalNairaPaid,
+            nairaGoal: 3105000,
             paidPercentage: 51.55
         }
     }

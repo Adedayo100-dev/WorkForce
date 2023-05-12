@@ -27,7 +27,7 @@ export default {
 <template>
     <div class="work-log-list-container">
         <UnseeIcon />
-        <WorkLogItem v-for="(work, index) in worksList.slice().reverse()" :key="work._id" :loc="work.loc" :time="work.time" :description="work.description" :pay="work.pay" :payStatus="work.payStatus" :idx="index"/>
+        <WorkLogItem v-for="(work, index) in worksList" :key="work._id" :loc="work.loc" :time="work.time" :description="work.description" :pay="work.pay" :payStatus="work.payStatus" :idx="index"/>
         <div class="shifts-list-item" id="totalShifts">
             <div class="visible">
                 <div class="work-logo_image-container">

@@ -33,14 +33,6 @@ export default {
                 console.log(err.message)
                 this.errorMsg = 'error retrieving data';
             });
-        axios.get('http://localhost:3000/api/transactions')
-            .then((res) => {
-                this.transactions = res.data;
-                console.log(res.data);
-            })
-            .catch((err) => {
-                console.log(err.message)
-            });
         
     },
     // beforeMount() {
@@ -52,14 +44,6 @@ export default {
     //     }
     // },
     computed: {
-        nairaPaid(){
-            // return parseFloat(this.transactions.reduce((acc, item) => acc + (item.amount * item.rate), 0).toFixed(2));
-            let sum = 0;
-            for (const entry of Object.values(this.transactions)) {
-                sum += (entry.amount * entry.rate);
-            }
-            return sum;
-        },
         totalPay() {
             return parseFloat(this.worksList.reduce((acc, item) => acc + item.pay, 0).toFixed(2));
         },
@@ -72,20 +56,12 @@ export default {
             //     }
             // );
             // return numDates;
-        },
-        paidPercentage(){
-            return (this.nairaPaid / this.nairaTotal*100).toFixed(2);
         }
     },
     methods: {
         openModal(modalType) {
             this.$store.commit('openModal', modalType);
             // console.log(modalType, 'Modal-Opened');
-
-        // POSTING
-        // axios.post('http://localhost:3000/api/transactions', this.sampleSub, {headers:{"Content-Type" : "application/json"}})
-        //     .then((res) => console.log(res))
-        //     .catch((err) => console.log(err))
         }
     },
 }
@@ -152,11 +128,11 @@ export default {
                         <div class="first-tithe-box">
                             <form oninput="x.value='₦'+(parseInt(a.value)*parseInt(b.value)).toLocaleString('en-US')">
                                 <div class="func-container">
-                                    <span>Tithe: </span>
+                                    <span>Percentages: </span>
                                     <div class="calc-container">
                                         <input type="number" name="" id="a" :value="totalPay / 10" placeholder="$">
                                         <pre> * </pre>
-                                        <input type="number" name="" id="b" :value="exchangeRate" placeholder="Currency Rate">
+                                        <input type="number" name="" id="b" :value="exchangeRate" placeholder="Rate">
                                         <pre> = </pre>
                                         <output name="x" for="a  b"></output>
                                     </div>
@@ -175,25 +151,6 @@ export default {
                                     </div>
                                 </div>
                             </form>
-                            <br>
-                            <div>
-                                <span>Transactions: </span>
-                                <br> <br>
-                                <div class="transactions-binder">
-                                    <div class="paid-percentage-box">
-                                        <h3>{{paidPercentage}}%</h3>
-                                        <span>paid</span>
-                                    </div>
-                                </div>
-                                
-                                <br>
-
-                                <div>
-                                    <span>Remaining: </span>
-                                    <p>₦{{ $formatNum(nairaTotal) }} - ₦{{$formatNum(nairaPaid)}} = ₦{{$formatNum(1402000)}}</p>
-                                    <p>₦1402000 / {{exchangeRate}} = ${{$formatNum(2572.48)}}</p>
-                                </div>
-                            </div>
                         </div>
                         <hr class="">
                         <div class="second-tithe-box">
