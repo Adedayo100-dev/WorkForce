@@ -10,45 +10,50 @@ const router = createRouter({
       meta: {title: 'Home'}
     },
     {
-      path: '/plans',
-      name: 'plans',
-      component: () => import('../views/plans/PlansView.vue'),
-      meta: {title: 'Plans'},
+      path: '/tasks',
+      name: 'tasks',
+      component: () => import('../views/tasks/TasksView.vue'),
+      meta: {title: 'Tasks'},
       children: [
         {
           // Userhelp will be rendered inside User's <router-view>
           // when /user/:id/profile is matched
           path: '',
-          name: 'plansindx',
-          component:  () => import('../views/plans/PlansIndx.vue'),
+          name: 'tasksindx',
+          component:  () => import('../views/tasks/TasksIndx.vue'),
           //
         },
         {
           // UserProfile will be rendered inside User's <router-view>
           // when /user/:id/profile is matched
-          path: 'allplans',
-          name: 'allplans',
-          component: () => import('../views/plans/AllPlans.vue') ,
+          path: 'alltasks',
+          name: 'alltasks',
+          component: () => import('../views/tasks/AllTasks.vue') ,
         },
         {
           path: 'shopping-list',
           name: 'shoppling-list',
-          component: () => import('../views/plans/ShopList.vue'),
+          component: () => import('../views/tasks/ShopList.vue'),
         },
         {
           path: 'taxfiling',
           name: 'taxfiling',
-          component: () => import('../views/plans/TaxFiling.vue'),
+          component: () => import('../views/tasks/TaxFiling.vue'),
         },
         {
           path: 'wish-list',
           name: 'wish-list',
-          component: () => import('../views/plans/WishList.vue'),
+          component: () => import('../views/tasks/WishList.vue'),
         },
         {
           path: 'bought-items',
           name: 'bought-items',
-          component: () => import('../views/plans/BoughtItems.vue'),
+          component: () => import('../views/tasks/BoughtItems.vue'),
+        },
+        {
+          path: 'vault',
+          name: 'vault',
+          component: () => import('../views/tasks/Vault.vue'),
         }
       ],
     },

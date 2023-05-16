@@ -1,15 +1,16 @@
 <script>
-import FilterIcon from '../../../components/icons/IconFilter.vue'
-import EditSquareIcon from '../../../components/icons/IconEditSquare.vue'
+import AddButton from '../../../components/AddButton.vue'
 import IncomeCalculator from '../../../components/IncomeCalculator.vue'
+import UnseeIcon from '../../../components/icons/IconUnview.vue'
 import TableIcon from '../../../components/icons/IconTable.vue'
 import GraphIcon from '../../../components/icons/IconGraph.vue'
+import FilterButton from '../../../components/FilterButton.vue'
 import axios from 'axios'
 
 
 export default {
     components: {
-        FilterIcon, IncomeCalculator, TableIcon, GraphIcon, EditSquareIcon
+        AddButton, IncomeCalculator, TableIcon, GraphIcon, FilterButton, UnseeIcon
     },
     props: ['title'],
     data() {
@@ -73,27 +74,31 @@ export default {
             <!-- ul used to be here -->
             <div class="add-shift_button-box justify-end">
                 <ul class="link-tab-group">
-                <li>
-                    <router-link to="/finance/worklog/tabular" class="tab-link" title="Tabular">
-                        <TableIcon/>
-                    </router-link>
-                </li>
-                <li>
-                    <router-link to="/finance/worklog/graphical" class="tab-link" title="Graphical">
-                        <GraphIcon/>
-                    </router-link>
-                </li>
-            </ul>
-                <button class="filter_button">
-                    Filter <FilterIcon />
-                </button>
-                <button class="add-shift_button green-confirm-button" @click="openModal('NewShift')">
-                    <EditSquareIcon />
-                    <span>  Add Shift</span>
-                </button>
+                    <li>
+                        <router-link to="/finance/worklog/tabular" class="tab-link" title="Tabular">
+                            <TableIcon/>
+                        </router-link>
+                    </li>
+                    <li>
+                        <router-link to="/finance/worklog/graphical" class="tab-link" title="Graphical">
+                            <GraphIcon/>
+                        </router-link>
+                    </li>
+                </ul>
+                <FilterButton/>
+                <AddButton  @click="openModal('NewShift')">
+                    <span> Add Shift</span>
+                </AddButton>
             </div>
             <div class="work-log-filter-box">
-                <form action="/search" class="filter-form">
+                <div class="entries_input_container">
+                    <input type="checkbox" name="" id="">
+                    <small>Show </small>
+                    <input type="number" class="entries_input" value="99" > <!-- Toggle disabled-->
+                    <small> entries</small>
+                </div>
+
+                <form action="/search" class="filter_input-group">
                     <input type="search" placeholder="Search">
                     <div class="select-box">
                         <div class="vertical-divider"></div>
@@ -113,6 +118,8 @@ export default {
                 </form>
                 <div class="work-log-flank-right">
                     <router-link to="#totalShifts">&#8645;</router-link>
+                    <UnseeIcon />
+
                 </div>
             </div>
         </div>
@@ -167,10 +174,10 @@ export default {
 </template>
 
 <style>
-    .transactions-binder{
+    /* .transactions-binder{
         display: flex;
         gap: 28px;
-    }
+    } */
     .select-box{
         position: relative;
         display: inline-block;

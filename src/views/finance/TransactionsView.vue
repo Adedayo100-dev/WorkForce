@@ -1,11 +1,11 @@
 <script>
     import axios from 'axios'
-    import EditSquareIcon from '../../components/icons/IconEditSquare.vue'
+    import AddButton from '../../components/AddButton.vue'
 
     export default {
         name: 'transactions',
         components: {
-            EditSquareIcon,
+            AddButton,
         },
         data() {
             return {
@@ -63,10 +63,9 @@
 
 <template>
     <div class="add-shift_button-box justify-end">
-        <button class="add-shift_button green-confirm-button" @click="openModal('NewTransaction')">
-            <EditSquareIcon />
+        <AddButton @click="openModal('NewTransaction')">
             <span>  Add Transaction</span>
-        </button>
+        </AddButton>
     </div>
     <br>
     <div v-for="(item, index) in transactions" :key="index">

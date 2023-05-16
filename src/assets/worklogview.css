@@ -1,4 +1,7 @@
 @import "tables.css";
+:root {
+    --light-grey-color: #f5f5f5;
+}
 .title-top{
     /* padding: 10px 0 0px; */
     background-color: white;
@@ -7,7 +10,7 @@
 }
 .link-tab-group{
     list-style-type: none;
-    background-color: rgb(235, 235, 235);
+    background-color: var(--light-grey-color);
     border-radius: 0.5rem;
     margin: 0;
     padding: 0 6px;
@@ -46,7 +49,7 @@
     color: white;
 }
 .green-confirm-button:hover{
-    background-color: rgb(235, 235, 235);
+    background-color: var(--light-grey-color);
     color: grey;
 }
 .green-confirm-button span{
@@ -101,21 +104,21 @@
 .border-width-3{
     border-width: 3px;
 }
-.filter-form{
+.filter_input-group{
     border: 1px solid rgb(235, 235, 235);
     border-radius: 0.25rem;
     overflow: hidden;
 }
-.work-log-filter-box input, .work-log-filter-box select{
+.filter_input-group input, .filter_input-group select{
     border: none;
     outline: none;
     font-size: 12px;
 }
-.work-log-filter-box input{
+.filter_input-group input{
     padding: 8px 10px;
-    border-right: none;
+    /* border-right: none; */
 }
-.work-log-filter-box select{
+.filter_input-group select{
     padding: 7px 10px;
 }
 .work-log-flank-right{
@@ -151,7 +154,7 @@
 .tithe{
     margin: 30px 0 0;
     padding: 15px 20px 30px;
-    background-color: rgba(0,0,0,.1); /* #f4f4f6, #f8f8f8 */
+    background-color: var(--light-grey-color); /* #f4f4f6, #f8f8f8, rgba(0,0,0,.1) */
     color: black;
     border-radius: 4px;
 }

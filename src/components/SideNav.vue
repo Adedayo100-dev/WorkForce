@@ -2,17 +2,17 @@
     <div class="side-nav">
         <ul>
             <li>
-                <RouterLink to="/plans">
+                <RouterLink to="/tasks">
                     <div>
-                        <TaskIcon />
-                        <span v-show="navTogVal"> Plans</span>
+                        <TaskIcon class="side-nav-links-icons" />
+                        <span v-show="navTogVal"> Tasks</span>
                     </div>
                 </RouterLink>
             </li>
             <li class="show">
                 <RouterLink to="/finance">
                     <div>
-                        <WorkIcon />
+                        <WorkIcon class="side-nav-links-icons" />
                         <span v-show="navTogVal"> Jobs</span>
                     </div>
                     <div class="caret-d-container" v-show="navTogVal">
@@ -24,7 +24,7 @@
                         <router-link to="/finance/worklog">Work Log</router-link>
                     </li>
                     <li>
-                        <router-link to="/finance/alljobs">All</router-link>
+                        <router-link to="/finance/employers">All</router-link>
                     </li>
                     <li>
                         <router-link to="/finance/sinjobs">SIN</router-link>
@@ -53,7 +53,7 @@
             <li>
                 <RouterLink to="/notifications">
                     <div>
-                        <BellIcon />
+                        <BellIcon  class="side-nav-links-icons"/>
                         <span v-show="navTogVal"> Notifications</span>
                     </div>
                 </RouterLink>
@@ -126,13 +126,13 @@ export default {
         align-items: center;
     }
     .side-nav ul li a:hover {
-        background-color: rgba(0, 0, 0, 0.1);
+        background-color: rgb(247, 247, 247);
     }
     .side-nav ul li a.router-link-active{
-        background-color: rgba(232, 57, 0, 1);
+        background-color: rgba(232 57 0 / 10%);
     }
     .side-nav ul li a.router-link-active .side-nav-links-icons{
-        fill: white;
+        fill: rgba(232, 57, 0, 1);
     }
     .side-nav-links-icons{
         height: 20px;
@@ -140,6 +140,9 @@ export default {
     .side-nav ul li a div{
         display: inline-flex;
         gap: 12px;
+    }
+    .side-nav svg{
+        fill: grey;
     }
     .sidenav-dropdown{
         display: none;

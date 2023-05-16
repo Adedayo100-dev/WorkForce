@@ -1,6 +1,6 @@
 <template>
     <div class="allplans-box">
-        <h3>All Plans</h3>
+        <h3>All Tasks</h3>
         <ul>
             <li>Activate KOHO card</li>
             <li></li>

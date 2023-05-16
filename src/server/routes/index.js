@@ -1,4 +1,5 @@
 const express = require('express')
+const passport = require('passport')
 const router = express.Router()
 const { ensureAuth, ensureGuest} = require('../middleware/auth')
 
@@ -11,7 +12,7 @@ router.get('/', ensureGuest, (req, res) => {
 
 // @desc    Profile
 // @route   GET /profile
-router.get('/profile', ensureAuth, async (req, res) => {
+router.get('/profile', passport.authenticate("jwt", { session: false }), async (req, res) => { //passport.authenticate("jwt", { session: false })
     console.log("2. Well, this got touched");
     try {
         res.status(200).send({

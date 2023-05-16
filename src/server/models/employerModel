@@ -35,16 +35,34 @@ const employerSchema = mongoose.Schema(
         },
         time: {
             morning: {
-                type: String,
-                required: [true, 'Please add a time value']
+                startTime: {
+                    type: String,
+                    required: [true, 'Please add a time value']
+                },
+                stopTime: {
+                    type: String,
+                    required: [true, 'Please add a time value']
+                }  
             },
             afternoon: {
-                type: String,
-                required: [true, 'Please add a time value']
+                startTime: {
+                    type: String,
+                    required: [true, 'Please add a time value']
+                },
+                stopTime: {
+                    type: String,
+                    required: [true, 'Please add a time value']
+                }  
             },
             night: {
-                type: String,
-                required: [true, 'Please add a time value']
+                startTime: {
+                    type: String,
+                    required: [true, 'Please add a time value']
+                },
+                stopTime: {
+                    type: String,
+                    required: [true, 'Please add a time value']
+                }  
             }
         },
         description: {

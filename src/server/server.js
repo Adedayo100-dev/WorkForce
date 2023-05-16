@@ -4,6 +4,7 @@ require('dotenv').config({ path: './config/config.env'});
 const {errorHandler} = require('./middleware/errorMiddleware');
 // const exphbs = require('express-handlebars');
 const passport = require('passport');
+const jwt = require("jsonwebtoken")
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const cors = require('cors');

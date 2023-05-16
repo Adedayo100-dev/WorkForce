@@ -1,11 +1,10 @@
 <script>
 import WorkLogItem from '../../../components/WorkLogItem.vue'
-import UnseeIcon from '../../../components/icons/IconUnview.vue'
 
 
 export default {
     components: {
-        WorkLogItem, UnseeIcon
+        WorkLogItem
     },
     props: {
         worksList: {
@@ -26,22 +25,35 @@ export default {
 
 <template>
     <div class="work-log-list-container">
-        <UnseeIcon />
-        <WorkLogItem v-for="(work, index) in worksList" :key="work._id" :loc="work.loc" :time="work.time" :description="work.description" :pay="work.pay" :payStatus="work.payStatus" :idx="index"/>
-        <div class="shifts-list-item" id="totalShifts">
-            <div class="visible">
-                <div class="work-logo_image-container">
-                    <p>Total</p>
+        <div v-if="worksList[0]">
+            <WorkLogItem v-for="(work, index) in worksList" :key="work._id" :loc="work.loc" :time="work.time" :description="work.description" :pay="work.pay" :payStatus="work.payStatus" :idx="index"/>
+            <div class="shifts-list-item" id="totalShifts">
+                <div class="visible">
+                    <div class="work-logo_image-container">
+                        <p>Total</p>
+                    </div>
+                    <div class="dates-output">{{totalShifts}} entries</div>
+                    <div class="hours-output"></div>
+                    <div class="text-bold pay-output text-black">
+                        <span>{{$formatNum(totalPay)}}</span>
+                    </div>
+                    <!-- <td colspan="3" style="color: #757575;">This is the total sum of all work done from May, 2022 to present......</td> -->
                 </div>
-                <div class="dates-output">{{totalShifts}} entries</div>
-                <div class="hours-output"></div>
-                <div class="text-bold pay-output text-black">
-                    <span>{{$formatNum(totalPay)}}</span>
-                </div>
-                <!-- <td colspan="3" style="color: #757575;">This is the total sum of all work done from May, 2022 to present......</td> -->
+                
             </div>
-            
         </div>
+
+        <div v-else class="d-center my-100">
+            <div>
+                <div class="text-center">
+                    <p>There isn't any data to display at the moment</p>
+                </div>
+                <div class="text-center">
+                    <p>Click the Add Shift Button to add a shift</p>
+                </div>
+            </div>
+        </div>
+
     </div>
 </template>
 

@@ -27,6 +27,9 @@
         <div class="donate-view">
             <span class="donate-title">Donate to the cause:</span>
         </div>
+        <div>
+            <router-link to="/settings">Settings</router-link>
+        </div>
     </div>
     
 </template>
@@ -48,12 +51,14 @@ export default {
     },
     async created() {
 
-        let axiosConfig = {
-            headers: {
-                'Content-Type': 'application/json;charset=UTF-8',
-                "Access-Control-Allow-Origin": "*",
-            }
-        };
+        // const accessToken = 'ya29.a0AWY7CkmGEjAedAC8u6Zos0jWBlfUh_hRsE_Wd9qj0SNIpOWqzmd0CEsVOrOBDSjA7-Saocd1B-6PZPWiTvceybbvpF6C2Fk1TIsDb350JW8f7Sin63CSQ8Q4b1pCedlxaUbU9qf9E0_nbi5XJiLuWEMZq9vKaCgYKARYSARASFQG1tDrp7so1DbvmcAxTwrQUAn1yEg0163';
+        // let axiosConfig = {
+        //     headers: {
+        //         'Authorization': `Bearer ${accessToken}`,
+        //         'Content-Type': 'application/json;charset=UTF-8',
+        //         "Access-Control-Allow-Origin": "*",
+        //     }
+        // };
 
         axios.get('http://localhost:3000/profile')
             .then((res) => {
@@ -93,7 +98,23 @@ export default {
         // } catch (error) {
         //     throw error;
         // }
-    }
+    },
+    mounted() {
+        gapi.load('auth2', () => {
+            gapi.auth2.init({
+                client_id: import.meta.env.VITE_GOOGLE_OAUTH_CLIENT_ID,
+                scope: 'openid profile email',
+                discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/oauth2/v2/rest'],
+                responseType: 'token id_token',
+            }).then(() => {
+                const currentUser = gapi.auth2.getAuthInstance().currentUser.get();
+                const accessToken = currentUser.getAuthResponse().access_token;
+                console.log(accessToken);
+
+            this.token = accessToken;
+            });
+        });
+    },
 }
 </script>
 

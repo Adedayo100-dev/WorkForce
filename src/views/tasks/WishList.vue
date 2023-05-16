@@ -1,6 +1,7 @@
 <template>
     <div class="wish-list_view">
-        Wish Lists
+        <h3>Wish Lists</h3>
+        
         <ul>
             <li>Chair <span>199.99 - 206</span></li>
             <li>Singlet <span>23.97</span></li>

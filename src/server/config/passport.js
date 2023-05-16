@@ -1,6 +1,8 @@
 const GoogleStrategy = require('passport-google-oauth20').Strategy
+const JwtStrategy = require('passport-jwt').Strategy
+const { ExtractJwt } = require("passport-jwt");
 const mongoose = require('mongoose')
-const User = require('../models/User')
+const User = require('../models/UserModel')
 
 module.exports = function(passport) {
     passport.use(
@@ -11,7 +13,7 @@ module.exports = function(passport) {
                 callbackURL: '/auth/google/callback'
             },
             async (accessToken, refreshToken, profile, done) => {
-                console.log(profile)
+                console.log(profile, accessToken)
                 const newUser = {
                     googleId: profile.id,
                     displayName: profile.displayName,
@@ -31,6 +33,23 @@ module.exports = function(passport) {
                     }
                 } catch (err) {
                     console.error(err)
+                }
+            }
+        )
+    );
+
+    passport.use(
+        new JwtStrategy(
+            {
+                jwtFromRequest: ExtractJwt.fromHeader("authorization"),
+                secretOrKey: "secretKey",
+            },
+            async (jwtPayload, done) => {
+                try { 
+                    const user = jwtPayload.user;
+                    done(null, user); 
+                } catch (error) {
+                    done(error, false);
                 }
             }
         )

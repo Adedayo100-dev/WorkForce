@@ -8,6 +8,11 @@
                         <component :is='modalSubmitType'></component> 
                     </div>
                     <!-- Content goes in here -->
+
+                    <!-- #dae0e4  color for input
+                        #1274c4 color for blue pay button
+                     -->
+
                 </div>
             </div>
         </div>
@@ -17,6 +22,7 @@
 <script>
 import NewShift from '../components/NewShift.vue'
 import NewTransaction from '../components/NewTransaction.vue'
+import NewEmployer from '../components/NewEmployer.vue'
 import DialogBox from '../components/DialogBox.vue'
 import WorkDetails from '../components/WorkDetails.vue'
 import DialogSubmit from '../components/DialogSubmit.vue'
@@ -27,6 +33,7 @@ export default {
     components: {
         NewShift,
         NewTransaction,
+        NewEmployer,
         DialogBox,
         WorkDetails,
         DialogSubmit

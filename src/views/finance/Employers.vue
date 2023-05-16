@@ -1,5 +1,11 @@
 <template>
     <div class="tab-pane" id="tab-all">
+        <div class="add-shift_button-box justify-end">
+                <FilterButton/>
+                <AddButton @click="openModal('NewEmployer')">
+                    <span>  Add Employer</span>
+                </AddButton>
+            </div>
         <h4>Employers</h4>
         <table>
             <thead>
@@ -14,7 +20,25 @@
             </thead>
             <tbody>
                 <!-- Each Courses Data -->
-                <tr>
+                <tr v-for="employer in employers"  :key="employer.id">
+                    <td>{{employer.name}}</td>
+                    <td><input type="checkbox" name="" id="" :checked="[employer.contacted? 'true' : 'false']"></td>
+                    <td><input type="checkbox" name="" id="" checked="false"></td>
+                    <td><input type="checkbox" name="" id="" :checked="[employer.employed? 'true' : 'false']"></td>
+                    <td>
+                        <span v-for="item in employer.pay" :key="item.id">{{ item }} | </span>
+                        <!-- 18.60 | 20.10 -->
+                    </td>
+                    <td>
+                        <div class="shift-time" v-for="item in employer.time" :key="item.id">
+                            <span>{{ item.startTime }} - {{ item.stopTime }}</span>
+                        </div>
+
+                        <!-- <span class="underlined">10:00am-6:30pm</span> <br> 
+                        <span>2:00pm - 10:30pm</span> -->
+                    </td>
+                </tr>
+                <!-- <tr>
                     <td>UPS Burlington</td>
                     <td><input type="checkbox" name="" id="" checked></td>
                     <td><input type="checkbox" name="" id="" checked></td>
@@ -223,7 +247,7 @@
                     <td><input type="checkbox" name="" id=""></td>
                     <td></td>
                     <td></td>
-                </tr>
+                </tr> -->
             </tbody>
         </table>
     </div>
@@ -232,32 +256,44 @@
 <script>
 import axios from 'axios'
 import MessageDangerIcon from '../../components/icons/IconMessageDanger.vue'
+import FilterButton from '../../components/FilterButton.vue'
+import AddButton from '../../components/AddButton.vue'
+
 export default {
     name: 'Employers',
     components: {
-        MessageDangerIcon
+        MessageDangerIcon, FilterButton, AddButton
     },
     data() {
         return {
-            allJobs: [
-                { Employer: "UPS Burlington", contacted: true, registered: true, employed: true, pay: [18.60, 20.10], time: []}
-            ]
+            employers: [],
         }
     },
     created() {
-        // axios.get('http://localhost:3000/api/employer')
-        // .then((res) => {
-        //     this.alljobs = res.data;
-        //     console.log(res.data);
-        // })
-        // .catch((err) => {
-        //     console.log(err.message)
-        // });
+        axios.get('http://localhost:3000/api/employers')
+        .then((res) => {
+            this.employers = res.data;
+            console.log(res.data);
+        })
+        .catch((err) => {
+            console.log(err.message)
+        });
     
+    },
+    methods: {
+        openModal(modalType) {
+            this.$store.commit('openModal', modalType);
+            // console.log(modalType, 'Modal-Opened');
+        }
     },
 }
 </script>
 
-<style>
-
+<style scoped>
+    .shift-time span{
+        border-bottom: 1px dashed black;
+    }
+    .shift-time:last-of-type span{
+        border-bottom: none;
+    }
 </style>

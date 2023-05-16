@@ -8,15 +8,23 @@
         </form>
     </div>
     <div>
-        <a href="http://localhost:3000/auth/google">Google</a>
+        <a :href="getGoogleUrl(from)" class="g-signin2">Google</a>
     </div>
 </template>
 
 <script>
+import { getGoogleUrl } from '../utils/getGoogleUrl';
+
 export default {
     name: 'log-in',
-    methods: {
+    data() {
+        return {
+            from: '/',
+        }
     },
+    methods: {
+        getGoogleUrl,
+    }
     
 }
 </script>

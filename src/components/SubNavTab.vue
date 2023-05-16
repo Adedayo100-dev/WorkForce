@@ -1,26 +1,6 @@
 <template>
   <ul id="nav-tab" class="tab-nav">
-    <li>
-      <router-link to="/finance/alljobs">All</router-link>
-    </li>
-    <li>
-      <router-link to="/finance/sinjobs">SIN</router-link>
-    </li>
-    <li>
-      <router-link to="/finance/cashjobs">Cash</router-link>
-    </li>
-    <li>
-      <router-link to="/finance/breakjobs">Breaks</router-link>
-    </li>
-    <li>
-      <router-link to="/finance/favjobs">Fav</router-link>
-    </li>
-    <li>
-      <router-link to="/finance/availability">Availability</router-link>
-    </li>
-    <li>
-      <router-link to="/finance/co-op">Co-op</router-link>
-    </li>
+    <slot></slot>
   </ul>
 </template>
 
@@ -30,7 +10,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style >
 /* Tabs */
 
 #tabs .tab-nav .active a { 
@@ -59,18 +39,19 @@ export default {
     font-size: 14px;
     position: relative;
 }
-#tabs ul.tab-nav li a:first-of-type{
-  padding-left: 0;
+#tabs ul.tab-nav li:first-of-type a{
+  /* padding-left: 0; */
 }
-/* #tabs ul.tab-nav li a.router-link-active::after{
+
+#tabs ul.tab-nav li a.router-link-active::after{
     content: "";
-    background-color: #0a793b;
+    background-color: rgba(232, 57, 0, .2);/* #0a793b */
     position: absolute;
-    bottom: -5px;
+    bottom: -2px;
     height: 2px;
     left: 0px;
     right: 0px;
-} */
+}
 #tabs ul.tab-nav li a:hover {
     color: gray;
 }
