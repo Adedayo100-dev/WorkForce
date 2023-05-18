@@ -3,10 +3,11 @@
     --light-grey-color: #f5f5f5;
 }
 .title-top{
-    /* padding: 10px 0 0px; */
+    margin-top: 12px;
+    /* padding: 10px 0 0px;
     background-color: white;
     position: sticky;
-    top: 0;
+    top: 0; */
 }
 .link-tab-group{
     list-style-type: none;
@@ -44,20 +45,6 @@
 .justify-end{
     justify-content: end;
 }
-.green-confirm-button{
-    background-color: rgba(232, 57, 0, 1); /* #1B5E20 */
-    color: white;
-}
-.green-confirm-button:hover{
-    background-color: var(--light-grey-color);
-    color: grey;
-}
-.green-confirm-button span{
-    color: white;
-}
-.green-confirm-button:hover span{
-    color: grey;
-}
 .filter_button, .add-shift_button{
     display: flex;
     align-items: center;
@@ -84,11 +71,6 @@
     border: 1px solid #dadce0;
     color: #202124;
 }
-.work-log-filter-box{
-    display: flex;
-    padding: 12px 0px;
-    justify-content: space-between;
-}
 .text-bold{
     font-weight: bold;
 }
@@ -104,34 +86,7 @@
 .border-width-3{
     border-width: 3px;
 }
-.filter_input-group{
-    border: 1px solid rgb(235, 235, 235);
-    border-radius: 0.25rem;
-    overflow: hidden;
-}
-.filter_input-group input, .filter_input-group select{
-    border: none;
-    outline: none;
-    font-size: 12px;
-}
-.filter_input-group input{
-    padding: 8px 10px;
-    /* border-right: none; */
-}
-.filter_input-group select{
-    padding: 7px 10px;
-}
-.work-log-flank-right{
-    display: flex;
-    align-items: center;
-    padding: 0px 10px;
-    cursor: pointer;
-    /* border: 1px dashed rgb(235, 235, 235); */
-}
-.work-log-flank-right:hover{
-    background-color: rgba(32,33,36,0.049);
-    border-radius: 4px;
-}
+
 /* .work-log-flank-right a{
     color: darkgrey;
 } */

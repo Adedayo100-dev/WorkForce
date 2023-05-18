@@ -36,7 +36,7 @@
                 </li>
                 <li>
                     <router-link to=''>CIBC</router-link>
-                    <router-link to='https://cibc.wd3.myworkdayjobs.com/en-US/campus/userHome'>View Application</router-link>
+                    <a href='https://cibc.wd3.myworkdayjobs.com/en-US/campus/userHome'>View Application</a>
                 </li>
             </ul>
         </div>

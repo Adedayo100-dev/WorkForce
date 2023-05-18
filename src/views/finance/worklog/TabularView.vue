@@ -1,10 +1,11 @@
 <script>
 import WorkLogItem from '../../../components/WorkLogItem.vue'
+import FilterBox from '../../../components/FilterBox.vue'
 
 
 export default {
     components: {
-        WorkLogItem
+        WorkLogItem, FilterBox
     },
     props: {
         worksList: {
@@ -25,7 +26,9 @@ export default {
 
 <template>
     <div class="work-log-list-container">
-        <div v-if="worksList[0]">
+        <FilterBox/>
+
+        <div>
             <WorkLogItem v-for="(work, index) in worksList" :key="work._id" :loc="work.loc" :time="work.time" :description="work.description" :pay="work.pay" :payStatus="work.payStatus" :idx="index"/>
             <div class="shifts-list-item" id="totalShifts">
                 <div class="visible">
@@ -41,18 +44,7 @@ export default {
                 </div>
                 
             </div>
-        </div>
-
-        <div v-else class="d-center my-100">
-            <div>
-                <div class="text-center">
-                    <p>There isn't any data to display at the moment</p>
-                </div>
-                <div class="text-center">
-                    <p>Click the Add Shift Button to add a shift</p>
-                </div>
-            </div>
-        </div>
+    </div>
 
     </div>
 </template>

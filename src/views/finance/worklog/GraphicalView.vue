@@ -1,4 +1,5 @@
 <script>
+import FilterBox from '../../../components/FilterBox.vue'
 import HighchartsVue from 'highcharts-vue'
 import Highcharts from 'highcharts'
 import {Chart} from 'highcharts-vue'
@@ -84,7 +85,8 @@ import {Chart} from 'highcharts-vue'
 export default {
     name: 'GraphicalView',
     components: {
-        highcharts: Chart //HighCharts (component registration) was removed.
+        highcharts: Chart, //HighCharts (component registration) was removed.
+        FilterBox
     },
     props: {
         worksList: {
@@ -194,6 +196,8 @@ export default {
 
 <template>
     <!-- <div id="container" class="container"></div> -->
+    <FilterBox/>
+    
     <highcharts class="hc" :options="chartOptions" ref="chart" />
 </template>
 

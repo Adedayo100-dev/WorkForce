@@ -51,7 +51,7 @@ const getTransactions = asyncHandler(async (req, res) => {
             totalDollarPaid: someDB.totalDollarPaid, //2500
             totalNairaPaid: someDB.totalNairaPaid, //1324280
             nairaGoal: 1324280,
-            paidPercentage: 100
+            paidPercentage: ((someDB.totalNairaPaid / 1324280) * 100).toFixed(2)
         }
     }
 
@@ -96,8 +96,8 @@ const getTransactions = asyncHandler(async (req, res) => {
             name: "School Fee",
             totalDollarPaid: someSF.totalDollarPaid,
             totalNairaPaid: someSF.totalNairaPaid,
-            nairaGoal: 3105000,
-            paidPercentage: 51.55
+            nairaGoal: 3113659.02,
+            paidPercentage: ((someSF.totalNairaPaid / 3113659.02) * 100).toFixed(2)
         }
     }
 

@@ -8,7 +8,7 @@
         </div>
         <div class="button-group-icon" @click="switchButton()"><UnfoldMoreIcon/></div>
     </div>
-    <button class="green-confirm-button border-rad-4" type="submit">
+    <button class="orange-confirm-button border-rad-4" type="submit">
         Add
     </button>
 </template>

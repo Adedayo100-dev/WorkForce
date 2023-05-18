@@ -1,12 +1,14 @@
 <template>
     <div class="tab-pane" id="tab-all">
         <div class="add-shift_button-box justify-end">
-                <FilterButton/>
-                <AddButton @click="openModal('NewEmployer')">
-                    <span>  Add Employer</span>
-                </AddButton>
-            </div>
+            <FilterButton/>
+            <AddButton @click="openModal('NewEmployer')">
+                <span>  Add Employer</span>
+            </AddButton>
+        </div>
+        <FilterBox/>
         <h4>Employers</h4>
+        all, sin & cash filters
         <table>
             <thead>
                 <tr>
@@ -257,12 +259,13 @@
 import axios from 'axios'
 import MessageDangerIcon from '../../components/icons/IconMessageDanger.vue'
 import FilterButton from '../../components/FilterButton.vue'
+import FilterBox from '../../components/FilterBox.vue'
 import AddButton from '../../components/AddButton.vue'
 
 export default {
     name: 'Employers',
     components: {
-        MessageDangerIcon, FilterButton, AddButton
+        MessageDangerIcon, FilterButton, AddButton, FilterBox
     },
     data() {
         return {

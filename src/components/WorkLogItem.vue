@@ -99,18 +99,18 @@
 
 <style>
     .shifts-list-item{
-        border: 1px solid rgb(238, 238, 238);
+        border-top: 1px solid rgb(238, 238, 238);
         /* height: 44px; */
     }
-    .shifts-list-item:first-of-type{
+    /* .shifts-list-item:first-child{
         border-radius: 8px 8px 0 0;
-    }
+    } */
     .shifts-list-item:not(:last-child){
         margin-bottom: -1px;
     }
-    .shifts-list-item:last-child{
+    /* .shifts-list-item:last-child{
         border-radius: 0 0 8px 8px;
-    }
+    } */
     .shifts-list-item .visible{
         display: flex;
         /* justify-content: space-between; */
@@ -133,15 +133,6 @@
     }
     .shifts-list-item .hidden{
         padding: 13px 10px 26px;
-    }
-    .d-flex{
-        display: flex;
-    }
-    .align-center{
-        align-items: center;
-    }
-    .width-full{
-        width: 100%;
     }
     .dates-output{
         color: #757575;

@@ -37,7 +37,7 @@ export default {
     padding: 10px;
     transition: all .3s ease-in-out;
     font-size: 14px;
-    position: relative;
+    /* position: relative; */
 }
 #tabs ul.tab-nav li:first-of-type a{
   /* padding-left: 0; */

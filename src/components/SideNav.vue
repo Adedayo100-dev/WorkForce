@@ -19,18 +19,12 @@
                         <CaretUpIcon />
                     </div>
                 </RouterLink>
-                <ul id="" class="sidenav-dropdown"  v-show="navTogVal">
+                <ul id="" class="sidenav-dropdown"  ><!-- v-show="navTogVal" -->
                     <li>
-                        <router-link to="/finance/worklog">Work Log</router-link>
+                        <router-link to="/finance/worklog">Shifts Log</router-link>
                     </li>
                     <li>
-                        <router-link to="/finance/employers">All</router-link>
-                    </li>
-                    <li>
-                        <router-link to="/finance/sinjobs">SIN</router-link>
-                    </li>
-                    <li>
-                        <router-link to="/finance/cashjobs">Cash</router-link>
+                        <router-link to="/finance/employers">Employers</router-link>
                     </li>
                     <li>
                         <router-link to="/finance/breakjobs">Breaks</router-link>
@@ -43,6 +37,9 @@
                     </li>
                     <li>
                         <router-link to="/finance/co-op">Co-op</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/finance/transactions">Transactions</router-link>
                     </li>
                     
                 </ul>
@@ -95,7 +92,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
     .side-nav{
         /*background-color: #004D40;#f7f7f7, rgb(244,244,244)*/
         position: fixed;
@@ -115,7 +112,9 @@ export default {
     }
     .side-nav ul li{
         padding: 0px 0px 0px 0px;
+        position: relative;
     }
+    
     .side-nav ul li a{
         font-size: 14px;
         color: #262626;
@@ -145,13 +144,29 @@ export default {
         fill: grey;
     }
     .sidenav-dropdown{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
         display: none;
+        /* New Code */
+        position: absolute;
+        left: var(--side-nav-width);
+        border: 1px solid #d1d1d1;
+        border-left: none;
+        background: white;
+        top: 0;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
     }
-    li.show .sidenav-dropdown{
+    .side-nav ul li:hover .sidenav-dropdown{
         display: block;
     }
+    /* li.show .sidenav-dropdown{
+        display: block;
+        
+    } */
     .sidenav-dropdown li a{
-        padding: 12px 53px 12px 56px !important;
+        padding: 13px 24px !important;
         color: grey !important;
     }
     .float-bottom{

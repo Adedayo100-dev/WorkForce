@@ -8,9 +8,9 @@
     export default {
         name: 'App',
         components: {
-            Modal: defineAsyncComponent(() => import('./components/Modal.vue')),
             SideNav,
-            TopNavBar
+            TopNavBar,
+            Modal: defineAsyncComponent(() => import('./components/Modal.vue')),
         },
         data() {
             return {

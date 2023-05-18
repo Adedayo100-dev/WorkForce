@@ -1,11 +1,13 @@
 <script>
     import axios from 'axios'
     import AddButton from '../../components/AddButton.vue'
+    import IncomeCalculator from '../../components/IncomeCalculator.vue'
+
 
     export default {
         name: 'transactions',
         components: {
-            AddButton,
+            AddButton, IncomeCalculator
         },
         data() {
             return {
@@ -101,6 +103,45 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="tithe">
+        <div class="contribution">
+            <div class="first-tithe-box">
+                <form oninput="x.value='₦'+(parseInt(a.value)*parseInt(b.value)).toLocaleString('en-US')">
+                    <div class="func-container">
+                        <span>Percentages: </span>
+                        <div class="calc-container">
+                            <input type="number" name="" id="a" :value="totalPay / 10" placeholder="$">
+                            <pre> * </pre>
+                            <input type="number" name="" id="b" :value="exchangeRate" placeholder="Rate">
+                            <pre> = </pre>
+                            <output name="x" for="a  b"></output>
+                        </div>
+                    </div>
+                </form>
+                <br>
+                <form oninput="y.value='₦'+(parseInt(c.value)*parseInt(d.value)).toLocaleString('en-US')">
+                    <div class="func-container">
+                        <span>Send Home: </span>
+                        <div class="calc-container">
+                            <input type="number" name="" id="c" placeholder="$">
+                            <pre> * </pre>
+                            <input type="number" name="" id="d" :value="exchangeRate" placeholder="Currency Rate">
+                            <pre> = </pre>
+                            <output name="y" for="c d"></output>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <hr class="">
+            <div class="second-tithe-box">
+                <p>
+                    {{$formatNum(75459384)}}
+                </p>
+            </div>
+        </div>
+        <IncomeCalculator/>
     </div>
 </template>
 

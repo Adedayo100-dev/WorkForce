@@ -1,7 +1,7 @@
 <template>
     <div class="dialog-submit">
         <button @click="closeModal('close', 'Modal cancelled')" class="border-rad-4">No</button>
-        <button class="green-confirm-button border-rad-4">
+        <button class="orange-confirm-button border-rad-4">
             <router-link to="/signedout">Yes</router-link>
         </button>
     </div>

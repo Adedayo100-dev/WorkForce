@@ -1,6 +1,6 @@
 <template>
     <transition  name="modal">
-        <div class="modal-overlay" :class="{show: toggleModal}">
+        <div class="modal-overlay center-modal" :class="{show: toggleModal}">
             <div class="modal-static-container">
                 <div class="modal-dynamic-content">
                     <component :is='currentModal'></component>
@@ -65,17 +65,28 @@ export default {
     }
     .modal-overlay{
         position: fixed;
-        top: 0;
-        left: 0;
+        inset: 0;
         /* background-color: rgba(0, 0, 0, 0.452); */
         background-color: rgba(32, 33, 36, 0.6);
-        width: 100%;
         z-index: 100;
         height: 100vh;
         display: flex;
+        min-height: 500px;
+        transition: all .4s;
+    }
+    .center-modal{
         justify-content: center;
         align-items: center;
-        min-height: 500px;
+    }
+    .bottom-modal{
+        justify-content: center;
+        align-items: end;
+    }
+    .bottom-modal .modal-static-container{
+        width: 100%;
+        border-radius: 16px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
     }
     .modal-overlay h3{
         margin-top: 0;

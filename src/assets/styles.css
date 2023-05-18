@@ -4,6 +4,8 @@
     --border-color-primary:  rgba(0, 0, 0, .1);
     --table-font-size: 12px;
     --primary-black: #202124;
+    --orange-color: rgba(232, 57, 0, 1);
+    --side-nav-width: 48px;
 }
 html{
     scroll-behavior: smooth;
@@ -27,6 +29,15 @@ main{
 }
 a{
     text-decoration: none;
+}
+.d-flex{
+    display: flex;
+}
+.align-center{
+    align-items: center;
+}
+.width-full{
+    width: 100%;
 }
 .d-center{
     display: flex;
@@ -79,19 +90,7 @@ ul{
 .text-center{
     text-align: center;
 }
-.entries_input_container{
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-}
-.entries_input{
-    background: #fff url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") no-repeat right .75rem center;
-    background-size: 8px 10px;
-    width: 40px;
-    border-radius: 2px;
-    border: 1px solid rgb(235, 235, 235);
-    outline: none;
-}
+
 /* Responsiveness */
 
 @media only screen and (max-width: 467.98px){

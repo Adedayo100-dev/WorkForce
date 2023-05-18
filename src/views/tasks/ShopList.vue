@@ -5,13 +5,9 @@ export default {
         return {
             shoppingList: [],
             newShopItem:{
-                    inputAmount: null,
-                    inputRate: null,
-                    inputTime: {
-                        inputDate: null,
-                        inputTime: null,
-                    },
-                },
+                inputName: '',
+                inputAmount: null,
+            },
         }
     },
     mounted() {
@@ -41,10 +37,8 @@ export default {
             <!-- Check Youtube for how to handle Vue forms -->
             <li>
                 <form @submit.prevent="createShopItem" action="">
-                    <input v-model="newShopItem.inputAmount" placeholder="New Item" class="shopping-list_input"/>
-                    <input v-model="newShopItem.inputRate" placeholder="Amount" class="shopping-list_input"/>
-                    <input v-model="newShopItem.inputTime.inputDate" placeholder="StartDate" class="shopping-list_input"/>
-                    <input v-model="newShopItem.inputTime.inputTime" placeholder="StartTime" class="shopping-list_input"/>
+                    <input v-model="newShopItem.inputName" placeholder="New Item" class="shopping-list_input" require/><br>
+                    <input v-model="newShopItem.inputAmount" placeholder="Amount" class="shopping-list_input"/>
                     <input type="submit" value="">
                 </form>
             </li>

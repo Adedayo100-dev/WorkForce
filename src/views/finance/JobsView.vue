@@ -17,7 +17,7 @@
     <div class="jobs">
       <h3><span>{{$route.meta.title}}</span> <span class="title_total-pay">{{$formatNum(totalPay)}} <span class="small-currency">CAD</span></span></h3>
         <div id="tabs">
-            <SubNavTab>
+            <!-- <SubNavTab>
               <li>
                 <router-link to="/finance/worklog">Shifts Log</router-link>
               </li>
@@ -45,7 +45,7 @@
               <li>
                 <router-link to="/finance/transactions">Transactions</router-link>
               </li>
-            </SubNavTab>
+            </SubNavTab> -->
             <div id="sub-router_contents">
               <router-view>
 
