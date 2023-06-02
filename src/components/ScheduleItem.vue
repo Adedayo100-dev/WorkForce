@@ -1,8 +1,9 @@
 <script>
-    import VDotsIcon from '../components/icons/IconVDots.vue'
+    // import VDotsIcon from '../components/icons/IconVDots.vue'
+    import ExpandFullIcon from '../components/icons/IconExpandFull.vue'
     export default {
         components: {
-            VDotsIcon
+            ExpandFullIcon
         },
         props: ['title', 'body', 'date','idx']
     }
@@ -18,7 +19,9 @@
                         <button>Done</button>
                         <button>Acknowledged</button>
                     </div>
-                    <VDotsIcon/>
+                    <div class="icon-container">
+                        <ExpandFullIcon/>
+                    </div>
                 </div>
             </div>
             <p class="notification-body">{{body}}</p>
@@ -27,7 +30,7 @@
     </div>
 </template>
 
-<style>
+<style scoped>
 .flex-out{
     display: flex;
     justify-content: space-between;
@@ -39,5 +42,11 @@
 .invisible-buttons{
     display: flex;
     gap: 10px;
+}
+.icon-container{
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+    fill: grey;
 }
 </style>

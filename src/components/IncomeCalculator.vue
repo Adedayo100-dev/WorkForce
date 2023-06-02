@@ -80,6 +80,7 @@ export default {
             <span>Income: </span>
             <div class="calc-container">
                 <input type="number" v-model="hoursWorked" placeholder="hrs">
+                
             </div>
         </div>
         <br>

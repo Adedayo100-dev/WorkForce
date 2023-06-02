@@ -21,7 +21,7 @@
                 </RouterLink>
                 <ul id="" class="sidenav-dropdown"  ><!-- v-show="navTogVal" -->
                     <li>
-                        <router-link to="/finance/worklog">Shifts Log</router-link>
+                        <router-link to="/finance/worklog">Jobs Log</router-link>
                     </li>
                     <li>
                         <router-link to="/finance/employers">Employers</router-link>
@@ -30,7 +30,7 @@
                         <router-link to="/finance/breakjobs">Breaks</router-link>
                     </li>
                     <li>
-                        <router-link to="/finance/favjobs">Fav</router-link>
+                        <router-link to="/finance/favjobs">Favorite</router-link>
                     </li>
                     <li>
                         <router-link to="/finance/availability">Availability</router-link>
@@ -48,10 +48,10 @@
                 <RouterLink to="/assignments">Assignments</RouterLink>
             </li> -->
             <li>
-                <RouterLink to="/notifications">
+                <RouterLink to="/schedule">
                     <div>
-                        <BellIcon  class="side-nav-links-icons"/>
-                        <span v-show="navTogVal"> Notifications</span>
+                        <DateRangeIcon  class="side-nav-links-icons"/>
+                        <span v-show="navTogVal"> Schedule</span>
                     </div>
                 </RouterLink>
             </li>
@@ -60,11 +60,15 @@
         <div>
             <div class="float-bottom">
                 <RouterLink to="/user-profile">
-                    <div>
+                    <div class="tiny_profile-pic">
                         <!-- <SettingsIcon />
                         <span v-show="navTogVal"> Settings</span> -->
                         <img src="../assets/profile_default.png" alt="" class="profile-img">
                         <div class="on-side"></div>
+                    </div>
+                    <div class="tiny_profile-name">
+                        <span>Hi!</span>
+                        <span>Taiwo</span>
                     </div>
                 </RouterLink>
             </div>
@@ -75,14 +79,14 @@
 <script>
 import TaskIcon from '../components/icons/IconTask.vue'
 import WorkIcon from '../components/icons/IconWork.vue'
-import BellIcon from '../components/icons/IconBell.vue'
+import DateRangeIcon from '../components/icons/IconDateRange.vue'
 import CaretUpIcon from '../components/icons/IconCaretUp.vue'
 import CaretDownIcon from '../components/icons/IconCaretDown.vue'
 import SettingsIcon from '../components/icons/IconSettings.vue'
 
 export default {
     components: {
-        TaskIcon, WorkIcon, BellIcon, CaretUpIcon, CaretDownIcon, SettingsIcon
+        TaskIcon, WorkIcon, DateRangeIcon, CaretUpIcon, CaretDownIcon, SettingsIcon
     },
     data() {
         return {
@@ -175,10 +179,10 @@ export default {
     .float-bottom a{
         display: block;
     }
-    .float-bottom a:hover>div{
+    /* .float-bottom a:hover>div{
         background-color: rgba(218,220,224,.5);
-    }
-    .float-bottom>a>div{
+    } */
+    .tiny_profile-pic{
         display: flex;
         justify-content: center;
         position: relative;
@@ -198,5 +202,13 @@ export default {
         height: 28px;
         position: absolute;
         top: 0;
+    }
+    .tiny_profile-name{
+        font-size: 10px;
+        text-align: center;
+        margin-top: 8px;
+    }
+    .tiny_profile-name span{
+        display: block;
     }
 </style>

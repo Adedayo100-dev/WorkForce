@@ -77,7 +77,7 @@ const router = createRouter({
           path: 'worklog',
           name: 'worklog',
           component: () => import('../views/finance/worklog/WorklogView.vue'),
-          meta: {title: 'Work Log'},
+          meta: {title: 'Jobs Log'},
           children: [
             {
               path: 'tabular',
@@ -142,10 +142,10 @@ const router = createRouter({
       meta: {title: 'Assignments'}
     },
     {
-      path: '/notifications',
-      name: 'notifications',
-      component: () => import('../views/NotificationsView.vue'),
-      meta: {title: 'Notifications'}
+      path: '/schedule',
+      name: 'schedule',
+      component: () => import('../views/ScheduleView.vue'),
+      meta: {title: 'Schedule'}
     },
     {
       path: '/settings',
@@ -157,7 +157,7 @@ const router = createRouter({
       path: '/user-profile',
       name: 'profile',
       component: () => import('../views/ProfileView.vue'),
-      meta: {title: 'Dashboard'}
+      meta: {title: 'Hi Taiwo!'}
     },
     {
       path: '/help',

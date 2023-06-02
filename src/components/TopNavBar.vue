@@ -1,10 +1,10 @@
 <template>
     <div class="top-nav">
         <div class="title-box">
+            <WorkForceIcon />
             <span class="title">WorkForce</span>
         </div>
         <div class="logo">
-            <WorkForceIcon />
         </div>
         <!-- div was here -->
     </div>
@@ -34,7 +34,7 @@ export default {
     justify-content: space-between; */
     position: sticky;
     top: 0;
-    background-color: white;
+    background-color: rgb(245, 246, 247);
     border-bottom: 1px solid  #d1d1d1; /*rgb(235, 235, 235)*/
     padding: 5px 24px 5px 18px;
     color: grey;
@@ -45,6 +45,7 @@ export default {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    gap: 6px;
 }
 .top-nav span.title{
     color:  #5F6368;

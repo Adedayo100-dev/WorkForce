@@ -18,8 +18,8 @@
             }
         },
         computed: mapState({
-            modalState: 'toggleModal',
-            modalType: state => state.whichModal,
+            modalState: state => state.modal.toggleModal,
+            modalType: state => state.modal.whichModal,
         }),
         methods: {
             closeModal: function(event) {
@@ -33,10 +33,10 @@
             // }
         },
         // created(){
-        //     console.log(this.$store.state.whichModal, 'created')
+        //     console.log(this.$store.state.modal.whichModal, 'created')
         // },
         // updated() {
-        //     console.log('updated to', this.$store.state.whichModal)
+        //     console.log('updated to', this.$store.state.modal.whichModal)
         // },
     }
 </script>
@@ -47,6 +47,9 @@
         <div class="layout-chasis">
             <SideNav />
             <main>
+                <!-- <p>
+                {{ modalState }}
+                </p> -->
                 <RouterView />
             </main>
         </div>

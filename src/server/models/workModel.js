@@ -24,8 +24,26 @@ const workSchema = mongoose.Schema(
                 required: [true, "please add end time"]
             },
             duration: {
-                type: String,
-                required: [true, "please add duration"]
+                years: {
+                    type: Number,
+                    // required: [true, "please add hour duration"]
+                },
+                months: {
+                    type: Number,
+                    // required: [true, "please add hour duration"]
+                },
+                days: {
+                    type: Number,
+                    // required: [true, "please add hour duration"]
+                },
+                hours: {
+                    type: Number,
+                    // required: [true, "please add hour duration"]
+                },
+                minutes: {
+                    type: Number,
+                    // required: [true, "please add minute duration"]
+                }
             }
         },
         pay: {

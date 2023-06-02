@@ -100,20 +100,7 @@ export default {
         // }
     },
     mounted() {
-        gapi.load('auth2', () => {
-            gapi.auth2.init({
-                client_id: import.meta.env.VITE_GOOGLE_OAUTH_CLIENT_ID,
-                scope: 'openid profile email',
-                discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/oauth2/v2/rest'],
-                responseType: 'token id_token',
-            }).then(() => {
-                const currentUser = gapi.auth2.getAuthInstance().currentUser.get();
-                const accessToken = currentUser.getAuthResponse().access_token;
-                console.log(accessToken);
-
-            this.token = accessToken;
-            });
-        });
+        
     },
 }
 </script>

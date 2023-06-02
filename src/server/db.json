@@ -71,7 +71,7 @@
             {"id": 68, "loc": "Minova", "dates": ["Mon 10 Apr, 2023"], "hours": [11],  "pay": 223.15, "payStatus": true},
             {"id": 69, "loc": "Minova", "dates": ["Mon 17 Apr, 2023","Tue 18 Apr, 2023","Wed 19 Apr, 2023","Thur 20 Apr, 2023","Fri 21 Apr, 2023"], "hours": [12,12,11,11,7.66],  "pay": 816, "payStatus": false},
             {"id": 70, "loc": "Minova", "dates": ["Mon 24 Apr, 2023","Tue 25 Apr, 2023"], "hours": [11.2,7],  "pay": 336.85, "payStatus": false},
-            {"id": 71, "loc": "Minova", "dates": ["Sun 30 Apr, 2023"], "hours": [8.5],  "pay": 0, "payStatus": false}
+            {"id": 71, "loc": "Minova", "dates": ["Sun 30 Apr, 2023"], "hours": [8.5],  "pay": 150, "payStatus": false}
         ]
     },
     "shopping": [

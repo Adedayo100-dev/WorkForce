@@ -33,7 +33,7 @@ td{
 .cancelled{
     background-color: rgba(255, 0, 0, 0.25);
 }
-.success{
+tr.success{
     background-color: rgba(0, 128, 0, 0.25);
 }
 .premium{
@@ -58,16 +58,16 @@ caption{
     color: red;
 }
 .paid{
-    color: #390;
+    color: #390 !important;
 }
 .unpaid{
-    color: #757575;
+    color: rgb(255 75 75) !important;
 }
 .pay-error{
     color: red;
 }
 .work-log{
-    /* padding-top:38.67px; */
+    padding-top:38.67px;
 }
 .work-log thead tr{
     background-color: rgba(32,33,36,0.049);
@@ -77,7 +77,6 @@ caption{
 }
 .work-log tr:nth-of-type(even){
     /* background-color: #efefef; */
- 
 }
 table p{
     margin: 0;

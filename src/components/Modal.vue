@@ -1,6 +1,6 @@
 <template>
     <transition  name="modal">
-        <div class="modal-overlay center-modal" :class="{show: toggleModal}">
+        <div class="modal-overlay " :class="[{show: toggleModal}, modalPosition ]">
             <div class="modal-static-container">
                 <div class="modal-dynamic-content">
                     <component :is='currentModal'></component>
@@ -23,6 +23,7 @@
 import NewShift from '../components/NewShift.vue'
 import NewTransaction from '../components/NewTransaction.vue'
 import NewEmployer from '../components/NewEmployer.vue'
+import NewFilter from '../components/FilterComponent.vue'
 import DialogBox from '../components/DialogBox.vue'
 import WorkDetails from '../components/WorkDetails.vue'
 import DialogSubmit from '../components/DialogSubmit.vue'
@@ -34,6 +35,7 @@ export default {
         NewShift,
         NewTransaction,
         NewEmployer,
+        NewFilter,
         DialogBox,
         WorkDetails,
         DialogSubmit
@@ -41,17 +43,18 @@ export default {
     props: ['modalOptions'],
     data() {
         return {
-
+            
         }
     },
     computed: mapState({
-        currentModal: state => state.whichModal, // NewShift, newTransaction  or DialogBox
-        modalSubmitType: state => state.whichSubmitType, // FormSubmit or DialogSubmit
+        currentModal: state => state.modal.whichModal, // NewShift, newTransaction  or DialogBox
+        modalSubmitType: state => state.modal.whichSubmitType, // FormSubmit or DialogSubmit
+        modalPosition: state => state.modal.position, // center-Modal / right-modal
 
     }),
     emits: ['close'],
     // created(){
-    //     console.log(this.$store.state.whichModal, "created");
+    //     console.log(this.$store.state.modal.whichModal, "created");
     // },
     // updated() {
     //     console.log("updated modal to", this.currentModal);
@@ -82,11 +85,21 @@ export default {
         justify-content: center;
         align-items: end;
     }
+    .right-modal{
+        justify-content: end;
+    }
     .bottom-modal .modal-static-container{
         width: 100%;
         border-radius: 16px;
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
+    }
+    .right-modal .modal-static-container{
+        /* width: 100%; */
+        border: none !important;
+        border-radius: 0;
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
     }
     .modal-overlay h3{
         margin-top: 0;
@@ -98,6 +111,9 @@ export default {
         border-radius: 6px;
         box-shadow: 0 12px 15px 0 rgb(0 0 0 / 24%);
         font-size: 14px;
+    }
+    .modal-dynamic-content{
+        height: 100%;
     }
     .modal_add-shift{
         display: flex;

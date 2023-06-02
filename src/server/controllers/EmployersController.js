@@ -19,8 +19,17 @@ const getEmployers = asyncHandler(async (req, res) => {
 const setEmployers = async (req, res) => {
     if (!req.body) {
         res.status(400)
-        throw new Error('Pleae add a shopping field');
+        throw new Error('Pleae add an employers field');
     }
+
+    if(req.body.inputName == null){
+        // var name = null;
+    }
+
+    if(req.body.inputDescription == ""){
+        // var description = ;
+    }
+
     const shoppings = await Employer.create({
         name: req.body.inputName,
         contacted: req.body.inputContactStatus,

@@ -7,7 +7,8 @@
                 <span>Price: <sup>$</sup>{{ item.displayedPrice }}</span> <br>
                 <span>Total: <sup>$</sup>{{ item.totalPrice }}</span> <br>
                 <span>@{{ item.store }}</span> <br>
-                <span>Date: {{ item.purchaseDate }}</span>
+                <span>Purchased: {{ item.purchaseDate }}</span> <br>
+                <span>Delivered: {{ item.deliveryDate }}</span>
             </div>
         </div>
     </div>
@@ -20,11 +21,11 @@ export default {
         return {
             boughtItems: [
                 {"name": "TV & Bike", "displayedPrice": 375, "totalPrice": 375, "store": "Ugo", "purchaseDate": "", "deliveryDate": "" },
-                {"name": "Table", "displayedPrice": 119.99, "totalPrice": 135, "store": "BestBuy", "purchaseDate": "", "deliveryDate": "" },
+                {"name": "Table", "displayedPrice": 119.99, "totalPrice": 135.59, "store": "BestBuy", "purchaseDate": "February 20, 2023", "deliveryDate": "February 24, 2023" },
                 {"name": "Humidifier", "displayedPrice": 49.99, "totalPrice": 56.49, "store": "Canadian Tire", "purchaseDate": "04 March 2023", "deliveryDate": "" },
                 {"name": "Heater", "displayedPrice": 28.99, "totalPrice":35, "store": "Canadian Tire", "purchaseDate": "Feb 25, 2023", "deliveryDate": "" },
                 {"name": "TML RayCroft Cap", "displayedPrice": 19.99, "totalPrice":22.59, "store": "", "purchaseDate": "Feb 25, 2023", "deliveryDate": "" },
-                {"name": "Keyboard", "displayedPrice": 65.98, "totalPrice":74, "store": "", "purchaseDate": "", "deliveryDate": "" }
+                {"name": "Keyboard", "displayedPrice": 65.98, "totalPrice":74.56, "store": "Amazon", "purchaseDate": "March 4, 2023", "deliveryDate": "March 8, 2023" }
             ]
         }
     },

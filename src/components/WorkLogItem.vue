@@ -1,12 +1,11 @@
 <script>
     import AmazonIcon from '../components/icons/IconAmazon.vue'
-    import VDotsIcon from '../components/icons/IconVDots.vue'
     import DeleteIcon from '../components/icons/IconDelete.vue'
     import EditIcon from '../components/icons/IconEditSquare.vue'
     
     export default {
         components: {
-            AmazonIcon, VDotsIcon, DeleteIcon, EditIcon
+            AmazonIcon, DeleteIcon, EditIcon
         },
         props: {
             key: {
@@ -56,11 +55,56 @@
 </script>
 
 <template>
-    <div class="shifts-list-item" @click="detailsExpand = !detailsExpand">
+    <div>
+        <div class="display-option-row py-xsm px-std css-mmep5j" @click="detailsExpand = !detailsExpand">
+            <div>
+                <div class="css-szkv6d">{{loc}}</div>
+                <div class="css-kx45yu">Hamilton, ON<span class="d-block-inline d-sm-none">&nbsp;| 5 years</span></div>
+            </div>
+            <div>
+                <div class="css-szkv6d css-c7ebe2" :class="[payStatus? 'paid' : 'unpaid']">
+                    <span>${{$formatNum(pay)}}</span>
+                </div>
+                <div class="css-kx45yu css-c7ebe2 css-dark-1">
+                    <span class="shift-pay">$210 | </span>
+                    <span class="shift-pay">$170 | </span>
+                    <span class="shift-pay">$18.60</span>
+                </div>
+                
+            </div>
+            <div class="d-none d-sm-block">
+                <div class="css-szkv6d">{{ time.duration.hours }} <span class="css-gwog64">hrs</span> {{ time.duration.minutes }}<span class="css-gwog64"> mins</span></div>
+                <div>
+                    <!-- {{ time.duration }} -->
+                </div>
+            </div>
+            <div>
+                <div class="shift-time">
+                    <span>{{time.startDate}}</span>
+                </div>
+            </div>
+        </div>
+        <template  v-if="detailsExpand">
+            <div class="hidden details-expand py-xsm px-std border-bottom" >
+                <p>{{ description }}</p>
+                <div>
+                    <p class="start-time_render css-kx45yu"><span>Begins: </span>{{ time.startDate }} {{ time.startTime }}</p>
+                    <p class="stop-time_render css-kx45yu"><span>Ends: </span>{{ time.endDate }} {{ time.endTime }}</p>
+                </div>
+                <!-- <p>{{ key }}</p> -->
+                <div class="action-buttons_box">
+                    <button class="shift-edit_button" @click="editWorkItem(idx)" title="Update All"><EditIcon width="14px" height="14px"/> Update</button>
+                    <button class="shift-delete_button" @click="initDelWorkItem(key)" title="Delete All"><DeleteIcon width="14px" height="14px"/> Delete</button>
+                </div>
+                
+            </div>
+        </template>
+    </div>
+
+    <!-- <div class="shifts-list-item">
         <div class="visible">
             <div class="work-logo_image-container">
                 <div v-if="loc ==='Amazon'">
-                    <!-- <AmazonIcon /> -->
                     <p>{{loc}}</p>
                 </div>
                 <div v-else-if="loc ==='Olivieri Foods'">
@@ -76,24 +120,12 @@
         <div class="hours-output">
             <span class="works-hours-list">{{ time.duration }}</span>
         </div>
-        <div class="pay-output" :class="[payStatus? 'paid' : 'unpaid']"> 
+        <div class="pay-output"> 
             <span>{{$formatNum(pay)}}</span> 
         </div>
         </div>
-        <template  v-if="detailsExpand">
-            <div class="hidden details-expand">
-                <p>{{ description }}</p>
-                <p class="start-time_render"><span>Start Timestamp: </span>{{ time.startDate }} {{ time.startTime }}</p>
-                <p class="stop-time_render"><span>Stop Timestamp: </span>{{ time.endDate }} {{ time.endTime }}</p>
-                <p>{{ key }}</p>
-                <div class="action-buttons_box">
-                    <button class="shift-edit_button" @click="editWorkItem(idx)"><EditIcon /> Edit</button>
-                    <button class="shift-delete_button" @click="initDelWorkItem(key)"><DeleteIcon/> Delete</button>
-                </div>
-                
-            </div>
-        </template>
-    </div>
+        
+    </div> -->
 </template>
 
 
@@ -167,7 +199,7 @@
         gap: 4px;
     }
     .shift-delete_button:hover, .shift-edit_button:hover{
-        background-color: rgb(235, 235, 235);
+        background-color: rgb(245 245 245);
     }
     .shift-edit_button svg{
         fill: grey;
@@ -190,6 +222,6 @@
         font-size: 14px;
     }
     .details-expand .start-time_render, .details-expand .stop-time_render{
-        color: #757575;
+        /* color: #757575; */
     }
 </style>

@@ -8,8 +8,8 @@
         </div>
         <div class="button-group-icon" @click="switchButton()"><UnfoldMoreIcon/></div>
     </div>
-    <button class="orange-confirm-button border-rad-4" type="submit">
-        Add
+    <button class="orange-confirm-button border-rad-4 font-weight-700" type="submit">
+        <slot name="button_name"></slot>
     </button>
 </template>
 
@@ -38,6 +38,7 @@ import UnfoldMoreIcon from '../components/icons/IconUnfoldMore.vue'
     }
 </script>
 <style>
+
 .button-group{
     display: flex;
     flex-direction: row;

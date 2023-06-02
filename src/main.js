@@ -13,47 +13,60 @@ import './assets/styles.css'
 const store = createStore({
     state(){
         return {
-            toggleModal: false,
-            whichModal: 'null', //Change to null
-            whichSubmitType: null,
+            modal: {
+                toggleModal: false,
+                whichModal: null, //Change to null
+                whichSubmitType: null, //Change to null
+                position: ''
+            }
         }
     },
     mutations: {
         openModal (state, modalType){
-            state.toggleModal = true;
-            state.whichModal = modalType;
-            switch (state.whichModal) {
+            state.modal.toggleModal = true;
+            state.modal.whichModal = modalType;
+            switch (state.modal.whichModal) {
                 case "DialogBox":
-                    state.whichSubmitType = "DialogSubmit";
+                    state.modal.whichSubmitType = "DialogSubmit";
+                    state.modal.position = 'center-modal'
                     break;
                     
                 case "NewShift":
-                    state.whichSubmitType = null;
+                    state.modal.whichSubmitType = null;
+                    state.modal.position = 'center-modal'
                     break;
                     
                 case "NewTransaction":
-                    state.whichSubmitType = null;
+                    state.modal.whichSubmitType = null;
+                    state.modal.position = 'center-modal'
                     break;
                     
                 case "NewEmployer":
-                    state.whichSubmitType = null;
+                    state.modal.whichSubmitType = null;
+                    state.modal.position = 'center-modal'
+                    break;
+
+                case "NewFilter":
+                    state.modal.whichSubmitType = null;
+                    state.modal.position = 'right-modal'
                     break;
 
                 default:
-                    state.whichSubmitType = "DialogSubmit";
+                    state.modal.whichSubmitType = null;
+                    state.modal.position = ''
                     break;
             }
             
-            console.log(state.whichModal, typeof state.whichModal, "mutated");
+            console.log(state, typeof state.modal.whichModal, "mutated");
         },
         closeModal (state){
-            state.toggleModal = false;
+            state.modal.toggleModal = false;
         }
     }
 })
 
 
-// console.log(store.state.toggleModal, store.state.whichModal);
+// console.log(store.state.modal.toggleModal, store.state.modal.whichModal);
 
 
 

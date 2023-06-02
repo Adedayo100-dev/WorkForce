@@ -9,7 +9,9 @@
                 <input type="text" v-model="transactionValues.inputMedium" name="transacMedium" placeholder="Medium"> <br>
                 <input type="description" v-model="transactionValues.inputDescription" name="transacDesc" placeholder="Desc">
                 <div class="confirm-button-container">
-                    <FormSubmit></FormSubmit>
+                    <FormSubmit>
+                        <template  #button_name>Add</template>
+                    </FormSubmit>
                 </div>
             </form>
         </div>

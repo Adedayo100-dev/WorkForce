@@ -55,7 +55,9 @@
 
             <!-- <input type="submit" value="submit"> -->
             <div class="confirm-button-container">
-                <FormSubmit></FormSubmit>
+                <FormSubmit>
+                    <template  #button_name>Save</template>
+                </FormSubmit>
             </div>
         </form>
 

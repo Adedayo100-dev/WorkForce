@@ -6,7 +6,7 @@
     <div class="visual-link-box">
       <div class="visual-link">
         <div class="visual-link_text">
-          <router-link to="/finance/worklog">Work Log</router-link>
+          <router-link to="/finance/worklog">Jobs Log</router-link>
         </div>
         <div class="visual-link_icons-group">
           <router-link to="/finance/worklog/tabular"><TableIcon/></router-link>

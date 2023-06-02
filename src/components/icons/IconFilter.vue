@@ -5,7 +5,7 @@
 
 <style scoped>
     svg{
-        height: 15px;
+        height: 20px;
         fill: rgba(232, 57, 0, 1);
     }
 </style>

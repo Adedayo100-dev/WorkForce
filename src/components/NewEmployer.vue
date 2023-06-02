@@ -3,14 +3,19 @@
         <h3>New Employer</h3>
         <div>
             <form @submit.prevent="createEmployer" id="addEmployer"  action="">
-                <input type="text" v-model="employerValues.inputName" name="employerName" placeholder="Name"> <br>
+                <input type="text" v-model="employerValues.inputName" name="employerName" placeholder="Name" required>
+                <div>
+                    <label for="">Contact: </label>
+                    <input type="email" name="" id="" placeholder="E-mail" minlength="6"> <span> or </span>
+                    <input type="tel" name="" id="" placeholder="+X(XXX) XXX-XXXX" minlength="11" pattern="^\+[0-9]{1,3}\s?\([0-9]{3}\)\s?[0-9]{3}-[0-9]{4}$">
+                </div>
                 <input type="checkbox" v-model="employerValues.inputContactStatus" name="employerContactStatus" id="employerContactStatus"> <label for="employerContactStatus">Contacted</label> <br>
                 <input type="checkbox" v-model="employerValues.inputRegisterationStatus" name="employerRegisterationStatus" id="employerRegisterationStatus"> <label for="employerRegisterationStatus">Registered</label> <br>
                 <input type="checkbox" v-model="employerValues.inputEmploymentStatus" name="employerEmploymentStatus" id="employerEmploymentStatus"> <label for="employerEmploymentStatus">Employed</label> <br>
                 <div>
-                    <input type="number" v-model="employerValues.inputPay.morningPay" name="employerPay1" step=".01" placeholder="Morning">
-                    <input type="number" v-model="employerValues.inputPay.afternoonPay" name="employerPay2" step=".01"  placeholder="Afternoon">
-                    <input type="number" v-model="employerValues.inputPay.nightPay" name="employerPay3" step=".01"  placeholder="Night">
+                    <input type="number" v-model="employerValues.inputPay.morningPay" name="employerPay1" step=".01" placeholder="Morning" min="0">
+                    <input type="number" v-model="employerValues.inputPay.afternoonPay" name="employerPay2" step=".01"  placeholder="Afternoon" min="0">
+                    <input type="number" v-model="employerValues.inputPay.nightPay" name="employerPay3" step=".01"  placeholder="Night" min="0">
                 </div> <br>
                 <div>
                     <div>
@@ -32,9 +37,11 @@
                         <input type="time" v-model="employerValues.inputTime.night.inputStopTime" name="employerTime2">
                     </div>
                 </div><br>
-                <input type="description" v-model="employerValues.inputDescription" name="employerDesc" placeholder="Desc">
+                <textarea v-model="employerValues.inputDescription" name="employerDesc" placeholder="Description" cols="30" rows="10"></textarea>
                 <div class="confirm-button-container">
-                    <FormSubmit></FormSubmit>
+                    <FormSubmit>
+                        <template  #button_name>Add</template>
+                    </FormSubmit>
                 </div>
             </form>
         </div>
@@ -51,7 +58,7 @@
         data() {
             return {
                 employerValues:{
-                    inputName: null,
+                    inputName: '',
                     inputContactStatus: false,
                     inputRegisterationStatus: false,
                     inputEmploymentStatus: false,
@@ -62,16 +69,16 @@
                     },
                     inputTime:{
                         morning:{
-                            inputStartTime: null,
-                            inputStopTime: null,
+                            inputStartTime: '',
+                            inputStopTime: '',
                         },
                         afternoon: {
-                            inputStartTime: null,
-                            inputStopTime: null,
+                            inputStartTime: '',
+                            inputStopTime: '',
                         },
                         night: {
-                            inputStartTime: null,
-                            inputStopTime: null,
+                            inputStartTime: '',
+                            inputStopTime: '',
                         }
                     },
                     inputDescription: '',

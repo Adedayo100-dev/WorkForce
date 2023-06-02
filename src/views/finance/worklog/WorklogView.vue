@@ -23,16 +23,8 @@ export default {
         }
     },
     created() {
-        axios.get('http://localhost:3000/api/worksList')
-            .then((res) => {
-                this.worksList = res.data;
-                console.log(res.data);
-            })
-            .catch((err) => {
-                console.log(err.message)
-                this.errorMsg = 'error retrieving data';
-            });
-        
+        this.fetchWorks()
+
     },
     // beforeMount() {
     //     if (this.worksList = {}) {
@@ -43,6 +35,7 @@ export default {
     //     }
     // },
     computed: {
+        
         totalPay() {
             return parseFloat(this.worksList.reduce((acc, item) => acc + item.pay, 0).toFixed(2));
         },
@@ -58,6 +51,17 @@ export default {
         }
     },
     methods: {
+        fetchWorks(){
+            axios.get('http://localhost:3000/api/worksList')
+            .then((res) => {
+                this.worksList = res.data;
+                console.log(res.data);
+            })
+            .catch((err) => {
+                console.log(err.message)
+                this.errorMsg = 'error retrieving data';
+            });
+        },
         openModal(modalType) {
             this.$store.commit('openModal', modalType);
             // console.log(modalType, 'Modal-Opened');
@@ -74,18 +78,18 @@ export default {
                 <ul class="link-tab-group">
                     <li>
                         <router-link to="/finance/worklog/tabular" class="tab-link" title="Tabular">
-                            <TableIcon/>
+                            <TableIcon width="20px" height="20px"/>
                         </router-link>
                     </li>
                     <li>
                         <router-link to="/finance/worklog/graphical" class="tab-link" title="Graphical">
-                            <GraphIcon/>
+                            <GraphIcon width="20px" height="20px"/>
                         </router-link>
                     </li>
                 </ul>
-                <FilterButton/>
+                <FilterButton  @click="openModal('NewFilter')"/>
                 <AddButton  @click="openModal('NewShift')">
-                    <span> Add Shift</span>
+                    <span>New Entry</span>
                 </AddButton>
             </div>
         </div>

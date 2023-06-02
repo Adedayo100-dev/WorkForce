@@ -1,5 +1,4 @@
 <script>
-import FilterBox from '../../../components/FilterBox.vue'
 import HighchartsVue from 'highcharts-vue'
 import Highcharts from 'highcharts'
 import {Chart} from 'highcharts-vue'
@@ -86,7 +85,6 @@ export default {
     name: 'GraphicalView',
     components: {
         highcharts: Chart, //HighCharts (component registration) was removed.
-        FilterBox
     },
     props: {
         worksList: {
@@ -104,13 +102,13 @@ export default {
                     plotBorderWidth: null,
                     plotShadow: false,
                     zoomType: "x",
-                    type: 'line'
+                    type: 'spline'
                 },
                 // xAxis: {
                 //     type: "datetime"
                 // },
                 title: {
-                    text: 'Browser market shares in May, 2020',
+                    text: 'Weekly Income',
                     align: 'center',
                     verticalAlign: 'bottom'
                 },
@@ -196,7 +194,6 @@ export default {
 
 <template>
     <!-- <div id="container" class="container"></div> -->
-    <FilterBox/>
     
     <highcharts class="hc" :options="chartOptions" ref="chart" />
 </template>

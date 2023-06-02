@@ -1,11 +1,19 @@
 <script>
 export default {
-    // data() {
-    //     return {
-    //         shoppingList: [],
-    //         newShopItem: ''
-    //     }
-    // },
+    data() {
+        return {
+            taxFiling: [
+                {"item": "StaffPlus"},
+                {"item": "School"},
+                {"item": "Blitz Personnel"},
+                {"item": "Service Master"},
+                {"item": "GigHound"},
+                {"item": "Vertical SR"},
+                {"item": "StaffPlus"}
+            ],
+            newShopItem: ''
+        }
+    },
     // mounted() {
     //     fetch('http://localhost:3000/api/taxFiling')
     //         .then(res => res.json())
@@ -19,19 +27,12 @@ export default {
     <div class="tax-filing">
         <h3>Tax Filing</h3>
         <ul class="s">
-            <!-- <li v-for="item in shoppingList" :key="item.id" class="shop-item">
-                <input type="checkbox" name="" id="">{{item.shopItem}}
-            </li> -->
-            <!-- Check Youtube for how to handle Vue forms -->
-            <!-- <li>
+            <li v-for="item in taxFiling" :key="item.id" class="shop-item">
+                <input type="checkbox" name="" id=""> {{item.item}}
+            </li>
+            <li>
                 <input v-model="newShopItem" placeholder="New Item" class="shopping-list_input"/>
-            </li> -->
-            <li>StaffPlus T4</li>
-            <li>School T4</li>
-            <li>Blitz Personnel T4</li>
-            <li>Service Master T4</li>
-            <li>GigHound T4</li>
-            <li>Vertical SR T4</li>
+            </li>
         </ul>
     </div>
 </template>
