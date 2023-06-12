@@ -1,34 +1,39 @@
 <template>
     <button class="add-shift_button orange-confirm-button font-weight-700">
-        <EditSquareIcon weight="20px" height="20px"/>
+        <AddIcon weight="20px" height="20px"/>
         <slot></slot>
     </button>
 </template>
 
 <script>
-import EditSquareIcon from '../components/icons/IconEditSquare.vue'
+
+import AddIcon from '../components/icons/IconAdd.vue'
 
 export default {
     components: {
-        EditSquareIcon
+        AddIcon
     }
 }
 </script>
 
 <style>
+.add-shift_button{
+    border: 1px solid var(--light-grey-color);
+    color: grey;
+}
 .orange-confirm-button{
-    background-color: rgba(232 57 0 / 10%); /* #1B5E20 */
-    color: var(--orange-color);
+    background-color: transparent; /* #1B5E20, rgba(232 57 0 / 10%) */
+    /* color: var(--orange-color); */
     font-family: Lato;
 }
 .orange-confirm-button:hover{
     background-color: var(--light-grey-color);
-    color: grey;
+    color: black;
 }
 .orange-confirm-button span{
-    color: var(--orange-color);
+    color: grey;
 }
 .orange-confirm-button:hover span{
-    color: grey;
+    color: black;
 }
 </style>

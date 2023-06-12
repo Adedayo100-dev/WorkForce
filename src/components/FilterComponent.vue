@@ -91,6 +91,9 @@ export default {
     position: absolute;
     left: -24px;
     top: calc((100% - 24px) / 2);
+    margin-top: -10PX;
+    border-radius: 50%;
+    background-color: rgb(245 245 245);
     width: 24px;
     height: 24px;
     fill: darkgray;

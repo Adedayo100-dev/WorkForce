@@ -11,6 +11,10 @@ const workSchema = mongoose.Schema(
                 type: String,
                 required: [true, "please add start date"]
             },
+            startDateString: {
+                type: String,
+                required: [true, "please add start date string"]
+            },
             startTime: {
                 type: String,
                 required: [true, "please add start time"]

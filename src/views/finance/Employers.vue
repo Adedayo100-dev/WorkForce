@@ -7,7 +7,7 @@
             </AddButton>
         </div> 
 
-        <h4 class="section-title">Employers</h4>            
+        <h4 class="section-title color-777 font-weight-500">Employers</h4>            
             <!-- <tr>
                 <td>UPS Burlington</td>
                 <td><input type="checkbox" name="" id="" checked></td>
@@ -210,10 +210,10 @@
                 <td></td>
             </tr> -->
              
-        <div class="display-option container-fluid css-bt7gsy ml-none ml-sm-xxl">
+        <div class="display-option container-fluid css-bt7gsy ml-none ml-sm-xxl border-x-none">
             <div class="display-option-row py-xsm px-std css-mmep5j css-10la47u">
                 <div>
-                    <div class="css-i8rtc8">Employer Title</div>
+                    <div class="css-i8rtc8">Company / Agency</div>
                     <div class="d-block d-sm-none css-znfehe">Location | Total Experience</div>
                     <div class="d-none d-sm-block css-znfehe">Location</div>
                 </div>
@@ -222,7 +222,7 @@
                     <div class="css-znfehe css-c7ebe2">Morning | Afternoon | Night</div>
                 </div>
                 <div class="d-none d-sm-block">
-                    <div class="css-i8rtc8">Contacted | Registered | Employed</div>
+                    <div class="css-i8rtc8">Contacted <span>|</span> Registered <span>|</span> Employed</div>
                 </div>
                 <div class="d-none d-sm-block">
                     <div class="css-i8rtc8">Rotation</div>

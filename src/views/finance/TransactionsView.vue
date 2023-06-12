@@ -11,7 +11,7 @@
         },
         data() {
             return {
-                transactions:{},
+                transactions: {},
                 nairaTotal: 2000000,
             }
         },
@@ -69,41 +69,43 @@
             <span>  Add Transaction</span>
         </AddButton>
     </div>
-    <br>
-    <div v-for="(item, index) in transactions" :key="index">
-        <div class="transaction-list">    
-            <h4>Towards {{ item.transactionsMeta.name }}</h4>
-            <div class="transactions-binder">
-                <div>
-                    <table>
-                        <tr v-for="content in item.transactionsData" :key="content.id">
-                            <td class="num-output">{{$formatNum(content.amount)}}</td>
-                            <td><pre> * </pre></td>
-                            <td class="num-output">{{content.rate}} ₦/CAD</td>
-                            <td><pre> = </pre></td>
-                            <td class="num-output">{{$formatNum(content.amount * content.rate)}}</td>
-                        </tr>
-                        <tr>
-                            <td colspan="5"><div class="hr"></div></td>
-        
-                        </tr>
-                        <tr class="transaction-sum">
-                        <td class="num-output">{{$formatNum(item.transactionsMeta.totalDollarPaid)}}</td>
-                            <td><pre> * </pre></td>
-                            <td>{{ $formatNum(10000)}} ₦/CAD</td>
-                            <td><pre> = </pre></td>
-                            <td class="num-output">{{$formatNum(item.transactionsMeta.totalNairaPaid)}}</td>
-                        </tr>
-                    </table>
-                   <span> Goal: ₦{{$formatNum(item.transactionsMeta.nairaGoal)}}</span>
-                </div>
-                <div class="paid-percentage-box">
-                    <h3>{{item.transactionsMeta.paidPercentage}}%</h3>
-                    <span>paid</span>
+    <div>
+        <div v-for="(item, index) in transactions" :key="index">
+            <div class="transaction-list">    
+                <h4>Towards {{ item.transactionsMeta.name }}</h4>
+                <div class="transactions-binder">
+                    <div>
+                        <table>
+                            <tr v-for="content in item.transactionsData" :key="content.id">
+                                <td class="num-output">{{$formatNumFloat(content.amount)}}</td>
+                                <td><pre> * </pre></td>
+                                <td class="num-output">{{content.rate}} ₦/CAD</td>
+                                <td><pre> = </pre></td>
+                                <td class="num-output">{{$formatNumFloat (content.amount * content.rate)}}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="5"><div class="hr"></div></td>
+            
+                            </tr>
+                            <tr class="transaction-sum">
+                            <td class="num-output">{{$formatNum(item.transactionsMeta.totalDollarPaid)}}</td>
+                                <td><pre> * </pre></td>
+                                <td>{{ $formatNumFloat(item.transactionsMeta.totalNairaPaid / item.transactionsMeta.totalDollarPaid)}} ₦/CAD</td>
+                                <td><pre> = </pre></td>
+                                <td class="num-output">{{$formatNum(item.transactionsMeta.totalNairaPaid)}}</td>
+                            </tr>
+                        </table>
+                    <span> Goal: ₦{{$formatNum(item.transactionsMeta.nairaGoal)}}</span>
+                    </div>
+                    <div class="paid-percentage-box">
+                        <h3>{{item.transactionsMeta.paidPercentage}}%</h3>
+                        <span>paid</span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    
 
     <div class="tithe">
         <div class="contribution">

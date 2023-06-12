@@ -64,7 +64,7 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/finance/JobsView.vue'),
-      meta: {title: 'Jobs Search Table'},
+      meta: {title: 'Finance'},
       children: [
         {
           // UserProfile will be rendered inside User's <router-view>

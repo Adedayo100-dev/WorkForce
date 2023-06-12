@@ -24,6 +24,8 @@ import NewShift from '../components/NewShift.vue'
 import NewTransaction from '../components/NewTransaction.vue'
 import NewEmployer from '../components/NewEmployer.vue'
 import NewFilter from '../components/FilterComponent.vue'
+import NewSchedule from '../components/NewSchedule.vue'
+import UndoCountDown from '../components/UndoCountDown.vue'
 import DialogBox from '../components/DialogBox.vue'
 import WorkDetails from '../components/WorkDetails.vue'
 import DialogSubmit from '../components/DialogSubmit.vue'
@@ -36,6 +38,8 @@ export default {
         NewTransaction,
         NewEmployer,
         NewFilter,
+        NewSchedule,
+        UndoCountDown,
         DialogBox,
         WorkDetails,
         DialogSubmit
@@ -49,7 +53,7 @@ export default {
     computed: mapState({
         currentModal: state => state.modal.whichModal, // NewShift, newTransaction  or DialogBox
         modalSubmitType: state => state.modal.whichSubmitType, // FormSubmit or DialogSubmit
-        modalPosition: state => state.modal.position, // center-Modal / right-modal
+        modalPosition: state => state.modal.classNames, // center-Modal / right-modal
 
     }),
     emits: ['close'],
@@ -87,6 +91,20 @@ export default {
     }
     .right-modal{
         justify-content: end;
+    }
+    .left-modal{
+        justify-content: flex-start;
+        align-items: end;
+    }
+    .left-modal .modal-static-container{
+        margin: 0 0 24px 49px;
+        padding: 4px 12px;
+    }
+    .light-outer-bg{
+        background-color: transparent;
+    }
+    .dark-inner-bg .modal-static-container{
+        background-color: rgba(0, 0, 0, 0.5);
     }
     .bottom-modal .modal-static-container{
         width: 100%;
@@ -153,13 +171,13 @@ export default {
         transform: scale(1.1);
     }
     .form-group{
-    display: grid;
-    grid-template-columns: 2fr 10fr;
-    gap: 12px;
-    margin-bottom: 10px;
-}
-label{
-    font-size: 13px;
-    color: darkgray;
-}
+        display: grid;
+        grid-template-columns: 2fr 10fr;
+        gap: 12px;
+        margin-bottom: 10px;
+    }
+    label{
+        font-size: 13px;
+        color: darkgray;
+    }
 </style>

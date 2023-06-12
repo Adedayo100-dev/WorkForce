@@ -69,9 +69,61 @@
             {"id": 66, "loc": "Minova", "dates": ["Sun 26 Mar 2023","Mon 27 Mar, 2023","Wed 29 Mar, 2023","Thur 30 Mar, 2023"], "hours": [11.5,11.25,11.5,7.25],  "pay": 636, "payStatus": true},
             {"id": 67, "loc": "Minova", "dates": ["Mon 03 Apr, 2023","Tue 04 Apr, 2023","Thur 30 Feb, 2023"], "hours": [7.5, 9.25, 8.58],  "pay": 518.34, "payStatus": true},
             {"id": 68, "loc": "Minova", "dates": ["Mon 10 Apr, 2023"], "hours": [11],  "pay": 223.15, "payStatus": true},
-            {"id": 69, "loc": "Minova", "dates": ["Mon 17 Apr, 2023","Tue 18 Apr, 2023","Wed 19 Apr, 2023","Thur 20 Apr, 2023","Fri 21 Apr, 2023"], "hours": [12,12,11,11,7.66],  "pay": 816, "payStatus": false},
-            {"id": 70, "loc": "Minova", "dates": ["Mon 24 Apr, 2023","Tue 25 Apr, 2023"], "hours": [11.2,7],  "pay": 336.85, "payStatus": false},
-            {"id": 71, "loc": "Minova", "dates": ["Sun 30 Apr, 2023"], "hours": [8.5],  "pay": 150, "payStatus": false}
+            {"id": 69, "loc": "Minova", "dates": ["Mon 17 Apr, 2023","Tue 18 Apr, 2023","Wed 19 Apr, 2023","Thur 20 Apr, 2023","Fri 21 Apr, 2023"], "hours": [12,12,11,11,7.66],  "pay": 816, "payStatus": true},
+            {"id": 70, "loc": "Minova", "dates": ["Mon 24 Apr, 2023","Tue 25 Apr, 2023"], "hours": [11.2,7],  "pay": 336.85, "payStatus": true},
+            {"id": 71, "loc": "Minova", "dates": ["Sun 30 Apr, 2023"], "hours": [8.5],  "pay": 150, "payStatus": true},
+            {
+                "id": 71, 
+                "name": "Seasons Retirement Community", 
+                "location": "Hamilton, ON", 
+                "dates": [
+                    {"shift": {
+                        "name": "Seasons Retirement Community",
+                        "date": "Tue 06 June, 2023",
+                        "time": [{
+                            "duration": {"hours": 1, "minutes": 0},
+                            "endDate": "2023-06-02",
+                            "endTime": "19:23",
+                            "startDate": "2023-06-02",
+                            "startDateString": "Feb 17, 2022",
+                            "startTime": "18:23"
+                        }],
+                        "pay": 0,
+                        "payStatus": false,
+                        "comment": ""}
+                    },
+                    {"shift": {
+                        "date": "Wed  07 June, 2023",
+                        "time": [{
+                            "duration": {"hours": 1, "minutes": 0},
+                            "endDate": "2023-06-02",
+                            "endTime": "19:23",
+                            "startDate": "2023-06-02",
+                            "startDateString": "Feb 17, 2022",
+                            "startTime": "18:23"
+                        }],
+                        "pay": 0,
+                        "payStatus": false,
+                        "comment": ""
+                    }},
+                    {"shift": {
+                        "date": "Thur 08 June, 2023",
+                        "time": [{
+                            "duration": {"hours": 1, "minutes": 0},
+                            "endDate": "2023-06-02",
+                            "endTime": "19:23",
+                            "startDate": "2023-06-02",
+                            "startDateString": "Feb 17, 2022",
+                            "startTime": "18:23"
+                        }],
+                        "pay": 0,
+                        "payStatus": false,
+                        "comment": ""
+                    }}
+                ],
+                "comment": "",
+                "pay": 0
+            }
         ]
     },
     "shopping": [

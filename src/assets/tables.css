@@ -48,7 +48,9 @@ tr.success{
     margin-top: 20px;
 }
 caption{
-    text-align: left;
+    /* text-align: left; */
+    font-size: 14px;
+    margin: 12px 0;
 }
 .today{
     background-color: grey;

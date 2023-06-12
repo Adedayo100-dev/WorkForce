@@ -87,11 +87,11 @@
         },
         methods: {
             createShift(){
-                    console.log('Shift Form values', this.formValues);
-                    axios.post('http://localhost:3000/api/worksList', this.formValues, {headers:{"Content-Type" : "application/json"}})
-                    .then((res) => console.log(res))
-                    .catch((err) => console.log(err))
-                },
+                console.log('Shift Form values', this.formValues);
+                axios.post('http://localhost:3000/api/worksList', this.formValues, {headers:{"Content-Type" : "application/json"}})
+                .then((res) => console.log(res))
+                .catch((err) => console.log(err))
+            },
         },
     }
 </script>

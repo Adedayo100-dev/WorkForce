@@ -1,5 +1,6 @@
 .css-bt7gsy.display-option {
-    border: 0.5px solid rgb(196, 199, 204);
+    border: 0.5px solid var(--light-grey-color); /* rgb(196, 199, 204) */
+    border: none;
     color: #20262e;
     font-size: 15px;
     font-weight: 400;
@@ -8,6 +9,8 @@
 }
 .css-10la47u {
     background-color: rgb(245, 246, 247) !important;
+    border-bottom: 1px solid #d1d1d1;
+
 }
 .css-mmep5j {
     display: grid;
@@ -25,7 +28,7 @@
     padding-bottom: 8px!important;
 }
 .css-bt7gsy.display-option .display-option-row + .display-option-row {
-    border-top: 0.5px solid rgb(196, 199, 204);
+    border-top: 0.5px solid var(--light-grey-color);
 }
 .css-i8rtc8 {
     font-size: 12px;
@@ -76,10 +79,10 @@
     height: 14px;
     width: 14px;
     margin-right: 4px;
-    fill: rgb(133, 140, 148);
+    fill: rgb(189,193,197);
 }
 .verified-icon.success{
-    fill: rgb(48, 124, 0);
+    fill: rgb(133, 140, 148); /* rgb(48, 124, 0) */
 }
 .shift-time{
     display: flex;

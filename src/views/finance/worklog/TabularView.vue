@@ -6,6 +6,11 @@ export default {
     components: {
         WorkLogItem,
     },
+    data() {
+        return {
+            
+        }
+    },
     props: {
         worksList: {
             type: Array,
@@ -18,6 +23,12 @@ export default {
         totalPay: {
             type: Number,
             required: true,
+        }
+    },
+    methods: {
+        handleDeletion(idx) {
+            this.consoleNum = idx;
+            this.worksList.splice(idx, 1)
         }
     },
 }
@@ -47,7 +58,7 @@ export default {
             </div>
         </div>
         <div class="bank">
-            <WorkLogItem v-for="(work, index) in worksList" :key="work._id" :loc="work.loc" :time="work.time" :description="work.description" :pay="work.pay" :payStatus="work.payStatus" :idx="index"/>
+            <WorkLogItem v-for="(work, index) in worksList" :key="work._id" :id="work._id" :loc="work.loc" :time="work.time" :description="work.description" :pay="work.pay" :payStatus="work.payStatus" :idx="index" @deleteById="handleDeletion"/>
             
             <div class="display-option-row py-xsm px-std css-mmep5j css-10la47u">
                 <div>

@@ -1,6 +1,7 @@
 const asyncHandler = require('express-async-handler');
 const Work = require('../models/workModel');
 const { substractTime } = require('../middleware/timeHandling.js');
+const { dateToString } = require('../middleware/formatDate.js');
 
 // @desc    Get WorksList
 // @route   GET /api/workslist
@@ -22,6 +23,7 @@ const setWorksList = asyncHandler(async (req, res) => {
         loc: req.body.inputLocation,
         time: {
             startDate: req.body.inputTime.startTime.slice(0, 10),
+            startDateString: dateToString(req.body.inputTime.startTime.slice(0, 10)),
             startTime: req.body.inputTime.startTime.slice(11, 16),
             endDate: req.body.inputTime.stopTime.slice(0, 10),
             endTime: req.body.inputTime.stopTime.slice(11, 16),
@@ -64,7 +66,9 @@ const deleteWorksList = asyncHandler(async (req, res) => {
         res.status(400)
         throw new Error('Work not found')
     }
+    
     await work.remove()
+    console.log(req.params.id, "deleted");
 
     res.status(200).json({id: req.params.id})
 })

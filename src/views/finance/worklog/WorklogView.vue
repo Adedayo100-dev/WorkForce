@@ -64,7 +64,6 @@ export default {
         },
         openModal(modalType) {
             this.$store.commit('openModal', modalType);
-            // console.log(modalType, 'Modal-Opened');
         }
     },
 }

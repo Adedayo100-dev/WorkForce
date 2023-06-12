@@ -1,5 +1,4 @@
-{
-    "months": [
+const months = [
         {"id": 1, "monthName":"Jan", "fullName": "January"},
         {"id": 2, "monthName":"Feb", "fullName": "February"},
         {"id": 3, "monthName":"Mar", "fullName": "March"},
@@ -12,5 +11,5 @@
         {"id": 10, "monthName":"Oct", "fullName": "October"},
         {"id": 11, "monthName":"Nov", "fullName": "November"},
         {"id": 12, "monthName":"Dec", "fullName": "December"}
-    ]
-}
+]
+export default months;

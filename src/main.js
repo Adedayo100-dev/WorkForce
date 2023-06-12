@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import { createStore } from 'vuex'
-import { formatNum } from './mixins/toLocaleString.js'
+import { formatNum, formatNumFloat } from './mixins/toLocaleString.js'
 
 
 import App from './App.vue'
@@ -17,7 +17,7 @@ const store = createStore({
                 toggleModal: false,
                 whichModal: null, //Change to null
                 whichSubmitType: null, //Change to null
-                position: ''
+                classNames: ''
             }
         }
     },
@@ -28,32 +28,42 @@ const store = createStore({
             switch (state.modal.whichModal) {
                 case "DialogBox":
                     state.modal.whichSubmitType = "DialogSubmit";
-                    state.modal.position = 'center-modal'
+                    state.modal.classNames = 'center-modal'
                     break;
                     
                 case "NewShift":
                     state.modal.whichSubmitType = null;
-                    state.modal.position = 'center-modal'
+                    state.modal.classNames = 'center-modal'
                     break;
                     
                 case "NewTransaction":
                     state.modal.whichSubmitType = null;
-                    state.modal.position = 'center-modal'
+                    state.modal.classNames = 'center-modal'
                     break;
                     
                 case "NewEmployer":
                     state.modal.whichSubmitType = null;
-                    state.modal.position = 'center-modal'
+                    state.modal.classNames = 'center-modal'
                     break;
 
                 case "NewFilter":
                     state.modal.whichSubmitType = null;
-                    state.modal.position = 'right-modal'
+                    state.modal.classNames = 'right-modal'
+                    break;
+
+                case "NewSchedule":
+                    state.modal.whichSubmitType = null;
+                    state.modal.classNames = 'center-modal'
+                    break;
+
+                case "undoCountDown":
+                    state.modal.whichSubmitType = null;
+                    state.modal.classNames = 'left-modal dark-inner-bg light-outer-bg'
                     break;
 
                 default:
                     state.modal.whichSubmitType = null;
-                    state.modal.position = ''
+                    state.modal.classNames = ''
                     break;
             }
             
@@ -73,6 +83,12 @@ const store = createStore({
 const app = createApp(App)
 
 app.config.globalProperties.$formatNum = formatNum;
+
+app.config.globalProperties = {
+    ...app.config.globalProperties,
+    $formatNum: formatNum,
+    $formatNumFloat: formatNumFloat
+  };
 app.use(router)
 app.use(store)
 

@@ -62,7 +62,7 @@
 }
 .small-currency{
   font-size: 14px;
-  font-weight: 300;
-  color: #757575;
+  font-weight: 500;
+    color: rgb(181 181 181);
 }
 </style>
