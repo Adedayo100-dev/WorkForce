@@ -170,7 +170,7 @@
         {"id": 41, "shopItem": "Pots", "where": "Walmart"},
         {"id": 42, "shopItem": "Electronics", "where": "Walmart"},
         {"id": 43, "shopItem": "Rod", "where": "Walmart"},
-        {"id": 44, "shopItem": "", "where": "Canadian Tore"},
+        {"id": 44, "shopItem": "", "where": "Canadian Tire"},
         {"id": 45, "shopItem": "Adjustable Computer Keyboard & Mouse Platform Tray Deluxe Under Table Desk Mount", "where": ""},
         {"id": 46, "shopItem": "", "where": "Canadian Tire"}
     ],

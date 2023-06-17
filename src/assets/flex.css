@@ -106,9 +106,9 @@
     .css-1ordlh1 .display-option {
         width: auto;
     }
-    .ml-sm-xxl, .mx-sm-xxl {
-        /* margin-left: 32px!important; */
-    }
+    /* .ml-sm-xxl, .mx-sm-xxl {
+        margin-left: 32px!important;
+    } */
     .container-fluid {
         margin-right: auto;
         margin-left: auto;

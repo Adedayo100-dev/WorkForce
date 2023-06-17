@@ -19,7 +19,7 @@
                 <label for="">Date(S):</label>
                 <div class="date_form-control">
                     <input v-model="formValues.inputTime.startTime" type="datetime-local" name="shiftstart" id=""  class="form-control_input width-full">
-                    <button class="add-new-date">
+                    <button class="add-new-date" @click="addEndDate">
                         +
                     </button>
                 </div>
@@ -86,6 +86,9 @@
             }
         },
         methods: {
+            addEndDate(){
+                
+            },
             createShift(){
                 console.log('Shift Form values', this.formValues);
                 axios.post('http://localhost:3000/api/worksList', this.formValues, {headers:{"Content-Type" : "application/json"}})

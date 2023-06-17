@@ -292,6 +292,8 @@ export default {
         .catch((err) => {
             console.log(err.message)
         });
+
+        console.log(this.$route.query)
     
     },
     methods: {

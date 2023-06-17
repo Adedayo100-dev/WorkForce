@@ -1,12 +1,20 @@
 <template>
     <div class="drop-down">
-        <ul>
+        <!-- <ul>
             <li>All</li>
-            <li>SIN</li>
-            <li>Cash</li>
+            <li>Tags</li>  
+            <li>Location</li>
             <li>Full-Time</li>
             <li>Part-Time</li>
-        </ul>
+        </ul> -->
+        <select name="category">
+            <option value="All">All</option>
+            <option value="Tags">Tags</option> <!-- SIN, Cash -->
+            <option value="Location">Location</option>
+            <option value="Full-Time">Full-Time</option>
+            <option value="Part-Time">Part-Time</option>
+        </select>
+
     </div>
 </template>
 
@@ -29,4 +37,13 @@ li{
 li:hover{
     background-color: rgba(128, 128, 128, 0.125);
 }
+select[name=category]{
+    width: calc(100% - 4px);
+    background-color: rgb(238 238 238 / 50%);
+    border: none;
+    padding: 4px 0px 4px 4px;
+    border-radius: 4px;
+    outline: none;
+    font-size: 12px;
+ }
 </style>

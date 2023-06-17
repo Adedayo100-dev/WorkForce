@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import { createStore } from 'vuex'
 import { formatNum, formatNumFloat } from './mixins/toLocaleString.js'
+import DateRangeIcon from './components/icons/IconDateRange.vue'
 
 
 import App from './App.vue'
@@ -82,13 +83,13 @@ const store = createStore({
 
 const app = createApp(App)
 
-app.config.globalProperties.$formatNum = formatNum;
+app.component('DateRangeIcon', DateRangeIcon)
 
 app.config.globalProperties = {
     ...app.config.globalProperties,
     $formatNum: formatNum,
     $formatNumFloat: formatNumFloat
-  };
+};
 app.use(router)
 app.use(store)
 
