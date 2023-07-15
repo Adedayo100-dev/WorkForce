@@ -28,6 +28,7 @@
 
 <script>
 import FormSubmit from '../components/FormSubmit.vue'
+import axios from 'axios'
 
     export default {
         components: {

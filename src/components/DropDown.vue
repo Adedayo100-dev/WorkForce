@@ -1,21 +1,7 @@
 <template>
-    <div class="drop-down">
-        <!-- <ul>
-            <li>All</li>
-            <li>Tags</li>  
-            <li>Location</li>
-            <li>Full-Time</li>
-            <li>Part-Time</li>
-        </ul> -->
-        <select name="category">
-            <option value="All">All</option>
-            <option value="Tags">Tags</option> <!-- SIN, Cash -->
-            <option value="Location">Location</option>
-            <option value="Full-Time">Full-Time</option>
-            <option value="Part-Time">Part-Time</option>
-        </select>
-
-    </div>
+    <select>
+        <slot></slot>
+    </select>
 </template>
 
 <script>
@@ -25,7 +11,7 @@ export default {
 </script>
 
 <style scoped>
-ul{
+/* ul{
     background-color: rgb(238 238 238 / 50%);
     padding: 2px 0;
     border-radius: 4px;
@@ -36,14 +22,14 @@ li{
 }
 li:hover{
     background-color: rgba(128, 128, 128, 0.125);
-}
-select[name=category]{
-    width: calc(100% - 4px);
+} */
+select{
+    width: calc(100% - 12px);
     background-color: rgb(238 238 238 / 50%);
-    border: none;
-    padding: 4px 0px 4px 4px;
+    border: 1px solid rgb(235, 235, 235);
+    padding: 8px 0px 8px 10px;
     border-radius: 4px;
     outline: none;
     font-size: 12px;
- }
+}
 </style>

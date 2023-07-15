@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { workWatcher, employerWatcher } = require('../watchers/watchers')
 mongoose.set('strictQuery', false);
 
 const connectDB = async () => {
@@ -8,7 +9,7 @@ const connectDB = async () => {
             useUnifiedTopology: true,
             // useFindAndModify: false,
         })
-
+        
         console.log(`MongoDB Connected: ${conn.connection.host}`)
     } catch(error){
         console.log(error);

@@ -4,7 +4,7 @@ import TableIcon from '../../../components/icons/IconTable.vue'
 import GraphIcon from '../../../components/icons/IconGraph.vue'
 import FilterButton from '../../../components/FilterButton.vue'
 import axios from 'axios'
-
+import { useModalStore } from '../../../stores/modalStore'
 
 export default {
     components: {
@@ -19,21 +19,10 @@ export default {
             nairaTotal: 2000000,
             dollarTotal: 2500,
             exchangeRate: 560,
-            errorMsg: ''
+            errorMsg: '',
+            currentRoute: '',
         }
     },
-    created() {
-        this.fetchWorks()
-
-    },
-    // beforeMount() {
-    //     if (this.worksList = {}) {
-    //         console.log("Workslist is active but empty")
-    //     }
-    //     else{
-    //         console.log(typeof this.worksList);
-    //     }
-    // },
     computed: {
         
         totalPay() {
@@ -52,20 +41,26 @@ export default {
     },
     methods: {
         fetchWorks(){
-            axios.get('http://localhost:3000/api/worksList')
+            const queryParameters = this.$route.query; // Access query parameters from the URI
+
+            axios.get('http://localhost:3000/api/worksList', { params: queryParameters })
             .then((res) => {
                 this.worksList = res.data;
-                console.log(res.data);
+                console.log(res.data);        
             })
             .catch((err) => {
-                console.log(err.message)
+                console.error(err.message)
                 this.errorMsg = 'error retrieving data';
             });
         },
         openModal(modalType) {
-            this.$store.commit('openModal', modalType);
+            useModalStore().openModal(modalType)
         }
     },
+    created() {
+        this.fetchWorks();
+        this.currentRoute = this.$route.path;
+    }
 }
 </script>
 

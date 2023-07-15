@@ -29,7 +29,8 @@ import UndoCountDown from '../components/UndoCountDown.vue'
 import DialogBox from '../components/DialogBox.vue'
 import WorkDetails from '../components/WorkDetails.vue'
 import DialogSubmit from '../components/DialogSubmit.vue'
-import { mapState } from 'vuex'
+import { mapState } from 'pinia'
+import { useModalStore } from '@/stores/modalStore'
 
 export default {
     name: 'modal',
@@ -50,12 +51,13 @@ export default {
             
         }
     },
-    computed: mapState({
-        currentModal: state => state.modal.whichModal, // NewShift, newTransaction  or DialogBox
-        modalSubmitType: state => state.modal.whichSubmitType, // FormSubmit or DialogSubmit
-        modalPosition: state => state.modal.classNames, // center-Modal / right-modal
-
-    }),
+    computed: {
+        ...mapState( useModalStore, {
+            currentModal: store => store.modal.whichModal, // NewShift, newTransaction  or DialogBox
+            modalSubmitType: store => store.modal.whichSubmitType, // FormSubmit or DialogSubmit
+            modalPosition: store => store.modal.classNames, // center-Modal / right-modal
+        })
+    },
     emits: ['close'],
     // created(){
     //     console.log(this.$store.state.modal.whichModal, "created");
@@ -175,6 +177,17 @@ export default {
         grid-template-columns: 2fr 10fr;
         gap: 12px;
         margin-bottom: 10px;
+    }
+    .form-center{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10px 0 10px;
+    }
+    .form-center button{
+        border: none;
+        padding: 12px 14px;
+        border-radius: 4px;
     }
     label{
         font-size: 13px;

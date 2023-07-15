@@ -7,9 +7,31 @@ const Employer = require('../models/employerModel');
 // @access  Private
 const getEmployers = asyncHandler(async (req, res) => {
 
-    const employers = await Employer.find()
-    res.status(200).json(employers);
+    var queryParams = req.query; // Get the query parameters
+    // console.log(queryParams)
+    var employers;
 
+    if(Object.keys(queryParams).length == 0){
+        
+        employers = await Employer.find()
+        // console.log("Employers query is empty!");
+
+    }
+    else {
+        
+        const query = {
+            
+            name: { $regex: `.*${queryParams.keyword}.*`, $options: "i" } 
+
+            //  name: queryParams.keyword 
+            
+        }
+
+        employers = await Employer.find(query)
+
+    }
+
+    res.status(200).json(employers);
 
 })
 
@@ -69,12 +91,22 @@ const updateEmployers = async (req, res) => {
 }
 
 // @desc    Delete Employer
-// @route   DELETE /api/employer
+// @route   DELETE /api/employer/:id
 // @access  Private
-const deleteEmployers = async (req, res) => {
-    res.status(200).json({ message: `Delete goal ${req.params.id}`})
+const deleteEmployers = asyncHandler(async (req, res) => {
+
+    const employer = await Employer.findById(req.params.id)
+
+    if(!employer){
+        res.status(400)
+        throw new Error('Work not found')
+    }
+    
+    await employer.remove()
+
+    res.status(200).json({ message: `Deleted Employer ${req.params.id}`})
     // res.send(employer);
-}
+})
 
 
 

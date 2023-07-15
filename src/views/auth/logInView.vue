@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { getGoogleUrl } from '../utils/getGoogleUrl';
+import { getGoogleUrl } from '../../utils/getGoogleUrl';
 
 export default {
     name: 'log-in',

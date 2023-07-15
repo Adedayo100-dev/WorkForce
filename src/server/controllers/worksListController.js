@@ -7,7 +7,20 @@ const { dateToString } = require('../middleware/formatDate.js');
 // @route   GET /api/workslist
 // @access  Private
 const getWorksList = asyncHandler(async (req, res) => {
-    const works = await Work.find()
+    var queryParams = req.query; // Get the query parameters
+    var works;
+    if(Object.keys(queryParams).length == 0){
+        works = await Work.find()
+        console.log("Works query is empty!");
+    }
+    else {
+        const query = {
+            name: { $regex: `.*${queryParams.keyword}.*`, $options: "i" } 
+            //  name: queryParams.keyword 
+        }
+        works = await Work.find(query)
+    }
+    works = await Work.find()
     res.status(200).json(works);
 })
 

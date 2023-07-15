@@ -7,7 +7,7 @@ export default {
   data() {
     return {
       schedule: [
-        {title: "CEC Personnel", body: "I need to hear back from CEC personnel about my application that was forwarded to UPS Burligton", date: "Today"},
+        {title: "New Passport", body: "Go to Ottawa to get a new passport", date: "Today"},
         {title: "Pay Phone bill- $122.67", body: "Pay the phone bill for Fido", date: "Apr 19"},
         {title: "Get TELEX after paying with form-A", body: "Pay the phone bill for Fido", date: "Jun 1"},
         {title: "Check Message", body: "This is a Notification", date: "Undefined"}

@@ -107,6 +107,7 @@ export default {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        z-index: 50;
     }
     .side-nav ul{
         list-style-type: none;
@@ -147,9 +148,6 @@ export default {
         fill: grey;
     }
     .sidenav-dropdown{
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
         display: none;
         /* New Code */
         position: absolute;
@@ -160,6 +158,7 @@ export default {
         top: 0;
         border-top-right-radius: 4px;
         border-bottom-right-radius: 4px;
+        z-index: 50;
     }
     .side-nav ul li:hover .sidenav-dropdown{
         display: block;

@@ -25,7 +25,7 @@ export default {
 
 <template>
     <div class="tax-filing">
-        <h3>Tax Filing</h3>
+        <h3>Taxes</h3>
         <ul class="s">
             <li v-for="item in taxFiling" :key="item.id" class="shop-item">
                 <input type="checkbox" name="" id=""> {{item.item}}

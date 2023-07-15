@@ -6,6 +6,8 @@
     font-weight: 400;
     line-height: 24px;
     letter-spacing: normal;
+    position: sticky;
+    top: 31.09px;
 }
 .css-10la47u {
     background-color: rgb(245, 246, 247) !important;
@@ -101,6 +103,15 @@
 .border-x-none{
     border-left: none !important;
     border-right: none !important;
+}
+.color-light-grey{
+    color: rgb(133, 140, 148);;
+}
+.k5-font{
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 2;
+    margin: 0;
 }
 @media (min-width: 576px){
     .css-1ordlh1 .display-option {

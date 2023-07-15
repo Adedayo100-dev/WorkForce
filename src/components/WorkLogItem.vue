@@ -112,6 +112,15 @@
             <div class="hidden details-expand py-xsm px-std border-bottom" >
                 <p>{{ description }}</p>
                 <ul class="sub-shifts_array">
+                    <li v-for="(shift, index) in shifts" :key="index" class="individual-shift css-kx45yu">
+                        <span class="paid">${{ shift.pay }}</span>
+                        <span class="individual-date flank-right">Feb 17, 2022 &nbsp;&nbsp;{{ time.startTime }} &nbsp;&nbsp;------ &nbsp;&nbsp;Feb 17, 2022 &nbsp;&nbsp;{{ time.endTime }}</span>
+                        <div>Details: {{ shift.comment }}</div>
+                        <div class="time-stamp">
+                            <p class="start-time_render css-kx45yu"><span></span>{{ time.startDate }} {{ time.startTime }} ------ {{ time.endDate }} {{ time.endTime }}</p>
+                            <!-- <p class="stop-time_render css-kx45yu"><span>Ends: </span>{{ time.endDate }} {{ time.endTime }}</p> -->
+                        </div>
+                    </li>
                     <li class="individual-shift css-kx45yu">
                         <span class="paid">$210</span>
                         <span class="individual-date flank-right">Feb 17, 2022 &nbsp;&nbsp;{{ time.startTime }} &nbsp;&nbsp;------ &nbsp;&nbsp;Feb 17, 2022 &nbsp;&nbsp;{{ time.endTime }}</span>

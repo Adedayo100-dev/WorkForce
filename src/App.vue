@@ -1,6 +1,7 @@
 <script>
     import { RouterLink, RouterView } from 'vue-router';
-    import { mapState } from 'vuex'
+    import { useModalStore } from './stores/modalStore'
+    import { mapState } from 'pinia'
     import { defineAsyncComponent } from 'vue'
     import SideNav from './components/SideNav.vue';
     import TopNavBar from './components/TopNavBar.vue';
@@ -17,15 +18,21 @@
                 
             }
         },
-        computed: mapState({
-            modalState: state => state.modal.toggleModal,
-            modalType: state => state.modal.whichModal,
-        }),
+        computed: {
+            ...mapState(useModalStore, {
+                modalState: store => store.modal.toggleModal,
+                modalType: store => store.modal.whichModal,
+            })
+        },
         methods: {
             closeModal: function(event) {
-                this.$store.commit('closeModal')
-                console.log(event, this.modalType);
+                useModalStore().closeModal(modalType)
+                // this.$store.commit('closeModal')
+                // console.log(event, this.modalType);
             },
+            openModal(modalType) {
+                useModalStore().openModal(modalType)
+            }
             // openModal: function(modalType) {
             //     this.$store.commit('openModal', modalType)
             //     console.log(modalType," opened");

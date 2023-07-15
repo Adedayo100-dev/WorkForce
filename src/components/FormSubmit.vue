@@ -15,6 +15,8 @@
 
 <script>
 import UnfoldMoreIcon from '../components/icons/IconUnfoldMore.vue'
+import { useModalStore } from '../stores/modalStore'
+
 
     export default {
         name: 'FormSubmit',
@@ -28,8 +30,9 @@ import UnfoldMoreIcon from '../components/icons/IconUnfoldMore.vue'
         },
         methods: {
             closeModal: function(event) {
-                this.$store.commit('closeModal')
-                console.log(event, this.modalType);
+                useModalStore().closeModal()
+
+                // console.log(event, this.modalType);
             },
             switchButton: function(){
                 this.switchButtonState = !this.switchButtonState;

@@ -15,20 +15,59 @@
                             <SortIcon height="17px"/>
                             <span>Sort by :</span>
                         </div>
-                        <DropDown>
-                        </DropDown>
+
+                        <div class="filter_input-group">
+                            <select name="category">
+                                <option value="all">All</option>
+                                <option value="Tags">Tags</option>
+                                <option value="Company">Company</option>
+                                <option value="Location">Location</option>
+                            </select>
+                            <div class="select-box">
+                                <div class="vertical-divider"></div>
+                                <input type="search" name="keyword" placeholder="Search">
+                            </div>
+                            <!-- <option value="minova">Minova</option>
+                                    <option value="amazon">Amazon</option>
+                                    <option value="lcbo">LCBO</option>
+                                    <option value="pro-bell">PRO-BELL</option>
+                                    <option value="mondelez">Mondelez</option>
+                                    <option value="ferrero">Ferrero</option>
+                                    <option value="aspire">Aspire</option>
+                                    <option value="upseat">Upseat</option> -->
+                        </div>
                     </div>
                     <div>
                         <div class="filter-subsection_title">
                             <AZIcon height="17px"/>
                             <span>Order by :</span>
                         </div>
+                        <DropDown name="orderBy">
+                            <option value="newestToOldest">Newest - Oldest</option>
+                            <option value="oldestToNewest">Oldest - Newest</option> 
+                        </DropDown>
                         
-                        <ul>
-                            <input type="radio" name="orderBy" id="newestToOldest" checked value="newestToOldest"> <label for="">Newest - Oldest</label><br>
-                            <input type="radio" name="orderBy" id="oldestToNewest" value="oldestToNewest"> <label for="">Oldest - Newest</label><br>
-                            <!-- <input type="radio" name="orderBy" id=""> <label for=""></label> -->
-                        </ul>
+                    </div>
+                    <div>
+                        <div class="filter-subsection_title">
+                            <CheckListIcon height="17px"/>
+                            <span>Type :</span>
+                        </div>
+                        
+                        <div class="type-list-container">
+                            <div>
+                                <input type="checkbox" name="type" value="Full-Time" id="fullTime"> <label for="fullTime">Full-Time</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="type" value="Part-Time" id="partTime"> <label for="partTime">Part-Time</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="type" value="SIN" id="sinJob"> <label for="sinJob">SIN</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="type" value="Cash" id="cashJob"> <label for="cashJob">Cash</label>
+                            </div>
+                        </div>
                     </div>
                     <div>
                         <div class="filter-subsection_title">
@@ -44,10 +83,10 @@
                         <div class="filter-subsection_title">
                             <input type="checkbox" name="useLength" class="use-length_checkbox" ref="uselength">
                             <span>Show:</span>
-                        </div>
-                        <div class="">
-                            <input type="number" name="length" class="entries_input" value="99" :disabled="useLengthStatus"> <!-- Toggle disabled-->
-                            <small> entries</small>
+                            <div class="">
+                                <input type="number" name="length" class="entries_input" value="99" :disabled="useLengthStatus">&nbsp;&nbsp; <!-- Toggle disabled-->
+                                <small> entries</small>
+                            </div>
                         </div>
                     </div>
                     <!-- <div class="entries_input_container">
@@ -57,24 +96,6 @@
                         <small> entries</small>
                     </div> -->
                 
-                    <!-- <form action="/finance/employers" class="filter_input-group">
-                        <input type="search" name="text" placeholder="Search">
-                        <div class="select-box">
-                            <div class="vertical-divider"></div>
-                            <select name="browser">
-                                <option value="all">All</option>
-                                <option value="minova">Minova</option>
-                                <option value="amazon">Amazon</option>
-                                <option value="lcbo">LCBO</option>
-                                <option value="pro-bell">PRO-BELL</option>
-                                <option value="mondelez">Mondelez</option>
-                                <option value="ferrero">Ferrero</option>
-                                <option value="aspire">Aspire</option>
-                                <option value="upseat">Upseat</option>
-                            </select>
-                        </div>
-                        <input type="submit" value="Submit">
-                    </form> -->
                     <div class="confirm-button-container">
                         <FormSubmit>
                             <template  #button_name>Save</template>
@@ -104,15 +125,15 @@ import FormSubmit from '../components/FormSubmit.vue'
 import ArrowLeftIcon from '../components/icons/IconArrowLeft.vue'
 import AZIcon from '../components/icons/IconAZ.vue'
 import SortIcon from '../components/icons/IconSort.vue'
-// import DateRangeIcon from '../components/icons/IconDateRange.vue'
+import CheckListIcon from '../components/icons/IconCheckList.vue'
 
 export default {
     components: {
-        DropDown, FormSubmit, ArrowLeftIcon, SortIcon, AZIcon
+        DropDown, FormSubmit, ArrowLeftIcon, SortIcon, AZIcon, CheckListIcon
     },
     methods: {
         closeModal: function(event) {
-            this.$store.commit('closeModal')
+            this.$store.patch('closeModal')
             console.log(event, this.modalType);
         },
     },
@@ -123,20 +144,26 @@ export default {
 .new-filter{
     position: relative;
     height: 100%;
+    max-width: 271px;
 }
 .left-arrow{
-    position: absolute;
-    left: -24px;
-    top: calc((100% - 24px) / 2);
-    margin-top: -10PX;
+    /* position: absolute; */
+    margin-left: -8.45px;
+    /* top: calc((100% - 24px) / 2); */
+    /* margin-top: -10PX; */
     border-radius: 50%;
-    background-color: rgb(245 245 245);
+    /* background-color: rgb(245 245 245); */
     width: 24px;
     height: 24px;
     fill: darkgray;
 }
+.left-arrow:hover{
+    background-color: rgb(245 245 245);
+    fill: #202124;
+
+}
 .filter-title{
-    margin-bottom: 0;
+    margin: 0 0 0 8px;
     line-height: .8;
 }
 .filter-box{
@@ -148,7 +175,7 @@ export default {
 .filter_input-group{
     border: 1px solid rgb(235, 235, 235);
     border-radius: 0.25rem;
-    width: fit-content;
+    /* width: fit-content; */
     overflow: hidden;
 }
 .filter_input-group input, .filter_input-group select{
@@ -163,15 +190,23 @@ export default {
 .filter_input-group select{
     padding: 7px 10px;
 }
+.type-list-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 4px;
+}
+.type-list-container label{
+    word-break: keep-all;
+}
 .dates-range_box{
     display: flex;
     justify-content: space-between;
     gap: 4px;
 }
 .date-from, .date-to{
-    border: none;
+    border: 1px solid rgb(235, 235, 235);
     background-color: rgb(238 238 238 / 50%);
-    padding: 4px 8px;
+    padding: 8px 10px;
     border-radius: 4px;
 }
 .entries_input_container{
@@ -185,6 +220,8 @@ export default {
     border-radius: 2px;
     border: 1px solid rgb(235, 235, 235);
     outline: none;
+    background-color: rgb(238 238 238 / 50%);
+    text-align: right;
 }
 .filter-subsection_title{
     display: flex;

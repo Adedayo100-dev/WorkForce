@@ -2,6 +2,7 @@
     import axios from 'axios'
     import AddButton from '../../components/AddButton.vue'
     import IncomeCalculator from '../../components/IncomeCalculator.vue'
+    import { useModalStore } from '../../stores/modalStore'
 
 
     export default {
@@ -53,8 +54,7 @@
         },
         methods: {
             openModal(modalType) {
-                this.$store.commit('openModal', modalType);
-                // console.log(modalType, 'Modal-Opened');
+                useModalStore().openModal(modalType)
             }
         },
         mounted() {
@@ -69,7 +69,7 @@
             <span>  Add Transaction</span>
         </AddButton>
     </div>
-    <div>
+    <div class="transactions-main margin-x">
         <div v-for="(item, index) in transactions" :key="index">
             <div class="transaction-list">    
                 <h4>Towards {{ item.transactionsMeta.name }}</h4>
@@ -107,9 +107,9 @@
     </div>
     
 
-    <div class="tithe">
+    <div class="calc margin-x">
         <div class="contribution">
-            <div class="first-tithe-box">
+            <div class="first-calc-box">
                 <form oninput="x.value='₦'+(parseInt(a.value)*parseInt(b.value)).toLocaleString('en-US')">
                     <div class="func-container">
                         <span>Percentages: </span>
@@ -137,7 +137,7 @@
                 </form>
             </div>
             <hr class="">
-            <div class="second-tithe-box">
+            <div class="second-calc-box">
                 <p>
                     {{$formatNum(75459384)}}
                 </p>
@@ -150,6 +150,9 @@
 
 
 <style scoped>
+.transactions-main{
+
+}
 pre{
     font-size: var(--table-font-size);
     margin: 0;

@@ -2,14 +2,18 @@ const express = require('express');
 const mongoose = require('mongoose');
 require('dotenv').config({ path: './config/config.env'});
 const {errorHandler} = require('./middleware/errorMiddleware');
-// const exphbs = require('express-handlebars');
 const passport = require('passport');
 const jwt = require("jsonwebtoken")
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
-const cors = require('cors');
 const app = express();
+const http = require('http');
+const server = http.createServer(app);
+const { Server } = require('socket.io');
+const io = new Server(server, { cors: { origin: "*"}});
+const cors = require('cors');
 const connectDB  = require('./config/db');
+require('./watchers/watchers')(io);
 
 
 
@@ -58,7 +62,7 @@ app.use('/api', require('./routes/api.js'))
 // Handler for 404 - Resource Not Found
 app.use((req, res, next) => {
     res.status(404).send("We think you are lost or you misspelt the link!");
-})
+});
 
 // Handler for Error 500
 // app.use((err, req, res, next) => {
@@ -66,8 +70,19 @@ app.use((req, res, next) => {
 //     res.sendFile(path.join(_dirname, '../public/500.html'))
 // })
 
+
+io.on('connection', (socket) => {
+    // console.log('A user connected to back-end');
+    // Handle websocket events and emit data to connected clients
+    io.on('employer-db-change', (data) => {
+        console.log("Data changed is", data)
+    })
+});
+
+
+
 const port = process.env.PORT || 3000;
-app.listen(port, () => console.log(`Listening on port ${port}...`));
+server.listen(port, () => console.log(`Listening on port ${port}...`));
 
 // Handling Error
 // process.on("unhandledRejection", err => {

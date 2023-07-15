@@ -45,6 +45,9 @@ a{
 .width-full{
     width: 100%;
 }
+.width_fill-available{
+    width: -webkit-fill-available;
+}
 .d-center{
     display: flex;
     justify-content: center;
@@ -100,7 +103,7 @@ ul{
     background-color: #eee;
     padding: 10px 12px;
 }
-.tithe span{
+.calc span{
     font-size: var(--table-font-size);
 }
 .one-liner{

@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
+const isUserLoggedIn = true;
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -7,13 +8,13 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component:  () => import('../views/HomeView.vue'),
-      meta: {title: 'Home'}
+      meta: {title: 'Home', requiresAuth: false}
     },
     {
       path: '/tasks',
       name: 'tasks',
       component: () => import('../views/tasks/TasksView.vue'),
-      meta: {title: 'Tasks'},
+      meta: {title: 'Tasks', requiresAuth: true},
       children: [
         {
           // Userhelp will be rendered inside User's <router-view>
@@ -36,8 +37,8 @@ const router = createRouter({
           component: () => import('../views/tasks/ShopList.vue'),
         },
         {
-          path: 'taxfiling',
-          name: 'taxfiling',
+          path: 'taxes',
+          name: 'taxes',
           component: () => import('../views/tasks/TaxFiling.vue'),
         },
         {
@@ -54,6 +55,11 @@ const router = createRouter({
           path: 'vault',
           name: 'vault',
           component: () => import('../views/tasks/Vault.vue'),
+        },
+        {
+          path: 'my-schedule',
+          name: 'my-schedule',
+          component: () => import('../views/tasks/mySchedule.vue'),
         }
       ],
     },
@@ -64,7 +70,7 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/finance/JobsView.vue'),
-      meta: {title: 'Finance'},
+      meta: {title: 'Finance', requiresAuth: true},
       children: [
         {
           // UserProfile will be rendered inside User's <router-view>
@@ -77,7 +83,9 @@ const router = createRouter({
           path: 'worklog',
           name: 'worklog',
           component: () => import('../views/finance/worklog/WorklogView.vue'),
-          meta: {title: 'Jobs Log'},
+          meta: {
+            title: 'Jobs Log',
+          },
           children: [
             {
               path: 'tabular',
@@ -139,50 +147,64 @@ const router = createRouter({
       path: '/assignments',
       name: 'assignments',
       component: () => import('../views/AssignmentsView.vue'),
-      meta: {title: 'Assignments'}
+      meta: {title: 'Assignments', requiresAuth: true}
     },
     {
       path: '/schedule',
       name: 'schedule',
       component: () => import('../views/ScheduleView.vue'),
-      meta: {title: 'Schedule'}
+      meta: {title: 'Schedule', requiresAuth: true}
     },
     {
       path: '/settings',
       name: 'settings',
       component: () => import('../views/SettingsView.vue'),
-      meta: {title: 'Settings'}
+      meta: {title: 'Settings', requiresAuth: true}
     },
     {
       path: '/user-profile',
       name: 'profile',
       component: () => import('../views/ProfileView.vue'),
-      meta: {title: 'Hi Taiwo!'}
+      meta: {title: 'Hi Taiwo!', requiresAuth: true}
     },
     {
       path: '/help',
       name: 'help',
       component: () => import('../views/helpView.vue'),
-      meta: {title: 'Help'}
+      meta: {title: 'Help', requiresAuth: true}
     },
     {
       path: '/signedout',
       name: 'signedout',
-      component: () => import('../views/signedOutView.vue'),
-      meta: {title: 'Signed-out'}
+      component: () => import('../views/auth/signedOutView.vue'),
+      meta: {title: 'Signed-out', requiresAuth: false}
     },
     {
       path: '/login',
       name: 'login',
-      component: () => import('../views/logInView.vue'),
-      meta: {title: 'Signed-out'}
-    }
+      component: () => import('../views/auth/logInView.vue'),
+      meta: {title: 'Signed-out', requiresAuth: false}
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'NotFound',
+      component: () => import('../views/PageNotFound.vue'),
+      meta: {title: 'Signed-out', requiresAuth: false}
+    },
   ]
 })
 
 router.beforeEach((to, from, next) => {
   document.title = `WorkForce - ${to.meta.title}`;
-  next();
+  if (to.meta.requiresAuth) {
+    if(isUserLoggedIn){
+      next();
+    } else{
+      next("/login")
+    }
+  } else {
+    next();
+  }
 });
 
 export default router

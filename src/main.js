@@ -1,86 +1,15 @@
 import { createApp } from 'vue'
-import { createStore } from 'vuex'
+import { createPinia } from 'pinia'
 import { formatNum, formatNumFloat } from './mixins/toLocaleString.js'
 import DateRangeIcon from './components/icons/IconDateRange.vue'
-
-
+// App & Router
 import App from './App.vue'
 import router from './router'
-
+// Stylesheet
 import './assets/styles.css'
 
 
-// Store 
-const store = createStore({
-    state(){
-        return {
-            modal: {
-                toggleModal: false,
-                whichModal: null, //Change to null
-                whichSubmitType: null, //Change to null
-                classNames: ''
-            }
-        }
-    },
-    mutations: {
-        openModal (state, modalType){
-            state.modal.toggleModal = true;
-            state.modal.whichModal = modalType;
-            switch (state.modal.whichModal) {
-                case "DialogBox":
-                    state.modal.whichSubmitType = "DialogSubmit";
-                    state.modal.classNames = 'center-modal'
-                    break;
-                    
-                case "NewShift":
-                    state.modal.whichSubmitType = null;
-                    state.modal.classNames = 'center-modal'
-                    break;
-                    
-                case "NewTransaction":
-                    state.modal.whichSubmitType = null;
-                    state.modal.classNames = 'center-modal'
-                    break;
-                    
-                case "NewEmployer":
-                    state.modal.whichSubmitType = null;
-                    state.modal.classNames = 'center-modal'
-                    break;
-
-                case "NewFilter":
-                    state.modal.whichSubmitType = null;
-                    state.modal.classNames = 'right-modal'
-                    break;
-
-                case "NewSchedule":
-                    state.modal.whichSubmitType = null;
-                    state.modal.classNames = 'center-modal'
-                    break;
-
-                case "undoCountDown":
-                    state.modal.whichSubmitType = null;
-                    state.modal.classNames = 'left-modal dark-inner-bg light-outer-bg'
-                    break;
-
-                default:
-                    state.modal.whichSubmitType = null;
-                    state.modal.classNames = ''
-                    break;
-            }
-            
-            console.log(state, typeof state.modal.whichModal, "mutated");
-        },
-        closeModal (state){
-            state.modal.toggleModal = false;
-        }
-    }
-})
-
-
-// console.log(store.state.modal.toggleModal, store.state.modal.whichModal);
-
-
-
+const pinia = createPinia()
 const app = createApp(App)
 
 app.component('DateRangeIcon', DateRangeIcon)
@@ -90,8 +19,9 @@ app.config.globalProperties = {
     $formatNum: formatNum,
     $formatNumFloat: formatNumFloat
 };
+
 app.use(router)
-app.use(store)
+app.use(pinia)
 
 app.mount('#app')
 
