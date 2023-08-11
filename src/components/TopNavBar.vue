@@ -2,7 +2,7 @@
     <div class="top-nav">
         <div class="title-box">
             <WorkForceIcon />
-            <span class="title">WorkForce</span>
+            <span class="title">Ice - Finance</span>
         </div>
         <div class="logo">
         </div>

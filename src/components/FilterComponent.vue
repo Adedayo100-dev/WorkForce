@@ -8,7 +8,7 @@
                 </div>
             </div>
             <div class="filter-box">
-                <form action="/finance/employers">
+                <form :action="this.currentPath">
                     <div>
                         <div class="filter-subsection_title">
                             <!-- &#8645;  -->
@@ -66,6 +66,9 @@
                             </div>
                             <div>
                                 <input type="checkbox" name="type" value="Cash" id="cashJob"> <label for="cashJob">Cash</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="type" value="Co-op" id="coopJob"> <label for="coopJob">Co-op</label>
                             </div>
                         </div>
                     </div>
@@ -126,16 +129,26 @@ import ArrowLeftIcon from '../components/icons/IconArrowLeft.vue'
 import AZIcon from '../components/icons/IconAZ.vue'
 import SortIcon from '../components/icons/IconSort.vue'
 import CheckListIcon from '../components/icons/IconCheckList.vue'
+import { mapState } from 'pinia'
+import { useRouteStore } from '@/stores/routeStore'
+
 
 export default {
     components: {
         DropDown, FormSubmit, ArrowLeftIcon, SortIcon, AZIcon, CheckListIcon
+    },
+    computed: {
+        ...mapState( useRouteStore, {
+            currentPath: store => store.route.currentPath, // 'finance/worklog', 'finance/employers'
+        })
     },
     methods: {
         closeModal: function(event) {
             this.$store.patch('closeModal')
             console.log(event, this.modalType);
         },
+    },
+    created() {
     },
 }
 </script>

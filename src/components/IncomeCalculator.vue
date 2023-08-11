@@ -1,7 +1,9 @@
 <script>
+import AddIcon from '../components/icons/IconAdd.vue'
 
 export default {
     name: 'IncomeCalculator',
+    components: { AddIcon },
     data() {
         return {
             regPay: 19,
@@ -137,10 +139,17 @@ export default {
             </tbody>
         </table> 
 
-        <span>Probable Income: {{ grossIncome }}</span>      
+        <div class="xyz">
+            <AddIcon/> &nbsp;
+            <span>Manage Income</span>  
+        </div>
     </div>
 </template>
 
 <style>
-
+    .xyz{
+        padding: 15px 0;
+        display: flex;
+        /* align-items: center; */
+    }
 </style>

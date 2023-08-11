@@ -37,7 +37,7 @@
                         <input type="time" v-model="employerValues.inputTime.night.inputStopTime" name="employerTime2">
                     </div>
                 </div><br>
-                <textarea v-model="employerValues.inputDescription" name="employerDesc" placeholder="Description" cols="30" rows="10"></textarea>
+                <textarea v-model="employerValues.inputDescription" name="employerDesc" placeholder="Comment" cols="30" rows="10"></textarea>
                 <div class="confirm-button-container">
                     <FormSubmit>
                         <template  #button_name>Add</template>

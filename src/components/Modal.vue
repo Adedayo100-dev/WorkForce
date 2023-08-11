@@ -1,5 +1,5 @@
 <template>
-    <transition  name="modal">
+    <Transition name="modal">
         <div class="modal-overlay " :class="[{show: toggleModal}, modalPosition ]">
             <div class="modal-static-container">
                 <div class="modal-dynamic-content">
@@ -16,7 +16,7 @@
                 </div>
             </div>
         </div>
-    </transition>
+    </Transition>
 </template>
 
 <script>
@@ -69,9 +69,9 @@ export default {
 </script>
 
 <style>
-    .modal-overlay.show{
-        /* display: flex; */
-    }
+    /* .modal-overlay.show{
+        display: flex;
+    } */
     .modal-overlay{
         position: fixed;
         inset: 0;
@@ -161,6 +161,11 @@ export default {
     /* Modal Transition */
     .modal-enter-from {
         opacity: 0;
+        transform: translateY(10px);
+    }
+    .modal-enter-to {
+        opacity: 1;
+        transform: translateY(0);
     }
 
     .modal-leave-to {
@@ -169,8 +174,8 @@ export default {
 
     .modal-enter-from .modal-container,
     .modal-leave-to .modal-container {
-        -webkit-transform: scale(1.1);
-        transform: scale(1.1);
+        /* -webkit-transform: scale(1.1);
+        transform: scale(1.1); */
     }
     .form-group{
         display: grid;

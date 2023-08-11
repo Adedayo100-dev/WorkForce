@@ -37,11 +37,6 @@ const router = createRouter({
           component: () => import('../views/tasks/ShopList.vue'),
         },
         {
-          path: 'taxes',
-          name: 'taxes',
-          component: () => import('../views/tasks/TaxFiling.vue'),
-        },
-        {
           path: 'wish-list',
           name: 'wish-list',
           component: () => import('../views/tasks/WishList.vue'),
@@ -106,16 +101,7 @@ const router = createRouter({
           name: 'employers',
           component: () => import('../views/finance/Employers.vue'),
         },
-        {
-          path: 'sinjobs',
-          name: 'sinjobs',
-          component: () => import('../views/finance/SINJobs.vue'),
-        },
-        {
-          path: 'cashjobs',
-          name: 'cashjobs',
-          component: () => import('../views/finance/CashJobs.vue'),
-        },
+        // breakjobs,favjobs, availability
         {
           path: 'breakjobs',
           name: 'breakjobs',
@@ -132,14 +118,34 @@ const router = createRouter({
           component: () => import('../views/finance/Availability.vue'),
         },
         {
-          path: 'co-op',
-          name: 'co-op',
-          component: () => import('../views/finance/Co-op.vue'),
-        },
-        {
           path: 'transactions',
           name: 'transactions',
-          component: () => import('../views/finance/TransactionsView.vue'),
+          component: () => import('../views/finance/transactions/TransactionsView.vue'),
+          children: [
+            {
+              // Userhelp will be rendered inside User's <router-view>
+              // when /user/:id/profile is matched
+              path: '',
+              name: 'transactionsindx',
+              component:  () => import('../views/finance/transactions/TransactionsIndx.vue'),
+              //
+            },
+            {
+              path: 'datasets',
+              name: 'datasets',
+              component: () => import('../views/finance/transactions/SetsView.vue')
+            },
+            {
+              path: 'currency-exchange',
+              name: 'currency-exchange',
+              component: () => import('../views/finance/transactions/CurrencyExchangeView.vue')
+            },
+          ]
+        },
+        {
+          path: 'taxes',
+          name: 'taxes',
+          component: () => import('../views/finance/TaxFiling.vue'),
         }
       ],
     },

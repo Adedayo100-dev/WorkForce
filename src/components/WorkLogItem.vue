@@ -3,6 +3,8 @@
     import DeleteIcon from '../components/icons/IconDelete.vue'
     import EditIcon from '../components/icons/IconEditSquare.vue'
     import axios from 'axios'
+    import { useModalStore } from '../stores/modalStore'
+
     
     export default {
         components: {
@@ -49,19 +51,27 @@
         },
         methods: {
             openModal(modalType) {
-                this.$store.commit('openModal', modalType);
-                // console.log(modalType, 'Modal-Opened');
+                useModalStore().openModal(modalType)
             },
             initDelWorkItem(id,idx) {
                 // Remove from view
                 this.$emit('deleteById', idx);
                 
                 function displayUndoModal(){
-                    var modalType = "undoCountDown";
-                    this.$store.commit('openModal', modalType);
+                    return new Promise((resolve, reject) => {
+                        var modalType = "undoCountDown";
+                        useModalStore().openModal(modalType)
 
+                        // Simulate an error
+                        if (false/* condition for error */) {
+                            var error = new Error("First function encountered an error");
+                            reject(error); // Reject the promise with the error
+                        } else {
+                        // Resolve the promise after successful execution
+                            resolve();
+                        }
+                    });
                 };
-                displayUndoModal.call(this)
 
                 function deleteWorkItem(){
                     axios.delete(`http://localhost:3000/api/worksList/${id}`, id, {headers:{"Content-Type" : "application/json"}})
@@ -72,7 +82,11 @@
                     )
                     .catch((err) => console.log(err))
                 }
-                setTimeout( deleteWorkItem, 10000)
+
+                displayUndoModal.call(this).then(() => {
+                    deleteWorkItem()
+                })
+
             }
         },
     }

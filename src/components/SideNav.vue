@@ -41,6 +41,9 @@
                     <li>
                         <router-link to="/finance/transactions">Transactions</router-link>
                     </li>
+                    <li>
+                        <router-link to="/finance/taxes">Taxes</router-link>
+                    </li>
                     
                 </ul>
             </li>
@@ -97,7 +100,7 @@ export default {
 
 <style scoped>
     .side-nav{
-        /*background-color: #004D40;#f7f7f7, rgb(244,244,244)*/
+        background-color: white;/* #004D40, #f7f7f7, rgb(244,244,244)*/
         position: fixed;
         /* top: 0; */
         left: 0;
@@ -150,14 +153,14 @@ export default {
     .sidenav-dropdown{
         display: none;
         /* New Code */
-        position: absolute;
-        left: var(--side-nav-width);
-        border: 1px solid #d1d1d1;
+        /* position: absolute; */
+        /* left: var(--side-nav-width); */
+        /* border: 1px solid #d1d1d1; */
         border-left: none;
         background: white;
-        top: 0;
-        border-top-right-radius: 4px;
-        border-bottom-right-radius: 4px;
+        /* top: 0; */
+        /* border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px; */
         z-index: 50;
     }
     .side-nav ul li:hover .sidenav-dropdown{

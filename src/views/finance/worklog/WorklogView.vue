@@ -5,6 +5,8 @@ import GraphIcon from '../../../components/icons/IconGraph.vue'
 import FilterButton from '../../../components/FilterButton.vue'
 import axios from 'axios'
 import { useModalStore } from '../../../stores/modalStore'
+import { useRouteStore } from '../../../stores/routeStore'
+
 
 export default {
     components: {
@@ -60,6 +62,9 @@ export default {
     created() {
         this.fetchWorks();
         this.currentRoute = this.$route.path;
+        // Let the state management know what route we are on
+        useRouteStore().updatePath(this.currentRoute);
+
     }
 }
 </script>

@@ -6,7 +6,7 @@
         <br>
 
         <div class="display-option css-bt7gsy ">
-            <div v-for="(item, index) in wishList"  :key="item.id">
+            <div v-for="(item, index) in wishList" :key="item.id">
                 <div class="wish-item ">
                     <div class="display-option-row py-xsm px-std css-mmep5j">
                         <div class="heading-box">

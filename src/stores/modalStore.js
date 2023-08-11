@@ -60,7 +60,7 @@ export const useModalStore = defineStore('modal', {
                     break;
             }
             
-            console.log(this, typeof this.modal.whichModal, "mutated");
+            console.log(typeof this.modal.whichModal, "activated");
         },
         closeModal (){
             this.modal.toggleModal = false;

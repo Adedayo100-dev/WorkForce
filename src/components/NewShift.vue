@@ -142,7 +142,6 @@
 
                 }
                 this.showFieldset = !this.showFieldset; //Toggle here
-                console.log("Toggled New Date container");
             },
             saveFieldSet(index){
                 this.formValues.shifts[index] = { ...this.formValues.shifts[index], ...this.currentShift};
@@ -175,6 +174,7 @@
     border: 1px solid rgba(0 0, 0, .1);
     resize: none;
     border-radius: 4px;
+    background-color: transparent;
 }
 /* .new-shift .add-shift_button{
     width: 100%;

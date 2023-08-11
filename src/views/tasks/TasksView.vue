@@ -11,9 +11,6 @@
           <router-link to="/tasks/shopping-list">Shopping</router-link>
         </li>
         <li>
-          <router-link to="/tasks/taxes">Taxes</router-link>
-        </li>
-        <li>
           <router-link to="/tasks/wish-list">Wish List</router-link>
         </li>
         <li>

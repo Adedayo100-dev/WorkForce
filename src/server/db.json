@@ -249,5 +249,519 @@
         {"id": 53, "item":"", "price": ""},
         {"id": 54, "item":"", "price": ""},
         {"id": 55, "item":"", "price": ""}
-    ]    
+    ],
+    "schedule": [
+        {"week1": [
+            {
+                "dayNum": 30,
+                "dayMonth": {
+                    "num": 7,
+                    "name": "July"
+                }, 
+                "dayYear": 2023,
+                "events": [
+
+                ],
+                "dayType": "prev-month"
+            },
+            {
+                "dayNum": 31,
+                "dayMonth": {
+                    "num": 7,
+                    "name": "July"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                    {"short_Desc": "Seasons +", "time": "10:00 - 06:00", "type": "is-work"}
+                ],
+                "dayType": "prev-month"
+            },
+            {
+                "dayNum": 1,
+                "dayMonth": {
+                    "num": 8,
+                    "name": "August"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                    {"short_Desc": "Seasons Retirement Community", "time": "10:00 - 06:00", "type": "is-work"}
+                ],
+                "dayType": "current"
+            },
+            {
+                "dayNum": 2,
+                "dayMonth": {
+                    "num": 8,
+                    "name": "August"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                    {"short_Desc": "Seasons Retirement Community", "time": "10:00 - 06:00", "type": "is-work"}
+                ],
+                "dayType": "current"
+            },
+            {
+                "dayNum": 3,
+                "dayMonth": {
+                    "num": 8,
+                    "name": "August"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                ],
+                "dayType": "current"
+            },
+            {
+                "dayNum": 4, 
+                "dayMonth": {
+                    "num": 8,
+                    "name": "August"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                    {"short_Desc": "Seasons Retirement Community", "time": "10:00 - 06:00", "type": "is-work"}
+                    
+                ],
+                "dayType": "current"
+            },
+            {
+                "dayNum": 5, 
+                "dayMonth": {
+                    "num": 8,
+                    "name": "August"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                    {"short_Desc": "Seasons Retirement Community", "time": "10:00 - 06:00", "type": "is-work"}
+                ],
+                "dayType": "current"
+            }
+        ]},
+        {"week2": [
+            {
+                "dayNum": 6, 
+                "dayMonth": {
+                    "num": 8,
+                    "name": "August"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"}
+                ],
+                "dayType": "current"
+            },
+            {
+                "dayNum": 7, 
+                "dayMonth": {
+                    "num": 8,
+                    "name": "August"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"}
+                ],
+                "dayType": "current"
+            },
+            {
+                "dayNum": 8, 
+                "dayMonth": {
+                    "num": 8,
+                    "name": "August"
+                }, 
+                "dayYear": 2023,
+                "events": [
+
+                ],
+                "dayType": "current"
+            },
+            {
+                "dayNum": 9,
+                "dayMonth": {
+                    "num": 8,
+                    "name": "August"
+                }, 
+                "dayYear": 2023, 
+                "events": [
+                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"}
+                ],
+                "dayType": "current"
+            },
+            {
+                "dayNum": 10, 
+                "dayMonth": {
+                    "num": 8,
+                    "name": "August"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"}
+                ],
+                "dayType": "current"
+            },
+            {
+                "dayNum": 11, 
+                "dayMonth": {
+                    "num": 8,
+                    "name": "August"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"}
+                ],
+                "dayType": "current"
+            },
+            {
+                "dayNum": 12, 
+                "dayMonth": {
+                    "num": 8,
+                    "name": "August"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                ],
+                "dayType": "current"
+            }
+        ]},
+        {"week3": [
+            {
+                "dayNum": 13, 
+                "dayMonth": {
+                    "num": 8,
+                    "name": "August"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                ],
+                "dayType": "current"
+            },
+            {
+                "dayNum": 14, 
+                "dayMonth": {
+                    "num": 8,
+                    "name": "August"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"}
+                ],
+                "dayType": "current"
+            },
+            {
+                "dayNum": 15, 
+                "dayMonth": {
+                    "num": 8,
+                    "name": "August"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"}
+                ],
+                "dayType": "current"
+            },
+            {
+                "dayNum": 16, 
+                "dayMonth": {
+                    "num": 8,
+                    "name": "August"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"}
+                ],
+                "dayType": "current"
+            },
+            {
+                "dayNum": 17, 
+                "dayMonth": {
+                    "num": 8,
+                    "name": "August"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                ],
+                "dayType": "current"
+            },
+            {
+                "dayNum": 18, 
+                "dayMonth": {
+                    "num": 8,
+                    "name": "August"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"},
+                    {"short_Desc": "Loan", "time": "14:00 - 14:30", "type": "is-appointment"},
+                    {"short_Desc": "Passport Application", "time": "", "type": ""}
+                ],
+                "dayType": "current"
+            },
+            {
+                "dayNum": 19, 
+                "dayMonth": {
+                    "num": 8,
+                    "name": "August"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"}
+                ],
+                "dayType": "current"
+            }
+        ]},
+        {"week4": [
+            {
+                "dayNum": 20, 
+                "dayMonth": {
+                    "num": 8,
+                    "name": "August"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"}
+                ],
+                "dayType": "current"
+            },
+            {
+                "dayNum": 21, 
+                "dayMonth": {
+                    "num": 8,
+                    "name": "August"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"}
+                ],
+                "dayType": "current"
+            },
+            {
+                "dayNum": 22, 
+                "dayMonth": {
+                    "num": 8,
+                    "name": "August"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                    
+                ],
+                "dayType": "current"
+            },
+            {
+                "dayNum": 23, 
+                "dayMonth": {
+                    "num": 8,
+                    "name": "August"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"}
+                ],
+                "dayType": "current"
+            },
+            {
+                "dayNum": 24, 
+                "dayMonth": {
+                    "num": 8,
+                    "name": "August"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"}
+                ],
+                "dayType": "current"
+            },
+            {
+                "dayNum": 25, 
+                "dayMonth": {
+                    "num": 8,
+                    "name": "August"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"}
+                ],
+                "dayType": "current"
+            },
+            {
+                "dayNum": 26, 
+                "dayMonth": {
+                    "num": 8,
+                    "name": "August"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                    
+                ],
+                "dayType": "current"
+            }
+        ]},
+        {"week5": [
+            {
+                "dayNum": 27, 
+                "dayMonth": {
+                    "num": 8,
+                    "name": "August"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                    
+                ],
+                "dayType": "current"
+            },
+            {
+                "dayNum": 28, 
+                "dayMonth": {
+                    "num": 8,
+                    "name": "August"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"}
+                ],
+                "dayType": "current"
+            },
+            {
+                "dayNum": 29, 
+                "dayMonth": {
+                    "num": 8,
+                    "name": "August"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"}
+                ],
+                "dayType": "current"
+            },
+            {
+                "dayNum": 30, 
+                "dayMonth": {
+                    "num": 8,
+                    "name": "August"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"}
+                ],
+                "dayType": "current"
+            },
+            {
+                "dayNum": 31, 
+                "dayMonth": {
+                    "num": 8,
+                    "name": "August"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                    
+                ],
+                "dayType": "current"
+            },
+            {
+                "dayNum": 1, 
+                "dayMonth": {
+                    "num": 9,
+                    "name": "September"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"}
+                ],
+                "dayType": "next-month"
+            },
+            {
+                "dayNum": 2, 
+                "dayMonth": {
+                    "num": 9,
+                    "name": "September"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"}
+                ],
+                "dayType": "next-month"
+            }
+        ]},
+        {"week6": [
+            {
+                "dayNum": 3, 
+                "dayMonth": {
+                    "num": 9,
+                    "name": "September"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"}
+                ],
+                "dayType": "next-month"
+            },
+            {
+                "dayNum": 4, 
+                "dayMonth": {
+                    "num": 9,
+                    "name": "September"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"}
+                ],
+                "dayType": "next-month"
+            },
+            {
+                "dayNum": 5, 
+                "dayMonth": {
+                    "num": 9,
+                    "name": "September"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"}
+                ],
+                "dayType": "next-month"
+            },
+            {
+                "dayNum": 6, 
+                "dayMonth": {
+                    "num": 9,
+                    "name": "September"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                ],
+                "dayType": "next-month"
+            },
+            {
+                "dayNum": 7, 
+                "dayMonth": {
+                    "num": 9,
+                    "name": "September"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                ],
+                "dayType": "next-month"
+            },
+            {
+                "dayNum": 8, 
+                "dayMonth": {
+                    "num": 9,
+                    "name": "September"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                ],
+                "dayType": "next-month"
+            },
+            {
+                "dayNum": 9, 
+                "dayMonth": {
+                    "num": 9,
+                    "name": "September"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                    
+                ],
+                "dayType": "next-month"
+            }
+        ]}   
+    ] 
 }

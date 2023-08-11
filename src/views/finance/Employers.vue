@@ -69,6 +69,7 @@ import VerifiedIcon from '../../components/icons/IconVerified.vue'
 import FilterButton from '../../components/FilterButton.vue'
 import AddButton from '../../components/AddButton.vue'
 import { useModalStore } from '../../stores/modalStore'
+import { useRouteStore } from '../../stores/routeStore'
 import socket from '../../../socket'
 
 export default {
@@ -103,13 +104,14 @@ export default {
     created() {
         this.fetchEmployers();
         this.currentRoute = this.$route.path;
+        useRouteStore().updatePath(this.currentRoute);
+
     },
     setup() {
         socket.on('employer-db-change', (data) => {
             console.log(data.operationType);
             // this.fetchEmployers();
         });
-        console.log("setup works!");
     },
 }
 </script>

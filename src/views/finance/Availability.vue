@@ -7,9 +7,35 @@
         </div>
         <div class="margin-x" id="availability">
             
-            <div class="weekly-availability">
+            <div class="monthly-availability">
+                <div class="calendar-control">
+                    <select name="years" id="">
+                        <option value="2022">2022</option>
+                        <option value="2023" selected>2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028</option>
+                        <option value="2029">2029</option>
+                        <option value="2030">2030</option>
+                    </select>
+                    <select name="months" id="">
+                        <option value="Jan">Jan</option>
+                        <option value="Feb">Feb</option>
+                        <option value="Mar">Mar</option>
+                        <option value="Apr">Apr</option>
+                        <option value="May">May</option>
+                        <option value="Jun">Jun</option>
+                        <option value="Jul" selected>Jul</option>
+                        <option value="Aug">Aug</option>
+                        <option value="Sep">Sep</option>
+                        <option value="Oct">Oct</option>
+                        <option value="Nov">Nov</option>
+                        <option value="Dec">Dec</option>
+                    </select>
+                </div>
                 <table >
-                    <caption>This Week</caption>
                     <thead>
                         <tr>
                             <td>Sun</td>
@@ -22,51 +48,28 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>
-
-                            </td>
-                            <td>
-                                <div class="has-shift">
-                                    <span class="company-name">Seasons Retirement Community</span>
-                                </div>
-                                <span class="has-time">10:00 - 18:00</span>
-                            </td>
-                            <td>
-                                <div class="has-shift">
-                                    <span class="company-name">Seasons Retirement Community</span>
-                                </div>
-                                <span class="has-time">10:00 - 18:00</span>
-                            </td>
-                            <td>
-                                <div class="has-shift">
-                                    <span class="company-name">Seasons Retirement Community</span>
-                                </div>
-                                <span class="has-time">10:00 - 18:00</span>
-                            </td>
-                            <td></td>
-                            <td>
-                                <div class="has-shift">
-                                    <span class="company-name">Seasons Retirement Community</span>
-                                </div>
-                                <span class="has-time">10:00 - 18:00</span>
-                            </td>
-                            <td>
-                                <div class="has-shift">
-                                    <span class="company-name">Seasons Retirement Community</span>
-                                </div>
-                                <span class="has-time">10:00 - 18:00</span>
-                            </td>
+                        <tr v-for="week in schedule" :key="week._id">
+                            <template v-for="cee in Object.values(week)" :key="cee._id">
+                                <td v-for="day in cee" :key="day._id" :class="[day.dayType, this.today.date == day.dayNum && this.today.month+1 == day.dayMonth.num ? 'present-day' : '']">
+                                    <div class="day-number-box">
+                                        <span :title="day.dayMonth.name + ' ' + day.dayNum + ' ,'+ day.dayYear">{{ day.dayNum }}</span>
+                                    </div>
+                                    <template v-for="event in day.events" :key="event._id">
+                                        <div class="has-shift" :class="event.type">
+                                            <span class="company-name" title="Seasons Retirement Community">{{ event.short_Desc }}</span>
+                                            <!-- <span class="has-time">{{ event.time }}</span> -->
+                                        </div>
+                                        <span class="has-time">{{ event.time }}</span>
+                                    </template>
+                                    
+                                    <!-- {{ day }} -->
+                                    <!-- {{ JSON.stringify(day, null, 2) }} -->
+                                    <!-- {{ Object.values(day) }} -->
+                                </td>
+                            </template>
+                            
                         </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+        
                         <tr>
                             <td colspan="5">invalid</td>
                             <td class="work-active" colspan="2">active</td>
@@ -74,6 +77,10 @@
                     </tbody>
                 </table>
             </div>
+
+            <h4>Color Code:</h4>
+
+            <div>Active</div>
 
             <h4 class="">Availability</h4>
 
@@ -112,6 +119,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import AddButton from '../../components/AddButton.vue'
 import { useModalStore } from '../../stores/modalStore'
 
@@ -120,33 +128,113 @@ export default {
     components:{
         AddButton
     },
+    data() {
+        return {
+            schedule: [],
+            today: {
+                year : new Date().getFullYear(),
+                month : new Date().getMonth(),
+                day: new Date().getDay(),
+                date: new Date().getDate(),
+            },
+        }
+    },
+    watch: {
+        
+    },
     methods: {
+        fetchSchedule() {
+            axios.get('http://localhost:3000/api/schedule')
+            .then((res) => {
+                this.schedule = res.data;
+                console.log(res.data);        
+            })
+            .catch((err) => {
+                console.error(err.message)
+                this.errorMsg = 'error retrieving data';
+            });
+        },
         openModal(modalType) {
             useModalStore().openModal(modalType)
-        }
+        }  
+    },
+    created() {
+        this.fetchSchedule();
+        console.log(this.today);
     },
 }
 </script>
 
-<style>
-.weekly-availability td{
+<style scoped>
+.monthly-availability td{
     text-align: center;
     border-left: 1px solid rgb(238, 238, 238);
 }
-/* .company-name{
-    background-color: #f4f4f6;
-} */
+.monthly-availability td:first-of-type{
+    border-left: none;
+}
+.calendar-control{
+    display: flex;
+    padding: 5px 10px;
+    gap: 10px;
+    justify-content: end;
+}
+.calendar-control select{
+    border: none;
+    background-color: transparent;
+}
+tbody tr{
+    vertical-align: top;
+}
+tbody tr:last-of-type {
+    border-bottom: none;
+}
 .work-active{
     background-color: rgba(0, 128, 0, 0.25);
 }
 .has-shift{
     background-color: #f4f4f6;
-    border-left: 5px solid rgb(219 216 216) !important;
+    border-left: 5px solid rgb(219 216 216);
     padding: 13px 10px;
+    margin-top: 13px;
+}
+.company-name{
+    /* padding-bottom: 7.5px; */
+    display: block;
 }
 .has-time{
     line-height: 1;
     display: block;
-    padding-top: 13px;
+    padding-top: 7.5px;
+    /* border-top: 1px solid rgb(238, 238, 238); */
 }
+.day-number-box{
+    /* padding-bottom: 13px; */
+    display: flex;
+    justify-content: end;
+}
+.next-month .day-number-box span, .prev-month .day-number-box span{
+    color: rgb(238, 238, 238) !important;
+}
+.is-work{
+    border-left: 5px solid rgba(0, 191.25, 0, 0.25) !important;
+}
+.is-appointment{
+    border-left: 5px solid rgba(191.25, 191.25, 0, 0.5) !important;
+}
+.present-day{
+    /* background-color: rgba(255, 0, 1 0, 0.5); */
+    position: relative;
+}
+.present-day::before {
+    content:'';
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-right: solid 15px green;
+    border-bottom: solid 15px transparent;
+    border-top: solid 0px transparent;
+};
 </style>

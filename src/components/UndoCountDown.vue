@@ -1,12 +1,14 @@
 <template>  
     <div class="undo-countdown">
-        <button @click="initiateUndo" class="">Undo</button>
+        <button @click="initiateUndo()" class=""><b>Undo</b></button>
         <span>{{ countdown }}</span>
         <div @click="closeModal('close', 'Modal cancelled')">X</div>
     </div>
 </template>
 
 <script>
+import { useModalStore } from '../stores/modalStore'
+
 export default {
     data() {
         return {
@@ -21,18 +23,21 @@ export default {
         startCountdown() {
             this.timer = setInterval(() => {
                 if (this.countdown > 0) {
-                this.countdown--;
+                    this.countdown--;
                 } else {
-                this.stopCountdown();
+                    this.stopCountdown();
                 }
             }, 1000);
         },
         stopCountdown() {
             clearInterval(this.timer);
         },
+        initiateUndo() {
+
+        },
         closeModal: function(event) {
-            this.$store.commit('closeModal')
-            console.log(event, this.modalType);
+            useModalStore().closeModal();
+            console.log('Undo tried closing');
         },
     }
 }
