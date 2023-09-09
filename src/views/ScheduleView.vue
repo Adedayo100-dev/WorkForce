@@ -1,16 +1,19 @@
 <script>
 import ScheduleItem from '../components/ScheduleItem.vue'
+import SubNavTab from '../components/SubNavTab.vue';
+
 export default {
   components: {
-    ScheduleItem
+    ScheduleItem, SubNavTab
   },
   data() {
     return {
       schedule: [
-        {title: "New Passport", body: "Go to Ottawa to get a new passport", date: "Today"},
-        {title: "Pay Phone bill- $122.67", body: "Pay the phone bill for Fido", date: "Apr 19"},
-        {title: "Get TELEX after paying with form-A", body: "Pay the phone bill for Fido", date: "Jun 1"},
-        {title: "Check Message", body: "This is a Notification", date: "Undefined"}
+        {title: "Time-table Registration", body: "Begin registration for all courses", date: "Sep 1"},
+        {title: "Pay Phone bill- $66.67", body: "Pay the phone bill for Fido", date: "Sep 1"},
+        {title: "New Passport", body: "Go to Ottawa to get a new passport", date: "Sep 20"},
+        {title: "Check What taxes I didn't file in 2022", body: "I noticed there is a limited number of pay stub in Linxus Group paystub folder.", date: "Undefined"},
+        {title: "Apply for SmartServe Certificate", body: "Apply for SmartServe Certification to apply for jobs in Service assistance areas like Retirement Homes.", date: "Undefined"}
       ]
     }
   },
@@ -23,7 +26,25 @@ export default {
     <!-- <div v-for="notes in notifications" :key="notes.id">
 
     </div> -->
-    <div>
+    <SubNavTab>
+        <li>
+          <router-link to="/schedule/new">New</router-link>
+        </li>
+        <li>
+          <router-link to="/schedule/acknowledged">Acknowledged</router-link>
+        </li>
+        <li>
+          <router-link to="/schedule/completed">Completed</router-link>
+        </li>
+        <!-- <li>
+          <router-link to="/schedule/bought-items">Bought Items</router-link>
+        </li>
+        <li>
+          <router-link to="/schedule/vault">Vault</router-link>
+        </li> -->
+      </SubNavTab>
+      <br>
+    <div class="margin-x">
       <ScheduleItem v-for="(notification, index) in schedule" :key="notification.id" :title="notification.title" :body="notification.body" :date="notification.date" :idx="index"/>
     </div>
 
@@ -34,9 +55,9 @@ export default {
 .notification-item{
   padding: 1.33em;
   padding-right: 0;
-  border: 0.5px solid rgb(196, 199, 204);
+  border: 0.5px solid var(--light-grey-color);
   border-left-width: 12px;
-  border-radius: 8px;
+  /* border-radius: 8px; */
   font-size: 14px;
   /* color: #757575; */
   margin-bottom: 9.31px;
@@ -57,6 +78,7 @@ export default {
 }
 .notification-body{
   margin-right: 1.33em;
+  margin-bottom: 0;
 }
 .notification-date{
   display: block;

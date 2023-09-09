@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
-const shoppingSchema = mongoose.Schema(
+const shoppingSchema = new mongoose.Schema(
     {
         amount: {
             type: Number,
@@ -28,4 +28,6 @@ const shoppingSchema = mongoose.Schema(
     }
 )
 
-module.exports = mongoose.model('Shopping', shoppingSchema)
+const Shopping = mongoose.model('Shopping', shoppingSchema);
+
+export default Shopping;

@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
-const debtSchema = mongoose.Schema(
+const debtSchema = new mongoose.Schema(
     {
         amount: {
             type: Number,
@@ -28,7 +28,7 @@ const debtSchema = mongoose.Schema(
     }
 )
 
-const schoolFeeSchema = mongoose.Schema(
+const schoolFeeSchema = new mongoose.Schema(
     {
         amount: {
             type: Number,
@@ -56,7 +56,7 @@ const schoolFeeSchema = mongoose.Schema(
     }
 )
 
-const Debt = mongoose.model('debt', debtSchema)
+const Debt = mongoose.model('Debt', debtSchema)
 const SchoolFee = mongoose.model('SchoolFee', schoolFeeSchema)
 
-module.exports = {Debt, SchoolFee}
+export {Debt, SchoolFee}

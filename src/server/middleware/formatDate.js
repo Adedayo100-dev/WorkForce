@@ -3,6 +3,4 @@ const dateToString = (a) => {
     return "Feb 17, 2022";
 }
 
-module.exports = {
-    dateToString
-}
+export default dateToString;

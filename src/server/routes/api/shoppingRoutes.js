@@ -1,6 +1,6 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
-const { getShoppingList, setShoppingList, updateShoppingList, deleteShoppingList } = require('../../controllers/ShoppingController.js');
+import { getShoppingList, setShoppingList, updateShoppingList, deleteShoppingList } from '../../controllers/ShoppingController.js';
 
 
 // GET, POST, PUT & DELETE
@@ -8,4 +8,4 @@ router.route('/').get(getShoppingList).post(setShoppingList)
 router.route('/:id').put(updateShoppingList).delete(deleteShoppingList)
 
 
-module.exports = router
+export default router

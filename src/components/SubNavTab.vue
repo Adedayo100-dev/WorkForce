@@ -1,5 +1,5 @@
 <template>
-  <ul id="nav-tab" class="tab-nav">
+  <ul id="nav-tab" class="tab-nav margin-x">
     <slot></slot>
   </ul>
 </template>
@@ -25,7 +25,7 @@ export default {
 #tabs ul.tab-nav{
     list-style-type: none;
     padding: 0;
-    margin: 0.125em 0;
+    
 }
 #tabs ul.tab-nav li{
     display: inline-flex;

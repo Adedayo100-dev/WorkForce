@@ -1,5 +1,5 @@
 <template>
-    <div class="tab-pane" id="tab-breaks">
+    <div class="tab-pane margin-x" id="tab-breaks">
         <h4>Breaks Work</h4>
 
         <table>

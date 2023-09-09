@@ -59,9 +59,6 @@ export default {
         })
     },
     emits: ['close'],
-    // created(){
-    //     console.log(this.$store.state.modal.whichModal, "created");
-    // },
     // updated() {
     //     console.log("updated modal to", this.currentModal);
     // },
@@ -80,6 +77,9 @@ export default {
         z-index: 100;
         height: 100vh;
         display: flex;
+        /* justify-content: center;  */
+        /* This & align-items should be reviewed and removed if needed!*/
+        /* align-items: center; */
         min-height: 500px;
         transition: all .4s;
     }

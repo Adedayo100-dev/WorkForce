@@ -1,7 +1,7 @@
-const express = require('express')
-const passport = require('passport')
+import express from 'express';
+import passport from 'passport';
 const router = express.Router()
-const { ensureAuth, ensureGuest} = require('../middleware/auth')
+import { ensureAuth, ensureGuest} from '../middleware/auth.js'
 
 // @desc    Login/Landing page
 // @route   GET /
@@ -36,4 +36,4 @@ router.get('/profile', passport.authenticate("jwt", { session: false }), async (
 })
 
 
-module.exports = router
+export default router

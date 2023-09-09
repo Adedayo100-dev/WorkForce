@@ -20,7 +20,7 @@ export default {
     /* border: 1px solid rgb(235, 235, 235); */
     /* color: #262626;
     background-color: transparent; */
-    background-color: rgb(245 245 245);
+    background-color: var(--light-primary-color);
     color: grey;
     display: inline-flex;
     gap: 8px;
@@ -29,10 +29,10 @@ export default {
     /* box-shadow: 0 1px 1px rgba(0,0,0,0.1); */
     transition: all 0.0s;
     -webkit-transition: all 0.0s;
-    background-color: #f8f9fa;
+    /* background-color: #f8f9fa; */
     /* background-image: -webkit-linear-gradient(top,#f8f9fa,#f8f9fa); */
     /* background-image: -webkit-gradient(linear,left top,left bottom,from(#f8f9fa),to(#f8f9fa)); */
     /* border: 1px solid #dadce0; */
-    color: #202124;
+    color: var(--primary-color);
 }
 </style>

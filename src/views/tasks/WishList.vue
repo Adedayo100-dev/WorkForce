@@ -42,10 +42,12 @@
                                 </span>
                                 <div>
                                     <span class="css-kx45yu">Stores: </span>
-                                    <span v-for="store in option.stores" :key="store.id"  class="k5-font">
-                                        &nbsp;&nbsp;&nbsp;
-                                        {{ store }}
-                                    </span>
+                                    <div class="d-inline">
+                                        <a v-for="store in option.stores" :key="store.id" href="https://www.bestbuy.ca"  class="k5-font" target="_blank">
+                                            {{ store }}
+                                        </a>
+                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -78,7 +80,7 @@ export default {
                 {"name": "Black Colored Movable vent", "spec": {}, "stores": ['', ''], "minBudgetPrice": 0, "maxBudgetPrice": 8.49, "links": ['', '']},
                 {"name": "Dresser", "spec": {}, "stores": ['Ikea', ''], "minBudgetPrice": 0, "maxBudgetPrice": 159, "links": ['', '']},
                 {"name": "Tablet /i-Pad", "spec": {}, "stores": ['', ''], "minBudgetPrice": 169.99, "maxBudgetPrice": 599.99, "links": ['', ''], "options": [{"name": "Samsung Galaxy A8 32GB", "stores": ['BestBuy', ''], "spec": {}, "minBudgetPrice": 0, "maxBudgetPrice": 169.99},{"name": "i-Pad pro 2018", "stores": ['BestBuy', ''], "minBudgetPrice": 0, "maxBudgetPrice": 599.99}]},
-                {"name": "Custom Assembled Gaming PC", "spec": {"Processor": "Intel Core i7 - $391.98", "RAM": "(2 X 16GB) DDR5 - $134.99", "SSD": "1TB NVMe (using PCIe 4.0/5.0, M.2 | 2.5 inch)(WD_Black) - $99.99", "HDD": "3.5inch - 4TB Seagate BarraCuda SATA - $94.99", "Graphics Card": "NVIDIA GeForce RTX 4060 $394.99", "PSU": "700W Gold - $89.99","Cooling":"Liquid",  "OS": "Win 11 Pro 64-bit"}, "stores": ['', ''], "minBudgetPrice": 500, "maxBudgetPrice": 1600, "links": ['https://www.bestbuy.ca/en-ca/product/refurbished-excellent-gaming-pc-aqvin-desktop-computer-tower-black-intel-core-i7-up-to-4-0-ghz-1tb-ssd-32gb-ddr4-ram-geforce-rtx-3060-12gb-windows-10-pro-only-at-best-buy/17150929', '']},
+                {"name": "Custom Assembled Gaming PC", "spec": {"Processor": "Intel Core i9-10850K - $388.99(Amazon:used)", "RAM": "(2 X 16GB) DDR5 - $134.99", "SSD": "1TB NVMe (using PCIe 4.0/5.0, M.2 | 2.5 inch)(WD_Black) - $99.99", "HDD": "3.5inch - 4TB Seagate BarraCuda SATA - $94.99","Motherboard": "Standard ATX", "Graphics Card": "NVIDIA GeForce RTX 4060 $394.99", "PSU": "700W Gold - $89.99","Cooling":"Liquid all-in-one",  "OS": "Win 11 Pro 64-bit"}, "stores": ['', ''], "minBudgetPrice": 500, "maxBudgetPrice": 1600, "links": ['https://www.bestbuy.ca/en-ca/product/refurbished-excellent-gaming-pc-aqvin-desktop-computer-tower-black-intel-core-i7-up-to-4-0-ghz-1tb-ssd-32gb-ddr4-ram-geforce-rtx-3060-12gb-windows-10-pro-only-at-best-buy/17150929', '']},
                 {"name": "Malm Bed Drawers", "spec": {"DIM": `19cm/7.5"`}, "stores": ['', ''], "minBudgetPrice": 0, "maxBudgetPrice": 0, "links": ['', '']},
                 {"name": "Alex Desk Drawer", "spec": {}, "stores": ['Ikea', ''], "minBudgetPrice": 0, "maxBudgetPrice": 0, "links": ['https://www.ikea.com/ca/en/p/alex-drawer-unit-white-00473546/#content', 'https://www.ikea.com/ca/en/p/songesand-underbed-storage-box-set-of-2-brown-30372541/']},
                 {"name": "AirBuds", "spec": {}, "stores": ['BestBuy', ''], "minBudgetPrice": 0, "maxBudgetPrice": 0, "links": ['https://www.bestbuy.ca/en-ca/collection/truly-wireless-headphones/37057', 'https://www.bestbuy.ca/en-ca/product/jbl-vibe-200tws-in-ear-sound-isolating-truly-wireless-headphones-black/15667567']},

@@ -1,4 +1,4 @@
-const substractTime = (a, b) => {
+export const substractTime = (a, b) => {
     a = new Date(a);
     b = new Date(b);
     c = a - b;
@@ -15,7 +15,4 @@ const substractTime = (a, b) => {
     //     result = `${e} hrs ${f} mins`;
     // }
     return result;
-}
-module.exports = {
-    substractTime
 }

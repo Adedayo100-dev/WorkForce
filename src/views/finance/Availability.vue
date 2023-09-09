@@ -55,7 +55,7 @@
                                         <span :title="day.dayMonth.name + ' ' + day.dayNum + ' ,'+ day.dayYear">{{ day.dayNum }}</span>
                                     </div>
                                     <template v-for="event in day.events" :key="event._id">
-                                        <div class="has-shift" :class="event.type">
+                                        <div class="has-shift" :class="event.type" @click="say(event.short_Desc)">
                                             <span class="company-name" title="Seasons Retirement Community">{{ event.short_Desc }}</span>
                                             <!-- <span class="has-time">{{ event.time }}</span> -->
                                         </div>
@@ -156,6 +156,10 @@ export default {
         },
         openModal(modalType) {
             useModalStore().openModal(modalType)
+        },
+        say(message){
+            // alert(message)
+            this.openModal()
         }  
     },
     created() {
@@ -195,10 +199,11 @@ tbody tr:last-of-type {
 .has-shift{
     background-color: #f4f4f6;
     border-left: 5px solid rgb(219 216 216);
-    padding: 13px 10px;
+    padding: 10px 10px;
     margin-top: 13px;
 }
 .company-name{
+    padding: 3px 0;
     /* padding-bottom: 7.5px; */
     display: block;
 }
@@ -236,5 +241,12 @@ tbody tr:last-of-type {
     border-right: solid 15px green;
     border-bottom: solid 15px transparent;
     border-top: solid 0px transparent;
-};
+}
+.sick-day{
+    border-left: none !important;
+    background-image: repeating-linear-gradient(135deg,orangered,orangered 7px,white 7px,white 14px,orangered 14px,orangered 21px,white 21px,white 28px) !important;
+}
+.sick-day .company-name{
+    background-color: white !important;
+}
 </style>

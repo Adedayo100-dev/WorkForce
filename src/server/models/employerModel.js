@@ -1,7 +1,7 @@
 // Add main pay to be predicted for the user based on the scheduled shift time
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
-const employerSchema = mongoose.Schema(
+const employerSchema = new mongoose.Schema(
     {
         name: {
             type: String,
@@ -76,4 +76,6 @@ const employerSchema = mongoose.Schema(
     }
 )
 
-module.exports = mongoose.model('Employer', employerSchema)
+const Employer = mongoose.model('Employer', employerSchema);
+
+export default Employer;

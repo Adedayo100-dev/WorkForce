@@ -59,6 +59,11 @@ export default {
             useModalStore().openModal(modalType)
         }
     },
+    watch: {
+        totalPay(newValue, oldValue) {
+            console.log({oldValue, newValue});
+        }
+    },
     created() {
         this.fetchWorks();
         this.currentRoute = this.$route.path;
@@ -71,6 +76,8 @@ export default {
 
 <template>
     <div class="work-log-box">
+      <h3><span class="">{{$route.meta.title}}</span> <span class="title_total-pay">${{$formatNum(totalPay)}} <span class="small-currency">CAD</span></span></h3>
+
         <div class="title-top">
             <!-- ul used to be here -->
             <div class="add-shift_button-box justify-end">
@@ -116,6 +123,17 @@ export default {
 </template>
 
 <style>
+.title_total-pay{
+  float: right;
+  color: var(--primary-black);
+  /* font-size: 1.17em; */
+  font-weight: bold;
+}
+.small-currency{
+  font-size: 12px;
+  font-weight: 500;
+    color: rgb(181 181 181);
+}
     /* .transactions-binder{
         display: flex;
         gap: 28px;

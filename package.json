@@ -7,6 +7,7 @@
     "preview": "vite preview --port 4173"
   },
   "dependencies": {
+    "@apollo/server": "^4.9.3",
     "audit": "^0.0.6",
     "axios": "^1.3.4",
     "connect-mongo": "^4.6.0",
@@ -14,8 +15,8 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-async-handler": "^1.2.0",
-    "express-handlebars": "^7.0.1",
     "express-session": "^1.17.3",
+    "graphql": "^16.8.0",
     "highcharts": "^10.3.3",
     "highcharts-vue": "^1.4.0",
     "jsonwebtoken": "^9.0.0",
@@ -35,7 +36,7 @@
     "@vitejs/plugin-vue": "^3.2.0",
     "vite": "^3.0.0"
   },
-  "description": "This template should help get you started developing with Vue 3 in Vite.",
+  "description": "This project is a million dollar code.",
   "main": "vite.config.js",
   "repository": {
     "type": "git",
@@ -47,5 +48,6 @@
   "bugs": {
     "url": "https://github.com/Adedayo100-ux/WorkForce/issues"
   },
-  "homepage": "https://github.com/Adedayo100-ux/WorkForce#readme"
+  "homepage": "https://github.com/Adedayo100-ux/WorkForce#readme",
+  "type": "module"
 }

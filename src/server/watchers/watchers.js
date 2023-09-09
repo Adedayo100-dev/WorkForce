@@ -1,8 +1,8 @@
 
-const Work = require('../models/workModel');
-const Employer = require('../models/employerModel');
+import Work from '../models/workModel.js';
+import Employer from '../models/employerModel.js';
 
-module.exports = (io) => {
+export default function watchers(io) {
     
     // Watching for Work changes
     Work.watch().on('change', (change) => {

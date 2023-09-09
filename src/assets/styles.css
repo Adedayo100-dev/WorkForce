@@ -4,8 +4,9 @@
     --border-color-primary:  rgba(0, 0, 0, .1);
     --table-font-size: 12px;
     --primary-black: #202124;
-    --orange-color: rgba(232, 57, 0, 1);
-    --light-orange-color: rgba(232 57 0 / 10%);
+    --primary-color: rgba(3, 137, 255);
+    /* rgba(232, 57, 0, 1) */
+    --light-primary-color: rgba(3, 137, 255, 0.1);
     --side-nav-width: 48px;
     --x-margin: 24px;
 }
@@ -36,8 +37,14 @@ main{
 a{
     text-decoration: none;
 }
+.blue-link-color{
+    color: #06c;
+}
 .d-flex{
     display: flex;
+}
+.d-inline{
+    display: inline-flex;
 }
 .align-center{
     align-items: center;
@@ -119,12 +126,12 @@ ul{
     text-align: right;
 }
 .section-title{
-    margin: 6px var(--x-margin);
+    margin: 12px var(--x-margin);
     font-size: 16px;
-    line-height: 24px;
+    line-height: 1;
 }
 .margin-x{
-    margin: var(--x-margin);
+    margin: 0 var(--x-margin);
 }
 /* Responsiveness */
 

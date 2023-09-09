@@ -1,6 +1,6 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
-const { getTransactions, setTransactions, updateTransactions, deleteTransactions } = require('../../controllers/TransactionsController.js');
+import { getTransactions, setTransactions, updateTransactions, deleteTransactions } from '../../controllers/TransactionsController.js';
 
 
 // GET, POST, PUT & DELETE
@@ -8,4 +8,4 @@ router.route('/').get(getTransactions).post(setTransactions)
 router.route('/:id').put(updateTransactions).delete(deleteTransactions)
 
 
-module.exports = router
+export default router

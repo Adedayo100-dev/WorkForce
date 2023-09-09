@@ -1,3 +1,6 @@
+.display-option{
+    /* padding-top: 24px; */
+}
 .css-bt7gsy.display-option {
     border: 0.5px solid var(--light-grey-color); /* rgb(196, 199, 204) */
     border: none;
@@ -7,11 +10,11 @@
     line-height: 24px;
     letter-spacing: normal;
     position: sticky;
-    top: 31.09px;
+    top: 30px;
 }
 .css-10la47u {
     background-color: rgb(245, 246, 247) !important;
-    border-bottom: 1px solid #d1d1d1;
+    /* border-bottom: 1px solid #d1d1d1; */
 
 }
 .css-mmep5j {
@@ -59,7 +62,7 @@
 }
 .css-szkv6d {
     font-size: 15px;
-    font-weight: 700;
+    /* font-weight: 700; */
     color: var(--primary-black);
 }
 .css-kx45yu {
@@ -112,7 +115,13 @@
     font-weight: 500;
     line-height: 2;
     margin: 0;
+    padding-left: 10px;
+    color: #06c;
 }
+.k5-font:hover{
+    text-decoration: underline;
+}
+
 @media (min-width: 576px){
     .css-1ordlh1 .display-option {
         width: auto;

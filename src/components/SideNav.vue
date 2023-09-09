@@ -135,7 +135,7 @@ export default {
         background-color: rgb(247, 247, 247);
     }
     .side-nav ul li a.router-link-active{
-        background-color: rgba(232 57 0 / 10%);
+        background-color: rgba(3, 137, 255, 0.1); /* rgba(232 57 0 / 10%) */
     }
     .side-nav ul li a.router-link-active .side-nav-links-icons{
         fill: rgba(232, 57, 0, 1);

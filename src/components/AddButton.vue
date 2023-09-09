@@ -28,12 +28,12 @@ export default {
 }
 .orange-confirm-button:hover{
     background-color: var(--light-grey-color);
-    color: black;
+    /* color: var(--primary-color); */
 }
 .orange-confirm-button span{
     color: grey;
 }
 .orange-confirm-button:hover span{
-    color: black;
+    /* color: var(--primary-color); */
 }
 </style>

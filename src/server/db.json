@@ -79,17 +79,23 @@
                 "dates": [
                     {"shift": {
                         "name": "Seasons Retirement Community",
-                        "date": "Tue 06 June, 2023",
+                        "date": "Tue 06 June, 2023*",
                         "time": [{
                             "duration": {"hours": 1, "minutes": 0},
                             "endDate": "2023-06-02",
                             "endTime": "19:23",
                             "startDate": "2023-06-02",
-                            "startDateString": "Feb 17, 2022",
+                            "startDateString*":{
+                                "weekDay": "Tuesday",
+                                "dayNum": 6,
+                                "month": "June",
+                                "year": 2023
+                            },
                             "startTime": "18:23"
                         }],
                         "pay": 0,
                         "payStatus": false,
+                        "paymentMethod": "Direct Deposit",
                         "comment": ""}
                     },
                     {"shift": {

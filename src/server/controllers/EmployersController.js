@@ -1,11 +1,11 @@
-const asyncHandler = require('express-async-handler');
-const Employer = require('../models/employerModel');
+import asyncHandler from 'express-async-handler';
+import Employer from '../models/employerModel.js';
 
 
 // @desc    Get Employer
 // @route   GET /api/employer
 // @access  Private
-const getEmployers = asyncHandler(async (req, res) => {
+export const getEmployers = asyncHandler(async (req, res) => {
 
     var queryParams = req.query; // Get the query parameters
     // console.log(queryParams)
@@ -38,7 +38,7 @@ const getEmployers = asyncHandler(async (req, res) => {
 // @desc    Set Employer
 // @route   POST /api/employer
 // @access  Private
-const setEmployers = async (req, res) => {
+export const setEmployers = async (req, res) => {
     if (!req.body) {
         res.status(400)
         throw new Error('Pleae add an employers field');
@@ -85,7 +85,7 @@ const setEmployers = async (req, res) => {
 // @desc    Update Employer
 // @route   PUT /api/employer/:id
 // @access  Private
-const updateEmployers = async (req, res) => {
+export const updateEmployers = async (req, res) => {
     res.status(200).json({ message: `Update goal ${req.params.id}`})
     // res.send(employer);
 }
@@ -93,7 +93,7 @@ const updateEmployers = async (req, res) => {
 // @desc    Delete Employer
 // @route   DELETE /api/employer/:id
 // @access  Private
-const deleteEmployers = asyncHandler(async (req, res) => {
+export const deleteEmployers = asyncHandler(async (req, res) => {
 
     const employer = await Employer.findById(req.params.id)
 
@@ -107,10 +107,3 @@ const deleteEmployers = asyncHandler(async (req, res) => {
     res.status(200).json({ message: `Deleted Employer ${req.params.id}`})
     // res.send(employer);
 })
-
-
-
-
-module.exports = {
-    getEmployers, setEmployers, updateEmployers, deleteEmployers
-}

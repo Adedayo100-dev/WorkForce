@@ -1,6 +1,6 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
-const { getWorksList, setWorksList, updateWorksList, deleteWorksList } = require('../../controllers/worksListController');
+import { getWorksList, setWorksList, updateWorksList, deleteWorksList } from '../../controllers/worksListController.js';
 
 // Custom Variables
 // var worksList;
@@ -20,4 +20,4 @@ router.put('/:id', updateWorksList);
 router.delete('/:id', deleteWorksList);
 
 
-module.exports = router
+export default router

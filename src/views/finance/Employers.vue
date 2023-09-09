@@ -1,5 +1,7 @@
 <template>
     <div class="tab-pane" id="tab-all">
+        <h4 class="section-title font-weight-500">Employers</h4>            
+
         <div class="add-shift_button-box justify-end">
             <FilterButton @click="openModal('NewFilter')"/>
             <AddButton @click="openModal('NewEmployer')">
@@ -7,7 +9,6 @@
             </AddButton>
         </div> 
 
-        <h4 class="section-title color-777 font-weight-500">Employers</h4>            
              
         <div class="display-option container-fluid css-bt7gsy ml-none ml-sm-xxl border-x-none">
             <div class="display-option-row py-xsm px-std css-mmep5j css-10la47u">
@@ -28,6 +29,8 @@
                     <div class="css-znfehe css-c7ebe2">Morning | Afternoon | Night</div>
                 </div>
             </div>
+        </div>
+        <div class="bank">            
             <div v-for="employer in employers.slice().reverse()"  :key="employer.id" class="display-option-row py-xsm px-std css-mmep5j">
                 <div>
                     <div class="css-szkv6d">{{employer.name}}</div>

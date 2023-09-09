@@ -1,10 +1,10 @@
-const GoogleStrategy = require('passport-google-oauth20').Strategy
-const JwtStrategy = require('passport-jwt').Strategy
-const { ExtractJwt } = require("passport-jwt");
-const mongoose = require('mongoose')
-const User = require('../models/UserModel')
+import { Strategy as GoogleStrategy } from 'passport-google-oauth20';
+import { Strategy as JwtStrategy } from 'passport-jwt';
+import { ExtractJwt } from 'passport-jwt';
+// import mongoose from 'mongoose'
+import User from '../models/UserModel.js'
 
-module.exports = function(passport) {
+export default function configurePassport(passport) {
     passport.use(
         new GoogleStrategy(
             {

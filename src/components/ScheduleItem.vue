@@ -16,8 +16,8 @@
                 <h4>{{title}}</h4>
                 <div class="notifications-options">
                     <div class="invisible-buttons">
-                        <button>Done</button>
-                        <button>Acknowledged</button>
+                        <button>Complete</button>
+                        <!-- <button>Acknowledged</button> -->
                     </div>
                     <div class="icon-container">
                         <ExpandFullIcon/>

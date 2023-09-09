@@ -1,10 +1,10 @@
-const asyncHandler = require('express-async-handler');
-const fs  = require('fs')
+import asyncHandler from 'express-async-handler';
+import fs  from 'fs'
 
 // @desc    Get Schedule
 // @route   GET /api/schedule
 // @access  Private
-const getSchedules = asyncHandler(async (req, res) => {
+export const getSchedules = asyncHandler(async (req, res) => {
 
     fs.readFile("./db.json", "utf8", (err, data) => {
     var schedules;
@@ -22,7 +22,3 @@ const getSchedules = asyncHandler(async (req, res) => {
     })
     // event tyes: work, appointment, reminder
 })
-
-module.exports = {
-    getSchedules
-}

@@ -58,7 +58,7 @@ export default {
             </div>
         </div>
         <div class="bank">
-            <WorkLogItem v-for="(work, index) in worksList" :key="work._id" :id="work._id" :loc="work.loc" :time="work.time" :description="work.description" :pay="work.pay" :payStatus="work.payStatus" :idx="index" @deleteById="handleDeletion"/>
+            <WorkLogItem v-for="(work, index) in worksList" :key="work._id" :id="work._id" :loc="work.loc" :company="work.company" :shifts="work.shifts" :comment="work.comment" :pay="work.pay" :payStatus="work.payStatus" :idx="index" @deleteById="handleDeletion"/>
             
             <div class="display-option-row py-xsm px-std css-mmep5j css-10la47u">
                 <div>

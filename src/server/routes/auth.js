@@ -1,6 +1,6 @@
-const express = require('express');
-const passport = require('passport')
-const jwt = require('jsonwebtoken')
+import express from 'express';
+import passport from 'passport';
+import jwt from 'jsonwebtoken';
 const router = express.Router();
 
 
@@ -40,4 +40,4 @@ router.get('/logout', (req, res, next) => {
     })
 })
 
-module.exports = router
+export default router;

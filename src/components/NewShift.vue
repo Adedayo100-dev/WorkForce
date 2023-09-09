@@ -115,8 +115,8 @@
                 formValues:{
                     inputCompany: '',
                     inputLocation: '',
-                    sameLocAndNameInfo: '',
-                    inputPay: null,
+                    sameLocAndNameInfo: false,
+                    inputPay: 0,
                     inputPayStatus: true,
                     shifts: [], // Array to store shift objects
                     inputComment: '',
@@ -128,7 +128,7 @@
                         startTime: '',
                         stopTime: ''
                     },
-                    inputPay: null,
+                    inputPay: 0,
                     inputPayStatus: true,
                     inputComment: '',
                 }, // Current shift object
@@ -149,7 +149,6 @@
                 this.index++
             },
             createShift(){
-                
                 console.log('Shift Form values', this.formValues);
                 axios.post('http://localhost:3000/api/worksList', this.formValues, {headers:{"Content-Type" : "application/json"}})
                 .then((res) => console.log(res))

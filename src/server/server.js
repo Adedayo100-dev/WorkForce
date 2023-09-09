@@ -1,19 +1,24 @@
-const express = require('express');
-const mongoose = require('mongoose');
-require('dotenv').config({ path: './config/config.env'});
-const {errorHandler} = require('./middleware/errorMiddleware');
-const passport = require('passport');
-const jwt = require("jsonwebtoken")
-const session = require('express-session');
-const MongoStore = require('connect-mongo');
+import express from 'express';
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+dotenv.config({ path: './config/config.env' });
+import { errorHandler } from './middleware/errorMiddleware.js';
+import passport from 'passport';
+import jwt from "jsonwebtoken"
+import session from 'express-session';
+import MongoStore from 'connect-mongo';
 const app = express();
-const http = require('http');
+import  http from 'http';
 const server = http.createServer(app);
-const { Server } = require('socket.io');
+import { Server } from 'socket.io';
 const io = new Server(server, { cors: { origin: "*"}});
-const cors = require('cors');
-const connectDB  = require('./config/db');
-require('./watchers/watchers')(io);
+import cors from 'cors';
+import connectDB from './config/db.js';
+// GraphQL
+import * as graphQLScript from './graphQL/index.js';
+
+// import * as watchers from './watchers/watchers.js';
+// watchers(io);
 
 
 
@@ -21,7 +26,10 @@ require('./watchers/watchers')(io);
 app.use(cors());
 
 // Passport config
-require('./config/passport.js')(passport)
+import configurePassport from './config/passport.js';
+
+// Assuming 'passport' is defined or imported elsewhere in your code
+configurePassport(passport);
 
 
 // Connect to DataBase(MongoDB)
@@ -47,14 +55,16 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 
-
 //Index and Auth Route 
+import indexRouter from './routes/index.js';
+import authRouter from './routes/auth.js';
+app.use('/', indexRouter)
+app.use('/auth', authRouter)
 
-app.use('/', require('./routes/index'))
-app.use('/auth', require('./routes/auth'))
+//:: API Routes(worksList, shopping, transactions)
+import apiRouter from './routes/api.js';
 
-// API Routes(worksList, shopping, transactions)
-app.use('/api', require('./routes/api.js'))
+app.use('/api', apiRouter);
 
 
 // app.use(errorHandler)

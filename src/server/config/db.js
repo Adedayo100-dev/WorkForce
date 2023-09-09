@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const { workWatcher, employerWatcher } = require('../watchers/watchers')
+import mongoose from 'mongoose';
+// import { workWatcher, employerWatcher } from '../watchers/watchers.js';
 mongoose.set('strictQuery', false);
 
 const connectDB = async () => {
@@ -17,4 +17,4 @@ const connectDB = async () => {
     }
 }
 
-module.exports = connectDB
+export default connectDB;

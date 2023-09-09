@@ -1,10 +1,15 @@
-const express = require('express')
+import express from'express';
+import worksRouter from './api/worksRoutes.js';
+import shoppingRouter from './api/shoppingRoutes.js';
+import transactionsRouter from './api/transactionsRoutes.js';
+import employersRouter from './api/employersRoutes.js';
+import scheduleRouter from './api/scheduleRoutes.js';
 const router = express.Router()
 
-router.use('/worksList',  require('./api/worksRoutes'))
-router.use('/shopping',  require('./api/shoppingRoutes'))
-router.use('/transactions',  require('./api/transactionsRoutes'))
-router.use('/employers',  require('./api/employersRoutes'))
-router.use('/schedule',  require('./api/scheduleRoutes.js'))
+router.use('/worksList',  worksRouter)
+router.use('/shopping',  shoppingRouter)
+router.use('/transactions',  transactionsRouter)
+router.use('/employers',  employersRouter)
+router.use('/schedule',  scheduleRouter )
 
-module.exports = router;
+export default router;

@@ -15,7 +15,6 @@
 
 <template>
     <div class="jobs">
-      <h3><span>{{$route.meta.title}}</span> <span class="title_total-pay">${{$formatNum(totalPay)}} <span class="small-currency">CAD</span></span></h3>
         <div id="tabs">
             <!-- <SubNavTab>
               <li>
@@ -56,13 +55,5 @@
 </template>
 
 <style scoped>
-.title_total-pay{
-  float: right;
-  color: var(--primary-black);
-}
-.small-currency{
-  font-size: 14px;
-  font-weight: 500;
-    color: rgb(181 181 181);
-}
+
 </style>

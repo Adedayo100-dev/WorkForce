@@ -1,12 +1,11 @@
-const asyncHandler = require('express-async-handler');
-const {SchoolFee, Debt} = require('../models/transactionModel');
-// const Transaction = require('../models/transactionModel');
+import asyncHandler from 'express-async-handler';
+import { SchoolFee, Debt } from '../models/transactionModel.js';
 
 
 // @desc    Get Transactions
 // @route   GET /api/transactions
 // @access  Private
-const getTransactions = asyncHandler(async (req, res) => {
+export const getTransactions = asyncHandler(async (req, res) => {
 
     ////////////////Query Debt///////////////////////
     var someDB = await
@@ -108,7 +107,7 @@ const getTransactions = asyncHandler(async (req, res) => {
 // @desc    Set Transactions
 // @route   POST /api/transactions
 // @access  Private
-const setTransactions = asyncHandler(async (req, res) => {
+export const setTransactions = asyncHandler(async (req, res) => {
     if (!req.body) {
         res.status(400)
         throw new Error('Pleae add a transaction field');
@@ -136,7 +135,7 @@ const setTransactions = asyncHandler(async (req, res) => {
 // @desc    Update Transactions
 // @route   PUT /api/transactions/:id
 // @access  Private
-const updateTransactions = asyncHandler(async (req, res) => {
+export const updateTransactions = asyncHandler(async (req, res) => {
     const transaction = await Transaction.findById(req.params.id)
 
     if(!transaction){
@@ -155,7 +154,7 @@ const updateTransactions = asyncHandler(async (req, res) => {
 // @desc    Delete Transactions
 // @route   DELETE /api/transactions/:id
 // @access  Private
-const deleteTransactions = asyncHandler(async (req, res) => {
+export const deleteTransactions = asyncHandler(async (req, res) => {
     const transaction = await Transaction.findById(req.params.id)
 
     if(!transaction){
@@ -166,10 +165,3 @@ const deleteTransactions = asyncHandler(async (req, res) => {
 
     res.status(200).json({id: req.params.id, message: `Just deleted transaction ${req.params.id}`})
 })
-
-
-
-
-module.exports = {
-    getTransactions, setTransactions, updateTransactions, deleteTransactions
-}

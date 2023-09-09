@@ -6,7 +6,19 @@
         </div>
         <div class="logo">
         </div>
-        <!-- div was here -->
+        <div class="auth-container">
+            <!-- <span>Adedayo</span> -->
+            <router-link to="/user-profile" class="user-name">
+                <span>
+                    Adedayo
+                </span>
+                <div class="caret-box">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="7.5" viewBox="0 -960 960 960" width="7.5" fill="#808080">
+                        <path d="M480-240 0-720h960L480-240Z"></path>
+                    </svg>
+                </div>
+            </router-link>
+        </div>
     </div>
 </template>
 
@@ -87,5 +99,19 @@ export default {
     left: -5px;
     right: -5px;
 }
-
+.auth-container{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.user-name{
+    line-height: 1;
+    color: inherit;
+    display: flex;
+    align-items: center;
+}
+.caret-box{
+    display: flex;
+    align-items: center;
+}
 </style>
