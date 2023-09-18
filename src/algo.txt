@@ -1,0 +1,14 @@
+# For Availabilty/Schedule view
+// Check 'URL' for query Data
+    IF (contains query data): 
+        SET month & year in yearMonthSelection to month & year in 'URL' query data
+    ELSE :
+        SET month & year in yearMonthSelection to month & year in current Date.now()
+        UPDATE 'URL' parameter to include query of the current month and year
+     
+// Fecth Data
+    Fecth Data using the value of yearMonthSelection;
+
+// Watch for changes through year and month select control
+    $Router.replace() to the new year and month
+    Fecth Data again with the new arguments

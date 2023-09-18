@@ -33,7 +33,7 @@
                         <router-link to="/finance/favjobs">Favorite</router-link>
                     </li>
                     <li>
-                        <router-link to="/finance/availability">Schedule</router-link>
+                        <router-link to="/finance/my-schedule">Schedule</router-link>
                     </li>
                     <li>
                         <router-link to="/finance/co-op">Co-op</router-link>

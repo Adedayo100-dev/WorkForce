@@ -9,31 +9,33 @@
             
             <div class="monthly-availability">
                 <div class="calendar-control">
-                    <select name="years" id="">
-                        <option value="2022">2022</option>
-                        <option value="2023" selected>2023</option>
-                        <option value="2024">2024</option>
-                        <option value="2025">2025</option>
-                        <option value="2026">2026</option>
-                        <option value="2027">2027</option>
-                        <option value="2028">2028</option>
-                        <option value="2029">2029</option>
-                        <option value="2030">2030</option>
-                    </select>
-                    <select name="months" id="">
-                        <option value="Jan">Jan</option>
-                        <option value="Feb">Feb</option>
-                        <option value="Mar">Mar</option>
-                        <option value="Apr">Apr</option>
-                        <option value="May">May</option>
-                        <option value="Jun">Jun</option>
-                        <option value="Jul" selected>Jul</option>
-                        <option value="Aug">Aug</option>
-                        <option value="Sep">Sep</option>
-                        <option value="Oct">Oct</option>
-                        <option value="Nov">Nov</option>
-                        <option value="Dec">Dec</option>
-                    </select>
+                    <form action="finance/availability">
+                        <select name="years" id="" v-model="yearMonthSelection.year">
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                            <option value="2026">2026</option>
+                            <option value="2027">2027</option>
+                            <option value="2028">2028</option>
+                            <option value="2029">2029</option>
+                            <option value="2030">2030</option>
+                        </select>
+                        <select name="months" id="" v-model="yearMonthSelection.month">
+                            <option value="0">Jan</option>
+                            <option value="1">Feb</option>
+                            <option value="2">Mar</option>
+                            <option value="3">Apr</option>
+                            <option value="4">May</option>
+                            <option value="5">Jun</option>
+                            <option value="6" selected>Jul</option>
+                            <option value="7">Aug</option>
+                            <option value="8">Sep</option>
+                            <option value="9">Oct</option>
+                            <option value="10">Nov</option>
+                            <option value="11">Dec</option>
+                        </select>
+                    </form>
                 </div>
                 <table >
                     <thead>
@@ -124,13 +126,16 @@ import AddButton from '../../components/AddButton.vue'
 import { useModalStore } from '../../stores/modalStore'
 
 export default {
-
     components:{
         AddButton
     },
     data() {
         return {
             schedule: [],
+            yearMonthSelection: {
+                year: null,
+                month: null
+            },
             today: {
                 year : new Date().getFullYear(),
                 month : new Date().getMonth(),
@@ -139,12 +144,24 @@ export default {
             },
         }
     },
+    computed: {
+
+    },
     watch: {
-        
+        yearMonthSelection: {
+            handler(newValue){
+                this.$router.replace({ query: { year: newValue.year, month: newValue.month } });
+                console.log(`Changed to ${newValue.year},${newValue.month}`)
+                // fecth data again (polling)
+                this.fetchSchedule();
+            },
+            deep: true,
+            immediate: true
+        }, 
     },
     methods: {
         fetchSchedule() {
-            axios.get('http://localhost:3000/api/schedule')
+            axios.get('http://localhost:3000/api/schedule',  { params: this.yearMonthSelection })
             .then((res) => {
                 this.schedule = res.data;
                 console.log(res.data);        
@@ -163,8 +180,24 @@ export default {
         }  
     },
     created() {
+        // Check URL if it contains query data
+        // Query looks like: ?year=2023&month=0
+        var currentURLQuery = this.$route.query;
+
+        if (Object.keys(currentURLQuery).length > 0){
+            console.log(currentURLQuery);
+            ({ year: this.yearMonthSelection.year, month: this.yearMonthSelection.month } = currentURLQuery);
+
+        } else {
+            /* If no Query present, Set Default date to today by 
+            assigning today to yearMonthSelection using destructuring pattern */
+            ({ year: this.yearMonthSelection.year, month: this.yearMonthSelection.month } = this.today);
+            this.$router.replace({ query: { year: this.yearMonthSelection.year, month: this.yearMonthSelection.month } });
+        }
+        
+        // Call the API
         this.fetchSchedule();
-        console.log(this.today);
+        console.log('creation finished')
     },
 }
 </script>
@@ -199,6 +232,7 @@ tbody tr:last-of-type {
 .has-shift{
     background-color: #f4f4f6;
     border-left: 5px solid rgb(219 216 216);
+    border-radius: 3px;
     padding: 10px 10px;
     margin-top: 13px;
 }

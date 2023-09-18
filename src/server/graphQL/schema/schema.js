@@ -1,4 +1,48 @@
 export const typeDefs = `#graphql
+    type prevMonthDays{
+        dayNum: String
+        dayMonth: dayMonth
+        dayYear: Int
+        events: [Event]
+        dayType: String
+    }
+    type currMonthDays {
+        dayNum: String
+        dayMonth: dayMonth
+        dayYear: Int
+        events: [Event]
+        dayType: String
+    }
+    type nextMonthDays {
+        dayNum: String
+        dayMonth: dayMonth
+        dayYear: Int
+        events: [Event]
+        dayType: String
+    }
+    type Month {
+        prevMonthDays: prevMonthDays
+        currMonthDays: currMonthDays
+        nextMonthDays: nextMonthDays
+    }
+    type Day {
+        dayNum: String
+        dayMonth: dayMonth
+        dayYear: Int
+        events: [Event]
+    }
+    type dayMonth {
+        num: Int,
+        name: String!
+    }
+    type Event {
+        short_Desc: String!
+        time: String!
+        type: String!
+    }
+
+    # ########################################
+    
     type Game {
         id: ID!
         title: String!
@@ -19,6 +63,10 @@ export const typeDefs = `#graphql
         reviews: [Review!]
     }
     type Query {
+        month(name: String!): [Day]
+        prevMonthDays: [Day]
+        currMonthDays: [Day]
+        nextMonthDays: [Day]
         reviews: [Review]
         review(id: ID!): Review
         games: [Game]

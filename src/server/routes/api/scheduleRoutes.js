@@ -1,5 +1,4 @@
 import express from 'express';
-
 const router = express.Router();
 import { getSchedules } from '../../controllers/SchedulesController.js';
 

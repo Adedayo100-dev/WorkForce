@@ -15,7 +15,7 @@ const io = new Server(server, { cors: { origin: "*"}});
 import cors from 'cors';
 import connectDB from './config/db.js';
 // GraphQL
-import * as graphQLScript from './graphQL/index.js';
+// import * as graphQLScript from './graphQL/index.js';
 
 // import * as watchers from './watchers/watchers.js';
 // watchers(io);

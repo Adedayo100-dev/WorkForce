@@ -113,9 +113,9 @@ const router = createRouter({
           component: () => import('../views/finance/FavJobs.vue'),
         },
         {
-          path: 'availability',
-          name: 'availability',
-          component: () => import('../views/finance/Availability.vue'),
+          path: 'my-schedule',
+          name: 'my-schedule',
+          component: () => import('../views/finance/MySchedule.vue'),
         },
         {
           path: 'transactions',

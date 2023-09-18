@@ -74,11 +74,11 @@
             {"id": 71, "loc": "Minova", "dates": ["Sun 30 Apr, 2023"], "hours": [8.5],  "pay": 150, "payStatus": true},
             {
                 "id": 71, 
-                "name": "Seasons Retirement Community", 
+                "name": "Seasons +", 
                 "location": "Hamilton, ON", 
                 "dates": [
                     {"shift": {
-                        "name": "Seasons Retirement Community",
+                        "name": "Seasons +",
                         "date": "Tue 06 June, 2023*",
                         "time": [{
                             "duration": {"hours": 1, "minutes": 0},
@@ -268,7 +268,7 @@
                 "events": [
 
                 ],
-                "dayType": "prev-month"
+                "dayType": ""
             },
             {
                 "dayNum": 31,
@@ -280,7 +280,7 @@
                 "events": [
                     {"short_Desc": "Seasons +", "time": "10:00 - 06:00", "type": "is-work"}
                 ],
-                "dayType": "prev-month"
+                "dayType": ""
             },
             {
                 "dayNum": 1,
@@ -290,9 +290,9 @@
                 }, 
                 "dayYear": 2023,
                 "events": [
-                    {"short_Desc": "Seasons Retirement Community", "time": "10:00 - 06:00", "type": "is-work"}
+                    {"short_Desc": "Seasons +", "time": "10:00 - 06:00", "type": "is-work"}
                 ],
-                "dayType": "current"
+                "dayType": "prev-month"
             },
             {
                 "dayNum": 2,
@@ -302,9 +302,9 @@
                 }, 
                 "dayYear": 2023,
                 "events": [
-                    {"short_Desc": "Seasons Retirement Community", "time": "10:00 - 06:00", "type": "is-work"}
+                    {"short_Desc": "Seasons +", "time": "10:00 - 06:00", "type": "is-work"}
                 ],
-                "dayType": "current"
+                "dayType": "prev-month"
             },
             {
                 "dayNum": 3,
@@ -315,7 +315,7 @@
                 "dayYear": 2023,
                 "events": [
                 ],
-                "dayType": "current"
+                "dayType": "prev-month"
             },
             {
                 "dayNum": 4, 
@@ -325,10 +325,10 @@
                 }, 
                 "dayYear": 2023,
                 "events": [
-                    {"short_Desc": "Seasons Retirement Community", "time": "10:00 - 06:00", "type": "is-work"}
+                    {"short_Desc": "Seasons +", "time": "10:00 - 06:00", "type": "is-work"}
                     
                 ],
-                "dayType": "current"
+                "dayType": "prev-month"
             },
             {
                 "dayNum": 5, 
@@ -338,9 +338,9 @@
                 }, 
                 "dayYear": 2023,
                 "events": [
-                    {"short_Desc": "Seasons Retirement Community", "time": "10:00 - 06:00", "type": "is-work"}
+                    {"short_Desc": "Seasons +", "time": "10:00 - 06:00", "type": "is-work"}
                 ],
-                "dayType": "current"
+                "dayType": "prev-month"
             }
         ]},
         {"week2": [
@@ -352,9 +352,9 @@
                 }, 
                 "dayYear": 2023,
                 "events": [
-                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"}
+                    {"short_Desc": "Seasons +", "time": "10:30 - 06:30", "type": "is-work"}
                 ],
-                "dayType": "current"
+                "dayType": "prev-month"
             },
             {
                 "dayNum": 7, 
@@ -364,9 +364,9 @@
                 }, 
                 "dayYear": 2023,
                 "events": [
-                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"}
+                    {"short_Desc": "Seasons +", "time": "10:30 - 06:30", "type": "is-work"}
                 ],
-                "dayType": "current"
+                "dayType": "prev-month"
             },
             {
                 "dayNum": 8, 
@@ -378,7 +378,7 @@
                 "events": [
 
                 ],
-                "dayType": "current"
+                "dayType": "prev-month"
             },
             {
                 "dayNum": 9,
@@ -388,9 +388,9 @@
                 }, 
                 "dayYear": 2023, 
                 "events": [
-                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"}
+                    {"short_Desc": "Seasons +", "time": "10:30 - 06:30", "type": "is-work"}
                 ],
-                "dayType": "current"
+                "dayType": "prev-month"
             },
             {
                 "dayNum": 10, 
@@ -400,9 +400,9 @@
                 }, 
                 "dayYear": 2023,
                 "events": [
-                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"}
+                    {"short_Desc": "Seasons +", "time": "10:30 - 06:30", "type": "is-work"}
                 ],
-                "dayType": "current"
+                "dayType": "prev-month"
             },
             {
                 "dayNum": 11, 
@@ -412,9 +412,9 @@
                 }, 
                 "dayYear": 2023,
                 "events": [
-                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"}
+                    {"short_Desc": "Seasons +", "time": "10:30 - 06:30", "type": "is-work"}
                 ],
-                "dayType": "current"
+                "dayType": "prev-month"
             },
             {
                 "dayNum": 12, 
@@ -425,7 +425,7 @@
                 "dayYear": 2023,
                 "events": [
                 ],
-                "dayType": "current"
+                "dayType": "prev-month"
             }
         ]},
         {"week3": [
@@ -438,7 +438,7 @@
                 "dayYear": 2023,
                 "events": [
                 ],
-                "dayType": "current"
+                "dayType": "prev-month"
             },
             {
                 "dayNum": 14, 
@@ -448,9 +448,9 @@
                 }, 
                 "dayYear": 2023,
                 "events": [
-                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"}
+                    {"short_Desc": "Seasons +", "time": "10:30 - 06:30", "type": "is-work"}
                 ],
-                "dayType": "current"
+                "dayType": "prev-month"
             },
             {
                 "dayNum": 15, 
@@ -460,9 +460,9 @@
                 }, 
                 "dayYear": 2023,
                 "events": [
-                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"}
+                    {"short_Desc": "Seasons +", "time": "10:30 - 06:30", "type": "is-work"}
                 ],
-                "dayType": "current"
+                "dayType": "prev-month"
             },
             {
                 "dayNum": 16, 
@@ -472,9 +472,9 @@
                 }, 
                 "dayYear": 2023,
                 "events": [
-                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"}
+                    {"short_Desc": "Seasons +", "time": "10:30 - 06:30", "type": "is-work"}
                 ],
-                "dayType": "current"
+                "dayType": "prev-month"
             },
             {
                 "dayNum": 17, 
@@ -485,7 +485,7 @@
                 "dayYear": 2023,
                 "events": [
                 ],
-                "dayType": "current"
+                "dayType": "prev-month"
             },
             {
                 "dayNum": 18, 
@@ -495,11 +495,11 @@
                 }, 
                 "dayYear": 2023,
                 "events": [
-                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"},
+                    {"short_Desc": "Seasons +", "time": "10:30 - 06:30", "type": "is-work"},
                     {"short_Desc": "Loan", "time": "14:00 - 14:30", "type": "is-appointment"},
                     {"short_Desc": "Passport Application", "time": "", "type": ""}
                 ],
-                "dayType": "current"
+                "dayType": "prev-month"
             },
             {
                 "dayNum": 19, 
@@ -509,9 +509,9 @@
                 }, 
                 "dayYear": 2023,
                 "events": [
-                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"}
+                    {"short_Desc": "Seasons +", "time": "10:30 - 06:30", "type": "is-work"}
                 ],
-                "dayType": "current"
+                "dayType": "prev-month"
             }
         ]},
         {"week4": [
@@ -523,9 +523,9 @@
                 }, 
                 "dayYear": 2023,
                 "events": [
-                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"}
+                    {"short_Desc": "Seasons +", "time": "10:30 - 06:30", "type": "is-work"}
                 ],
-                "dayType": "current"
+                "dayType": "prev-month"
             },
             {
                 "dayNum": 21, 
@@ -535,9 +535,9 @@
                 }, 
                 "dayYear": 2023,
                 "events": [
-                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"}
+                    {"short_Desc": "Seasons +", "time": "10:30 - 06:30", "type": "is-work"}
                 ],
-                "dayType": "current"
+                "dayType": "prev-month"
             },
             {
                 "dayNum": 22, 
@@ -549,7 +549,7 @@
                 "events": [
                     
                 ],
-                "dayType": "current"
+                "dayType": "prev-month"
             },
             {
                 "dayNum": 23, 
@@ -559,9 +559,9 @@
                 }, 
                 "dayYear": 2023,
                 "events": [
-                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"}
+                    {"short_Desc": "Seasons +", "time": "10:30 - 06:30", "type": "is-work"}
                 ],
-                "dayType": "current"
+                "dayType": "prev-month"
             },
             {
                 "dayNum": 24, 
@@ -571,9 +571,9 @@
                 }, 
                 "dayYear": 2023,
                 "events": [
-                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"}
+                    {"short_Desc": "Seasons +", "time": "10:30 - 06:30", "type": "is-work"}
                 ],
-                "dayType": "current"
+                "dayType": "prev-month"
             },
             {
                 "dayNum": 25, 
@@ -583,9 +583,9 @@
                 }, 
                 "dayYear": 2023,
                 "events": [
-                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"}
+                    {"short_Desc": "Seasons +", "time": "10:30 - 06:30", "type": "is-work"}
                 ],
-                "dayType": "current"
+                "dayType": "prev-month"
             },
             {
                 "dayNum": 26, 
@@ -597,7 +597,7 @@
                 "events": [
                     
                 ],
-                "dayType": "current"
+                "dayType": "prev-month"
             }
         ]},
         {"week5": [
@@ -611,7 +611,7 @@
                 "events": [
                     
                 ],
-                "dayType": "current"
+                "dayType": "prev-month"
             },
             {
                 "dayNum": 28, 
@@ -621,9 +621,9 @@
                 }, 
                 "dayYear": 2023,
                 "events": [
-                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"}
+                    {"short_Desc": "Seasons +", "time": "10:30 - 06:30", "type": "is-work"}
                 ],
-                "dayType": "current"
+                "dayType": "prev-month"
             },
             {
                 "dayNum": 29, 
@@ -633,9 +633,9 @@
                 }, 
                 "dayYear": 2023,
                 "events": [
-                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"}
+                    {"short_Desc": "Seasons +", "time": "10:30 - 06:30", "type": "is-work"}
                 ],
-                "dayType": "current"
+                "dayType": "prev-month"
             },
             {
                 "dayNum": 30, 
@@ -645,9 +645,9 @@
                 }, 
                 "dayYear": 2023,
                 "events": [
-                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"}
+                    {"short_Desc": "Seasons +", "time": "10:30 - 06:30", "type": "is-work"}
                 ],
-                "dayType": "current"
+                "dayType": "prev-month"
             },
             {
                 "dayNum": 31, 
@@ -659,7 +659,7 @@
                 "events": [
                     
                 ],
-                "dayType": "current"
+                "dayType": "prev-month"
             },
             {
                 "dayNum": 1, 
@@ -669,9 +669,9 @@
                 }, 
                 "dayYear": 2023,
                 "events": [
-                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"}
+                    {"short_Desc": "Seasons +", "time": "10:30 - 06:30", "type": "is-work"}
                 ],
-                "dayType": "next-month"
+                "dayType": "current"
             },
             {
                 "dayNum": 2, 
@@ -681,9 +681,9 @@
                 }, 
                 "dayYear": 2023,
                 "events": [
-                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"}
+                    {"short_Desc": "Seasons +", "time": "10:30 - 06:30", "type": "is-work"}
                 ],
-                "dayType": "next-month"
+                "dayType": "current"
             }
         ]},
         {"week6": [
@@ -695,9 +695,9 @@
                 }, 
                 "dayYear": 2023,
                 "events": [
-                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"}
+                    {"short_Desc": "Seasons +", "time": "10:30 - 06:30", "type": "is-work"}
                 ],
-                "dayType": "next-month"
+                "dayType": "current"
             },
             {
                 "dayNum": 4, 
@@ -707,9 +707,9 @@
                 }, 
                 "dayYear": 2023,
                 "events": [
-                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"}
+                    {"short_Desc": "Seasons +", "time": "10:30 - 06:30", "type": "is-work"}
                 ],
-                "dayType": "next-month"
+                "dayType": "current"
             },
             {
                 "dayNum": 5, 
@@ -719,9 +719,9 @@
                 }, 
                 "dayYear": 2023,
                 "events": [
-                    {"short_Desc": "Seasons Retirement Community", "time": "10:30 - 06:30", "type": "is-work"}
+                    {"short_Desc": "Seasons +", "time": "10:30 - 06:30", "type": "is-work"}
                 ],
-                "dayType": "next-month"
+                "dayType": "current"
             },
             {
                 "dayNum": 6, 
@@ -732,7 +732,7 @@
                 "dayYear": 2023,
                 "events": [
                 ],
-                "dayType": "next-month"
+                "dayType": "current"
             },
             {
                 "dayNum": 7, 
@@ -743,7 +743,7 @@
                 "dayYear": 2023,
                 "events": [
                 ],
-                "dayType": "next-month"
+                "dayType": "current"
             },
             {
                 "dayNum": 8, 
@@ -754,7 +754,7 @@
                 "dayYear": 2023,
                 "events": [
                 ],
-                "dayType": "next-month"
+                "dayType": "current"
             },
             {
                 "dayNum": 9, 
@@ -766,8 +766,170 @@
                 "events": [
                     
                 ],
-                "dayType": "next-month"
+                "dayType": "current"
             }
-        ]}   
+        ]},   
+        {"week7": [
+            {
+                "dayNum": 10, 
+                "dayMonth": {
+                    "num": 9,
+                    "name": "September"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                ],
+                "dayType": "current"
+            },
+            {
+                "dayNum": 11, 
+                "dayMonth": {
+                    "num": 9,
+                    "name": "September"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                ],
+                "dayType": "current"
+            },
+            {
+                "dayNum": 12, 
+                "dayMonth": {
+                    "num": 9,
+                    "name": "September"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                ],
+                "dayType": "current"
+            },
+            {
+                "dayNum": 13, 
+                "dayMonth": {
+                    "num": 9,
+                    "name": "September"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                ],
+                "dayType": "current"
+            },
+            {
+                "dayNum": 14, 
+                "dayMonth": {
+                    "num": 9,
+                    "name": "September"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                ],
+                "dayType": "current"
+            },
+            {
+                "dayNum": 15, 
+                "dayMonth": {
+                    "num": 9,
+                    "name": "September"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                    {"short_Desc": "Seasons +", "time": "07:00 - 03:00", "type": "is-work"}
+                ],
+                "dayType": "current"
+            },
+            {
+                "dayNum": 16, 
+                "dayMonth": {
+                    "num": 9,
+                    "name": "September"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                    {"short_Desc": "Seasons +", "time": "07:00 - 06:30", "type": "is-work"}
+                ],
+                "dayType": "current"
+            }
+        ]},
+        {"week8": [
+            {
+                "dayNum": 17, 
+                "dayMonth": {
+                    "num": 9,
+                    "name": "September"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                    {"short_Desc": "Seasons +", "time": "07:00 - 06:30", "type": "is-work"}
+                ],
+                "dayType": "current"
+            },
+            {
+                "dayNum": 18, 
+                "dayMonth": {
+                    "num": 9,
+                    "name": "September"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                ],
+                "dayType": "current"
+            },
+            {
+                "dayNum": 19, 
+                "dayMonth": {
+                    "num": 9,
+                    "name": "September"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                ],
+                "dayType": "current"
+            },
+            {
+                "dayNum": 20, 
+                "dayMonth": {
+                    "num": 9,
+                    "name": "September"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                ],
+                "dayType": "current"
+            },
+            {
+                "dayNum": 21, 
+                "dayMonth": {
+                    "num": 9,
+                    "name": "September"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                ],
+                "dayType": "current"
+            },
+            {
+                "dayNum": 22, 
+                "dayMonth": {
+                    "num": 9,
+                    "name": "September"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                ],
+                "dayType": "current"
+            },
+            {
+                "dayNum": 23, 
+                "dayMonth": {
+                    "num": 9,
+                    "name": "September"
+                }, 
+                "dayYear": 2023,
+                "events": [
+                    
+                ],
+                "dayType": "current"
+            }
+        ]}
     ] 
 }
