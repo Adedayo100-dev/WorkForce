@@ -1,6 +1,5 @@
 import asyncHandler from 'express-async-handler';
 import fs  from 'fs'
-import monthsData from '../models/months.js'
 import { createMonthDays } from '../utils/getDays.js'
 
 // @desc    Get Schedule
@@ -16,9 +15,9 @@ export const getSchedules = asyncHandler(async (req, res) => {
       
     var monthDays = createMonthDays(queryParams);
       
-    // console.log(monthDays);
+    // console.log('monthDays:', monthDays);
 
-    // Old Code
+    // Old Code -------------------------------------------------
 
     fs.readFile("./db.json", "utf8", (err, data) => {
     var schedules;
@@ -34,5 +33,10 @@ export const getSchedules = asyncHandler(async (req, res) => {
             console.log("Error parsing JSON string:", err);
         }
     })
+
+    // ------------------------------------------------------------
     // event tyes: work, appointment, reminder
+
+    res.status(200).json(monthDays);
+
 })

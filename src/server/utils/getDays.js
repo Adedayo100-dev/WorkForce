@@ -1,10 +1,34 @@
-import monthsData from '../models/months.js'
+import getMonthData from './getMonth.js'
 import weekDaysData from '../models/weekDays.js'
 
-const constructDays = (n) => {
+const constructDays = (n, s, e) => {
+    if (s == undefined){
+        s = 1;
+    } else {
+        s = s;
+    }
+
+    if (e == undefined){
+
+        // FEBRUARY exception bcuz feb has either 28 or 29 days.
+        if (n.id === 1) {
+            // Check if leap year
+            if (n.year % 4 === 0) {
+                n.numOfDays = 29 // 29 days in leap year's february
+            } else {
+                n.numOfDays = 28 // 28 days in normal year's february
+            }
+        }
+
+        e = n.numOfDays;
+
+    } else {
+        e = e;
+    }
+
     const arrayOfObjects = [];
     
-    for (let i = 1; i <= n.numOfDays; i++) {
+    for (let i = s; i <= e; i++) {
         const newObj = { 
             dayNum: i,
             dayInfo: weekDaysData[new Date(`${n.monthName} ${i}, ${n.year}`).getDay()],
@@ -26,9 +50,24 @@ const constructDays = (n) => {
 
 export const createMonthDays = (a) => {
 
+    const createCurrMonthDays = () => {
+        var m = a.month;
+        var y = a.year;
+
+        var currMonthObj = getMonthData(m, y);
+        // console.log('currMonth:', currMonthObj)
+
+        // Construct Days
+        var currMonthDays = constructDays(currMonthObj, undefined, undefined);
+
+        // console.log('currentMonthDays:', currMonthDays);
+        return currMonthDays;
+    }
+
     const createPrevMonthDays = () => {
+
         var m = a.month - 1;
-        // Check if prevMonth = December
+        // Check if prevMonth is December of last year
         if (m === -1){
             var y = a.year - 1 ;
             var m = 12 + m;
@@ -38,49 +77,58 @@ export const createMonthDays = (a) => {
             var m = m;
         }
 
-        var prevMonthObj = monthsData.find((month) => month.id === m);
-        prevMonthObj.year = y;
+        var prevMonthObj = getMonthData(m, y);
 
-        // Check if february
-        if (m === 1) {
-        // Check if leap year
-            if (y % 4 === 0) {
-                prevMonthObj.numOfDays = 29 // 29 days in leap year's february
-            } else {
-                prevMonthObj.numOfDays = 28 // 28 days in normal year's february
-            }
-        }
+        var prevMonthLastDay = prevMonthObj.numOfDays;
+        var currMonthFirstDay = createCurrMonthDays()[0].dayInfo.dayIndex;
+        // console.log('prevMonthLastDay:', prevMonthLastDay);
+
+        var start = prevMonthLastDay - currMonthFirstDay + 1;
         
-        console.log('previous:', prevMonthObj);     
+        // console.log('start:', start);   
+        
+        // console.log('previousMonth:', prevMonthObj);     
 
-        var days = constructDays(prevMonthObj);
+        var prevMonthDays = constructDays(prevMonthObj, start);
 
-        console.log(days);
+        // console.log('prevMonthDays:', prevMonthDays);
+        return prevMonthDays;
   
     }
 
-    createPrevMonthDays();
+    const createNextMonthDays = () => {
 
-    // const createCurrMonthDays
+        var m = a.month + 1;
 
-    // var m = a.month, y = a.year;
+        // Check if nextMonth is January of next year.
+        if (m === 12){
+            var y = a.year + 1 ;
+            var m = 12 - m;
+            console.log(m);
+        } else {
+            var y = a.year;
+            var m = m;
+        }
 
-    // var prevMonthDays = monthsData.find((month) => month.id === (+m) - 1); 
-    /*  add code for: if prev month was dec ,
-        if prev month was february
-    */
-    // var currMonthDays = monthsData.find((month) => month.id === +m);
+        var nextMonthObj = getMonthData(m, y);
+        // console.log('nextMonthObj:', nextMonthObj);
 
-    // var nextMonthDays = monthsData.find((month) => month.id === (+m) + 1);
+        var currMonthLastDay = createCurrMonthDays().pop().dayInfo.dayIndex;
+        // console.log('currMonthLastDay:', currMonthLastDay);
 
-    // console.log('months:', prevMonthDays, currMonthDays, nextMonthDays);
+        var end = 6 - currMonthLastDay;
+        // console.log('end:', currMonthLastDay, end);
 
-    // var n = currMonthDays
+        // var start = prevMonthLastDay - currMonthFirstDay + 1;
 
-    // n = no. of days in the month {1-28}/{1-30}/{1-31}
-    // y = year {2023, 2024, 2025...}
-    const arrayOfObjects = [];
-    // FEBRUARY exception bcuz feb has either 28 or 29 days.
+        var nextMonthDays = constructDays(nextMonthObj, undefined, end);
+        // console.log('nextMonthDays:', nextMonthdays);
+        return nextMonthDays;
+
+    }
+
+    var concatMonthsDays = [...createPrevMonthDays(), ...createCurrMonthDays(), ...createNextMonthDays()];
+    // console.log(concatMonthsDays);
     
-    return arrayOfObjects;
+    return  concatMonthsDays;
 }

@@ -54,7 +54,7 @@
                             <template v-for="cee in Object.values(week)" :key="cee._id">
                                 <td v-for="day in cee" :key="day._id" :class="[day.dayType, this.today.date == day.dayNum && this.today.month+1 == day.dayMonth.num ? 'present-day' : '']">
                                     <div class="day-number-box">
-                                        <span :title="day.dayMonth.name + ' ' + day.dayNum + ' ,'+ day.dayYear">{{ day.dayNum }}</span>
+                                        <!-- <span :title="day.dayMonth.short_name + ' ' + day.dayNum + ' ,'+ day.dayYear">{{ day.dayNum }}</span> -->
                                     </div>
                                     <template v-for="event in day.events" :key="event._id">
                                         <div class="has-shift" :class="event.type" @click="say(event.short_Desc)">
