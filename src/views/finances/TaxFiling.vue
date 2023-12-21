@@ -85,4 +85,9 @@ export default {
         font-size: 10px;
         color: rgb(133, 140, 148);
     }
+    .shopping-list_input{
+        background-color: transparent;
+        border: 1px solid grey;
+        border-radius: 3px;
+    }
 </style>

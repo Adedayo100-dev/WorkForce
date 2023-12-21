@@ -6,11 +6,12 @@
         <br>
 
         <div class="display-option css-bt7gsy ">
-            <div v-for="(item, index) in wishList" :key="item.id">
+            <p class="color-light-grey">{{ wishList.length }} items</p>
+            <div v-for="item in wishList" :key="item.id">
                 <div class="wish-item ">
-                    <div class="display-option-row py-xsm px-std css-mmep5j">
+                    <div class="display-option-row py-xsm css-mmep5j">
                         <div class="heading-box">
-                            <span class="color-light-grey">{{ index +1 }}.</span>
+                            <!-- <span class="color-light-grey">{{ index +1 }}.</span> -->
                             <span class="css-szkv6d">{{ item.name }}</span>
                         </div>  
                         <div>
@@ -38,7 +39,9 @@
                                 <span>{{ option.name }}</span>
                                 <span>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    ${{ option.minBudgetPrice }} - ${{ option.maxBudgetPrice }}
+                                    <span>
+                                        ${{ option.minBudgetPrice }} - ${{ option.maxBudgetPrice }}
+                                    </span>
                                 </span>
                                 <div>
                                     <span class="css-kx45yu">Stores: </span>

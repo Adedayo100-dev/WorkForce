@@ -51,15 +51,15 @@
                     </thead>
                     <tbody>
                         <tr v-for="week in schedule" :key="week._id">
-                            <template v-for="cee in Object.values(week)" :key="cee._id">
-                                <td v-for="day in cee" :key="day._id" :class="[day.dayType, this.today.date == day.dayNum && this.today.month+1 == day.dayMonth.num ? 'present-day' : '']">
+                            <!-- <template v-for="cee in week" :key="cee._id"> -->
+                                <td v-for="day in week" :key="day._id" :class="[day.dayType, this.today.date == day.dayNum && this.today.month == day.dayMonth.num ? 'present-day' : '']">
                                     <div class="day-number-box">
-                                        <!-- <span :title="day.dayMonth.short_name + ' ' + day.dayNum + ' ,'+ day.dayYear">{{ day.dayNum }}</span> -->
+                                        <span :title="day.dayMonth.short_name + ' ' + day.dayNum + ' ,'+ day.dayYear">{{ day.dayNum }}</span>
                                     </div>
                                     <template v-for="event in day.events" :key="event._id">
                                         <div class="has-shift" :class="event.type" @click="say(event.short_Desc)">
                                             <span class="company-name" title="Seasons Retirement Community">{{ event.short_Desc }}</span>
-                                            <!-- <span class="has-time">{{ event.time }}</span> -->
+                                            <span class="has-time">{{ event.time }}</span>
                                         </div>
                                         <span class="has-time">{{ event.time }}</span>
                                     </template>
@@ -68,10 +68,9 @@
                                     <!-- {{ JSON.stringify(day, null, 2) }} -->
                                     <!-- {{ Object.values(day) }} -->
                                 </td>
-                            </template>
-                            
+                            <!-- </template>   -->
+
                         </tr>
-        
                         <tr>
                             <td colspan="5">invalid</td>
                             <td class="work-active" colspan="2">active</td>
@@ -197,7 +196,8 @@ export default {
         
         // Call the API
         this.fetchSchedule();
-        console.log('creation finished')
+        console.log('creation finished');
+        console.log(this.today.date);
     },
 }
 </script>
@@ -212,7 +212,7 @@ export default {
 }
 .calendar-control{
     display: flex;
-    padding: 5px 10px;
+    padding: 15px 0 15px;
     gap: 10px;
     justify-content: end;
 }

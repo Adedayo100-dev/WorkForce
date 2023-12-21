@@ -12,3 +12,11 @@
 // Watch for changes through year and month select control
     $Router.replace() to the new year and month
     Fecth Data again with the new arguments
+
+The settings icon on the bootom-left in sidenav only shows up in profile page
+
+    auth:
+        login
+        signup
+    portal:
+        finances

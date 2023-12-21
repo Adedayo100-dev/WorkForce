@@ -1,22 +1,27 @@
 <template>
-    <Transition name="modal">
-        <div class="modal-overlay " :class="[{show: toggleModal}, modalPosition ]">
-            <div class="modal-static-container">
-                <div class="modal-dynamic-content">
-                    <component :is='currentModal'></component>
-                    <div class="confirm-button-container">
-                        <component :is='modalSubmitType'></component> 
+    <div class="modal-fixed-overlay" :class="{show: toggleModal}">
+        <div class="modal-relative-overlay">
+            <Transition name="modal">
+                <div class="dark-bg" @click="closeModal('close')"></div>
+            </Transition>
+            <div class="modal-appearance" :class="modalPosition">
+                <div class="modal-static-container">
+                    <div class="modal-dynamic-content">
+                        <component :is='currentModal'></component>
+                        <div class="confirm-button-container">
+                            <component :is='modalSubmitType'></component> 
+                        </div>
+                        <!-- Content goes in here -->
+
+                        <!-- #dae0e4  color for input
+                            #1274c4 color for blue pay button
+                        -->
+
                     </div>
-                    <!-- Content goes in here -->
-
-                    <!-- #dae0e4  color for input
-                        #1274c4 color for blue pay button
-                     -->
-
                 </div>
             </div>
-        </div>
-    </Transition>
+        </div>  
+    </div>   
 </template>
 
 <script>
@@ -59,6 +64,13 @@ export default {
         })
     },
     emits: ['close'],
+    methods: {
+        closeModal: function(event) {
+            useModalStore().closeModal()
+
+            // console.log(event, this.modalType);
+        },
+    },
     // updated() {
     //     console.log("updated modal to", this.currentModal);
     // },
@@ -69,30 +81,49 @@ export default {
     /* .modal-overlay.show{
         display: flex;
     } */
-    .modal-overlay{
+    .modal-fixed-overlay{
         position: fixed;
         inset: 0;
-        /* background-color: rgba(0, 0, 0, 0.452); */
-        background-color: rgba(32, 33, 36, 0.6);
-        z-index: 100;
-        height: 100vh;
-        display: flex;
-        /* justify-content: center;  */
-        /* This & align-items should be reviewed and removed if needed!*/
-        /* align-items: center; */
-        min-height: 500px;
+        z-index: 100;        
         transition: all .4s;
+        display: flex;
+    }
+    .modal-relative-overlay{
+        position: relative;
+        width: 100%;
+        height: 100vh;
+    }
+    .dark-bg{
+        /* background-color: rgba(0, 0, 0, 0.452); */
+        background-color: rgba(32, 33, 36, 0.3);
+        height: 100vh;
+        width: 100%;
+
+    }
+    .modal-appearance{
+        position: absolute;
+        /* top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); */
+        display: flex;
+
     }
     .center-modal{
-        justify-content: center;
-        align-items: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* justify-content: center;
+        align-items: center; */
     }
     .bottom-modal{
         justify-content: center;
         align-items: end;
     }
     .right-modal{
-        justify-content: end;
+        top: 50%;
+        right: 20px;
+        transform: translate(0%, -50%);
+        /* justify-content: end; */
     }
     .left-modal{
         justify-content: flex-start;
@@ -117,9 +148,7 @@ export default {
     .right-modal .modal-static-container{
         /* width: 100%; */
         border: none !important;
-        border-radius: 0;
-        border-bottom-right-radius: 0;
-        border-top-right-radius: 0;
+        border-radius: 8px;
     }
     .modal-overlay h3{
         margin-top: 0;
@@ -129,8 +158,10 @@ export default {
         background: white;
         padding: 24px 24px;
         border-radius: 6px;
-        box-shadow: 0 12px 15px 0 rgb(0 0 0 / 24%);
+        /* box-shadow: 0 12px 15px 0 rgb(0 0 0 / 24%); */
+        box-shadow: 0 36px 15px 0 rgb(0 0 0 / 24%);
         font-size: 14px;
+        transition: all .3s ease-in-out;
     }
     .modal-dynamic-content{
         height: 100%;
@@ -161,21 +192,27 @@ export default {
     /* Modal Transition */
     .modal-enter-from {
         opacity: 0;
-        transform: translateY(10px);
     }
     .modal-enter-to {
         opacity: 1;
-        transform: translateY(0);
     }
-
     .modal-leave-to {
         opacity: 0;
     }
-
-    .modal-enter-from .modal-container,
-    .modal-leave-to .modal-container {
-        /* -webkit-transform: scale(1.1);
-        transform: scale(1.1); */
+    .modal-enter-from .modal-static-container {
+        /* -webkit-transform: scale(1.1); */
+        /* transition: all .3s ease-in-out; */
+        -webkit-transition-delay: 4.25s;
+        transition-delay: 4.25s;
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+        /* transform: scale(1.1); */
+    }
+    .modal-enter-to .modal-static-container {
+        /* -webkit-transform: scale(1.1); */
+        transform: translateY(0);
+        -webkit-transform: translateY(0);
+        /* transform: scale(1.1); */
     }
     .form-group{
         display: grid;

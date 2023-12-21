@@ -46,9 +46,9 @@ export default {
     justify-content: space-between; */
     position: sticky;
     top: 0;
-    background-color: rgb(245, 246, 247);
-    border-bottom: 1px solid  #d1d1d1; /*rgb(235, 235, 235)*/
-    padding: 5px 24px 5px 18px;
+    background-color: var(--light-grey-color-2);
+    border-bottom: 1px solid  var(--line-color); /*rgb(235, 235, 235)*/
+    padding: 8px 24px 8px 18px;
     color: grey;
     font-size: 12px;
     z-index: 10;
@@ -60,6 +60,7 @@ export default {
     gap: 6px;
 }
 .top-nav span.title{
+    font-weight: bold;
     color:  #5F6368;
     /* margin-right: 10px; */
 }

@@ -59,25 +59,25 @@ const router = createRouter({
       ],
     },
     {
-      path: '/finance',
-      name: 'finance',
+      path: '/finances',
+      name: 'finances',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/finance/JobsView.vue'),
-      meta: {title: 'Finance', requiresAuth: true},
+      component: () => import('../views/finances/JobsView.vue'),
+      meta: {title: 'Finances', requiresAuth: true},
       children: [
         {
           // UserProfile will be rendered inside User's <router-view>
           // when /user/:id/profile is matched
           path: '',
           name: 'JobsIndx',
-          component:  () => import('../views/finance/JobsIndx.vue')
+          component:  () => import('../views/finances/JobsIndx.vue')
         },
         {
           path: 'worklog',
           name: 'worklog',
-          component: () => import('../views/finance/worklog/WorklogView.vue'),
+          component: () => import('../views/finances/worklog/WorklogView.vue'),
           meta: {
             title: 'Jobs Log',
           },
@@ -85,12 +85,12 @@ const router = createRouter({
             {
               path: 'tabular',
               name: 'Tabular',
-              component: () => import('../views/finance/worklog/TabularView.vue'),
+              component: () => import('../views/finances/worklog/TabularView.vue'),
             },
             {
               path: 'graphical',
               name: 'Graphical',
-              component: () => import('../views/finance/worklog/GraphicalView.vue')
+              component: () => import('../views/finances/worklog/GraphicalView.vue')
             }
           ]
         },
@@ -99,53 +99,53 @@ const router = createRouter({
           // when /user/:id/profile is matched
           path: 'employers',
           name: 'employers',
-          component: () => import('../views/finance/Employers.vue'),
+          component: () => import('../views/finances/Employers.vue'),
         },
         // breakjobs,favjobs, availability
         {
           path: 'breakjobs',
           name: 'breakjobs',
-          component: () => import('../views/finance/BreakJobs.vue'),
+          component: () => import('../views/finances/BreakJobs.vue'),
         },
         {
           path: 'favjobs',
           name: 'favjobs',
-          component: () => import('../views/finance/FavJobs.vue'),
+          component: () => import('../views/finances/FavJobs.vue'),
         },
         {
           path: 'my-schedule',
           name: 'my-schedule',
-          component: () => import('../views/finance/MySchedule.vue'),
+          component: () => import('../views/finances/MySchedule.vue'),
         },
         {
           path: 'transactions',
           name: 'transactions',
-          component: () => import('../views/finance/transactions/TransactionsView.vue'),
+          component: () => import('../views/finances/transactions/TransactionsView.vue'),
           children: [
             {
               // Userhelp will be rendered inside User's <router-view>
               // when /user/:id/profile is matched
               path: '',
               name: 'transactionsindx',
-              component:  () => import('../views/finance/transactions/TransactionsIndx.vue'),
+              component:  () => import('../views/finances/transactions/TransactionsIndx.vue'),
               //
             },
             {
               path: 'datasets',
               name: 'datasets',
-              component: () => import('../views/finance/transactions/SetsView.vue')
+              component: () => import('../views/finances/transactions/SetsView.vue')
             },
             {
               path: 'currency-exchange',
               name: 'currency-exchange',
-              component: () => import('../views/finance/transactions/CurrencyExchangeView.vue')
+              component: () => import('../views/finances/transactions/CurrencyExchangeView.vue')
             },
           ]
         },
         {
           path: 'taxes',
           name: 'taxes',
-          component: () => import('../views/finance/TaxFiling.vue'),
+          component: () => import('../views/finances/TaxFiling.vue'),
         }
       ],
     },

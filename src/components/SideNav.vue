@@ -60,21 +60,20 @@
             </li>
             
         </ul>
-        <div>
+        <!-- <div>
             <div class="float-bottom">
                 <RouterLink to="/user-profile">
                     <div class="tiny_profile-pic">
-                        <!-- <SettingsIcon />
-                        <span v-show="navTogVal"> Settings</span> -->
-                        <img src="../assets/profile_default.png" alt="" class="profile-img">
+                        <SettingsIcon />
+                        <span v-show="navTogVal"> Settings</span>
                         <div class="on-side"></div>
                     </div>
                     <div class="tiny_profile-name">
-                        <!-- <span>Taiwo</span> -->
+                        <span>Settings</span>
                     </div>
                 </RouterLink>
             </div>
-        </div>
+        </div> -->
     </div>
 </template>
 
@@ -106,7 +105,7 @@ export default {
         left: 0;
         height: -webkit-fill-available;
         padding: 0;
-        border-right:  1px solid #d1d1d1;
+        border-right:  1px solid var(--line-color);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -123,9 +122,9 @@ export default {
     }
     
     .side-nav ul li a{
-        font-size: 14px;
+        font-size: 12px;
         color: #262626;
-        padding: 12px 12px;
+        padding: 9px 12px;
         /* border-radius: 4px; */
         display: flex;
         justify-content: space-between;
@@ -171,7 +170,7 @@ export default {
         
     } */
     .sidenav-dropdown li a{
-        padding: 13px 24px !important;
+        padding: 9px 24px !important;
         color: grey !important;
     }
     .float-bottom{
@@ -188,11 +187,6 @@ export default {
         justify-content: center;
         position: relative;
         /* padding: 6px 4px; */
-        border-radius: 50%;
-    }
-    .profile-img{
-        width: 28px;
-        height: 28px;
         border-radius: 50%;
     }
     .on-side{

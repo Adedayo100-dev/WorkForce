@@ -8,7 +8,7 @@
                 </div>
             </div>
             <div class="filter-box">
-                <form :action="this.currentPath">
+                <form @submit.prevent="useFilter" >   
                     <div>
                         <div class="filter-subsection_title">
                             <!-- &#8645;  -->
@@ -17,15 +17,15 @@
                         </div>
 
                         <div class="filter_input-group">
-                            <select name="category">
-                                <option value="all">All</option>
+                            <select v-model="queryInput.category" name="category">
+                                <option value="All">All</option>
                                 <option value="Tags">Tags</option>
                                 <option value="Company">Company</option>
                                 <option value="Location">Location</option>
                             </select>
                             <div class="select-box">
                                 <div class="vertical-divider"></div>
-                                <input type="search" name="keyword" placeholder="Search">
+                                <input type="search" v-model="queryInput.keyword" name="keyword" placeholder="Search">
                             </div>
                             <!-- <option value="minova">Minova</option>
                                     <option value="amazon">Amazon</option>
@@ -42,7 +42,7 @@
                             <AZIcon height="17px"/>
                             <span>Order by :</span>
                         </div>
-                        <DropDown name="orderBy">
+                        <DropDown v-model="queryInput.orderBy" name="orderBy">
                             <option value="newestToOldest">Newest - Oldest</option>
                             <option value="oldestToNewest">Oldest - Newest</option> 
                         </DropDown>
@@ -56,19 +56,19 @@
                         
                         <div class="type-list-container">
                             <div>
-                                <input type="checkbox" name="type" value="Full-Time" id="fullTime"> <label for="fullTime">Full-Time</label>
+                                <input type="checkbox" v-model="queryInput.type" name="type" value="Full-Time" id="fullTime"> <label for="fullTime">Full-Time</label>
                             </div>
                             <div>
-                                <input type="checkbox" name="type" value="Part-Time" id="partTime"> <label for="partTime">Part-Time</label>
+                                <input type="checkbox" v-model="queryInput.type" name="type" value="Part-Time" id="partTime"> <label for="partTime">Part-Time</label>
                             </div>
                             <div>
-                                <input type="checkbox" name="type" value="SIN" id="sinJob"> <label for="sinJob">SIN</label>
+                                <input type="checkbox" v-model="queryInput.type" name="type" value="SIN" id="sinJob"> <label for="sinJob">SIN</label>
                             </div>
                             <div>
-                                <input type="checkbox" name="type" value="Cash" id="cashJob"> <label for="cashJob">Cash</label>
+                                <input type="checkbox" v-model="queryInput.type" name="type" value="Cash" id="cashJob"> <label for="cashJob">Cash</label>
                             </div>
                             <div>
-                                <input type="checkbox" name="type" value="Co-op" id="coopJob"> <label for="coopJob">Co-op</label>
+                                <input type="checkbox" v-model="queryInput.type" name="type" value="Co-op" id="coopJob"> <label for="coopJob">Co-op</label>
                             </div>
                         </div>
                     </div>
@@ -78,16 +78,16 @@
                             <span>Date Range:</span>
                         </div>
                         <div class="dates-range_box">
-                            <input type="date" name="dateFrom" class="date-from">
-                            <input type="date" name="dateTo" class="date-to">
+                            <input type="date" v-model="queryInput.dateFrom" name="dateFrom" class="date-from">
+                            <input type="date" v-model="queryInput.dateTo" name="dateTo" class="date-to">
                         </div>
                     </div>
                     <div>
                         <div class="filter-subsection_title">
-                            <input type="checkbox" name="useLength" class="use-length_checkbox" ref="uselength">
+                            <input type="checkbox" v-model="queryInput.useLength" name="useLength" class="use-length_checkbox" ref="uselength">
                             <span>Show:</span>
                             <div class="">
-                                <input type="number" name="length" class="entries_input" value="99" :disabled="useLengthStatus">&nbsp;&nbsp; <!-- Toggle disabled-->
+                                <input type="number" v-model="queryInput.length" name="length" class="entries_input" :disabled="useLengthStatus">&nbsp;&nbsp; <!-- Toggle disabled-->
                                 <small> entries</small>
                             </div>
                         </div>
@@ -115,7 +115,7 @@
         <div class="form-action">
             <div class="confirm-button-container">
                 <FormSubmit>
-                    <template  #button_name>Save</template>
+                    <template  #button_name>Sve</template>
                 </FormSubmit>
             </div>
         </div>
@@ -131,11 +131,26 @@ import SortIcon from '../components/icons/IconSort.vue'
 import CheckListIcon from '../components/icons/IconCheckList.vue'
 import { mapState } from 'pinia'
 import { useRouteStore } from '@/stores/routeStore'
+import { useModalStore } from '@/stores/modalStore'
 
 
 export default {
     components: {
         DropDown, FormSubmit, ArrowLeftIcon, SortIcon, AZIcon, CheckListIcon
+    },
+    data() {
+        return {
+            queryInput: {
+                category: "All",
+                keyword: "",
+                type: [],
+                dateFrom: "",
+                dateTo: "",
+                length: 99,
+                useLength: false,
+                orderBy: "newestToOldest"
+            }
+        }
     },
     computed: {
         ...mapState( useRouteStore, {
@@ -144,9 +159,20 @@ export default {
     },
     methods: {
         closeModal: function(event) {
-            this.$store.patch('closeModal')
+            useModalStore().closeModal()
             console.log(event, this.modalType);
         },
+        useFilter: function(){
+            this.$router.push(
+                { 
+                    path: '/finance/employers', 
+                    query: this.queryInput,
+                }
+            )
+            // console.log(this.$route);
+
+        }
+        // http://localhost:5173/finance/employers?category=all&keyword=&orderBy=newestToOldest&dateFrom=&dateTo=&length=99
     },
     created() {
     },

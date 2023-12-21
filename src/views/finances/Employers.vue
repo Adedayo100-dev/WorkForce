@@ -9,6 +9,8 @@
             </AddButton>
         </div> 
 
+        <!-- <input v-model="queryParameters" type="text"> -->
+        <p>{{ this.$route.query }}</p>
              
         <div class="display-option container-fluid css-bt7gsy ml-none ml-sm-xxl border-x-none">
             <div class="display-option-row py-xsm px-std css-mmep5j css-10la47u">
@@ -84,6 +86,8 @@ export default {
         return {
             employers: [], // placeholder for the WorksList Data
             currentRoute: '',
+            queryParameters: '', // Access query parameters from the URI
+            // a: 'ok'
         }
     },
     methods: {
@@ -92,9 +96,7 @@ export default {
             // console.log(modalType, 'Modal-Opened');
         },
         fetchEmployers() {
-            const queryParameters = this.$route.query; // Access query parameters from the URI
-
-            axios.get('http://localhost:3000/api/employers', { params: queryParameters })
+            axios.get('http://localhost:3000/api/employers', { params: this.queryParameters })
             .then((res) => {
                 this.employers = res.data;
                 console.log(res.data);
@@ -104,11 +106,23 @@ export default {
             });
         }
     },
+    watch: {
+        queryParameters: {
+            handler(newValue){
+                console.log(newValue);
+            },
+            deep: true
+        },
+        // queryParameters(newValue){
+        //     console.log(newValue)
+        // }
+    },
     created() {
         this.fetchEmployers();
         this.currentRoute = this.$route.path;
         useRouteStore().updatePath(this.currentRoute);
 
+        // console.log(this.queryParameters);
     },
     setup() {
         socket.on('employer-db-change', (data) => {

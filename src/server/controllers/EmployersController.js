@@ -14,7 +14,6 @@ export const getEmployers = asyncHandler(async (req, res) => {
     if(Object.keys(queryParams).length == 0){
         
         employers = await Employer.find()
-        // console.log("Employers query is empty!");
 
     }
     else {
@@ -22,12 +21,19 @@ export const getEmployers = asyncHandler(async (req, res) => {
         const query = {
             
             name: { $regex: `.*${queryParams.keyword}.*`, $options: "i" } 
-
-            //  name: queryParams.keyword 
             
         }
 
-        employers = await Employer.find(query)
+        try {
+
+            employers = await Employer.find(query)
+
+        } catch(error) {
+            // Handle the error here
+            console.error('Error fetching employers from database:', error);
+            // You can also throw the error further or return an error response to the client
+        }
+
 
     }
 

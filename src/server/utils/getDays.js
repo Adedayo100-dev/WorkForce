@@ -1,7 +1,7 @@
 import getMonthData from './getMonth.js'
 import weekDaysData from '../models/weekDays.js'
 
-const constructDays = (n, s, e) => {
+const constructDays = (n, s, e, t) => {
     if (s == undefined){
         s = 1;
     } else {
@@ -37,7 +37,8 @@ const constructDays = (n, s, e) => {
                 short_name: n.monthName,
                 fullName: n.fullName
             }, 
-            dayYear: n.year
+            dayYear: n.year,
+            dayType: t,
 
         };
       arrayOfObjects.push(newObj);
@@ -58,7 +59,7 @@ export const createMonthDays = (a) => {
         // console.log('currMonth:', currMonthObj)
 
         // Construct Days
-        var currMonthDays = constructDays(currMonthObj, undefined, undefined);
+        var currMonthDays = constructDays(currMonthObj, undefined, undefined, 'current');
 
         // console.log('currentMonthDays:', currMonthDays);
         return currMonthDays;
@@ -89,7 +90,7 @@ export const createMonthDays = (a) => {
         
         // console.log('previousMonth:', prevMonthObj);     
 
-        var prevMonthDays = constructDays(prevMonthObj, start);
+        var prevMonthDays = constructDays(prevMonthObj, start, undefined, 'prev-month');
 
         // console.log('prevMonthDays:', prevMonthDays);
         return prevMonthDays;
@@ -121,14 +122,27 @@ export const createMonthDays = (a) => {
 
         // var start = prevMonthLastDay - currMonthFirstDay + 1;
 
-        var nextMonthDays = constructDays(nextMonthObj, undefined, end);
+        var nextMonthDays = constructDays(nextMonthObj, undefined, end, 'next-month');
         // console.log('nextMonthDays:', nextMonthdays);
         return nextMonthDays;
 
     }
 
     var concatMonthsDays = [...createPrevMonthDays(), ...createCurrMonthDays(), ...createNextMonthDays()];
-    // console.log(concatMonthsDays);
+
+    // slice into 7 days each week
+    const weeklyArrays = [];
+
+    // Iterate over the original array
+    for (let i = 0; i < concatMonthsDays.length; i += 7) {
+        // Slice the original array to get the next six objects
+        const sixObjects = concatMonthsDays.slice(i, i + 7);
+        
+        // Add the six objects to the arrayOfArrays
+        weeklyArrays.push(sixObjects);
+    }
     
-    return  concatMonthsDays;
+    // console.log(weeklyArrays);
+
+    return  weeklyArrays;
 }

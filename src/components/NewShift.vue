@@ -2,7 +2,7 @@
     <div class="new-shift">
         <h3>Add New Shift</h3>
         
-        <form @submit.prevent="createShift" action="" id="addShift" class="">
+        <form @submit.prevent="createShift" id="addShift" class="">
             <div class="form-group">
                 <label for="">Company / Agency:</label>
                 <input type="text" v-model="formValues.inputCompany" name="shiftlocation" id=""  class="form-control_input" list="locName" placeholder="Company">
