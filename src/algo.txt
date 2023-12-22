@@ -14,9 +14,13 @@
     Fecth Data again with the new arguments
 
 The settings icon on the bootom-left in sidenav only shows up in profile page
+Change all hard-coded /adedayo to /${userName}: sidenav, taksview
 
     auth:
         login
         signup
+        signedout
     portal:
         finances
+        tasks
+    help

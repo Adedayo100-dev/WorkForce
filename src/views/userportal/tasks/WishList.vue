@@ -95,19 +95,19 @@ export default {
 </script>
 
 <style scoped>
-@import "../../assets/flex.css";
-.wish-item{
+@import "../../../assets/flex.css";
+/* .wish-item{ */
     /* padding: 10px; */
     /* margin-bottom: 10px; */
     /* border-bottom: 1px solid grey; */
-}
+/* } */
 .heading-box{
     display: flex;
     gap: 8px;
 }
-.options-box{
-    /* background-color: red; */
-}
+/* .options-box{
+    background-color: red;
+} */
 .options-global-box .options-label{
     margin-bottom: 18px;
 }
@@ -116,7 +116,7 @@ export default {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 10px;
 }
-.options-box .each-option{
+/* .options-box .each-option{
 
-}
+} */
 </style>

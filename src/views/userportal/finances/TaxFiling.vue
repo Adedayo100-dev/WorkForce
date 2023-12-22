@@ -1,5 +1,5 @@
 <script>
-    import EditIcon from '../../components/icons/IconEdit.vue'
+    import EditIcon from '../../../components/icons/IconEdit.vue'
 
 export default {
     components: {
@@ -66,8 +66,8 @@ export default {
 </template>
 
 <style scoped>
-    .tax-filing{
-    }
+    /* .tax-filing{
+    } */
     .s{
         font-family: Inter,sans-serif;
         padding: 0 var(--x-margin);

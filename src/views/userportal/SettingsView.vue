@@ -62,9 +62,9 @@
 
 <script>
 
-import GlobeIcon from '../components/icons/IconGlobe.vue'
-import CaretUpIcon from '../components/icons/IconCaretUp.vue'
-import CaretDownIcon from '../components/icons/IconCaretDown.vue'
+import GlobeIcon from '../../components/icons/IconGlobe.vue'
+import CaretUpIcon from '../../components/icons/IconCaretUp.vue'
+import CaretDownIcon from '../../components/icons/IconCaretDown.vue'
 export default {
     components: {
         GlobeIcon, CaretUpIcon, CaretDownIcon

@@ -1,9 +1,9 @@
 <script>
 
 import axios from 'axios'
-import AddButton from '../../../components/AddButton.vue'
-import IncomeCalculator from '../../../components/IncomeCalculator.vue'
-import { useModalStore } from '../../../stores/modalStore'
+import AddButton from '../../../../components/AddButton.vue'
+import IncomeCalculator from '../../../../components/IncomeCalculator.vue'
+import { useModalStore } from '../../../../stores/modalStore'
 
 
     export default {

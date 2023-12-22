@@ -7,7 +7,7 @@
     <h3>Home</h3>
     <!-- <TheWelcome /> -->
     <p>Begin to get things done</p>
-    <router-link to="/login" class="subscribe-button">Join Workforce Today!</router-link>
+    <router-link to="/auth/login" class="subscribe-button">Join Workforce Today!</router-link>
   </div>
 </template>
 

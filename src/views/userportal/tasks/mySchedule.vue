@@ -112,8 +112,8 @@
 </template>
 
 <script>
-import AddButton from '../../components/AddButton.vue'
-import { useModalStore } from '../../stores/modalStore'
+import AddButton from '../../../components/AddButton.vue'
+import { useModalStore } from '../../../stores/modalStore'
 
 export default {
 

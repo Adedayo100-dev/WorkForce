@@ -1,11 +1,11 @@
 <script>
-import AddButton from '../../../components/AddButton.vue'
-import TableIcon from '../../../components/icons/IconTable.vue'
-import GraphIcon from '../../../components/icons/IconGraph.vue'
-import FilterButton from '../../../components/FilterButton.vue'
+import AddButton from '../../../../components/AddButton.vue'
+import TableIcon from '../../../../components/icons/IconTable.vue'
+import GraphIcon from '../../../../components/icons/IconGraph.vue'
+import FilterButton from '../../../../components/FilterButton.vue'
 import axios from 'axios'
-import { useModalStore } from '../../../stores/modalStore'
-import { useRouteStore } from '../../../stores/routeStore'
+import { useModalStore } from '../../../../stores/modalStore'
+import { useRouteStore } from '../../../../stores/routeStore'
 
 
 export default {

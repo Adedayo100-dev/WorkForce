@@ -2,7 +2,7 @@
     <div class="side-nav">
         <ul>
             <li>
-                <RouterLink to="/tasks">
+                <RouterLink to="/adedayo/tasks">
                     <div>
                         <TaskIcon class="side-nav-links-icons" />
                         <span v-show="navTogVal"> Tasks</span>
@@ -10,7 +10,7 @@
                 </RouterLink>
             </li>
             <li class="show">
-                <RouterLink to="/finance">
+                <RouterLink to="/adedayo/finances">
                     <div>
                         <WorkIcon class="side-nav-links-icons" />
                         <span v-show="navTogVal"> Jobs</span>
@@ -21,28 +21,28 @@
                 </RouterLink>
                 <ul id="" class="sidenav-dropdown"  ><!-- v-show="navTogVal" -->
                     <li>
-                        <router-link to="/finance/worklog">Jobs Log</router-link>
+                        <router-link to="/adedayo/finances/worklog">Jobs Log</router-link>
                     </li>
                     <li>
-                        <router-link to="/finance/employers">Employers</router-link>
+                        <router-link to="/adedayo/finances/employers">Employers</router-link>
                     </li>
                     <li>
-                        <router-link to="/finance/breakjobs">Breaks</router-link>
+                        <router-link to="/adedayo/finances/breakjobs">Breaks</router-link>
                     </li>
                     <li>
-                        <router-link to="/finance/favjobs">Favorite</router-link>
+                        <router-link to="/adedayo/finances/favjobs">Favorite</router-link>
                     </li>
                     <li>
-                        <router-link to="/finance/my-schedule">Schedule</router-link>
+                        <router-link to="/adedayo/finances/my-schedule">Schedule</router-link>
                     </li>
                     <li>
-                        <router-link to="/finance/co-op">Co-op</router-link>
+                        <router-link to="/adedayo/finances/co-op">Co-op</router-link>
                     </li>
                     <li>
-                        <router-link to="/finance/transactions">Transactions</router-link>
+                        <router-link to="/adedayo/finances/transactions">Transactions</router-link>
                     </li>
                     <li>
-                        <router-link to="/finance/taxes">Taxes</router-link>
+                        <router-link to="/adedayo/finances/taxes">Taxes</router-link>
                     </li>
                     
                 </ul>
@@ -51,7 +51,7 @@
                 <RouterLink to="/assignments">Assignments</RouterLink>
             </li> -->
             <li>
-                <RouterLink to="/schedule">
+                <RouterLink to="/adedayo/schedule">
                     <div>
                         <DateRangeIcon  class="side-nav-links-icons"/>
                         <span v-show="navTogVal"> Schedule</span>

@@ -2,15 +2,11 @@
     import { RouterLink, RouterView } from 'vue-router';
     import { useModalStore } from './stores/modalStore'
     import { mapState } from 'pinia'
-    import { defineAsyncComponent } from 'vue'
-    import SideNav from './components/SideNav.vue';
-    import TopNavBar from './components/TopNavBar.vue';
+    import { defineAsyncComponent } from 'vue'   
     
     export default {
         name: 'App',
         components: {
-            SideNav,
-            TopNavBar,
             Modal: defineAsyncComponent(() => import('./components/Modal.vue')),
         },
         data() {
@@ -49,17 +45,6 @@
 </script>
 
 <template>
-    <div class="visible-layout">
-        <TopNavBar />
-        <div class="layout-chasis">
-            <SideNav />
-            <main>
-                <!-- <p>
-                {{ modalState }}
-                </p> -->
-                <RouterView />
-            </main>
-        </div>
-    </div>
+    <RouterView />
     <Modal v-show="modalState" @close="closeModal"/>
 </template>

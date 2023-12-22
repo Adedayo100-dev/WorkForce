@@ -69,13 +69,13 @@
 
 <script>
 import axios from 'axios'
-import MessageDangerIcon from '../../components/icons/IconMessageDanger.vue'
-import VerifiedIcon from '../../components/icons/IconVerified.vue'
-import FilterButton from '../../components/FilterButton.vue'
-import AddButton from '../../components/AddButton.vue'
-import { useModalStore } from '../../stores/modalStore'
-import { useRouteStore } from '../../stores/routeStore'
-import socket from '../../../socket'
+import MessageDangerIcon from '../../../components/icons/IconMessageDanger.vue'
+import VerifiedIcon from '../../../components/icons/IconVerified.vue'
+import FilterButton from '../../../components/FilterButton.vue'
+import AddButton from '../../../components/AddButton.vue'
+import { useModalStore } from '../../../stores/modalStore'
+import { useRouteStore } from '../../../stores/routeStore'
+import socket from '../../../../socket'
 
 export default {
     name: 'Employers',

@@ -1,6 +1,6 @@
 <script>
-import ScheduleItem from '../components/ScheduleItem.vue'
-import SubNavTab from '../components/SubNavTab.vue';
+import ScheduleItem from '../../components/ScheduleItem.vue'
+import SubNavTab from '../../components/SubNavTab.vue';
 
 export default {
   components: {

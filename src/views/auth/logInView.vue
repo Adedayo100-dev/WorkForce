@@ -27,7 +27,7 @@
                     <a :href="getGoogleUrl(from)" class="g-signin2">Google</a>
                 </div>
                 <div class="terms-declaration">
-                    By clicking the Continue button above you agree to the <router-link to="/terms" title="Terms of use">Terms of use </router-link> and <router-link to="/privacy" title="Privacy Policy">Privacy Policy</router-link>
+                    By clicking the Continue button above you agree to the <router-link to="/terms_of_use" title="Terms of use">Terms of use </router-link> and <router-link to="/privacy_policy" title="Privacy Policy">Privacy Policy</router-link>
                 </div>
             </div>
         </div>

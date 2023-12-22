@@ -65,8 +65,8 @@
 </template>
 
 <script>
-import TableIcon from '../../components/icons/IconTable.vue'
-import GraphIcon from '../../components/icons/IconGraph.vue'
+import TableIcon from '../../../components/icons/IconTable.vue'
+import GraphIcon from '../../../components/icons/IconGraph.vue'
 
 export default {
   components: {

@@ -1,5 +1,5 @@
 <script>
-  import SubNavTab from '../../components/SubNavTab.vue'
+  import SubNavTab from '../../../components/SubNavTab.vue'
   export default {
     components: {
       SubNavTab

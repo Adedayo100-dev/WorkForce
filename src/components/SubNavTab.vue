@@ -39,9 +39,9 @@ export default {
     font-size: 14px;
     /* position: relative; */
 }
-#tabs ul.tab-nav li:first-of-type a{
-  /* padding-left: 0; */
-}
+/* #tabs ul.tab-nav li:first-of-type a{
+  padding-left: 0;
+} */
 
 #tabs ul.tab-nav li a.router-link-active::after{
     content: "";

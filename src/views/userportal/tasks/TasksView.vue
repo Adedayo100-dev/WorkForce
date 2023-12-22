@@ -5,19 +5,19 @@
     <div id="tabs">
       <SubNavTab>
         <li>
-          <router-link to="/tasks/alltasks">All</router-link>
+          <router-link to="/adedayo/tasks/alltasks">All</router-link>
         </li>
         <li>
-          <router-link to="/tasks/shopping-list">Shopping</router-link>
+          <router-link to="/adedayo/tasks/shopping-list">Shopping</router-link>
         </li>
         <li>
-          <router-link to="/tasks/wish-list">Wish List</router-link>
+          <router-link to="/adedayo/tasks/wish-list">Wish List</router-link>
         </li>
         <li>
-          <router-link to="/tasks/bought-items">Bought Items</router-link>
+          <router-link to="/adedayo/tasks/bought-items">Bought Items</router-link>
         </li>
         <li>
-          <router-link to="/tasks/vault">Vault</router-link>
+          <router-link to="/adedayo/tasks/vault">Vault</router-link>
         </li>
       </SubNavTab>
       <div id="tab-contents">
@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import SubNavTab from '../../components/SubNavTab.vue';
+import SubNavTab from '../../../components/SubNavTab.vue';
 export default {
   components: {
     SubNavTab

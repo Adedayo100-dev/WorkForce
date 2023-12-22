@@ -1,5 +1,5 @@
 <script>
-import WorkLogItem from '../../../components/WorkLogItem.vue'
+import WorkLogItem from '../../../../components/WorkLogItem.vue'
 
 
 export default {
