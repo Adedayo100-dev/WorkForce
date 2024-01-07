@@ -79,7 +79,7 @@
 
 <script>
 import TaskIcon from '../components/icons/IconTask.vue'
-import WorkIcon from '../components/icons/IconWork.vue'
+import WorkIcon from '../components/icons/IconCoin.vue'
 import DateRangeIcon from '../components/icons/IconDateRange.vue'
 import CaretUpIcon from '../components/icons/IconCaretUp.vue'
 import CaretDownIcon from '../components/icons/IconCaretDown.vue'
@@ -134,7 +134,7 @@ export default {
         background-color: rgb(247, 247, 247);
     }
     .side-nav ul li a.router-link-active{
-        background-color: rgba(3, 137, 255, 0.1); /* rgba(232 57 0 / 10%) */
+        background-color: rgb(167 167 167 / 10%); /*rgba(3, 137, 255, 0.1) rgba(232 57 0 / 10%) */
     }
     .side-nav ul li a.router-link-active .side-nav-links-icons{
         fill: rgba(232, 57, 0, 1);

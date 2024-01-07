@@ -121,7 +121,7 @@ export default {
     }
     .right-modal{
         top: 50%;
-        right: 20px;
+        right: 0px;
         transform: translate(0%, -50%);
         /* justify-content: end; */
     }

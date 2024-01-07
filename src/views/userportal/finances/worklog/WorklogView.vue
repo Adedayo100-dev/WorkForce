@@ -83,12 +83,12 @@ export default {
             <div class="add-shift_button-box justify-end">
                 <ul class="link-tab-group">
                     <li>
-                        <router-link to="/finance/worklog/tabular" class="tab-link" title="Tabular">
+                        <router-link to="/adedayo/finances/worklog/tabular" class="tab-link" title="Tabular">
                             <TableIcon width="20px" height="20px"/>
                         </router-link>
                     </li>
                     <li>
-                        <router-link to="/finance/worklog/graphical" class="tab-link" title="Graphical">
+                        <router-link to="/adedayo/finances/worklog/graphical" class="tab-link" title="Graphical">
                             <GraphIcon width="20px" height="20px"/>
                         </router-link>
                     </li>

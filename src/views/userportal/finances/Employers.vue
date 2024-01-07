@@ -134,6 +134,6 @@ export default {
 </script>
 
 <style scoped>
-@import "../../assets/flex.css";
+@import "../../../assets/flex.css";
     
 </style>

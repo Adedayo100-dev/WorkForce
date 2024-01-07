@@ -6,7 +6,7 @@ import { ensureAuth, ensureGuest} from '../middleware/auth.js'
 // @desc    Login/Landing page
 // @route   GET /
 router.get('/', ensureGuest, (req, res) => {
-    res.redirect("http://127.0.0.1:5173/login")
+    res.redirect("http://localhost/login")
     // res.send('Hello World of Dayo! This is all API | Login')
 })
 

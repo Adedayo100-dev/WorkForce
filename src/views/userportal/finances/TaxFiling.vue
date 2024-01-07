@@ -1,5 +1,5 @@
 <script>
-    import EditIcon from '../../../components/icons/IconEdit.vue'
+    import EditIcon from '../../../components/icons/IconAdd.vue'
 
 export default {
     components: {
@@ -9,21 +9,21 @@ export default {
         return {
             taxFiling: [
                 {
+                    "year": "2023",
+                    "items": [
+                        {"item": "is2 (Minova)", "duration": {"startDate": "Jan 2023", "endDate": "Apr 2023"}},
+                        {"item": "Seasons+", "duration": {"startDate": "June 2023", "endDate": "Dec 2023"}},
+                        {"item": "School", "duration": {"startDate": "Jan 2022", "endDate": "Dec 2023"}}
+                    ]
+                },
+                {
                     "year": "2022",
                     "items": [
                         {"item": "StaffPlus", "duration": {"startDate": "Feb 2022", "endDate": "Apr 2022"}},
-                        {"item": "School", "duration": {"startDate": "Jan 2022", "endDate": "Dec 2023"}},
                         {"item": "Blitz Personnel", "duration": {"startDate": "May 2022", "endDate": "May 2022"}},
                         {"item": "Service Master", "duration": {"startDate": "May 2022", "endDate": "Dec 2022"}},
                         {"item": "GigHound", "duration": {"startDate": "unavailable", "endDate": "unavailable"}},
                         {"item": "Vertical SR", "duration": {"startDate": "unavailable", "endDate": "unavailable"}},
-                    ]
-                },
-                {
-                    "year": "2023",
-                    "items": [
-                        {"item": "is2 :: Minova", "duration": {"startDate": "Jan 2023", "endDate": "Apr 2023"}},
-                        {"item": "Seasons+", "duration": {"startDate": "June 2023", "endDate": "Sep 2023"}}
                     ]
                 }
             ],
@@ -43,8 +43,11 @@ export default {
     <div class="tax-filing">
         <h3>Taxes</h3>
         <div class="margin-x">
+            <div>
+                <a href="https://apps.cra-arc.gc.ca/ebci/rhpd/beta/ng/step1" class="blue-link-color" target="_blank">Canada Payroll Calculator &#x1F855;</a>
+            </div>
             <div v-for="taxYear in taxFiling" :key="taxYear.id">
-                <h5>{{ taxYear.year }} <EditIcon height="16px"/></h5>     
+                <h5>{{ taxYear.year }} <EditIcon height="16px" color="rgb(133, 140, 148)"/></h5>     
                 <ul class="s" >
                     <li v-for="item in taxYear.items" :key="item.id" class="shop-item">
                         <!-- <input type="checkbox" name="" id="">  -->
@@ -55,9 +58,6 @@ export default {
                         <input v-model="newShopItem" placeholder="New Item" class="shopping-list_input"/>
                     </li>
                 </ul>
-            </div>
-            <div>
-                <a href="https://apps.cra-arc.gc.ca/ebci/rhpd/beta/ng/step1" class="blue-link-color" target="_blank">Canada Payroll Calculator &#x1F855;</a>
             </div>
         </div>
         

@@ -91,10 +91,10 @@ export const setEmployers = async (req, res) => {
 // @desc    Update Employer
 // @route   PUT /api/employer/:id
 // @access  Private
-export const updateEmployers = async (req, res) => {
+export const updateEmployers = asyncHandler(async (req, res) => {
     res.status(200).json({ message: `Update goal ${req.params.id}`})
     // res.send(employer);
-}
+})
 
 // @desc    Delete Employer
 // @route   DELETE /api/employer/:id
@@ -105,11 +105,14 @@ export const deleteEmployers = asyncHandler(async (req, res) => {
 
     if(!employer){
         res.status(400)
-        throw new Error('Work not found')
+        throw new Error('Employer not found')
     }
     
-    await employer.remove()
+    await employer.remove(
+        () =>{
+            res.status(200).json({ message: `Deleted Employer ${req.params.id}`})
+        }
+    )
 
-    res.status(200).json({ message: `Deleted Employer ${req.params.id}`})
     // res.send(employer);
 })

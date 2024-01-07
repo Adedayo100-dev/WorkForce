@@ -72,7 +72,7 @@ export const createMonthDays = (a) => {
         if (m === -1){
             var y = a.year - 1 ;
             var m = 12 + m;
-            console.log(m);
+            // console.log(m);
         } else {
             var y = a.year;
             var m = m;

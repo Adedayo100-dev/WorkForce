@@ -114,6 +114,6 @@ export default {
 </template>
 
 <style>
-@import "../../..//assets/flex.css";
+@import "../../../../assets/flex.css";
 
 </style>

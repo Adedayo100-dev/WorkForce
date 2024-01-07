@@ -11,8 +11,8 @@
     letter-spacing: normal;
     position: sticky;
     top: 30px;
-    margin-left: var(--x-margin);
-    margin-right: var(--x-margin);
+    /* margin-left: var(--x-margin);
+    margin-right: var(--x-margin); */
 }
 .css-10la47u {
     background-color: var(--light-grey-color-2) !important;

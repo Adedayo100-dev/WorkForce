@@ -176,6 +176,9 @@ export default {
         say(message){
             // alert(message)
             this.openModal()
+        },
+        mapUnto(){
+            alert("Could map");
         }  
     },
     created() {
@@ -196,8 +199,6 @@ export default {
         
         // Call the API
         this.fetchSchedule();
-        console.log('creation finished');
-        console.log(this.today.date);
     },
 }
 </script>

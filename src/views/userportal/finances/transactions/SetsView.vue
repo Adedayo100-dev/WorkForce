@@ -99,7 +99,7 @@ import { useModalStore } from '../../../../stores/modalStore'
                     <span> Goal: ₦{{$formatNum(item.transactionsMeta.nairaGoal)}}</span>
                     </div>
                     <div class="paid-percentage-box">
-                        <h3>{{item.transactionsMeta.paidPercentage}}%</h3>
+                        <h4>{{item.transactionsMeta.paidPercentage}}%</h4>
                         <span>paid</span>
                     </div>
                 </div>
