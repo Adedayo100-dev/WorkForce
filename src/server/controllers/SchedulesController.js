@@ -25,6 +25,7 @@ export const getSchedules = asyncHandler(async (req, res) => {
 
     // Map the shedule datasets to the calendar
     var schedule = mapEventsToCalendar(monthDays, monthEventsList);
+    // console.log(schedule);
 
 
     // ------------------------------------------------------------
