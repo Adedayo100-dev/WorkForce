@@ -3,7 +3,7 @@
         <h4>New Schedule</h4>
         <form @submit.prevent="createSchedule" action="">
             <div>
-                <input type="text" name="" id="" class="width-full" placeholder="Name/Location">
+                <input type="text" name="" id="" v-model="formValues.inputName" class="width-full" placeholder="Name/Location">
             </div>
             <div id="from">
                 <label for="from">From:</label><br>
@@ -39,19 +39,24 @@ import axios from 'axios'
             formValues:{
                 inputRecurring: false,
                 inputTime: {
-                    startTime: '',
-                    stopTime: ''
+                    startTime: '10:00am',
+                    stopTime: '13:00pm'
                 },
-                inputPay: null,
-                inputPayStatus: false,
-                inputDescription: '',
+                inputName: '',
+                inputDay: 9,
+                inputMonth: 0,
+                inputYear: 2024,
+                inputEventType: 'is-work'
+                // inputPay: null,
+                // inputPayStatus: false,
+                // inputDescription: '',
             }   
         }
     },
     methods: {
         createSchedule(){
             console.log('Schedule Form values', this.formValues);
-            axios.post('http://localhost:3000/api/schedules', this.formValues, {headers:{"Content-Type" : "application/json"}})
+            axios.post('http://localhost:3000/api/schedule', this.formValues, {headers:{"Content-Type" : "application/json"}})
             .then((res) => console.log(res))
             .catch((err) => console.log(err))
         },

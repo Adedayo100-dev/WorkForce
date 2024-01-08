@@ -58,7 +58,7 @@ export const setEmployers = async (req, res) => {
         // var description = ;
     }
 
-    const shoppings = await Employer.create({
+    const employer = await Employer.create({
         name: req.body.inputName,
         contacted: req.body.inputContactStatus,
         registered: req.body.inputRegisterationStatus,
@@ -85,7 +85,7 @@ export const setEmployers = async (req, res) => {
         description: req.body.inputDescription,
     })
 
-    res.status(200).json(shoppings);
+    res.status(200).json(employer);
 }
 
 // @desc    Update Employer

@@ -259,10 +259,10 @@
     "schedule": [
         {"week1": [
             {
-                "dayNum": 30,
+                "dayNum": 31,
                 "dayMonth": {
-                    "num": 7,
-                    "name": "July"
+                    "num": 11,
+                    "name": "Dec"
                 }, 
                 "dayYear": 2023,
                 "events": [
@@ -271,12 +271,12 @@
                 "dayType": ""
             },
             {
-                "dayNum": 31,
+                "dayNum": 1,
                 "dayMonth": {
-                    "num": 7,
-                    "name": "July"
+                    "num": 0,
+                    "name": "Jan"
                 }, 
-                "dayYear": 2023,
+                "dayYear": 2024,
                 "events": [
                     {"short_Desc": "Seasons +", "time": "10:00 - 06:00", "type": "is-work"}
                 ],

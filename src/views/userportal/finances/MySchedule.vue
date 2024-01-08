@@ -52,7 +52,7 @@
                     <tbody>
                         <tr v-for="week in schedule" :key="week._id">
                             <!-- <template v-for="cee in week" :key="cee._id"> -->
-                                <td v-for="day in week" :key="day._id" :class="[day.dayType, this.today.date == day.dayNum && this.today.month == day.dayMonth.num ? 'present-day' : '']">
+                                <td v-for="day in week" :key="day._id" :class="[day.dayType, this.today.date == day.dayNum && this.today.month == day.dayMonth.num && this.today.year == day.dayYear ? 'present-day' : '']">
                                     <div class="day-number-box">
                                         <span :title="day.dayMonth.short_name + ' ' + day.dayNum + ' ,'+ day.dayYear">{{ day.dayNum }}</span>
                                     </div>
@@ -63,10 +63,6 @@
                                         </div>
                                         <span class="has-time">{{ event.time }}</span>
                                     </template>
-                                    
-                                    <!-- {{ day }} -->
-                                    <!-- {{ JSON.stringify(day, null, 2) }} -->
-                                    <!-- {{ Object.values(day) }} -->
                                 </td>
                             <!-- </template>   -->
 
@@ -163,7 +159,8 @@ export default {
             axios.get('http://localhost:3000/api/schedule',  { params: this.yearMonthSelection })
             .then((res) => {
                 this.schedule = res.data;
-                console.log(res.data);        
+                console.log(res.data);
+
             })
             .catch((err) => {
                 console.error(err.message)
@@ -176,10 +173,7 @@ export default {
         say(message){
             // alert(message)
             this.openModal()
-        },
-        mapUnto(){
-            alert("Could map");
-        }  
+        } 
     },
     created() {
         // Check URL if it contains query data
@@ -199,7 +193,8 @@ export default {
         
         // Call the API
         this.fetchSchedule();
-    },
+        console.log(this.today);
+    }
 }
 </script>
 
@@ -273,7 +268,7 @@ tbody tr:last-of-type {
     position: absolute;
     top: 0;
     right: 0;
-    border-right: solid 15px green;
+    border-right: solid 15px rgba(0, 128, 0, 0.25);
     border-bottom: solid 15px transparent;
     border-top: solid 0px transparent;
 }
