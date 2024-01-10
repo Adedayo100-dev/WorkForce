@@ -15,6 +15,10 @@ const monthEventsSchema = new mongoose.Schema(
                 dayYear: {
                     type: Number,
                     required: [true, 'Please add a start dayYear value']
+                },
+                time: {
+                    type: String,
+                    required: [true, "please add an event start time value"]
                 }
             },
             end: {
@@ -29,6 +33,10 @@ const monthEventsSchema = new mongoose.Schema(
                 dayYear: {
                     type: Number,
                     required: [true, 'Please add a stop dayYear value']
+                },
+                time: {
+                    type: String,
+                    required: [true, "please add an event end time value"]
                 }
             }
         },
@@ -36,16 +44,6 @@ const monthEventsSchema = new mongoose.Schema(
             short_desc: {
                 type: String,
                 required: [true, "please add an event short description value"]
-            },
-            time: {
-                start: {
-                    type: String,
-                    required: [true, "please add an event start time value"]
-                },
-                stop: {
-                    type: String,
-                    required: [true, "please add an event sop time value"]
-                }
             },
             type: {
                 type: String,

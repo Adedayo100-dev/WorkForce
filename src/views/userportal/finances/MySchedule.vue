@@ -59,9 +59,9 @@
                                     <template v-for="event in day.events" :key="event._id">
                                         <div class="has-shift" :class="event.data.type" @click="say(event.data.short_desc)">
                                             <span class="company-name" title="Seasons Retirement Community">{{ event.data.short_desc }}</span>
-                                            <!-- <span class="has-time">{{ event.data.time.start }} - {{ event.data.time.stop }}</span> -->
+                                            <span class="has-time">{{ event.date.start.time }} - {{ event.date.end.time }} 	&#127769;</span>
                                         </div>
-                                        <span class="has-time">{{ event.data.time.start }} - {{ event.data.time.stop }}</span>
+                                        <!-- <span class="has-time">{{ event.date.start.time }} - {{ event.date.end.time }} &#127747;</span> -->
                                     </template>
                                 </td>
                             <!-- </template>   -->

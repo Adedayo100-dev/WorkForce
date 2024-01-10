@@ -13,7 +13,7 @@
             <div id="to">
                 <label for="to">To:</label><br>
                 <input type="date" v-model="formValues.inputDayTime.stop.date" name="" id="">
-                <input type="time" v-model="formValues.inputDayTime.stop.time" name="" id="">
+                <input type="time" v-model="formValues.inputDayTime.stop.time" name="" id=""><br>
             </div>
             <input type="checkbox" name="" id="recurring" v-model="formValues.inputRecurring"> <label for="recurring">Recurring</label><br>
             <br>
