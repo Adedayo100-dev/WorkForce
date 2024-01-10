@@ -57,11 +57,11 @@
                                         <span :title="day.dayMonth.short_name + ' ' + day.dayNum + ' ,'+ day.dayYear">{{ day.dayNum }}</span>
                                     </div>
                                     <template v-for="event in day.events" :key="event._id">
-                                        <div class="has-shift" :class="event.events.type" @click="say(event.events.short_desc)">
-                                            <span class="company-name" title="Seasons Retirement Community">{{ event.events.short_desc }}</span>
-                                            <span class="has-time">{{ event.events.time.start }} - {{ event.events.time.stop }}</span>
+                                        <div class="has-shift" :class="event.data.type" @click="say(event.data.short_desc)">
+                                            <span class="company-name" title="Seasons Retirement Community">{{ event.data.short_desc }}</span>
+                                            <!-- <span class="has-time">{{ event.data.time.start }} - {{ event.data.time.stop }}</span> -->
                                         </div>
-                                        <span class="has-time">{{ event.events.time.start }} - {{ event.events.time.stop }}</span>
+                                        <span class="has-time">{{ event.data.time.start }} - {{ event.data.time.stop }}</span>
                                     </template>
                                 </td>
                             <!-- </template>   -->
@@ -69,7 +69,7 @@
                         </tr>
                         <tr>
                             <td colspan="5">invalid</td>
-                            <td class="work-active" colspan="2">active</td>
+                            <td class="work-active" colspan="2">Today</td>
                         </tr>
                     </tbody>
                 </table>

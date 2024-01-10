@@ -40,17 +40,29 @@ export const getSchedules = asyncHandler(async (req, res) => {
 // @route   POST /api/Sshedule
 // @access  Private
 export const setSchedules = asyncHandler(async (req, res) => {
+
+    const startDate = new Date(req.body.inputDayTime.start.date);
+    const endDate = new Date(req.body.inputDayTime.stop.date);
+    console.log(startDate, startDate.getDate());
+
     const schedule = await monthEvents.create({
-        date: {
-            dayNum: req.body.inputDay,
-            dayMonth: req.body.inputMonth,
-            dayYear: req.body.inputYear
+        date: { 
+            start: {
+                dayNum: startDate.getDate(),
+                dayMonth: startDate.getMonth(),
+                dayYear: startDate.getFullYear()
+            },
+            end: {
+                dayNum: endDate.getDate(),
+                dayMonth: endDate.getMonth(),
+                dayYear: endDate.getFullYear()
+            }
         },
-        events: {
+        data: {
             short_desc: req.body.inputName,
             time: {
-                start: req.body.inputTime.startTime,
-                stop: req.body.inputTime.stopTime
+                start: req.body.inputDayTime.start.time,
+                stop: req.body.inputDayTime.stop.time
             },
             type: req.body.inputEventType
         }

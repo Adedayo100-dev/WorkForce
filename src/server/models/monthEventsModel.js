@@ -3,20 +3,36 @@ import mongoose from 'mongoose';
 const monthEventsSchema = new mongoose.Schema(
     {
         date: { 
-            dayNum: {
-                type: Number,
-                required: [true, 'Please add an dayNum value']
+            start: {
+                dayNum: {
+                    type: Number,
+                    required: [true, 'Please add a start dayNum value']
+                },
+                dayMonth: {
+                    type: Number,
+                    required: [true, 'Please add a start dayMonth value']
+                },
+                dayYear: {
+                    type: Number,
+                    required: [true, 'Please add a start dayYear value']
+                }
             },
-            dayMonth: {
-                type: Number,
-                required: [true, 'Please add an dayMonth value']
-            },
-            dayYear: {
-                type: Number,
-                required: [true, 'Please add an dayYear value']
+            end: {
+                dayNum: {
+                    type: Number,
+                    required: [true, 'Please add a stop dayNum value']
+                },
+                dayMonth: {
+                    type: Number,
+                    required: [true, 'Please add a stop dayMonth value']
+                },
+                dayYear: {
+                    type: Number,
+                    required: [true, 'Please add a stop dayYear value']
+                }
             }
         },
-        events: {
+        data: {
             short_desc: {
                 type: String,
                 required: [true, "please add an event short description value"]

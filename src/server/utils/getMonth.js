@@ -15,6 +15,7 @@ const monthsData = [
 
 const getMonthData = (m, y) => {
     var monthObj = monthsData.find((month) => month.id === m);
+    // console.log(typeof y);
     monthObj.year = y;
 
     return monthObj;
