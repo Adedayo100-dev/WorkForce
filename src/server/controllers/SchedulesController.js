@@ -16,7 +16,7 @@ export const getSchedules = asyncHandler(async (req, res) => {
     
     // Create calendar
     var monthDays = createMonthDays(queryParams);
-      
+    
     // console.log('monthDays:', monthDays);
 
     // Get Month Events
@@ -32,6 +32,7 @@ export const getSchedules = asyncHandler(async (req, res) => {
     // event tyes: work, appointment, reminder
 
     res.status(200).json(schedule);
+     
 
 })
 

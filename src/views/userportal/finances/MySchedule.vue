@@ -57,11 +57,11 @@
                                         <span :title="day.dayMonth.short_name + ' ' + day.dayNum + ' ,'+ day.dayYear">{{ day.dayNum }}</span>
                                     </div>
                                     <template v-for="event in day.events" :key="event._id">
-                                        <div class="has-shift" :class="event.type" @click="say(event.short_Desc)">
-                                            <span class="company-name" title="Seasons Retirement Community">{{ event.short_Desc }}</span>
-                                            <span class="has-time">{{ event.time }}</span>
+                                        <div class="has-shift" :class="event.events.type" @click="say(event.events.short_desc)">
+                                            <span class="company-name" title="Seasons Retirement Community">{{ event.events.short_desc }}</span>
+                                            <span class="has-time">{{ event.events.time.start }} - {{ event.events.time.stop }}</span>
                                         </div>
-                                        <span class="has-time">{{ event.time }}</span>
+                                        <span class="has-time">{{ event.events.time.start }} - {{ event.events.time.stop }}</span>
                                     </template>
                                 </td>
                             <!-- </template>   -->
@@ -156,6 +156,7 @@ export default {
     },
     methods: {
         fetchSchedule() {
+            console.log("sending");
             axios.get('http://localhost:3000/api/schedule',  { params: this.yearMonthSelection })
             .then((res) => {
                 this.schedule = res.data;
@@ -187,13 +188,13 @@ export default {
         } else {
             /* If no Query present, Set Default date to today by 
             assigning today to yearMonthSelection using destructuring pattern */
+
             ({ year: this.yearMonthSelection.year, month: this.yearMonthSelection.month } = this.today);
             this.$router.replace({ query: { year: this.yearMonthSelection.year, month: this.yearMonthSelection.month } });
         }
         
         // Call the API
         this.fetchSchedule();
-        console.log(this.today);
     }
 }
 </script>

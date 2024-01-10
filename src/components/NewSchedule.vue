@@ -8,12 +8,12 @@
             <div id="from">
                 <label for="from">From:</label><br>
                 <input type="date" name="" id="">
-                <input type="time" name="" id="">
+                <input type="time" v-model="formValues.inputTime.startTime" name="" id="">
             </div>
             <div id="to">
                 <label for="to">To:</label><br>
                 <input type="date" name="" id="">
-                <input type="time" name="" id="">
+                <input type="time" v-model="formValues.inputTime.stopTime" name="" id="">
             </div>
             <input type="checkbox" name="" id="recurring" v-model="formValues.inputRecurring"> <label for="recurring">Recurring</label><br>
             <br>
@@ -39,11 +39,11 @@ import axios from 'axios'
             formValues:{
                 inputRecurring: false,
                 inputTime: {
-                    startTime: '10:00am',
-                    stopTime: '13:00pm'
+                    startTime: '',
+                    stopTime: ''
                 },
                 inputName: '',
-                inputDay: 9,
+                inputDay: 7,
                 inputMonth: 0,
                 inputYear: 2024,
                 inputEventType: 'is-work'
