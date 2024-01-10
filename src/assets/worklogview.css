@@ -36,7 +36,7 @@
 .add-shift_button-box{
     display: flex;
     column-gap: 12px;
-    margin: 0 var(--x-margin);
+    margin: 20px var(--x-margin) 15px;
 }
 .mt-40{
     margin-top: 40px;

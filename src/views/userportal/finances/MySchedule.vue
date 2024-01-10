@@ -1,6 +1,33 @@
 <template>
     <div class="tab-pane " id="tab-availability">
         <div class="add-shift_button-box justify-end">
+            <form action="finance/availability" class="d-flex">
+                <select name="years" id="" v-model="yearMonthSelection.year">
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                    <option value="2029">2029</option>
+                    <option value="2030">2030</option>
+                </select>
+                <select name="months" id="" v-model="yearMonthSelection.month">
+                    <option value="0">Jan</option>
+                    <option value="1">Feb</option>
+                    <option value="2">Mar</option>
+                    <option value="3">Apr</option>
+                    <option value="4">May</option>
+                    <option value="5">Jun</option>
+                    <option value="6" selected>Jul</option>
+                    <option value="7">Aug</option>
+                    <option value="8">Sep</option>
+                    <option value="9">Oct</option>
+                    <option value="10">Nov</option>
+                    <option value="11">Dec</option>
+                </select>
+            </form>
             <AddButton @click="openModal('NewSchedule')">
                 <span>  New Schedule</span>
             </AddButton>
@@ -8,35 +35,6 @@
         <div class="margin-x" id="availability">
             
             <div class="monthly-availability">
-                <div class="calendar-control">
-                    <form action="finance/availability">
-                        <select name="years" id="" v-model="yearMonthSelection.year">
-                            <option value="2022">2022</option>
-                            <option value="2023">2023</option>
-                            <option value="2024">2024</option>
-                            <option value="2025">2025</option>
-                            <option value="2026">2026</option>
-                            <option value="2027">2027</option>
-                            <option value="2028">2028</option>
-                            <option value="2029">2029</option>
-                            <option value="2030">2030</option>
-                        </select>
-                        <select name="months" id="" v-model="yearMonthSelection.month">
-                            <option value="0">Jan</option>
-                            <option value="1">Feb</option>
-                            <option value="2">Mar</option>
-                            <option value="3">Apr</option>
-                            <option value="4">May</option>
-                            <option value="5">Jun</option>
-                            <option value="6" selected>Jul</option>
-                            <option value="7">Aug</option>
-                            <option value="8">Sep</option>
-                            <option value="9">Oct</option>
-                            <option value="10">Nov</option>
-                            <option value="11">Dec</option>
-                        </select>
-                    </form>
-                </div>
                 <table >
                     <thead>
                         <tr>
@@ -59,17 +57,21 @@
                                     <template v-for="event in day.events" :key="event._id">
                                         <div class="has-shift" :class="event.data.type" @click="say(event.data.short_desc)">
                                             <span class="company-name" title="Seasons Retirement Community">{{ event.data.short_desc }}</span>
-                                            <span class="has-time">{{ event.date.start.time }} - {{ event.date.end.time }} 	&#127769;</span>
+                                            <!-- <span class="has-time">{{ event.date.start.time }} - {{ event.date.end.time }} 	&#127769;</span> -->
                                         </div>
-                                        <!-- <span class="has-time">{{ event.date.start.time }} - {{ event.date.end.time }} &#127747;</span> -->
+                                        <span class="has-time">{{ event.date.start.time }} - {{ event.date.end.time }} &#127747;</span>
                                     </template>
+                                    <!-- <div class="bl" >
+                                        <ul>
+                                            <li style="">Orange</li>
+                                            <li>Banana</li>
+                                            <li>Cashew</li>
+                                            <li>Mango</li>
+                                        </ul>
+                                    </div> -->
                                 </td>
                             <!-- </template>   -->
 
-                        </tr>
-                        <tr>
-                            <td colspan="5">invalid</td>
-                            <td class="work-active" colspan="2">Today</td>
                         </tr>
                     </tbody>
                 </table>
@@ -78,6 +80,9 @@
             <h4>Color Code:</h4>
 
             <div>Active</div>
+            <tr>
+                <td class="work-active">Today</td>
+            </tr>
 
             <h4 class="">Availability</h4>
 
@@ -213,7 +218,7 @@ export default {
     gap: 10px;
     justify-content: end;
 }
-.calendar-control select{
+.add-shift_button-box select{
     border: none;
     background-color: transparent;
 }
@@ -279,5 +284,15 @@ tbody tr:last-of-type {
 }
 .sick-day .company-name{
     background-color: white !important;
+}
+.bl{
+    border: 1px solid #eee;
+    text-align: start;
+    border-radius: 3px;
+    margin-top: 13px;
+}
+.bl ul{
+    list-style-type: disc;
+    padding-left: 27.5px;
 }
 </style>
