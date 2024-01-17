@@ -23,24 +23,12 @@
         methods: {
             closeModal: function(event) {
                 useModalStore().closeModal(modalType)
-                // this.$store.commit('closeModal')
-                // console.log(event, this.modalType);
             },
-            openModal(modalType) {
-                useModalStore().openModal(modalType)
-            }
-            // openModal: function(modalType) {
-            //     this.$store.commit('openModal', modalType)
-            //     console.log(modalType," opened");
-            //     console.log("this works!")
+            // openModal(modalType) {
+            //     useModalStore().openModal(modalType)
+            //     console.log("App.vue:", modalData);
             // }
         },
-        // created(){
-        //     console.log(this.$store.state.modal.whichModal, 'created')
-        // },
-        // updated() {
-        //     console.log('updated to', this.$store.state.modal.whichModal)
-        // },
     }
 </script>
 

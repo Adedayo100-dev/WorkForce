@@ -6,6 +6,7 @@ export const useModalStore = defineStore('modal', {
         modal: {
             toggleModal: false,
             whichModal: null, //Change to null
+            args: null, // This is the data argument/parameter that may be passed with the modal invocation like id
             whichSubmitType: null, //Change to null
             classNames: ''
         }
@@ -13,10 +14,11 @@ export const useModalStore = defineStore('modal', {
 
     // actions
     actions: {
-        openModal (modalType) {
+        openModal (modalType, data) {
             console.log("open modal touched", modalType)
             this.modal.toggleModal = true;
             this.modal.whichModal = modalType;
+            this.modal.args = data;
 
             switch (this.modal.whichModal) {
                 case "DialogBox":
@@ -54,13 +56,18 @@ export const useModalStore = defineStore('modal', {
                     this.modal.classNames = 'left-modal dark-inner-bg light-outer-bg'
                     break;
 
+                case "ScheduleDetails":
+                    this.modal.whichSubmitType = null;
+                    this.modal.classNames = 'center-modal'
+                    break;
+
                 default:
                     this.modal.whichSubmitType = null;
                     this.modal.classNames = ''
                     break;
             }
             
-            console.log(typeof this.modal.whichModal, "activated");
+            console.log(this.modal.args, "activated");
         },
         closeModal (){
             this.modal.toggleModal = false;

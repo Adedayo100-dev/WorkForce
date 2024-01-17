@@ -36,6 +36,16 @@ export const getSchedules = asyncHandler(async (req, res) => {
 
 })
 
+// @desc    Get Schedule
+// @route   GET /api/schedule/:id
+// @access  Private
+export const getSchedule = asyncHandler(async (req, res) => {
+    const scheduleId = req.params.id;
+    console.log("id:", scheduleId);
+    const schedule = await monthEvents.findById(scheduleId);
+    res.status(200).json(schedule);
+})
+
 // @desc    Set Schedule
 // @route   POST /api/Sshedule
 // @access  Private

@@ -2,7 +2,7 @@
     <div class="schedule-component">
         <h4>New Schedule</h4>
         <form @submit.prevent="createSchedule" action="">
-            <div>
+            <div style="box-sizing:border-box;">
                 <input type="text" name="" id="" v-model="formValues.inputName" class="width-full" placeholder="Name/Location">
             </div>
             <div id="from">
@@ -14,6 +14,12 @@
                 <label for="to">To:</label><br>
                 <input type="date" v-model="formValues.inputDayTime.stop.date" name="" id="">
                 <input type="time" v-model="formValues.inputDayTime.stop.time" name="" id=""><br>
+            </div>
+            <div>
+                <select name="" id="" v-model="formValues.inputEventType">
+                    <option value="work-event">Work</option>
+                    <option value="reminder-event">Reminder</option>
+                </select>
             </div>
             <input type="checkbox" name="" id="recurring" v-model="formValues.inputRecurring"> <label for="recurring">Recurring</label><br>
             <br>
@@ -48,7 +54,7 @@ import axios from 'axios'
                         time: ''
                     }
                 },
-                inputEventType: 'is-work',
+                inputEventType: '',
                 inputRecurring: false,
                 // inputPay: null,
                 // inputPayStatus: false,

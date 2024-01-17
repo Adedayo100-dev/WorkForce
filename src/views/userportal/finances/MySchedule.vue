@@ -1,6 +1,16 @@
 <template>
     <div class="tab-pane " id="tab-availability">
         <div class="add-shift_button-box justify-end">
+            <div style="
+                align-items: center;
+                display: flex;
+            ">
+                <span style="
+                font-size: 13.33px;
+            "><b style="
+                color: green;
+            ">Up next:</b> House Keeping / 23:00 - 07:00</span>
+            </div>
             <form action="finance/availability" class="d-flex">
                 <select name="years" id="" v-model="yearMonthSelection.year">
                     <option value="2022">2022</option>
@@ -55,7 +65,7 @@
                                         <span :title="day.dayMonth.short_name + ' ' + day.dayNum + ' ,'+ day.dayYear">{{ day.dayNum }}</span>
                                     </div>
                                     <template v-for="event in day.events" :key="event._id">
-                                        <div class="has-shift" :class="event.data.type" @click="say(event.data.short_desc)">
+                                        <div class="has-shift" :class="event.data.type" @click="modalPop(event._id)">
                                             <span class="company-name" title="Seasons Retirement Community">{{ event.data.short_desc }}</span>
                                             <!-- <span class="has-time">{{ event.date.start.time }} - {{ event.date.end.time }} 	&#127769;</span> -->
                                         </div>
@@ -77,45 +87,16 @@
                 </table>
             </div>
 
+            <div>
+                <br> <br>
+                <p class="text-center">Did you do the House keeping night shift? &nbsp;&nbsp;&nbsp;&nbsp;<span>Yes | No</span></p>
+            </div>
             <h4>Color Code:</h4>
 
             <div>Active</div>
             <tr>
                 <td class="work-active">Today</td>
             </tr>
-
-            <h4 class="">Availability</h4>
-
-            <table>
-                <tr>
-                    <td>Monday</td>
-                    <td>from 4 pm for 12hrs</td>
-                </tr>
-                <tr>
-                    <td><b>Tuesday</b></td>
-                    <td>night</td>
-                </tr>
-                <tr>
-                    <td>Wednesday</td>
-                    <td>from 3 pm for 8hrs</td>
-                </tr>
-                <tr>
-                    <td><b>Thursday</b></td>
-                    <td>All day</td>
-                </tr>
-                <tr>
-                    <td><b>Friday</b></td>
-                    <td>from 4 pm and <b>night</b></td>
-                </tr>
-                <tr>
-                    <td><b>Saturday</b></td>
-                    <td>day and <b>night</b></td>
-                </tr>
-                <tr>
-                    <td><b>Sunday</b></td>
-                    <td>day and <b>night</b></td>
-                </tr>
-            </table>
         </div>
     </div>
 </template>
@@ -173,12 +154,13 @@ export default {
                 this.errorMsg = 'error retrieving data';
             });
         },
-        openModal(modalType) {
-            useModalStore().openModal(modalType)
+        openModal(message) {
+            useModalStore().openModal(message)
         },
-        say(message){
+        modalPop(message){
             // alert(message)
-            this.openModal()
+            console.log("id:", message);
+            useModalStore().openModal("ScheduleDetails", message);
         } 
     },
     created() {
@@ -257,7 +239,7 @@ tbody tr:last-of-type {
 .next-month .day-number-box span, .prev-month .day-number-box span{
     color: rgb(238, 238, 238) !important;
 }
-.is-work{
+.is-work, .work{
     border-left: 5px solid rgba(0, 191.25, 0, 0.25) !important;
 }
 .is-appointment{
@@ -277,6 +259,9 @@ tbody tr:last-of-type {
     border-right: solid 15px rgba(0, 128, 0, 0.25);
     border-bottom: solid 15px transparent;
     border-top: solid 0px transparent;
+}
+.present-day>.day-number-box>span{
+    font-weight: 900;
 }
 .sick-day{
     border-left: none !important;

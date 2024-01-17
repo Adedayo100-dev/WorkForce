@@ -7,7 +7,7 @@
             <div class="modal-appearance" :class="modalPosition">
                 <div class="modal-static-container">
                     <div class="modal-dynamic-content">
-                        <component :is='currentModal'></component>
+                        <component :is='currentModal' :modalBody="modalData"></component>
                         <div class="confirm-button-container">
                             <component :is='modalSubmitType'></component> 
                         </div>
@@ -25,14 +25,14 @@
 </template>
 
 <script>
+import DialogBox from '../components/DialogBox.vue'
 import NewShift from '../components/NewShift.vue'
 import NewTransaction from '../components/NewTransaction.vue'
 import NewEmployer from '../components/NewEmployer.vue'
 import NewFilter from '../components/FilterComponent.vue'
 import NewSchedule from '../components/NewSchedule.vue'
 import UndoCountDown from '../components/UndoCountDown.vue'
-import DialogBox from '../components/DialogBox.vue'
-import WorkDetails from '../components/WorkDetails.vue'
+import ScheduleDetails from './ScheduleDetails.vue'
 import DialogSubmit from '../components/DialogSubmit.vue'
 import { mapState } from 'pinia'
 import { useModalStore } from '@/stores/modalStore'
@@ -47,7 +47,7 @@ export default {
         NewSchedule,
         UndoCountDown,
         DialogBox,
-        WorkDetails,
+        ScheduleDetails,
         DialogSubmit
     },
     props: ['modalOptions'],
@@ -61,6 +61,7 @@ export default {
             currentModal: store => store.modal.whichModal, // NewShift, newTransaction  or DialogBox
             modalSubmitType: store => store.modal.whichSubmitType, // FormSubmit or DialogSubmit
             modalPosition: store => store.modal.classNames, // center-Modal / right-modal
+            modalData: store => store.modal.args,
         })
     },
     emits: ['close'],
