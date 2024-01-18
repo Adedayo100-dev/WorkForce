@@ -9,26 +9,28 @@ export default {
     },
     data() {
         return {
-            scheduleDetail: {},
+            scheduleDetail: {
+                data:{},
+                date:{}
+            },
         }
     },
     methods: {
-        fetchScheduleDetail() {
+        async fetchScheduleDetail() {
             axios.get(`http://localhost:3000/api/schedule/${this.modalBody}`,  { params: this.scheduleDetail._id })
             .then((res) => {
                 this.scheduleDetail = res.data;
                 console.log(res.data);
-
             })
             .catch((err) => {
                 console.error(err.message)
-                this.errorMsg = 'error retrieving data';
+                // this.errorMsg = 'error retrieving data';
             });
-        },
+        }
     },
     created() {
         this.fetchScheduleDetail();
-    },
+    }
 }
 </script>
 <template>
