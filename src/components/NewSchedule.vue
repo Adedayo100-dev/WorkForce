@@ -21,6 +21,9 @@
                     <option value="reminder-event">Reminder</option>
                 </select>
             </div>
+            <div>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+            </div>
             <input type="checkbox" name="" id="recurring" v-model="formValues.inputRecurring"> <label for="recurring">Recurring</label><br>
             <br>
             <div class="confirm-button-container">

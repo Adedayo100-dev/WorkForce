@@ -43,7 +43,7 @@ export default {
                 Mon 14 Feb, 2023
             </div>
         </div>
-        <p class="shift-details-location">{{ scheduleDetail.data.short_desc }}</p>
+        <h4 class="shift-details-location">{{ scheduleDetail.data.short_desc }}</h4>
         <h4>826.25 <span class="small-currency">CAD</span></h4>
         <!-- <ul>
             <li class="dates-output">Mon 14 Feb, 2023 <span>9.5hrs</span></li>
@@ -53,6 +53,7 @@ export default {
             <li class="dates-output">Fri 18 Feb, 2023 <span>8.5hrs</span></li>
         </ul> -->
         <p>Total hours: 45.5hrs</p>
+        <p>Time: {{ scheduleDetail.date.start.time }} to {{ scheduleDetail.date.end.time }}</p>
         <p class="schedule-details-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse, accusamus nulla! Laboriosam officiis molestias quidem atque, asperiores eveniet ducimus accusamus amet magni ea dicta, quaerat eos temporibus. Eum, eligendi voluptates!</p>
         <div>
             <button>Delete</button>
@@ -73,11 +74,12 @@ export default {
 }
 .schedule-date{
     color: gray;
+    font-size: 12px;
 }
 .schedule-details-container{
     min-width: 360px;
 }
 .schedule-details-description{
-    /* max-width: 200px; */
+    max-width: 376px; /* I might have to change this later to  */
 }
 </style>
