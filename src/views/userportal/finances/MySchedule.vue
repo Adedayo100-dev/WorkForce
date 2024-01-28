@@ -69,7 +69,10 @@
                                             <span class="company-name" title="Seasons Retirement Community">{{ event.data.short_desc }}</span>
                                             <!-- <span class="has-time">{{ event.date.start.time }} - {{ event.date.end.time }} 	&#127769;</span> -->
                                         </div>
-                                        <span class="has-time">{{ event.date.start.time }} - {{ event.date.end.time }} &#127747;</span>
+                                        <span class="has-time">{{ event.date.start.time }} - {{ event.date.end.time }} 
+                                            <!-- &#127747; -->
+
+                                        </span>
                                     </template>
                                     <!-- <div class="bl" >
                                         <ul>
@@ -138,7 +141,7 @@ export default {
             },
             deep: true,
             immediate: true
-        }, 
+        }
     },
     methods: {
         fetchSchedule() {
@@ -242,7 +245,7 @@ tbody tr:last-of-type {
 .is-work, .work{
     border-left: 5px solid rgba(0, 191.25, 0, 0.25) !important;
 }
-.is-appointment{
+.appointment{
     border-left: 5px solid rgba(191.25, 191.25, 0, 0.5) !important;
 }
 .present-day{

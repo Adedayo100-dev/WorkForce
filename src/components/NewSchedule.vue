@@ -3,7 +3,7 @@
         <h4>New Schedule</h4>
         <form @submit.prevent="createSchedule" action="">
             <div style="box-sizing:border-box;">
-                <input type="text" name="" id="" v-model="formValues.inputName" class="width-full" placeholder="Name/Location">
+                <input type="text" name="" id="" v-model="formValues.inputName" class="width-full" placeholder="Name/Location" required>
             </div>
             <div id="from">
                 <label for="from">From:</label><br>
@@ -16,8 +16,9 @@
                 <input type="time" v-model="formValues.inputDayTime.stop.time" name="" id=""><br>
             </div>
             <div>
-                <select name="" id="" v-model="formValues.inputEventType">
+                <select name="" id="" v-model="formValues.inputEventType" required>
                     <option value="work-event">Work</option>
+                    <option value="appointment-event">Appointment</option>
                     <option value="reminder-event">Reminder</option>
                 </select>
             </div>
