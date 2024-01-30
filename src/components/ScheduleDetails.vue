@@ -1,37 +1,45 @@
 <template>
     <div class="schedule-details-container">
-        <div class="schedule-header">
+        <div v-if="!editMode">        
+            <div class="schedule-header">
+                <div>
+                    <span class="schedule-type">{{ scheduleDetail.data.type }}</span>
+                </div>
+                <div class="schedule-date">
+                    Mon 14 Feb, 2023
+                </div>
+            </div>
+            <div class="schedule-header-2">
+                <div>
+                    <span class="schedule-details-short_desc">{{ scheduleDetail.data.short_desc }}</span>
+                </div>
+                <div class="schedule-status-container"  :class="scheduleDetail.data.status">
+                    <span class="schedule-status-message">{{scheduleDetail.data.status}}</span>
+                </div>
+            </div>
+            <h4>826.25 <span class="small-currency">CAD</span></h4>
+            <!-- <ul>
+                <li class="dates-output">Mon 14 Feb, 2023 <span>9.5hrs</span></li>
+                <li class="dates-output">Tue 15 Feb, 2023 <span>9.5hrs</span></li>
+                <li class="dates-output">Wed 16 Feb, 2023 <span>9.5hrs</span></li>
+                <li class="dates-output">Thur 17 Feb, 2023 <span>8.5hrs</span></li>
+                <li class="dates-output">Fri 18 Feb, 2023 <span>8.5hrs</span></li>
+            </ul> -->
+            <p><span class="schedule-detail_label-title">Time: </span>{{ scheduleDetail.date.start.time }} to {{ scheduleDetail.date.end.time }}</p>
+            <p><span class="schedule-detail_label-title">Total hours:</span> 45.5hrs</p>
+            <p class="schedule-details-description">
+                <span class="schedule-detail_label-title">Additional Info: </span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse, accusamus nulla! Laboriosam officiis molestias quidem atque, asperiores eveniet ducimus accusamus amet magni ea dicta, quaerat eos temporibus. Eum, eligendi voluptates!
+            </p>
             <div>
-                <span class="schedule-type">{{ scheduleDetail.data.type }}</span>
-            </div>
-            <div class="schedule-date">
-                Mon 14 Feb, 2023
+                <span class="schedule-detail_label-title">Work, Stoney Creek, Part-time</span>
             </div>
         </div>
-        <div class="schedule-header-2">
-            <div>
-                <span class="schedule-details-short_desc">{{ scheduleDetail.data.short_desc }}</span>
-            </div>
-            <div class="schedule-status-container">
-                <span class="schedule-status-message">Completed</span>
-            </div>
+        <div v-else>
+            <form action="">
+                <input type="text">
+            </form>
         </div>
-        <h4>826.25 <span class="small-currency">CAD</span></h4>
-        <!-- <ul>
-            <li class="dates-output">Mon 14 Feb, 2023 <span>9.5hrs</span></li>
-            <li class="dates-output">Tue 15 Feb, 2023 <span>9.5hrs</span></li>
-            <li class="dates-output">Wed 16 Feb, 2023 <span>9.5hrs</span></li>
-            <li class="dates-output">Thur 17 Feb, 2023 <span>8.5hrs</span></li>
-            <li class="dates-output">Fri 18 Feb, 2023 <span>8.5hrs</span></li>
-        </ul> -->
-        <p><span class="schedule-detail_label-title">Time: </span>{{ scheduleDetail.date.start.time }} to {{ scheduleDetail.date.end.time }}</p>
-        <p><span class="schedule-detail_label-title">Total hours:</span> 45.5hrs</p>
-        <p class="schedule-details-description">
-            <span class="schedule-detail_label-title">Additional Info: </span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse, accusamus nulla! Laboriosam officiis molestias quidem atque, asperiores eveniet ducimus accusamus amet magni ea dicta, quaerat eos temporibus. Eum, eligendi voluptates!
-        </p>
-        <div>
-            <span class="schedule-detail_label-title">Work, Stoney Creek, Part-time</span>
-        </div>
+        <!-- Controls -->
         <div class="schedule-buttons-container">
             <div class="confirmation-container">
                 <span class="schedule-delete-confirm-text" v-show="confirmDelete">Are you sure you want to delete this item? </span>
@@ -47,8 +55,14 @@
                         <button class="schedule-update-button" @click="toggleScheduleDetailDel()">No</button>
                     </div>
                     <div v-else>
-                        <button class="schedule-delete-button" @click="toggleScheduleDetailDel()">Delete</button>
-                        <button class="schedule-update-button">Update</button>
+                        <div v-if="!editMode">
+                            <button class="schedule-delete-button" @click="toggleScheduleDetailDel()">Delete</button>
+                            <button class="schedule-update-button" @click="updateScheDetail()">Update</button>
+                        </div>
+                        <div v-else>
+                            <button class="schedule-delete-button" @click="toggleScheDetailEdit()">Back</button>
+                            <!-- <button class="schedule-update-button" @click="">Submit</button> -->
+                        </div>
                     </div>
                 </div>
             </div>       
@@ -70,7 +84,9 @@ export default {
         return {
             scheduleDetail: {
                 data:{
-                    
+                    short_desc: '',
+                    type:'',
+                    status: '',
                 },
                 date:{
                     start: {
@@ -81,6 +97,7 @@ export default {
                     }
                 }
             },
+            editMode: false,
             confirmEdit: false,
             confirmDelete: false
         }
@@ -98,7 +115,7 @@ export default {
             axios.get(`http://localhost:3000/api/schedule/${id}`)
             .then((res) => {
                 this.scheduleDetail = res.data;
-                // console.log(res.data);
+                console.log(res.data);
             })
             .catch((err) => {
                 console.error(err.message);
@@ -106,6 +123,7 @@ export default {
         },
         toggleScheDetailEdit(){
             this.confirmEdit = !this.confirmEdit;
+            this.editMode = false;
         },
         toggleScheduleDetailDel(){
             this.confirmDelete = !this.confirmDelete;
@@ -119,6 +137,9 @@ export default {
             .catch((err) => {
                 console.error(err.message);
             });
+        },
+        updateScheDetail(){
+            this.editMode = !this.editMode;
         },
         closeModal() {
             useModalStore().closeModal();
@@ -145,14 +166,24 @@ export default {
     font-weight: bold;
 }
 .schedule-status-container{
-    background-color: rgba(0, 191.25, 0, 0.125);
     padding: 0 5px;
     line-height: 1;
     border-radius: 2px;
 }
 .schedule-status-message{
-    color: green;
     font-size: 12px;
+}
+.In.view.schedule-status-container{
+    background-color: rgba(128, 128, 128, 0.125);
+}
+.In.view .schedule-status-message{
+    color: grey;
+}
+.Completed.schedule-status-container{
+    background-color: rgba(0, 191.25, 0, 0.125);
+}
+.Completed .schedule-status-message{
+    color: green;
 }
 .schedule-type{
     text-transform: capitalize;

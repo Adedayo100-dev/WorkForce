@@ -25,7 +25,7 @@ export const getSchedules = asyncHandler(async (req, res) => {
 
     // Map the shedule datasets to the calendar
     var schedule = mapEventsToCalendar(monthDays, monthEventsList);
-    // console.log(schedule);
+    console.log(schedule);
 
 
     // ------------------------------------------------------------
@@ -51,7 +51,7 @@ export const getSchedule = asyncHandler(async (req, res) => {
 // @access  Private
 export const setSchedules = asyncHandler(async (req, res) => {
 
-    // Adding the time 'T' is compulsory to not cause confusing when the JS engine converts it to UTC
+    // Adding the time 'T' is compulsory to not cause confusion when the JS engine converts it to UTC
     const startDate = new Date(`${req.body.inputDayTime.start.date}T${req.body.inputDayTime.start.time}`); 
     const endDate = new Date(`${req.body.inputDayTime.stop.date}T${req.body.inputDayTime.stop.time}`);
     console.log(startDate, startDate.toLocaleTimeString('en-US'), req.body.inputDayTime.start.time);
@@ -73,7 +73,8 @@ export const setSchedules = asyncHandler(async (req, res) => {
         },
         data: {
             short_desc: req.body.inputName,
-            type: req.body.inputEventType
+            type: req.body.inputEventType,
+            status: 'In view'
         }
     })
     res.status(200).json(schedule);

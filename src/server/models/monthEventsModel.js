@@ -48,6 +48,9 @@ const monthEventsSchema = new mongoose.Schema(
             type: {
                 type: String,
                 required: [true, "please add an event type value"]
+            },
+            status: {
+                type: String
             }
         }
     },

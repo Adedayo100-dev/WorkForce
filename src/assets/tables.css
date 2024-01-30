@@ -42,11 +42,7 @@ tr.success{
 .underlined{
     text-decoration: underline dashed;
 }
-.reminder{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    margin-top: 20px;
-}
+
 caption{
     /* text-align: left; */
     font-size: 14px;

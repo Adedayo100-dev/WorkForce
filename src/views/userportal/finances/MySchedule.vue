@@ -248,6 +248,9 @@ tbody tr:last-of-type {
 .appointment{
     border-left: 5px solid rgba(191.25, 191.25, 0, 0.5) !important;
 }
+.reminder{
+    
+} 
 .present-day{
     /* background-color: rgba(255, 0, 1 0, 0.5); */
     position: relative;
