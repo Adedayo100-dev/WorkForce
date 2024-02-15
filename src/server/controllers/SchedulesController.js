@@ -41,7 +41,6 @@ export const getSchedules = asyncHandler(async (req, res) => {
 // @access  Private
 export const getSchedule = asyncHandler(async (req, res) => {
     const scheduleId = req.params.id;
-    console.log("id:", scheduleId);
     const schedule = await monthEvents.findById(scheduleId);
     res.status(200).json(schedule);
 })
@@ -74,7 +73,8 @@ export const setSchedules = asyncHandler(async (req, res) => {
         data: {
             short_desc: req.body.inputName,
             type: req.body.inputEventType,
-            status: 'In view'
+            status: req.body.inputStatus,
+            info: req.body.inputInfo,
         }
     })
     res.status(200).json(schedule);

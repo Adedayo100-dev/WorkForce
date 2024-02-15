@@ -28,16 +28,15 @@
             <p><span class="schedule-detail_label-title">Time: </span>{{ scheduleDetail.date.start.time }} to {{ scheduleDetail.date.end.time }}</p>
             <p><span class="schedule-detail_label-title">Total hours:</span> 45.5hrs</p>
             <p class="schedule-details-description">
-                <span class="schedule-detail_label-title">Additional Info: </span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse, accusamus nulla! Laboriosam officiis molestias quidem atque, asperiores eveniet ducimus accusamus amet magni ea dicta, quaerat eos temporibus. Eum, eligendi voluptates!
+                <span class="schedule-detail_label-title">Additional Info: </span>{{ scheduleDetail.data.info }}
             </p>
             <div>
                 <span class="schedule-detail_label-title">Work, Stoney Creek, Part-time</span>
             </div>
         </div>
         <div v-else>
-            <form action="">
-                <input type="text">
-            </form>
+            <!-- Schedule Update Form -->
+            <ScheduleUpdate/>
         </div>
         <!-- Controls -->
         <div class="schedule-buttons-container">
@@ -46,22 +45,30 @@
             </div>
             <div>
                 <div v-if="!confirmEdit">
-                    <button class="schedule-delete-button" @click="toggleScheDetailEdit()">Edit</button>
-                    <button class="schedule-update-button" @click="closeModal()">Close</button>
+                    <button class="schedule-button delete-button" @click="toggleScheDetailEdit()">Edit</button>
+                    <button class="schedule-button update-button" @click="closeModal()">Close</button>
                 </div>
                 <div v-else>
                     <div v-if="confirmDelete">
-                        <button class="schedule-delete-button" @click="delScheduleDetail()">Yes</button>
-                        <button class="schedule-update-button" @click="toggleScheduleDetailDel()">No</button>
+                        <button class="schedule-button" @click="delScheduleDetail()">
+                            <svg version="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" enable-background="new 0 0 48 48" height="14px">
+                                <polygon fill="grey" points="40.6,12.1 17,35.7 7.4,26.1 4.6,29 17,41.3 43.4,14.9"/>
+                            </svg>
+                        </button>
+                        <button class="schedule-button" @click="toggleScheduleDetailDel()">
+                            <svg fill="grey" width="14px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 180.607 180.607" xml:space="preserve">
+                                <path d="M180.607,10.607l-79.696,79.697l79.696,79.697L170,180.607l-79.696-79.696l-79.696,79.696L0,170.001l79.696-79.697L0,10.607L10.607,0.001l79.696,79.696L170,0.001L180.607,10.607z"/>
+                            </svg>
+                        </button>
                     </div>
                     <div v-else>
                         <div v-if="!editMode">
-                            <button class="schedule-delete-button" @click="toggleScheduleDetailDel()">Delete</button>
-                            <button class="schedule-update-button" @click="updateScheDetail()">Update</button>
+                            <button class="schedule-button" @click="toggleScheduleDetailDel()">Delete</button>
+                            <button class="schedule-button" @click="updateScheDetail()">Update</button>
                         </div>
                         <div v-else>
-                            <button class="schedule-delete-button" @click="toggleScheDetailEdit()">Back</button>
-                            <!-- <button class="schedule-update-button" @click="">Submit</button> -->
+                            <button class="schedule-button" @click="toggleScheDetailEdit()">Back</button>
+                            <!-- <button class="schedule-button" @click="">Submit</button> -->
                         </div>
                     </div>
                 </div>
@@ -73,9 +80,13 @@
 <script>
 import axios from 'axios'
 import { useModalStore } from '../stores/modalStore'
+import ScheduleUpdate from '../components/ScheduleUpdate.vue'
 
 export default {
     name: 'ScheduleDetails',
+    components: {
+        ScheduleUpdate,
+    },
     props: {
         modalBody:  String,
             // required: true
@@ -185,6 +196,13 @@ export default {
 .Completed .schedule-status-message{
     color: green;
 }
+.Cancelled.schedule-status-container{
+    background-color: rgba(191.25, 0, 0, 0.125);
+}
+.Cancelled .schedule-status-message{
+    color: red;
+}
+
 .schedule-type{
     text-transform: capitalize;
     font-size: 12px;
@@ -210,7 +228,7 @@ export default {
     align-items: center;
 }
 .schedule-delete-confirm-text{
-    color: grey;
+    color: red;
     font-size: 12px;
     line-height: 1;
 }
@@ -221,24 +239,23 @@ export default {
     justify-content: space-between;
     column-gap: 4px;
 }
-.schedule-delete-button,  .schedule-update-button{
+.schedule-button{
     border: none;
     padding: 6px 12px;
     border-radius: 0.25rem;
     color: gray;
     font-size: 12px;
 }
-.schedule-delete-button{
-    
+.delete-button{
     background-color: transparent;
 }
-.schedule-delete-button:hover{
+.delete-button:hover{
     background-color: rgba(245, 245, 245, 0.75);
 }
-.schedule-update-button{
+.update-button{
     background-color: var(--light-grey-color);
 }
-.schedule-update-button:hover{
+.update-button:hover{
     color: #404040;
 }
 </style>

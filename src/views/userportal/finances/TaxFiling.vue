@@ -11,6 +11,7 @@ export default {
                 {
                     "year": "2023",
                     "items": [
+                        {"item": "Service Master", "duration": {"startDate": "Jan 2023", "endDate": "Jan 2023"}},
                         {"item": "is2 (Minova)", "duration": {"startDate": "Jan 2023", "endDate": "Apr 2023"}},
                         {"item": "Seasons+", "duration": {"startDate": "June 2023", "endDate": "Dec 2023"}},
                         {"item": "School", "duration": {"startDate": "Jan 2022", "endDate": "Dec 2023"}}
@@ -21,6 +22,7 @@ export default {
                     "items": [
                         {"item": "StaffPlus", "duration": {"startDate": "Feb 2022", "endDate": "Apr 2022"}},
                         {"item": "Blitz Personnel", "duration": {"startDate": "May 2022", "endDate": "May 2022"}},
+                        {"item": "Linxus Group", "duration": {"startDate": "May 2022", "endDate": "Novnpm run dev 2022"}},
                         {"item": "Service Master", "duration": {"startDate": "May 2022", "endDate": "Dec 2022"}},
                         {"item": "GigHound", "duration": {"startDate": "unavailable", "endDate": "unavailable"}},
                         {"item": "Vertical SR", "duration": {"startDate": "unavailable", "endDate": "unavailable"}},

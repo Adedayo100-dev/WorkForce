@@ -51,6 +51,9 @@ const monthEventsSchema = new mongoose.Schema(
             },
             status: {
                 type: String
+            },
+            info: {
+                type: String
             }
         }
     },

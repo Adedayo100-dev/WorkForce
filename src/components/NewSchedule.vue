@@ -16,6 +16,7 @@
                 <input type="time" v-model="formValues.inputDayTime.stop.time" name="" id=""><br>
             </div>
             <div>
+                <label for="to">Type:</label><br>
                 <select name="" id="" v-model="formValues.inputEventType" required>
                     <option value="work-event">Work</option>
                     <option value="appointment-event">Appointment</option>
@@ -23,7 +24,15 @@
                 </select>
             </div>
             <div>
-                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <label for="to">Status:</label><br>
+                <select name="" id="" v-model="formValues.inputStatus" required>
+                    <option value="In view">In view</option>
+                    <option value="Completed">Complete</option>
+                    <option value="Early">Early</option>
+                </select>
+            </div>
+            <div>
+                <textarea name="" id="" v-model="formValues.inputInfo" cols="30" rows="10"></textarea>
             </div>
             <input type="checkbox" name="" id="recurring" v-model="formValues.inputRecurring"> <label for="recurring">Recurring</label><br>
             <br>
@@ -59,6 +68,8 @@ import axios from 'axios'
                     }
                 },
                 inputEventType: '',
+                inputStatus: '',
+                inputInfo: '',
                 inputRecurring: false,
                 // inputPay: null,
                 // inputPayStatus: false,
