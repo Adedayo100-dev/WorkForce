@@ -24,10 +24,12 @@ export default {
 .orange-confirm-button{
     background-color: var(--light-grey-color); /* transparent, #1B5E20, rgba(232 57 0 / 10%) */
     /* color: var(--orange-color); */
+    box-shadow: rgba(128, 128, 128, 0.2) 0px 4px 8px 0px;
     font-family: Lato;
 }
 .orange-confirm-button:hover{
     background-color: var(--light-grey-color);
+    box-shadow: none;
     /* color: var(--primary-color); */
 }
 .orange-confirm-button span{

@@ -65,7 +65,7 @@
                                         <span :title="day.dayMonth.short_name + ' ' + day.dayNum + ' ,'+ day.dayYear">{{ day.dayNum }}</span>
                                     </div>
                                     <template v-for="event in day.events" :key="event._id">
-                                        <div class="has-shift" :class="event.data.type" @click="modalPop(event._id)">
+                                        <div class="has-shift" :class="event.data.type && event.data.status" @click="modalPop(event._id)">
                                             <span class="company-name" title="Seasons Retirement Community">{{ event.data.short_desc }}</span>
                                             <!-- <span class="has-time">{{ event.date.start.time }} - {{ event.date.end.time }} 	&#127769;</span> -->
                                         </div>
@@ -285,5 +285,10 @@ tbody tr:last-of-type {
 .bl ul{
     list-style-type: disc;
     padding-left: 27.5px;
+}
+.Cancelled {
+    background-color: rgb(251 0 0 / 0%) !important;
+    border: 2px solid var(--danger-line) !important;
+    background-image: repeating-linear-gradient(135deg,var(--danger-line),var(--danger-line) 7px,white 7px,white 14px,var(--danger-line) 14px,var(--danger-line) 21px,white 21px,white 28px);
 }
 </style>

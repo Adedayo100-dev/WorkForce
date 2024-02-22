@@ -3,7 +3,7 @@ import { createMonthDays } from '../utils/createCalendar.js'
 import monthEvents from '../models/monthEventsModel.js'
 import { mapEventsToCalendar } from '../utils/mapEventsToCalendar.js'
 
-// @desc    Get Schedule
+// @desc    Get Schedules
 // @route   GET /api/schedule
 // @access  Private
 export const getSchedules = asyncHandler(async (req, res) => {
@@ -36,7 +36,7 @@ export const getSchedules = asyncHandler(async (req, res) => {
 
 })
 
-// @desc    Get Schedule
+// @desc    Get a single Schedule
 // @route   GET /api/schedule/:id
 // @access  Private
 export const getSchedule = asyncHandler(async (req, res) => {
@@ -78,6 +78,13 @@ export const setSchedules = asyncHandler(async (req, res) => {
         }
     })
     res.status(200).json(schedule);
+})
+
+// @desc    Update a single schedule Schedule
+// @route   PUT /api/Sshedule
+// @access  Private
+export const updateSchedule = asyncHandler(async (req, res) => {
+    console.log("Update is:", req.body);
 })
 
 // @desc    Delete Schedule

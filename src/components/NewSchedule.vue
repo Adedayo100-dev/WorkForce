@@ -3,7 +3,11 @@
         <h4>New Schedule</h4>
         <form @submit.prevent="createSchedule" action="">
             <div style="box-sizing:border-box;">
-                <input type="text" name="" id="" v-model="formValues.inputName" class="width-full" placeholder="Name/Location" required>
+                <input type="text" name="event-name" list="event-names" v-model="formValues.inputName" class="width-full" placeholder="Name/Location" required>
+                <datalist id="event-names">
+                    <option value="House Keeping">House Keeping</option>
+                    <option value="Dining">Dining</option>
+                </datalist>
             </div>
             <div id="from">
                 <label for="from">From:</label><br>

@@ -12,6 +12,7 @@
     --light-primary-color: rgba(3, 137, 255, 0.1);
     --side-nav-width: 48px;
     --x-margin: 24px;
+    --danger-line: rgb(255 140 1 / 50%);
 }
 *, :after, :before {
     -webkit-box-sizing: inherit;

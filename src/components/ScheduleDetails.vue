@@ -36,7 +36,7 @@
         </div>
         <div v-else>
             <!-- Schedule Update Form -->
-            <ScheduleUpdate/>
+            <ScheduleUpdate :testable="true"/>
         </div>
         <!-- Controls -->
         <div class="schedule-buttons-container">
@@ -51,24 +51,20 @@
                 <div v-else>
                     <div v-if="confirmDelete">
                         <button class="schedule-button" @click="delScheduleDetail()">
-                            <svg version="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" enable-background="new 0 0 48 48" height="14px">
-                                <polygon fill="grey" points="40.6,12.1 17,35.7 7.4,26.1 4.6,29 17,41.3 43.4,14.9"/>
-                            </svg>
+                            <CheckMarkIcon/>
                         </button>
                         <button class="schedule-button" @click="toggleScheduleDetailDel()">
-                            <svg fill="grey" width="14px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 180.607 180.607" xml:space="preserve">
-                                <path d="M180.607,10.607l-79.696,79.697l79.696,79.697L170,180.607l-79.696-79.696l-79.696,79.696L0,170.001l79.696-79.697L0,10.607L10.607,0.001l79.696,79.696L170,0.001L180.607,10.607z"/>
-                            </svg>
+                            <WrongIcon/>
                         </button>
                     </div>
                     <div v-else>
                         <div v-if="!editMode">
                             <button class="schedule-button" @click="toggleScheduleDetailDel()">Delete</button>
-                            <button class="schedule-button" @click="updateScheDetail()">Update</button>
+                            <button class="schedule-button" @click="initUpdateScheDetail()">Update</button>
                         </div>
                         <div v-else>
                             <button class="schedule-button" @click="toggleScheDetailEdit()">Back</button>
-                            <!-- <button class="schedule-button" @click="">Submit</button> -->
+                            <button class="schedule-button" @click="updateScheDetail()">Submit</button>
                         </div>
                     </div>
                 </div>
@@ -80,12 +76,16 @@
 <script>
 import axios from 'axios'
 import { useModalStore } from '../stores/modalStore'
+// Use this store to access the data in the Schedule Update Component
+import { useScheduleUpdateStore } from '../stores/scheduleUpdateStore'
+import CheckMarkIcon from '../components/icons/IconCheckMark.vue'
+import WrongIcon from '../components/icons/IconWrong.vue'
 import ScheduleUpdate from '../components/ScheduleUpdate.vue'
 
 export default {
     name: 'ScheduleDetails',
     components: {
-        ScheduleUpdate,
+        ScheduleUpdate, CheckMarkIcon, WrongIcon
     },
     props: {
         modalBody:  String,
@@ -121,6 +121,7 @@ export default {
         }
     },
     methods: {
+        // For fetching the particular Schedule
         async fetchScheduleDetail(id) {
             console.log(id);
             axios.get(`http://localhost:3000/api/schedule/${id}`)
@@ -139,8 +140,9 @@ export default {
         toggleScheduleDetailDel(){
             this.confirmDelete = !this.confirmDelete;
         },
+        // For deleting the particular Schedule
         delScheduleDetail(){
-            var id = this.modalBody
+            var id = this.modalBody;
             axios.delete(`http://localhost:3000/api/schedule/${id}`)
             .then((res) => {
                 console.log(res.data)
@@ -149,8 +151,15 @@ export default {
                 console.error(err.message);
             });
         },
-        updateScheDetail(){
+        initUpdateScheDetail(){
             this.editMode = !this.editMode;
+        },
+        // For Updating the particular Schedule
+        updateScheDetail(){
+            // I need to find a way to globally declare this variable within this component for it's use only
+            var id = this.modalBody; 
+            useScheduleUpdateStore().submitUpdateData();
+            
         },
         closeModal() {
             useModalStore().closeModal();
@@ -197,12 +206,11 @@ export default {
     color: green;
 }
 .Cancelled.schedule-status-container{
-    background-color: rgba(191.25, 0, 0, 0.125);
+    background-color: rgba(255, 140, 0, 0.125);
 }
 .Cancelled .schedule-status-message{
-    color: red;
+    color: rgb(255, 140, 0);
 }
-
 .schedule-type{
     text-transform: capitalize;
     font-size: 12px;
